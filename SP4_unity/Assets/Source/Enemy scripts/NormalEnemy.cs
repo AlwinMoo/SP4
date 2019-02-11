@@ -1,25 +1,22 @@
-﻿using UnityEngine;
-using UnityEngine.AI;
-public class NormalEnemy : MonoBehaviour {
-	public GameObject target;
-	public NavMeshAgent agent;
+﻿
+using UnityEngine;
 
-	private float m_countDown;
-	private const float cooldown = 3.0f;
+public class NormalEnemy : EnemyBase {
 
 	// Use this for initialization
-	void Start () {
-		m_countDown = cooldown;
+	public override void Start ()
+    {
+        health = 10;
+        mass = 30;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		m_countDown -= Time.deltaTime;
 
-		if (m_countDown <= 0.0f) {
-			m_countDown += cooldown;
-			agent.SetDestination (target.transform.position);
-			Debug.Log("updated destination");
-		}
-	}
+    public override void OnCollisionEnter(Collision collision)
+    {
+        float momentum = 0.0f;
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            momentum = collision.gameObject.GetComponent<VehicleBase>().mass * collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        }
+    }
 }
