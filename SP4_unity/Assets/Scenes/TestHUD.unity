@@ -160,7 +160,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3893287f9d176ef4c82a9a21671a92f4, type: 2}
+  - {fileID: 2100000, guid: c5e795342123d9f48a121bc1d53d9c8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 292647884}
   - component: {fileID: 292647883}
   - component: {fileID: 292647887}
+  - component: {fileID: 292647888}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -297,6 +298,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5645a91f414654994ea6ce067ace0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
+--- !u!114 &292647888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292647882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FogOfWarPlane: {fileID: 175364226}
 --- !u!1 &294837923
 GameObject:
   m_ObjectHideFlags: 0
