@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FR_Collider
+  - FL_Collider
+  - RL_Collider
+  - RR_Collider
+  - FL_Transform
+  - FR_Transform
+  - RR_Transform
+  - RL_Transform
   layers:
   - Default
   - TransparentFX
