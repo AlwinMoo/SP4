@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleParent : MonoBehaviour{
+public class VehicleBase : MonoBehaviour{
 
     public float health { get; set; }
     public float mass { get; set; }
