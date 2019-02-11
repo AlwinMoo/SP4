@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040155784, g: 0.00021916206, b: 0.000000053070956,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.27938733, g: 0.26134774, b: 0.2066037, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,6 +311,52 @@ Prefab:
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114745898481819640, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583515264906556, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: FR_Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098112497696834, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: FL_Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723556605923408, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: RL_Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733094994814800, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: RR_Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709942565494818, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: FL_Transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217138910691278, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: FR_Transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345744707238326, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: RL_Transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078882453443558, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+      propertyPath: m_TagString
+      value: RR_Transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 54915746514601460, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_IsPrefabAsset: 0
@@ -340,7 +385,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -374,13 +419,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: -0.19267528, y: 0.6727625, z: 0.7098593, w: -0.079791665}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: -0.51576966, y: 0.4551559, z: 0.58405393, w: -0.43092433}
+  m_LocalPosition: {x: 0, y: 169, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -67.576004, y: 273.086, z: -102.421005}
+  m_LocalEulerAnglesHint: {x: -5, y: 273.086, z: -102.421005}
 --- !u!1 &197035840
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +950,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4796401333105864, guid: d3a7ce60004abab4589a4fac8b69a9f9,
     type: 2}
   m_PrefabInternal: {fileID: 40903794}
+--- !u!114 &798475554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798475547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489d8f119daf3514eb83020c914a27e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884564131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,8 +1665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cda4ff7d82d364e904d916c2b13e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 798475547}
-  agent: {fileID: 2029229776}
 --- !u!136 &2029229778
 CapsuleCollider:
   m_ObjectHideFlags: 0
