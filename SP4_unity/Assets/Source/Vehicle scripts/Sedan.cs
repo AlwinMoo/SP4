@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sedan : VehicleParent
+public class Sedan : VehicleBase
 {
 	// Use this for initialization
 	public override void Start () {
