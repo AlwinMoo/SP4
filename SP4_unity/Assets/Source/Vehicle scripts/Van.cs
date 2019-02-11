@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sedan : VehicleBase
+public class Van : VehicleBase
 {
-    // Use this for initialization
-    public override void Start () {
-        health = 100;
-        mass = 1;
+    public override void Start()
+    {
+        health = 250;
+        mass = 1.6f;
 
-        motorForce = 1000;
+        motorForce = 500;
         steerForce = 9000;
 
         fR_Wheel = GameObject.FindWithTag("FR_Collider").GetComponent<WheelCollider>();
@@ -22,6 +22,6 @@ public class Sedan : VehicleBase
         rR_T = GameObject.FindWithTag("RR_Transform").GetComponent<Transform>();
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
 
-        driveTrain = VehicleBase.DriveTrain.DRIVE_FWD;
+        driveTrain = VehicleBase.DriveTrain.DRIVE_AWD;
     }
 }

@@ -11,6 +11,7 @@ public class Car_Controller : MonoBehaviour {
 	public WheelCollider fR_Wheel,fL_Wheel, rR_Wheel, rL_Wheel;
 	public Transform fR_T, fL_T, rR_T, rL_T;
 	public float maxSteerAngle = 30;
+
 	// Use this for initialization
 	void Start () {
 	}
