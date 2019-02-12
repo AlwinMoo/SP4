@@ -262,7 +262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -5, y: 273.086, z: -102.421005}
 --- !u!1 &197035840
 GameObject:
@@ -304,7 +304,7 @@ Transform:
   - {fileID: 1291249580}
   - {fileID: 37157948}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &210981569
 GameObject:
@@ -372,6 +372,53 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &355115021
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120795750370422, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 739a0303ef952df4c96cf18410448b79, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &355115022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1199921107709844, guid: 739a0303ef952df4c96cf18410448b79,
+    type: 2}
+  m_PrefabInternal: {fileID: 355115021}
 --- !u!1 &435316785
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +799,7 @@ Transform:
   m_LocalScale: {x: 131.60033, y: 1, z: 154.04712}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644062983
 GameObject:
@@ -915,6 +962,7 @@ GameObject:
   - component: {fileID: 798475549}
   - component: {fileID: 798475548}
   - component: {fileID: 798475554}
+  - component: {fileID: 798475555}
   m_Layer: 9
   m_Name: Car Base
   m_TagString: Player
@@ -1029,7 +1077,7 @@ Transform:
   - {fileID: 435316786}
   - {fileID: 210981570}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &798475554
 MonoBehaviour:
@@ -1042,6 +1090,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489d8f119daf3514eb83020c914a27e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &798475555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798475547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FogPlane: {fileID: 355115022}
+  Number: 1
 --- !u!1 &884564131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2029229782
 Rigidbody:

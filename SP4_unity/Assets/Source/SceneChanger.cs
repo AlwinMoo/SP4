@@ -22,7 +22,7 @@ public class SceneChanger : MonoBehaviour
 
     public void SceneMain()
     {
-        SceneManager.LoadScene("Main Game", LoadSceneMode.Single);
+        SceneManager.LoadScene("TestHUD", LoadSceneMode.Single);
     }
 
     public void SceneCharCreation()
@@ -32,7 +32,7 @@ public class SceneChanger : MonoBehaviour
 
     public void SceneSplashscreen()
     {
-        SceneManager.LoadScene("SplashScreen", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     public void QuitGame()
