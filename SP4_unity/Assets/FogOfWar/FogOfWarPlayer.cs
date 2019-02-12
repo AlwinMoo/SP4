@@ -28,7 +28,7 @@ public class FogOfWarPlayer : MonoBehaviour
 
     Transform FindFogPlane()
     {
-        FogPlane = GameObject.Find("FogOfWarPlane");
+        FogPlane = GameObject.FindWithTag("FogOfWarPlane");
         return FogPlane.transform;
     }
 

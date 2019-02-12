@@ -60,7 +60,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FogMaxRadius: 1.5
-    - _FogRadius: 7
+    - _FogRadius: 30
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -79,4 +79,6 @@ Material:
     - _Player1_Pos: {r: 20, g: 0, b: 0, a: 1}
     - _PlayerPos1: {r: 0, g: 0, b: 0, a: 1}
     - _PlayerPos2: {r: 0, g: 0, b: 0, a: 1}
+    - _PlayerPos3: {r: 0, g: 0, b: 0, a: 1}
+    - _PlayerPos4: {r: 0, g: 0, b: 0, a: 1}
     - _Player_Pos: {r: 0, g: 0, b: 0, a: 1}
