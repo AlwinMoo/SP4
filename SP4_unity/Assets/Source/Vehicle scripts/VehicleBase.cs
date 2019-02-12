@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class VehicleBase : MonoBehaviour {
 
+    public Vector3 u1 { get; set; }
+    public Vector3 u2 { get; set; }
+    public Vector3 v1 { get; set; }
+    public Vector3 v2 { get; set; }
+    public float m1 { get; set; }
+    public float m2 { get; set; }
+
     public float health { get; set; } //arbitrary health unit
     public float mass { get; set; } //mass in tonnes
 
@@ -119,5 +126,9 @@ public class VehicleBase : MonoBehaviour {
         Steer();
         Accelerate();
         UpdateWheelPoses();
+    }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
     }
 }
