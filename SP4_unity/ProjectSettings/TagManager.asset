@@ -12,6 +12,7 @@ TagManager:
   - FR_Transform
   - RR_Transform
   - RL_Transform
+  - Enemy
   layers:
   - Default
   - TransparentFX
