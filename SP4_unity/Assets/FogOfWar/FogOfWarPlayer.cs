@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FogOfWarPlayer : MonoBehaviour
 {
-
-    public GameObject FogPlane;
+    GameObject FogPlane;
     public int Number;
 
     // Use this for initialization

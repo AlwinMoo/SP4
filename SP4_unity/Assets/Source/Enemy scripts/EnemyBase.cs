@@ -20,6 +20,8 @@ public class EnemyBase : MonoBehaviour {
 
     private float m_countDown;
 
+    private float damageTickCD;
+
     public enum enemytype
     {
         ENEMY_NORMAL,
@@ -48,7 +50,9 @@ public class EnemyBase : MonoBehaviour {
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
             m_countDown = 0.0f;
+
             agent.SetDestination(target.transform.position);
+            agent.stoppingDistance = 5;
             Debug.Log("updated destination");
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
@@ -59,8 +63,27 @@ public class EnemyBase : MonoBehaviour {
         }
     }
 
-    public virtual void OnCollisionEnter(Collision collision)
+    public virtual void OnTriggerStay(Collider collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            damageTickCD += Time.deltaTime;
+
+            if (damageTickCD >= 2)
+            {
+                switch (this.gameObject.GetComponent<EnemyBase>().enemyType)
+                {
+                    case enemytype.ENEMY_NORMAL:
+                        collision.gameObject.GetComponent<VehicleBase>().health -= 10;
+                        break;
+                    case enemytype.ENEMY_TANK:
+                        collision.gameObject.GetComponent<VehicleBase>().health -= 20;
+                        break;
+                    default:
+                        break;
+                }
+                damageTickCD = 0.0f;
+            }
+        }
     }
 }

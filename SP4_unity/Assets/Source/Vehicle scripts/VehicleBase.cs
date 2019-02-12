@@ -42,6 +42,13 @@ public class VehicleBase : MonoBehaviour {
     }
     public DriveTrain driveTrain { get; set; }
 
+    public enum VehicleType
+    {
+        VEH_SEDAN,
+        VEH_VAN,
+    }
+    public VehicleType vehicleType { get; set; }
+
     //public Slider HealthSlider;
 
     // Use this for initialization
@@ -60,6 +67,39 @@ public class VehicleBase : MonoBehaviour {
         fL_Wheel.motorTorque = 0;
 
         //HealthSlider.value = health;
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rL_Wheel.brakeTorque = brakeForce;
+            rR_Wheel.brakeTorque = brakeForce;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            rL_Wheel.brakeTorque = 0;
+            rR_Wheel.brakeTorque = 0;
+        }
+
+        if (gameObject.GetComponent<Rigidbody>().velocity.magnitude < -3 && Input.GetKeyDown(KeyCode.W))
+        {
+            rL_Wheel.brakeTorque = brakeForce;
+            rR_Wheel.brakeTorque = brakeForce;
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            rL_Wheel.brakeTorque = 0;
+            rR_Wheel.brakeTorque = 0;
+        }
+
+        if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 3 && Input.GetKeyDown(KeyCode.S))
+        {
+            rL_Wheel.brakeTorque = brakeForce;
+            rR_Wheel.brakeTorque = brakeForce;
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            rL_Wheel.brakeTorque = 0;
+            rR_Wheel.brakeTorque = 0;
+        }
     }
     public virtual void GetInput()
     {
@@ -126,14 +166,25 @@ public class VehicleBase : MonoBehaviour {
         Steer();
         Accelerate();
         UpdateWheelPoses();
-        Debug.Log(m_verticalInput);
+        Debug.Log(health);
     }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyBase>().health -= 10;
+            switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
+            {
+                case VehicleType.VEH_SEDAN:
+                    collision.gameObject.GetComponent<EnemyBase>().health -= 10;
+                    break;
+                case VehicleType.VEH_VAN:
+                    collision.gameObject.GetComponent<EnemyBase>().health -= 15;
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

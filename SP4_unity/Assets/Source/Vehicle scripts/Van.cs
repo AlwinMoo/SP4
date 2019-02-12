@@ -8,10 +8,12 @@ public class Van : VehicleBase
     public override void Start()
     {
         health = 250;
+        this.gameObject.GetComponent<Rigidbody>().mass = 1500;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
-        motorForce = 500;
+        motorForce = 600;
         steerForce = 9000;
+        brakeForce = 5 * motorForce;
 
         fR_Wheel = GameObject.FindWithTag("FR_Collider").GetComponent<WheelCollider>();
         fL_Wheel = GameObject.FindWithTag("FL_Collider").GetComponent<WheelCollider>();
@@ -24,6 +26,7 @@ public class Van : VehicleBase
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
 
         driveTrain = VehicleBase.DriveTrain.DRIVE_AWD;
+        vehicleType = VehicleType.VEH_VAN;
     }
 
     public override void OnCollisionEnter(Collision collision)

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NormalEnemy : EnemyBase {
+public class TankEnemy : EnemyBase {
 
 	// Use this for initialization
 	public override void Start ()
     {
-        health = 20;
-        this.gameObject.GetComponent<Rigidbody>().mass = 20;
+        health = 100;
+        this.gameObject.GetComponent<Rigidbody>().mass = 100;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
-        enemyType = enemytype.ENEMY_NORMAL;
-        agent.speed = 3.5f;
+        enemyType = enemytype.ENEMY_TANK;
+        agent.speed = 1.5f;
 	}
 
     public override void Update()

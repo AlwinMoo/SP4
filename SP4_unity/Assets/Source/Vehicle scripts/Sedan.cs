@@ -9,10 +9,12 @@ public class Sedan : VehicleBase
     public override void Start ()
     {
         health = 100;
+        this.gameObject.GetComponent<Rigidbody>().mass = 1000;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
         motorForce = 1000;
         steerForce = 9000;
+        brakeForce = 5 * motorForce;
 
         fR_Wheel = GameObject.FindWithTag("FR_Collider").GetComponent<WheelCollider>();
         fL_Wheel = GameObject.FindWithTag("FL_Collider").GetComponent<WheelCollider>();
@@ -24,7 +26,8 @@ public class Sedan : VehicleBase
         rR_T = GameObject.FindWithTag("RR_Transform").GetComponent<Transform>();
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
 
-        driveTrain = VehicleBase.DriveTrain.DRIVE_RWD;
+        driveTrain = DriveTrain.DRIVE_RWD;
+        vehicleType = VehicleType.VEH_SEDAN;
     }
 
     public override void OnCollisionEnter(Collision collision)
