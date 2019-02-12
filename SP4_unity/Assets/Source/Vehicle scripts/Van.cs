@@ -8,7 +8,7 @@ public class Van : VehicleBase
     public override void Start()
     {
         health = 250;
-        mass = 1.6f;
+        mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
         motorForce = 500;
         steerForce = 9000;
@@ -28,6 +28,8 @@ public class Van : VehicleBase
 
     public override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Debug.Log("Zombie collided with player");

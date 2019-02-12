@@ -13,7 +13,7 @@ public class VehicleBase : MonoBehaviour {
     public float m2 { get; set; }
 
     public float health { get; set; } //arbitrary health unit
-    public float mass { get; set; } //mass in tonnes
+    public float mass { get; set; }
 
     public float m_horizonetalInput { get; set; }
     public float m_verticalInput { get; set; }
@@ -64,7 +64,7 @@ public class VehicleBase : MonoBehaviour {
     public virtual void GetInput()
     {
         m_horizonetalInput = Input.GetAxis("Horizontal");
-        m_verticalInput = Input.GetAxis("Vertical");
+        m_verticalInput = -Input.GetAxis("Vertical");
     }
     public virtual void Steer()
     {
@@ -80,22 +80,22 @@ public class VehicleBase : MonoBehaviour {
         {
             case DriveTrain.DRIVE_AWD:
                 { 
-                    fL_Wheel.motorTorque = m_verticalInput * motorForce / mass;
-                    fR_Wheel.motorTorque = m_verticalInput * motorForce / mass;
-                    rL_Wheel.motorTorque = m_verticalInput * motorForce / mass;
-                    rR_Wheel.motorTorque = m_verticalInput * motorForce / mass;
+                    fL_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
+                    fR_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
+                    rL_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
+                    rR_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
                     break;
                 }
             case DriveTrain.DRIVE_RWD:
                 {
-                    rL_Wheel.motorTorque = m_verticalInput * motorForce / mass;
-                    rR_Wheel.motorTorque = m_verticalInput * motorForce / mass;
+                    rL_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
+                    rR_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
                     break;
                 }
             case DriveTrain.DRIVE_FWD:
                 {
-                    fL_Wheel.motorTorque = m_verticalInput * motorForce / mass;
-                    fR_Wheel.motorTorque = m_verticalInput * motorForce / mass;
+                    fL_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
+                    fR_Wheel.motorTorque = m_verticalInput * motorForce / (mass * 0.001f);
                     break;
                 }
         }
@@ -126,9 +126,14 @@ public class VehicleBase : MonoBehaviour {
         Steer();
         Accelerate();
         UpdateWheelPoses();
+        Debug.Log(m_verticalInput);
     }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyBase>().health -= 10;
+        }
     }
 }

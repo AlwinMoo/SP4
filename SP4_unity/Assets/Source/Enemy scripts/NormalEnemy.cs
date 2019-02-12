@@ -7,26 +7,30 @@ public class NormalEnemy : EnemyBase {
 	// Use this for initialization
 	public override void Start ()
     {
-        health = 10;
-        mass = 30;
+        health = 20;
+        mass = this.gameObject.GetComponent<Rigidbody>().mass;
+        enemyType = enemytype.ENEMY_NORMAL;
 	}
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (health <= 0)
+            Destroy(this.gameObject);
+    }
 
     public override void OnCollisionEnter(Collision collision)
     {
-        //float momentum = 0.0f;
+        base.OnCollisionEnter(collision);
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            //momentum = collision.gameObject.GetComponent<VehicleBase>().mass * collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude;
-
-
-            //Debug.Log("Zombie collided with player");
-            //return;
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = false;
 
             m1 = this.mass;
-            m2 = collision.gameObject.GetComponent<VehicleBase>().mass * 1000;
+            m2 = collision.gameObject.GetComponent<VehicleBase>().mass;
             //u1 = this.gameObject.GetComponent<NavMeshAgent>().velocity;
             u1 = this.gameObject.GetComponent<Rigidbody>().velocity;
             u2 = collision.gameObject.GetComponent<Rigidbody>().velocity;

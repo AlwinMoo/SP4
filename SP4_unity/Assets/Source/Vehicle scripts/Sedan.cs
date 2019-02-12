@@ -6,9 +6,10 @@ using UnityEngine.AI;
 public class Sedan : VehicleBase
 {
     // Use this for initialization
-    public override void Start () {
+    public override void Start ()
+    {
         health = 100;
-        mass = 1;
+        mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
         motorForce = 1000;
         steerForce = 9000;
@@ -23,22 +24,22 @@ public class Sedan : VehicleBase
         rR_T = GameObject.FindWithTag("RR_Transform").GetComponent<Transform>();
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
 
-        driveTrain = VehicleBase.DriveTrain.DRIVE_FWD;
+        driveTrain = VehicleBase.DriveTrain.DRIVE_RWD;
     }
 
     public override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Debug.Log("Zombie collided with player");
             //return;
-            Debug.Log(this.gameObject.GetComponent<Rigidbody>().velocity);
-            Debug.Log(collision.gameObject.GetComponent<Rigidbody>().velocity);
             collision.gameObject.GetComponent<NavMeshAgent>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Rigidbody>().isKinematic = false;
 
-            m1 = this.GetComponent<Rigidbody>().mass;
+            m1 = mass;
             m2 = collision.gameObject.GetComponent<Rigidbody>().mass;
             //u1 = this.gameObject.GetComponent<NavMeshAgent>().velocity;
             u1 = this.gameObject.GetComponent<Rigidbody>().velocity;

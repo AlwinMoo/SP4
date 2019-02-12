@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBase : MonoBehaviour{
+public class EnemyBase : MonoBehaviour {
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
@@ -19,6 +19,13 @@ public class EnemyBase : MonoBehaviour{
     public NavMeshAgent agent { get; set; }
 
     private float m_countDown;
+
+    public enum enemytype
+    {
+        ENEMY_NORMAL,
+        ENEMY_TANK,
+    } 
+    public enemytype enemyType{get; set;}
 
     // Use this for initialization
     public virtual void Awake()
