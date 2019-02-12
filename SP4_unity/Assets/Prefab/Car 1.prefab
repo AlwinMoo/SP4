@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 114818686802998512}
   - component: {fileID: 114998256156763220}
   - component: {fileID: 114717373968283884}
+  - component: {fileID: 114636505244902382}
+  - component: {fileID: 114186217740035586}
   m_Layer: 0
   m_Name: Car 1
   m_TagString: Untagged
@@ -605,6 +607,30 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242553786050376}
   m_Enabled: 1
+--- !u!114 &114186217740035586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582086835144680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82902119fd5f394499f93afd9db1760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FogPlane: {fileID: 0}
+--- !u!114 &114636505244902382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582086835144680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FogOfWarPlane: {fileID: 0}
 --- !u!114 &114717373968283884
 MonoBehaviour:
   m_ObjectHideFlags: 1
