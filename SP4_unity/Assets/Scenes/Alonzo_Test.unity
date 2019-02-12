@@ -362,6 +362,11 @@ Prefab:
       propertyPath: m_Mass
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 54915746514601460, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_IsPrefabAsset: 0
@@ -1753,7 +1758,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &2031402823
 GameObject:
   m_ObjectHideFlags: 0
