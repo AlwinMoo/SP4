@@ -5,6 +5,7 @@ using UnityEngine;
 public class FogOfWarPlayer : MonoBehaviour {
 
     public Transform FogOfWarPlane;
+    public int Number;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class FogOfWarPlayer : MonoBehaviour {
         RaycastHit hit;
         if(Physics.Raycast(rayToPlayerPos, out hit, 1000))
         {
-            FogOfWarPlane.GetComponent<Renderer>().material.SetVector("_Player_Pos", hit.point);
+            FogOfWarPlane.GetComponent<Renderer>().material.SetVector("Player" + Number.ToString(), hit.point);
         }
 	}
 }
