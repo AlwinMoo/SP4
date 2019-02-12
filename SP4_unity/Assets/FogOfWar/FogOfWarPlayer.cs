@@ -5,11 +5,13 @@ using UnityEngine;
 public class FogOfWarPlayer : MonoBehaviour {
 
     public Transform FogOfWarPlane;
+    public GameObject FogPlane;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start ()
+    {
+        FindFogPlane();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,4 +24,11 @@ public class FogOfWarPlayer : MonoBehaviour {
             FogOfWarPlane.GetComponent<Renderer>().material.SetVector("_Player_Pos", hit.point);
         }
 	}
+
+    void FindFogPlane()
+    {
+        FogPlane = GameObject.Find("FogOfWarPlane");
+        Debug.Log("Found FogPlane");
+    }
+
 }
