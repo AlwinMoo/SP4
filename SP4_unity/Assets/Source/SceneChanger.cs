@@ -22,7 +22,7 @@ public class SceneChanger : MonoBehaviour
 
     public void SceneMain()
     {
-        SceneManager.LoadScene("TestHUD", LoadSceneMode.Single);
+        SceneManager.LoadScene("MAINSCENE", LoadSceneMode.Single);
     }
 
     public void SceneCharCreation()
