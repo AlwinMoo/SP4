@@ -22,8 +22,10 @@ public class TankEnemy : EnemyBase {
             Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Player"))
         {
             GetComponent<NavMeshAgent>().enabled = false;

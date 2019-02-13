@@ -83,10 +83,12 @@ public class VehicleBase : MonoBehaviour {
                 aimingRay.AddComponent<LineRenderer>();
                 LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
                 aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-                Color aRed = Color.red;
-                aRed.a -= 0.5f;
-                aimLine.startColor = Color.red;
-                aimLine.endColor = aRed;
+                Color endRed = Color.red;
+                endRed.a = 0.5f;
+                Color startRed = Color.red;
+                startRed.a = 0.8f;
+                aimLine.startColor = startRed;
+                aimLine.endColor = endRed;
                 aimLine.startWidth = 0.1f;
                 aimLine.endWidth = aimLine.startWidth;
                 aimLine.SetPosition(0, this.transform.position);
@@ -214,7 +216,6 @@ public class VehicleBase : MonoBehaviour {
                 default:
                     break;
             }
-
         }
     }
 }

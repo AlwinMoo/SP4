@@ -23,11 +23,18 @@ public class RocketLauncher : MonoBehaviour
 
         if (Input.GetMouseButton(1) && m_countDown <= 0.0f)
         {
-            Debug.Log("spawning RL_Bullet");
-            objectPooler.SpawnFromPool("RL_Bullet", transform.position, gameObject.transform.rotation);
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
+
+                // Play thegunfire light
+                flash.GetComponent<RL_Flash>().InitLight();
+            }
+
             m_countDown += fireRate;
-           
-            flash.GetComponent<RL_Flash>().InitLight();
         }
 
         else if (m_countDown <= 0.0f)
