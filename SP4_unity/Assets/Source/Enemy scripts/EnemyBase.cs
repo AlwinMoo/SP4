@@ -94,7 +94,5 @@ public class EnemyBase : MonoBehaviour {
         {
             collision.gameObject.GetComponent<VehicleBase>().health -= 5;
         }
-
-        collision.gameObject.SetActive(false);
     }
 }
