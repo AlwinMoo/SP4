@@ -143,7 +143,7 @@ MonoBehaviour:
   Pools:
   - tag: HMG_Bullet
     prefab: {fileID: 1799208403371290, guid: 60e7bdcee4a117e49996826a1644e358, type: 2}
-    size: 20
+    size: 1
 --- !u!4 &17133232
 Transform:
   m_ObjectHideFlags: 0
