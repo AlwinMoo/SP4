@@ -1281,18 +1281,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 907313082}
-        m_MethodName: SetVolumeSFX
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &676224665
@@ -1599,12 +1588,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904461606}
   m_CullTransparentMesh: 0
---- !u!114 &907313082 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114210768082515970, guid: 12d6be2a259dee14d855592c003f1649,
-    type: 2}
-  m_PrefabInternal: {fileID: 874476797}
-  m_Script: {fileID: 11500000, guid: 1a63ec644f10e4644aed7d7f5b6e7f49, type: 3}
 --- !u!1 &962765801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,12 +2418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenPanel: {fileID: 1413482762}
   ClosePanel: {fileID: 962765801}
---- !u!114 &1743222918 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114357035038539592, guid: 5389d249193135f47adf9eee95c59eae,
-    type: 2}
-  m_PrefabInternal: {fileID: 1131804773}
-  m_Script: {fileID: 11500000, guid: 9e6093943e1a6a542ad66976e9a4e1f4, type: 3}
 --- !u!1 &1915620554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,18 +2749,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1743222918}
-        m_MethodName: SetVolumeBGM
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2056846318
