@@ -32,6 +32,8 @@ public class VehicleBase : MonoBehaviour {
     public Transform rR_T { get; set; }
     public Transform rL_T { get; set; }
 
+    GameObject aimingRay;
+
     float maxSteerAngle = 30;
 
     public enum DriveTrain
@@ -54,7 +56,6 @@ public class VehicleBase : MonoBehaviour {
     // Use this for initialization
     public virtual void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -67,6 +68,38 @@ public class VehicleBase : MonoBehaviour {
         fL_Wheel.motorTorque = 0;
 
         //HealthSlider.value = health;
+
+        if (Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (!aimingRay)
+                    aimingRay = new GameObject();
+
+                aimingRay.transform.position = this.transform.position;
+                aimingRay.AddComponent<LineRenderer>();
+                LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
+                aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+
+                Color endRed = Color.red;
+                endRed.a = 0.5f;
+                Color startRed = Color.red;
+                startRed.a = 0.8f;
+                aimLine.startColor = startRed;
+                aimLine.endColor = endRed;
+                aimLine.startWidth = 0.1f;
+                aimLine.endWidth = aimLine.startWidth;
+                aimLine.SetPosition(0, this.transform.position);
+                aimLine.SetPosition(1, hit.point);
+            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            GameObject.Destroy(aimingRay);
+        }
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -184,7 +217,6 @@ public class VehicleBase : MonoBehaviour {
                 default:
                     break;
             }
-
         }
     }
 }

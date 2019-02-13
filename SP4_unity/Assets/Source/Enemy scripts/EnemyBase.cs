@@ -53,7 +53,7 @@ public class EnemyBase : MonoBehaviour {
 
             agent.SetDestination(target.transform.position);
             agent.stoppingDistance = 5;
-            Debug.Log("updated destination");
+            //Debug.Log("updated destination");
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
         {
@@ -84,6 +84,15 @@ public class EnemyBase : MonoBehaviour {
                 }
                 damageTickCD = 0.0f;
             }
+        }
+    }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        //TO DO: CHECK IF NOT OTHER PROJECTILES
+        if (collision.gameObject.name == "HMG_Bullet")
+        {
+            collision.gameObject.GetComponent<VehicleBase>().health -= 5;
         }
     }
 }

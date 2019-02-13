@@ -59,8 +59,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FogMaxRadius: 1.5
-    - _FogRadius: 30
+    - _FogMaxRadius: 0.7
+    - _FogRadius: 20
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -74,6 +74,14 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Player1: {r: 0, g: 0, b: 0, a: 1}
+    - Player2: {r: 150, g: 0, b: 0, a: 1}
+    - Player3: {r: 150, g: 0, b: 0, a: 1}
+    - Player4: {r: 150, g: 0, b: 0, a: 1}
+    - PlayerPos1: {r: 0, g: 0, b: 0, a: 1}
+    - PlayerPos2: {r: 0, g: 0, b: 0, a: 1}
+    - PlayerPos3: {r: 0, g: 0, b: 0, a: 1}
+    - PlayerPos4: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Player1_Pos: {r: 20, g: 0, b: 0, a: 1}
