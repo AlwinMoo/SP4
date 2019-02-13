@@ -4,10 +4,10 @@
 		_MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
 		_FogRadius("FogRadius", Float) = 1.0
 		_FogMaxRadius("FogMaxRadius", Float) = 0.5
-		_PlayerPos1("Player1", Vector) = (0,0,0,1)
-		_PlayerPos2("Player2", Vector) = (0,0,0,1)
-		_PlayerPos3("Player3", Vector) = (0,0,0,1)
-		_PlayerPos4("Player4", Vector) = (0,0,0,1)
+		Player1("Player1", Vector) = (0,0,0,1)
+		Player2("Player2", Vector) = (0,0,0,1)
+		Player3("Player3", Vector) = (0,0,0,1)
+		Player4("Player4", Vector) = (0,0,0,1)
 	}
 
 		SubShader{
