@@ -51,11 +51,12 @@ public class VehicleBase : MonoBehaviour {
     }
     public VehicleType vehicleType { get; set; }
 
-    //public Slider HealthSlider;
+    public Slider HealthSlider;
 
     // Use this for initialization
     public virtual void Start()
     {
+        HealthSlider.GetComponent<Slider>().maxValue = health;
     }
 
     // Update is called once per frame
@@ -66,8 +67,8 @@ public class VehicleBase : MonoBehaviour {
 
         fR_Wheel.motorTorque = 0;
         fL_Wheel.motorTorque = 0;
-
-        //HealthSlider.value = health;
+        
+        HealthSlider.value = health;
 
         if (Input.GetMouseButton(0))
         {

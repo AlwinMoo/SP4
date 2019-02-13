@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 114154215017020450}
   - component: {fileID: 114329716829735090}
   m_Layer: 0
-  m_Name: CarBaseTest 2
+  m_Name: Network Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,7 +905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FogPlane: {fileID: 0}
   Number: 1
 --- !u!114 &114329716829735090
 MonoBehaviour:

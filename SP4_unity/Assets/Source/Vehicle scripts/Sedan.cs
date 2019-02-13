@@ -12,6 +12,9 @@ public class Sedan : VehicleBase
         this.gameObject.GetComponent<Rigidbody>().mass = 1000;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
+        transform.Find("MachineGun").gameObject.SetActive(true);
+        transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
+
         motorForce = 1000;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
@@ -28,6 +31,8 @@ public class Sedan : VehicleBase
 
         driveTrain = DriveTrain.DRIVE_RWD;
         vehicleType = VehicleType.VEH_SEDAN;
+
+        base.Start();
     }
 
     public override void OnCollisionEnter(Collision collision)

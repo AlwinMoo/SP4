@@ -32,7 +32,7 @@ public class MachineGun : MonoBehaviour {
             if (Physics.Raycast(ray, out hit))
             {
 				Vector3 dir = hit.point - transform.position;
-				dir.y = transform.position.y;
+				dir.y = 0;
                 objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(dir));
                 
                 // Play thegunfire light

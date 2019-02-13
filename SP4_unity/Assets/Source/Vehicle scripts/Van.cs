@@ -11,6 +11,9 @@ public class Van : VehicleBase
         this.gameObject.GetComponent<Rigidbody>().mass = 1500;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
+        transform.Find("MachineGun").gameObject.SetActive(false);
+        transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
+
         motorForce = 600;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
@@ -27,6 +30,8 @@ public class Van : VehicleBase
 
         driveTrain = VehicleBase.DriveTrain.DRIVE_AWD;
         vehicleType = VehicleType.VEH_VAN;
+
+        base.Start();
     }
 
     public override void OnCollisionEnter(Collision collision)

@@ -36,6 +36,11 @@ public class HMG_Bullet : MonoBehaviour, IPooledObject
 			target.TakeDamage (GlobalDamage.g_HMGDamage, GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL);
 			this.gameObject.SetActive (false);
 		}
-	}
+
+        if (_other.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(_other.collider, this.gameObject.GetComponent<Collider>());
+        }
+    }
 
 }
