@@ -339,7 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FogPlane: {fileID: 0}
   Number: 1
 --- !u!1 &294837923
 GameObject:
@@ -1294,7 +1293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1223291092
 MonoBehaviour:
   m_ObjectHideFlags: 0

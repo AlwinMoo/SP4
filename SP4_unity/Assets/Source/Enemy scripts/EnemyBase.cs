@@ -53,7 +53,7 @@ public class EnemyBase : MonoBehaviour {
 
             agent.SetDestination(target.transform.position);
             agent.stoppingDistance = 5;
-            Debug.Log("updated destination");
+            //Debug.Log("updated destination");
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
         {
