@@ -1,5 +1,7 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
 public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
@@ -11,7 +13,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 	public float maxHealth = 100;
 	 
 	private bool m_burning;
-	private float m_countDown;
+	private float m_countDownTank;
 	// Use this for initialization
 	public override void Start ()
     {
@@ -21,7 +23,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
         enemyType = enemytype.ENEMY_TANK;
         agent.speed = 1.5f;
 		m_burning = false;
-		m_countDown = 0.0f;
+		m_countDownTank = 0.0f;
 		fire.Stop ();
 		glow.Stop ();
 	}
@@ -35,13 +37,13 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
             Destroy(this.gameObject);
 		if (m_burning) 
 		{
-			m_countDown -= Time.deltaTime;
+			m_countDownTank -= Time.deltaTime;
 			float damage;
-			if (m_countDown <= 0.0f) 
+			if (m_countDownTank <= 0.0f) 
 			{
 				m_burning = false;
 				// Set damage to be more accurate
-				damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDown) * maxHealth;
+				damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDownTank) * maxHealth;
 				fire.Stop ();
 				glow.Stop ();
 			}
@@ -54,7 +56,6 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 
     public override void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -102,13 +103,13 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 		{
 			// Reset the countdown and play the fire animation
 			m_burning = true;
-			m_countDown = burnDuration;
+			m_countDownTank = burnDuration;
 			glow.Play();
 			fire.Play ();
 			return true;
 		}
 		// If not, just reset the countdown
-		m_countDown = burnDuration;
+		m_countDownTank = burnDuration;
 		return false;
 	}
 }

@@ -1,5 +1,7 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
 public class NormalEnemy : EnemyBase {
@@ -24,7 +26,6 @@ public class NormalEnemy : EnemyBase {
 
     public override void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
 
         if (collision.gameObject.CompareTag("Player"))
         {

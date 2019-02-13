@@ -199,7 +199,6 @@ public class VehicleBase : MonoBehaviour {
         Steer();
         Accelerate();
         UpdateWheelPoses();
-        Debug.Log(health);
     }
 
     public virtual void OnCollisionEnter(Collision collision)
