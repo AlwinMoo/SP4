@@ -19,12 +19,18 @@ public class MachineGun : MonoBehaviour {
 	void Update() {
 		m_countDown -= Time.deltaTime;
 
-		if (Input.GetMouseButton (0) && m_countDown <= 0.0f) {
-			Debug.Log ("spawning HMG_Bullet");
-			objectPooler.SpawnFromPool ("HMG_Bullet", transform.position, gameObject.transform.rotation);
-			m_countDown += fireRate;
-			// Play thegunfire light
-			flash.GetComponent<HMG_Flash>().StartLight();
+		if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
+                m_countDown += fireRate;
+                // Play thegunfire light
+                flash.GetComponent<HMG_Flash>().StartLight();
+            }
 		}
 		// More accurate firerate if more than 1 shot is fired in a row
 		else if (m_countDown <= 0.0f) 
