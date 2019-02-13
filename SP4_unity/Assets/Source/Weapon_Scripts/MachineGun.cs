@@ -21,13 +21,14 @@ public class MachineGun : MonoBehaviour {
 
 		if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
         {
+            m_countDown += fireRate;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {
                 objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
-                m_countDown += fireRate;
+                
                 // Play thegunfire light
                 flash.GetComponent<HMG_Flash>().StartLight();
             }

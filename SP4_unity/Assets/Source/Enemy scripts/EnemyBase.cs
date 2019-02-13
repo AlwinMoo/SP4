@@ -86,4 +86,15 @@ public class EnemyBase : MonoBehaviour {
             }
         }
     }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        //TO DO: CHECK IF NOT OTHER PROJECTILES
+        if (collision.gameObject.name == "HMG_Bullet")
+        {
+            collision.gameObject.GetComponent<VehicleBase>().health -= 5;
+        }
+
+        collision.gameObject.SetActive(false);
+    }
 }
