@@ -83,6 +83,7 @@ public class VehicleBase : MonoBehaviour {
                 aimingRay.AddComponent<LineRenderer>();
                 LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
                 aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+
                 Color endRed = Color.red;
                 endRed.a = 0.5f;
                 Color startRed = Color.red;
