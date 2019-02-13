@@ -28,4 +28,14 @@ public class HMG_Bullet : MonoBehaviour, IPooledObject
 			gameObject.SetActive (false);
 		}
 	}
+	void OnCollisionEnter(Collision _other)
+	{
+		ILiveEntity target = _other.gameObject.GetComponent<ILiveEntity> ();
+		if (target != null) 
+		{
+			target.TakeDamage (GlobalDamage.g_HMGDamage, GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL);
+			this.gameObject.SetActive (false);
+		}
+	}
+
 }
