@@ -276,6 +276,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &83620016
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -154.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872614565450466, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_Name
+      value: SFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!82 &83620017 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82977186627260290, guid: 0725c698cf3d8134881f2d1dab99555d,
+    type: 2}
+  m_PrefabInternal: {fileID: 83620016}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,6 +4141,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114226572366907680, guid: 75141f21fede3bf4292bca5e14398d9e,
+        type: 2}
+      propertyPath: GunShot
+      value: 
+      objectReference: {fileID: 8300000, guid: bc11a1feb1ff6ae4d89b89bc5d697e93, type: 3}
+    - target: {fileID: 114226572366907680, guid: 75141f21fede3bf4292bca5e14398d9e,
+        type: 2}
+      propertyPath: GunShotSource
+      value: 
+      objectReference: {fileID: 83620017}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75141f21fede3bf4292bca5e14398d9e, type: 2}
   m_IsPrefabAsset: 0
