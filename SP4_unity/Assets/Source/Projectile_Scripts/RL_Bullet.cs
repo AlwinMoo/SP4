@@ -7,6 +7,8 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
     public const float bulletForce = 30.0f;
     public const float maxLifeTime = 3.0f;
     private float m_currLifeTime = maxLifeTime;
+    public ParticleSystem explosion;
+    public ParticleSystem smoke;
 
     public void OnObjectSpawn()
     {
@@ -28,4 +30,13 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
             gameObject.SetActive(false);
         }
 	}
+
+    void OnCollisionEnter (Collision col)
+    {
+        //TODO: fix rocket detonating on flamethrowers
+        ObjectPooler.Instance.SpawnFromPool("RL_Explosion", transform.position, gameObject.transform.rotation);
+        var explosionScript = this.gameObject.GetComponent<RL_Explosion>();
+        explosionScript.Explosion();
+        this.gameObject.SetActive(false);
+    }
 }

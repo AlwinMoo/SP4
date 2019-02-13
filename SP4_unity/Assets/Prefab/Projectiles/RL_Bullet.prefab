@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 65016245644344030}
   - component: {fileID: 54169086302018604}
   - component: {fileID: 114130506230824302}
+  - component: {fileID: 114065003645986886}
   m_Layer: 0
   m_Name: RL_Bullet
-  m_TagString: Untagged
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114065003645986886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055574777500844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e63b139c3de05149bcba9bb297a86b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 50
+  radius: 20
+  upforce: 1
 --- !u!114 &114130506230824302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,3 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20e97af26860a47952b1171c19ab3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  smoke: {fileID: 0}
