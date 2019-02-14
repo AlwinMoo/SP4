@@ -2,7 +2,7 @@
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
 		_MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
-		_FogRadius("FogRadius", Float) = 1.0
+		FogRadius("FogRadius", Float) = 1.0
 		_FogMaxRadius("FogMaxRadius", Float) = 0.5
 		Player1("Player1", Vector) = (0,0,0,1)
 		Player2("Player2", Vector) = (0,0,0,1)
@@ -21,7 +21,7 @@
 
 		sampler2D _MainTex;
 	fixed4 	_Color;
-	float 	_FogRadius;
+	float 	FogRadius;
 	float 	_FogMaxRadius;
 	float4 	Player1;
 	float4  Player2;
@@ -53,9 +53,9 @@
 
 	//return 0 if (pos - nearVertex) > _FogRadius
 	float powerForPos(float4 pos, float2 nearVertex) {
-		float atten = clamp(_FogRadius - length(pos.xz - nearVertex.xy), 0.0, _FogRadius);
+		float atten = clamp(FogRadius - length(pos.xz - nearVertex.xy), 0.0, FogRadius);
 
-		return (1.0 / _FogMaxRadius)*atten / _FogRadius;
+		return (1.0 / _FogMaxRadius)*atten / FogRadius;
 	}
 
 	ENDCG
