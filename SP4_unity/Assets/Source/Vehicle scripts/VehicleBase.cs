@@ -102,7 +102,7 @@ public class VehicleBase : MonoBehaviour {
                 aimingRay.transform.position = this.transform.position;
                 aimingRay.AddComponent<LineRenderer>();
 
-                CreateLineMaterial();
+                //CreateLineMaterial();
 
                 LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
                 aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
