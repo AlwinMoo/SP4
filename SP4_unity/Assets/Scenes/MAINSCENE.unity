@@ -317,7 +317,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1872614565450466, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
       propertyPath: m_Name
-      value: SFX
+      value: SFX(UseThisAsBase)
+      objectReference: {fileID: 0}
+    - target: {fileID: 82977186627260290, guid: 0725c698cf3d8134881f2d1dab99555d,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
@@ -388,6 +393,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -5, y: 273.086, z: -102.421005}
+--- !u!82 &173548615 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82977186627260290, guid: 0725c698cf3d8134881f2d1dab99555d,
+    type: 2}
+  m_PrefabInternal: {fileID: 83620016}
 --- !u!1001 &189656139
 Prefab:
   m_ObjectHideFlags: 0
@@ -426,6 +436,10 @@ Prefab:
     - target: {fileID: 4285579079273010, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872614565450466, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
+      propertyPath: m_Name
+      value: SFX(Button_SFX)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0725c698cf3d8134881f2d1dab99555d, type: 2}
@@ -667,6 +681,10 @@ Prefab:
     - target: {fileID: 4797055555314974, guid: 5389d249193135f47adf9eee95c59eae, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768435450320512, guid: 5389d249193135f47adf9eee95c59eae, type: 2}
+      propertyPath: m_Name
+      value: BGM(Volume+BGM)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5389d249193135f47adf9eee95c59eae, type: 2}
@@ -1289,6 +1307,21 @@ Prefab:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 1915491431}
+    - target: {fileID: 114101536708134520, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: GunShotSource
+      value: 
+      objectReference: {fileID: 173548615}
+    - target: {fileID: 114058050719544878, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324361683468728, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_IsPrefabAsset: 0

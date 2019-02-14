@@ -15,13 +15,13 @@ public class SliderValue : MonoBehaviour {
     {
         switch (ID)
         {
-            case 1:
-            {
-                HealthSlider.value = 100;
-                SpeedSlider.value = 7;
-                WeightSlider.value = 1000;
-                break;
-            }
+                case 1:
+                {
+                    HealthSlider.value = 100;
+                    SpeedSlider.value = 7;
+                    WeightSlider.value = 1000;
+                    break;
+                }
 
             case 2:
                 {
