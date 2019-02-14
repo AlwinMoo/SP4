@@ -7,6 +7,7 @@ using System.IO;
 
 public class PersistantData : MonoBehaviour
 {
+    // You Can Just Save Everything here
     public void Save()
     {
         // Do not use MonoBehaviour class to save
@@ -19,14 +20,13 @@ public class PersistantData : MonoBehaviour
         data.SFXvolume = SFX.SFXvolchanger.audioSrc.volume;
         data.SelectedvehicleID = SliderValue.ID;
 
-        Debug.Log("BGMSaveData" + data.BGMvolume);
-
         // This puts the data in the file BF
         BF.Serialize(file, data);
         // Remember to close file
         file.Close();
     }
 
+    // Can just copy this function
     public void Load()
     {
         // Check if the file is there
@@ -38,20 +38,19 @@ public class PersistantData : MonoBehaviour
             Data data = (Data)BF.Deserialize(file);
             file.Close();
 
+            // Copy till here then call which value u want from the save file 
+
             BGM.BGMvolchanger.audioSrc.volume = data.BGMvolume;
             SFX.SFXvolchanger.audioSrc.volume = data.SFXvolume;
             BGMSlider.BGMslid.BGMslider.value = data.BGMvolume;
             SFXSlider.SFXSlid.SFXslider.value = data.SFXvolume;
-            PlayersCar.PlayerscarID = data.SelectedvehicleID;
-
-
-            Debug.Log("BGMLoadedData" + data.BGMvolume);
         }
     }
 
 }
 
 // [Serializable] is needed to tell unity that this class can be saved
+// Just make a variable of the data u want to save
 [Serializable]
 class Data
 {
