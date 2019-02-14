@@ -86,7 +86,10 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 
 	public bool TakeDamage(float _damage, GlobalDamage.DamageTypes _type)
 	{
-		switch (_type) 
+        if (!this.enabled)
+            return false;
+
+        switch (_type) 
 		{
 		case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
 			health -= _damage;
