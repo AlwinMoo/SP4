@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 15377171}
   - component: {fileID: 15377170}
   m_Layer: 5
-  m_Name: Car2
+  m_Name: Van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Car2
+  m_Text: Van
 --- !u!222 &15377171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 95780528}
   - component: {fileID: 95780527}
   m_Layer: 5
-  m_Name: Car1
+  m_Name: Sedan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Car1
+  m_Text: Sedan
 --- !u!222 &95780528
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 335249786}
   - component: {fileID: 335249790}
   m_Layer: 5
-  m_Name: Car1
+  m_Name: Sedan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,7 +2710,7 @@ GameObject:
   - component: {fileID: 846524536}
   - component: {fileID: 846524537}
   m_Layer: 5
-  m_Name: Car2
+  m_Name: Van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3501,7 +3501,7 @@ GameObject:
   - component: {fileID: 1191987683}
   - component: {fileID: 1191987682}
   m_Layer: 5
-  m_Name: Car3
+  m_Name: PlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3557,7 +3557,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Car3
+  m_Text: PlaceHolder
 --- !u!222 &1191987683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4994,6 +4994,8 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114444435331361806, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+    - {fileID: 114058050719544878, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+    - {fileID: 114324361683468728, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2047181388
@@ -5217,7 +5219,7 @@ GameObject:
   - component: {fileID: 2079450365}
   - component: {fileID: 2079450369}
   m_Layer: 5
-  m_Name: Car3
+  m_Name: PlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
