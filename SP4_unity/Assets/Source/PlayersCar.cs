@@ -1,33 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 
 public class PlayersCar : MonoBehaviour {
 
     public static int PlayerscarID;
-    GameObject sedan;
-    GameObject van;
+    public GameObject CarBase;
 
-	void Update () {
+    void Start()
+    {
+        if (File.Exists(Application.persistentDataPath + "/DataFile.dat"))
+        {
+            BinaryFormatter BF = new BinaryFormatter();
+            // opens the file
+            FileStream file = File.Open(Application.persistentDataPath + "/DataFile.dat", FileMode.Open);
+            Data data = (Data)BF.Deserialize(file);
+            file.Close();
 
+            PlayerscarID = data.SelectedvehicleID;
+        }
+    }
+
+
+    void Update () {
         switch (PlayerscarID)
         {
             case 1:
                 {
-                    if(van != null)
-                    {
-                        van.SetActive(true);
-                    }
-                    sedan.SetActive(true);
+                    CarBase.GetComponent<Sedan>().enabled = true;
+                    CarBase.GetComponent<Van>().enabled = !CarBase.GetComponent<Sedan>().enabled;
                     break;
                 }
             case 2:
                 {
-                    if (sedan != null)
-                    {
-                        sedan.SetActive(true);
-                    }
-                    van.SetActive(true);
+                    CarBase.GetComponent<Van>().enabled = true;
+                    CarBase.GetComponent<Sedan>().enabled = !CarBase.GetComponent<Van>().enabled;
                     break;
                 }
         }

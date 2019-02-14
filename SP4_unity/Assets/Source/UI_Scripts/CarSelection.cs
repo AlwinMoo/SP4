@@ -17,7 +17,6 @@ public class CarSelection : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("SelectedID" + SliderValue.ID);
         switch (SliderValue.ID)
         {
             case 1:
