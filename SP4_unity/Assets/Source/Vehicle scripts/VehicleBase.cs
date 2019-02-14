@@ -93,8 +93,11 @@ public class VehicleBase : MonoBehaviour {
                 aimLine.endColor = endRed;
                 aimLine.startWidth = 0.1f;
                 aimLine.endWidth = aimLine.startWidth;
-                aimLine.SetPosition(0, this.transform.position);
-                aimLine.SetPosition(1, hit.point);
+                Vector3 startPos = transform.position;
+                Vector3 endPos = hit.point;
+                endPos.y = transform.position.y;
+                aimLine.SetPosition(0, startPos);
+                aimLine.SetPosition(1, endPos);
             }
         }
         if (Input.GetMouseButtonUp(0))

@@ -21,20 +21,9 @@ public class FlameThrower : MonoBehaviour {
 		m_firing = _fire;
 		if (_fire)
         {
-            //TO DO: EMIT FLAMES IN DIRECTION OF LINE
-            //RaycastHit hit;
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            //if (Physics.Raycast(ray, out hit))
-            {
-                //Vector3 dir = hit.point - transform.position;
-                //dir.y = 0;
-                //objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(dir));
-
-                smoke.Play();
-                fire.Play();
-                glow.Play();
-            }
+           smoke.Play();
+           fire.Play();
+           glow.Play();
 		}
 		else 
 		{
@@ -45,9 +34,20 @@ public class FlameThrower : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButton (0))
-			TriggerFire (true);
-		else
-			TriggerFire (false);
+        if (Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 dir = hit.point - transform.position;
+                dir.y = 0;
+                transform.rotation = Quaternion.LookRotation(dir);
+                TriggerFire(true);
+            }
+        }
+        else
+            TriggerFire(false);
 	}
 }
