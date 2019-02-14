@@ -34,6 +34,8 @@ public class VehicleBase : MonoBehaviour {
 
     GameObject aimingRay;
 
+    static Material lineMaterial;
+
     float maxSteerAngle = 30;
 
     public enum DriveTrain
@@ -59,6 +61,22 @@ public class VehicleBase : MonoBehaviour {
         HealthSlider.GetComponent<Slider>().maxValue = health;
     }
 
+    static void CreateLineMaterial()
+    {
+        if (!lineMaterial)
+        {
+            lineMaterial = new Material("Shader \"Lines/Colored Blended\" {" +
+                "SubShader { Pass { " +
+                "    Blend SrcAlpha OneMinusSrcAlpha " +
+                "    ZWrite Off Cull Off Fog { Mode Off } " +
+                "    BindChannels {" +
+                "      Bind \"vertex\", vertex Bind \"color\", color }" +
+                "} } }");
+            lineMaterial.hideFlags = HideFlags.HideAndDontSave;
+            lineMaterial.shader.hideFlags = HideFlags.HideAndDontSave;
+        }
+    }
+
     // Update is called once per frame
     public virtual void Update()
     {
@@ -80,8 +98,12 @@ public class VehicleBase : MonoBehaviour {
                 if (!aimingRay)
                     aimingRay = new GameObject();
 
+
                 aimingRay.transform.position = this.transform.position;
                 aimingRay.AddComponent<LineRenderer>();
+
+                CreateLineMaterial();
+
                 LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
                 aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
 
