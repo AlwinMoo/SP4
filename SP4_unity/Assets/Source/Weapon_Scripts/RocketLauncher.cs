@@ -33,7 +33,7 @@ public class RocketLauncher : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
+                objectPooler.SpawnFromPool("RL_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
 
                 // Play thegunfire light
                 flash.GetComponent<RL_Flash>().InitLight();
