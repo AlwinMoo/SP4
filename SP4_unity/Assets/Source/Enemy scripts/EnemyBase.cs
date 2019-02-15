@@ -50,6 +50,10 @@ public class EnemyBase : MonoBehaviour {
         //TODO: switch to pooler?
         if (health <= 0)
         {
+            if(QuestSystem.ID == 2)
+            {
+                --QuestSystem.KillsLeft;
+            }
             enemy_spawner.enemyList.Remove(this.gameObject.GetComponent<Rigidbody>());
             Destroy(this.gameObject);
         }
