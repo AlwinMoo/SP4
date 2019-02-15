@@ -7,7 +7,7 @@ public class enemy_spawner : MonoBehaviour {
     public Rigidbody enemyPrefab;
 
     public static List<Rigidbody> enemyList;
-    float spawnTimer;
+    public static float spawnTimer;
 
     int waveCount;
 
