@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Unity;
 using UnityEngine;
 
-public class enemy_spawner : MonoBehaviour {
+public class enemy_spawner : enemyBehavior {
     
-    public Rigidbody enemyPrefab;
+    //public Rigidbody enemyPrefab;
 
     public static List<Rigidbody> enemyList;
     public static float spawnTimer;
@@ -19,10 +22,10 @@ public class enemy_spawner : MonoBehaviour {
         Random.InitState((int)System.DateTime.Now.Ticks);
 
         //objectPooler = ObjectPooler.Instance;
-        if (!enemyPrefab.GetComponent<EnemyBase>())
-        {
-            Debug.Break();
-        }
+        //if (!enemyPrefab.GetComponent<EnemyBase>())
+        //{
+        //    Debug.Break();
+        //}
 
         waveCount = 1;
     }
@@ -30,44 +33,34 @@ public class enemy_spawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (enemyList.Count == 0)
+        if (networkObject.IsServer)
         {
-            //TO DO: SHOW TIME LEFT TILL NEXT WAVE
-            spawnTimer += Time.deltaTime;
-        }
-
-        //TO DO: SHOW ENEMIES LEFT
-        if (spawnTimer >= 5)
-        {
-            for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
+            if (enemyList.Count == 0)
             {
-                Rigidbody newEnemy;
-                newEnemy = Instantiate(enemyPrefab) as Rigidbody;
-                Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-                newEnemy.transform.position = randPos;
-
-                bool Boolean = (Random.value > 0.5f);
-                newEnemy.GetComponent<NormalEnemy>().enabled = Boolean;
-                newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
-
-                //if (Boolean)
-                //{
-                //    GameObject newEnemy = objectPooler.SpawnFromPool("Enemy_Normal", randPos, transform.rotation);
-                //    newEnemy.GetComponent<NormalEnemy>().enabled = true;
-                //    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
-                //}
-                //else
-                //{
-                //    GameObject newEnemy = objectPooler.SpawnFromPool("Enemy_Big", randPos, transform.rotation);
-                //    newEnemy.GetComponent<NormalEnemy>().enabled = false;
-                //    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
-                //}
-
-                enemyList.Add(newEnemy);
-                spawnTimer = 0.0f;
+                //TO DO: SHOW TIME LEFT TILL NEXT WAVE
+                spawnTimer += Time.deltaTime;
             }
 
-            ++waveCount;
+            //TO DO: SHOW ENEMIES LEFT
+            if (spawnTimer >= 5)
+            {
+                for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
+                {
+                    Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
+                    //newEnemy.transform.position = randPos;
+                    var newEnemy = NetworkManager.Instance.Instantiateenemy(0, randPos, transform.rotation, true);
+
+                    bool Boolean = (Random.value > 0.5f);
+                    newEnemy.GetComponent<NormalEnemy>().enabled = Boolean;
+
+                    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
+
+                    enemyList.Add(newEnemy.GetComponent<Rigidbody>());
+                    spawnTimer = 0.0f;
+                }
+
+                ++waveCount;
+            }
         }
     }
 

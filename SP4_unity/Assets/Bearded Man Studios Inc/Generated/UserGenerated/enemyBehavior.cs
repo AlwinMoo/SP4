@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"bool\"][]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"firing\"][]]")]
-	public abstract partial class w_ftBehavior : NetworkBehavior
+	[GeneratedRPC("{\"types\":[]")]
+	[GeneratedRPCVariableNames("{\"types\":[]")]
+	public abstract partial class enemyBehavior : NetworkBehavior
 	{
-		public const byte RPC_TOGGLE_FIRE = 0 + 5;
-		public const byte RPC_GENERATE_FIRE = 1 + 5;
 		
-		public w_ftNetworkObject networkObject = null;
+		public enemyNetworkObject networkObject = null;
 
 		public override void Initialize(NetworkObject obj)
 		{
@@ -19,12 +17,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (networkObject != null && networkObject.AttachedBehavior != null)
 				return;
 			
-			networkObject = (w_ftNetworkObject)obj;
+			networkObject = (enemyNetworkObject)obj;
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("ToggleFire", ToggleFire, typeof(bool));
-			networkObject.RegisterRpc("GenerateFire", GenerateFire);
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -82,7 +78,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override void Initialize(NetWorker networker, byte[] metadata = null)
 		{
-			Initialize(new w_ftNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
+			Initialize(new enemyNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
 		}
 
 		private void DestroyGameObject(NetWorker sender)
@@ -93,7 +89,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override NetworkObject CreateNetworkObject(NetWorker networker, int createCode, byte[] metadata = null)
 		{
-			return new w_ftNetworkObject(networker, this, createCode, metadata);
+			return new enemyNetworkObject(networker, this, createCode, metadata);
 		}
 
 		protected override void InitializedTransform()
@@ -101,15 +97,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.SnapInterpolations();
 		}
 
-		/// <summary>
-		/// Arguments:
-		/// bool firing
-		/// </summary>
-		public abstract void ToggleFire(RpcArgs args);
-		/// <summary>
-		/// Arguments:
-		/// </summary>
-		public abstract void GenerateFire(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

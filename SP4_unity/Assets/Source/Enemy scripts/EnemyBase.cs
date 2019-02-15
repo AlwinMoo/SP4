@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using BeardedManStudios.Forge.Networking.Generated;
 
-public class EnemyBase : MonoBehaviour {
+public class EnemyBase : enemyBehavior {
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
@@ -58,7 +59,16 @@ public class EnemyBase : MonoBehaviour {
         {
             m_countDown = 0.0f;
 
+            //if (!networkObject.IsServer)
+            //{
+            //    transform.position = networkObject.position;
+            //    //transform.rotation = networkObject.rotation;
+            //    return;
+            //}
+
             agent.SetDestination(target.transform.position);
+            //networkObject.position = this.transform.position;
+
             agent.stoppingDistance = 5;
             //Debug.Log("updated destination");
         }

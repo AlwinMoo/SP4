@@ -4,6 +4,7 @@ using UnityEngine;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
 using System;
+
 public class FlameThrower : w_ftBehavior {
 	// Particle systems
 	public ParticleSystem smoke;
@@ -44,26 +45,45 @@ public class FlameThrower : w_ftBehavior {
 			return;
         if (Input.GetMouseButton(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Plane plane = new Plane(Vector3.up, this.transform.position);
-            float distToPlane;
-
-            if (plane.Raycast(ray, out distToPlane))
-            {
-                Vector3 hitPos = ray.GetPoint(distToPlane);
-
-                Vector3 dir = hitPos - transform.position;
-                dir.y = 0;
-                transform.rotation = Quaternion.LookRotation(dir);
-                TriggerFire(true);
-            }
+            GenerateFire();
+            networkObject.SendRpc(RPC_GENERATE_FIRE, Receivers.All);
         }
         else
             TriggerFire(false);
 	}
 
+    public void GenerateFire()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane plane = new Plane(Vector3.up, this.transform.position);
+        float distToPlane;
+
+        if (plane.Raycast(ray, out distToPlane))
+        {
+            if (!networkObject.IsServer)
+            {
+                transform.rotation = networkObject.fireRotation;
+                return;
+            }
+
+            Vector3 hitPos = ray.GetPoint(distToPlane);
+
+            Vector3 dir = hitPos - transform.position;
+            dir.y = 0;
+            transform.rotation = Quaternion.LookRotation(dir);
+            networkObject.fireRotation = transform.rotation;
+
+            TriggerFire(true);
+        }
+    }
+
 	public override void ToggleFire(RpcArgs args)
 	{
 		TriggerFire (args.GetNext<bool> ());
 	}
+
+    public override void GenerateFire(RpcArgs args)
+    {
+        GenerateFire();
+    }
 }

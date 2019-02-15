@@ -21,7 +21,8 @@ public class PlayersCar : MonoBehaviour {
             Data data = (Data)BF.Deserialize(file);
             file.Close();
 
-            PlayerscarID = data.SelectedvehicleID;
+            //PlayerscarID = data.SelectedvehicleID;
+            PlayerscarID = 2;
         }
 
         switch (PlayerscarID)

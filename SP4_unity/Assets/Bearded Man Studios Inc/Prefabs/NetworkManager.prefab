@@ -43,11 +43,18 @@ MonoBehaviour:
   ChatManagerNetworkObject:
   - {fileID: 1000012032569418, guid: b454b1be0b2c3fa4fb48430867af7566, type: 2}
   CubeForgeGameNetworkObject: []
+  enemyNetworkObject:
+  - {fileID: 1433484063748296, guid: 7567501afee2fd4448417554dff24fe0, type: 2}
   ExampleProximityPlayerNetworkObject:
   - {fileID: 1000012738253334, guid: feb25ecf90a8d8b4ab922a455249997b, type: 2}
+  GuyNetworkObject: []
+  MoveCubeNetworkObject: []
   NetworkCameraNetworkObject:
   - {fileID: 139536, guid: 661f29f0c0c86fa47b6015bd602d0ac6, type: 2}
+  PlayerCameraNetworkObject: []
+  PlayerVehicleNetworkObject: []
   TestNetworkObject: []
+  w_ftNetworkObject: []
   automaticScenes: 1
 --- !u!1001 &100100000
 Prefab:
