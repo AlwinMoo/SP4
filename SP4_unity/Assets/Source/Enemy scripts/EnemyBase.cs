@@ -47,6 +47,13 @@ public class EnemyBase : MonoBehaviour {
     {
         m_countDown += Time.deltaTime;
 
+        //TODO: switch to pooler?
+        if (health <= 0)
+        {
+            enemy_spawner.enemyList.Remove(this.gameObject.GetComponent<Rigidbody>());
+            Destroy(this.gameObject);
+        }
+
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
             m_countDown = 0.0f;

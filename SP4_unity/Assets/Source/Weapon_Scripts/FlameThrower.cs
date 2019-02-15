@@ -36,12 +36,15 @@ public class FlameThrower : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButton(0))
         {
-            RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Plane plane = new Plane(Vector3.up, this.transform.position);
+            float distToPlane;
 
-            if (Physics.Raycast(ray, out hit))
+            if (plane.Raycast(ray, out distToPlane))
             {
-                Vector3 dir = hit.point - transform.position;
+                Vector3 hitPos = ray.GetPoint(distToPlane);
+
+                Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
                 transform.rotation = Quaternion.LookRotation(dir);
                 TriggerFire(true);

@@ -13,16 +13,19 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
     //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
     public const float burnDuration = 3.0f;
     //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-    public float maxHealth = 100;
+    public float maxHealth;
     private bool m_burning;
     private float m_countDownNormal;
     // Use this for initialization
     public override void Start ()
     {
         health = 20;
+        maxHealth = health;
+
         thisGO = this.gameObject.GetComponent<Rigidbody>();
         thisGO.mass = 20;
         mass = thisGO.mass;
+
         enemyType = enemytype.ENEMY_NORMAL;
         agent.speed = 3.5f;
         m_countDownNormal = 0.0f;

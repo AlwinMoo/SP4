@@ -26,12 +26,16 @@ public class MachineGun : MonoBehaviour {
 		if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
         {
             m_countDown += fireRate;
-            RaycastHit hit;
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-           
-            if (Physics.Raycast(ray, out hit))
+            Plane plane = new Plane(Vector3.up, this.transform.position);
+            float distToPlane;
+
+            if (plane.Raycast(ray, out distToPlane))
             {
-				Vector3 dir = hit.point - transform.position;
+                Vector3 hitPos = ray.GetPoint(distToPlane);
+
+                Vector3 dir = hitPos - transform.position;
 				dir.y = 0;
                 objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(dir));
                 

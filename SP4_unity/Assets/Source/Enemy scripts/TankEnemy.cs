@@ -11,7 +11,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-	public float maxHealth = 100;
+	public float maxHealth;
 	 
 	private bool m_burning;
 	private float m_countDownTank;
@@ -22,9 +22,12 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
     public override void Start ()
     {
         health = 100;
+        maxHealth = health;
+
         thisGO = this.gameObject.GetComponent<Rigidbody>();
         thisGO.mass = 100;
         mass = thisGO.mass;
+
         enemyType = enemytype.ENEMY_TANK;
         agent.speed = 1.5f;
 		m_burning = false;
@@ -36,10 +39,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
     public override void Update()
     {
         base.Update();
-
-		//TODO: switch to pooler?
-        if (health <= 0)
-            Destroy(this.gameObject);
+        
 		if (m_burning) 
 		{
 			m_countDownTank -= Time.deltaTime;

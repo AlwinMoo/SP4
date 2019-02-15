@@ -90,36 +90,40 @@ public class VehicleBase : MonoBehaviour {
 
         if (Input.GetMouseButton(0))
         {
-            RaycastHit hit;
+            //RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Plane plane = new Plane(Vector3.up, this.transform.position);
+            float distToPlane;
 
-            if (Physics.Raycast(ray, out hit))
+            if (plane.Raycast(ray, out distToPlane))
             {
+                Vector3 hitPos = ray.GetPoint(distToPlane);
+
                 if (!aimingRay)
                     aimingRay = new GameObject();
-
-
+                
                 aimingRay.transform.position = this.transform.position;
-                aimingRay.AddComponent<LineRenderer>();
 
                 //CreateLineMaterial();
+                if (!aimingRay.GetComponent<LineRenderer>())
+                {
+                    aimingRay.AddComponent<LineRenderer>();
+                }
 
                 LineRenderer aimLine = aimingRay.GetComponent<LineRenderer>();
-                aimLine.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+                aimLine.material = new Material(Shader.Find("Sprites/Default"));
 
                 Color endRed = Color.red;
-                endRed.a = 0.5f;
+                endRed.a = 0.3f;
                 Color startRed = Color.red;
-                startRed.a = 0.8f;
+                startRed.a = 0.6f;
                 aimLine.startColor = startRed;
                 aimLine.endColor = endRed;
-                aimLine.startWidth = 0.1f;
+                aimLine.startWidth = 0.15f;
                 aimLine.endWidth = aimLine.startWidth;
-                Vector3 startPos = transform.position;
-                Vector3 endPos = hit.point;
-                endPos.y = transform.position.y;
-                aimLine.SetPosition(0, startPos);
-                aimLine.SetPosition(1, endPos);
+
+                aimLine.SetPosition(0, transform.position);
+                aimLine.SetPosition(1, hitPos);
             }
         }
         if (Input.GetMouseButtonUp(0))
