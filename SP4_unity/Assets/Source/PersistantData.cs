@@ -57,4 +57,5 @@ class Data
     public float SFXvolume;
     public float BGMvolume;
     public int SelectedvehicleID;
+    public int killCount;
 }
