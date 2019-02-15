@@ -14,6 +14,7 @@ public class VehicleBase : MonoBehaviour {
 
     public float health { get; set; } //arbitrary health unit
     public float mass { get; set; }
+    public int armour { get; set; }
 
     public float m_horizonetalInput { get; set; }
     public float m_verticalInput { get; set; }
@@ -58,7 +59,8 @@ public class VehicleBase : MonoBehaviour {
     // Use this for initialization
     public virtual void Start()
     {
-        HealthSlider.GetComponent<Slider>().maxValue = health;
+        HealthSlider.maxValue = health;
+
     }
 
     static void CreateLineMaterial()

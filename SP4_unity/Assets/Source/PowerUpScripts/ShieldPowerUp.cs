@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ShieldPowerUp : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<VehicleBase>().armour += 1;
+
+            gameObject.SetActive(false);
+        }
+    }
 }

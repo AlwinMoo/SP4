@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - FogOfWarPlane
   - Rocket
+  - ShieldPowerUp
   layers:
   - Default
   - TransparentFX

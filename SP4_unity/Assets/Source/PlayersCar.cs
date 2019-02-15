@@ -23,10 +23,7 @@ public class PlayersCar : MonoBehaviour {
 
             PlayerscarID = data.SelectedvehicleID;
         }
-    }
 
-
-    void Update () {
         switch (PlayerscarID)
         {
             case 1:
@@ -42,5 +39,11 @@ public class PlayersCar : MonoBehaviour {
                     break;
                 }
         }
+
+    }
+
+
+    void Update () {
+        
     }
 }
