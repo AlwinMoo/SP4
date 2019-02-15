@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class TextDisplay : MonoBehaviour {
 
     //public Text HighScore;
+
     public Text Speed;
     public Text Armour;
     public Text Health;
     public Text EnemiesLeft;
     public Text NextWave;
+    public Text ObjectiveTitle;
+    public Text ObjectiveDescription;
     public GameObject CarBase;
     private int TimeRemainingTillNextWave;
 
@@ -27,5 +30,7 @@ public class TextDisplay : MonoBehaviour {
         Armour.text = "Armour: " + CarBase.GetComponent<VehicleBase>().armour.ToString();
         EnemiesLeft.text = "Enemies Remaining: " + enemy_spawner.enemyList.Count.ToString();
         NextWave.text = "Time Till Next Wave: " + (TimeRemainingTillNextWave - enemy_spawner.spawnTimer).ToString("0");
+        ObjectiveTitle.text = QuestSystem.Title;
+        ObjectiveDescription.text = QuestSystem.Description;
     }
 }
