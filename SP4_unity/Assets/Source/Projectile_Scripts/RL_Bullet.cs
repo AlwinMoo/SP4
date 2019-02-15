@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RL_Bullet : MonoBehaviour, IPooledObject
 {
-    public const float bulletForce = 30.0f;
+    public float bulletForce;
     public const float maxLifeTime = 3.0f;
     private float m_currLifeTime = maxLifeTime;
     public ParticleSystem explosion;
@@ -12,6 +12,8 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawn()
     {
+        var RL_BulletForce = this.gameObject.GetComponent<RocketLauncher>();
+        bulletForce = RL_BulletForce.bulletForce;
         m_currLifeTime = maxLifeTime;
         // direction vector for bullet's direction
         Vector3 shootDirection = this.transform.rotation * Vector3.forward;

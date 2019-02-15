@@ -8,6 +8,9 @@ public class RocketLauncher : MonoBehaviour
     public float fireRate = 2.0f;
     public GameObject flash;
     public bool m_bMouse1State = false;
+    public float bulletForce = 0.0f;
+    private bool increaseBulletForce = true;
+    private bool decreaseBulletForce = false;
 
     private float m_countDown = 0.0f;
 
@@ -22,12 +25,31 @@ public class RocketLauncher : MonoBehaviour
     {
         m_countDown -= Time.deltaTime;
         
-        if (Input.GetMouseButton(1) && m_countDown <= 0.0f && !m_bMouse1State)
+        if (Input.GetMouseButton(1) && m_countDown <= 0.0f /*&& !m_bMouse1State*/)
         {
             m_bMouse1State = true;
+            if(increaseBulletForce)
+            {
+                bulletForce += Time.deltaTime * 500;
+                if(bulletForce >= 100)
+                {
+                    bulletForce = 100.0f;
+                    increaseBulletForce = false;
+                    decreaseBulletForce = true;
+                }
+            }
+            else if(decreaseBulletForce)
+            {
+                bulletForce -= Time.deltaTime * 500;
+                if(bulletForce <= 0)
+                {
+                    bulletForce = 10.0f;
+                    increaseBulletForce = true;
+                    decreaseBulletForce = false;
+                }
+            }
             Debug.Log("spawning RL_Bullet");
-            objectPooler.SpawnFromPool("RL_Bullet", transform.position, gameObject.transform.rotation);
-
+            Debug.Log("Bullet Force: " + bulletForce);
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -42,7 +64,7 @@ public class RocketLauncher : MonoBehaviour
             m_countDown += fireRate;
         }
 
-        else if (m_countDown <= 0.0f && !Input.GetMouseButton(1))
+        else if (m_countDown <= 0.0f && !Input.GetMouseButton(1) /*&& m_bMouse1State*/)
         {
             m_countDown = fireRate;
             m_bMouse1State = false;
