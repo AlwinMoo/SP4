@@ -9,7 +9,6 @@ public class Sedan : VehicleBase
     public override void Start ()
     {
         health = 100;
-        armour = 0;
         this.gameObject.GetComponent<Rigidbody>().mass = 1000;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 

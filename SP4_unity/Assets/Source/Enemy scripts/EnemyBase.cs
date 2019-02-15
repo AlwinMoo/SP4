@@ -81,10 +81,10 @@ public class EnemyBase : MonoBehaviour {
                 switch (this.gameObject.GetComponent<EnemyBase>().enemyType)
                 {
                     case enemytype.ENEMY_NORMAL:
-                        collision.gameObject.GetComponent<VehicleBase>().health -= (10 / gameObject.GetComponent<VehicleBase>().armour);
+                        collision.gameObject.GetComponent<VehicleBase>().health -= (10 * collision.gameObject.GetComponent<VehicleBase>().armour);
                         break;
                     case enemytype.ENEMY_TANK:
-                        collision.gameObject.GetComponent<VehicleBase>().health -= (20 / gameObject.GetComponent<VehicleBase>().armour);
+                        collision.gameObject.GetComponent<VehicleBase>().health -= (20 * collision.gameObject.GetComponent<VehicleBase>().armour);
                         break;
                     default:
                         break;

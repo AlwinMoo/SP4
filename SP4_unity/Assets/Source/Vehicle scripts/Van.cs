@@ -8,7 +8,6 @@ public class Van : VehicleBase
     public override void Start()
     {
         health = 250;
-        armour = 1;
         this.gameObject.GetComponent<Rigidbody>().mass = 1500;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 

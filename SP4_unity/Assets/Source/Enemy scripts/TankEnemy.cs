@@ -21,7 +21,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
     // Use this for initialization
     public override void Start ()
     {
-        health = 100;
+        health = 60;
         maxHealth = health;
 
         thisGO = this.gameObject.GetComponent<Rigidbody>();

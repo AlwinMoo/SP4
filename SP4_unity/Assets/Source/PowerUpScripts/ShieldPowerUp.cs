@@ -9,7 +9,7 @@ public class ShieldPowerUp : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<VehicleBase>().armour += 1;
+            other.gameObject.GetComponent<VehicleBase>().armour = 0.5f;
 
             gameObject.SetActive(false);
         }

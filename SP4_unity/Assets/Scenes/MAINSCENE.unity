@@ -354,7 +354,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.9926078, b: 0.5613208, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1502,6 +1502,16 @@ Prefab:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 1915491431}
+    - target: {fileID: 114324361683468728, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114058050719544878, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   m_IsPrefabAsset: 0
@@ -7370,6 +7380,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1433484063748296, guid: 7567501afee2fd4448417554dff24fe0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7567501afee2fd4448417554dff24fe0, type: 2}
   m_IsPrefabAsset: 0
@@ -8012,7 +8026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1528660103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13858,8 +13872,9 @@ GameObject:
   - component: {fileID: 1936100548}
   - component: {fileID: 1936100547}
   - component: {fileID: 1936100549}
+  - component: {fileID: 1936100550}
   m_Layer: 0
-  m_Name: Scene's Stuff
+  m_Name: Global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13904,6 +13919,19 @@ MonoBehaviour:
   Armour: {fileID: 1930123062}
   Health: {fileID: 924865889}
   CarBase: {fileID: 311332888}
+--- !u!114 &1936100550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936100546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252d5c726fb6faa40af3f39e7f99a752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 54195740106704286, guid: 7567501afee2fd4448417554dff24fe0,
+    type: 2}
 --- !u!1 &1985181818
 GameObject:
   m_ObjectHideFlags: 0

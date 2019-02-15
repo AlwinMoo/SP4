@@ -4971,7 +4971,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
       propertyPath: m_Name
@@ -4992,6 +4992,12 @@ Prefab:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114601252378280920, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
+      propertyPath: CarBase
+      value: 
+      objectReference: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114444435331361806, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
     - {fileID: 114058050719544878, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}

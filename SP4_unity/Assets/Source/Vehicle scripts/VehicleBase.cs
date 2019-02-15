@@ -14,7 +14,7 @@ public class VehicleBase : MonoBehaviour {
 
     public float health { get; set; } //arbitrary health unit
     public float mass { get; set; }
-    public int armour { get; set; }
+    public float armour { get; set; }
 
     public float m_horizonetalInput { get; set; }
     public float m_verticalInput { get; set; }
@@ -60,23 +60,7 @@ public class VehicleBase : MonoBehaviour {
     public virtual void Start()
     {
         HealthSlider.maxValue = health;
-
-    }
-
-    static void CreateLineMaterial()
-    {
-        if (!lineMaterial)
-        {
-            lineMaterial = new Material("Shader \"Lines/Colored Blended\" {" +
-                "SubShader { Pass { " +
-                "    Blend SrcAlpha OneMinusSrcAlpha " +
-                "    ZWrite Off Cull Off Fog { Mode Off } " +
-                "    BindChannels {" +
-                "      Bind \"vertex\", vertex Bind \"color\", color }" +
-                "} } }");
-            lineMaterial.hideFlags = HideFlags.HideAndDontSave;
-            lineMaterial.shader.hideFlags = HideFlags.HideAndDontSave;
-        }
+        armour = 0;
     }
 
     // Update is called once per frame

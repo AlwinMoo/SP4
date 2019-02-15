@@ -30,14 +30,14 @@ public class PlayersCar : MonoBehaviour {
                 {
                     CarBase.GetComponent<Sedan>().enabled = true;
                     CarBase.GetComponent<Van>().enabled = !CarBase.GetComponent<Sedan>().enabled;
-                    break;
                 }
+                break;
             case 2:
                 {
-                    CarBase.GetComponent<Van>().enabled = true;
-                    CarBase.GetComponent<Sedan>().enabled = !CarBase.GetComponent<Van>().enabled;
-                    break;
+                    CarBase.GetComponent<Sedan>().enabled = false;
+                    CarBase.GetComponent<Van>().enabled = !CarBase.GetComponent<Sedan>().enabled;
                 }
+                break;
         }
 
     }
