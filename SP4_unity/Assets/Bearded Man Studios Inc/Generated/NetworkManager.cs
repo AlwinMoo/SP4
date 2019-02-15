@@ -16,7 +16,10 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public GameObject[] GuyNetworkObject = null;
 		public GameObject[] MoveCubeNetworkObject = null;
 		public GameObject[] NetworkCameraNetworkObject = null;
+		public GameObject[] PlayerCameraNetworkObject = null;
+		public GameObject[] PlayerVehicleNetworkObject = null;
 		public GameObject[] TestNetworkObject = null;
+		public GameObject[] w_ftNetworkObject = null;
 
 		private void SetupObjectCreatedEvent()
 		{
@@ -172,6 +175,52 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						objectInitialized(newObj, obj);
 				});
 			}
+			else if (obj is PlayerCameraNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (PlayerCameraNetworkObject.Length > 0 && PlayerCameraNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(PlayerCameraNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<PlayerCameraBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
+			else if (obj is PlayerVehicleNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (PlayerVehicleNetworkObject.Length > 0 && PlayerVehicleNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(PlayerVehicleNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<PlayerVehicleBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
 			else if (obj is TestNetworkObject)
 			{
 				MainThreadManager.Run(() =>
@@ -183,6 +232,29 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						{
 							var go = Instantiate(TestNetworkObject[obj.CreateCode]);
 							newObj = go.GetComponent<TestBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
+			else if (obj is w_ftNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (w_ftNetworkObject.Length > 0 && w_ftNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(w_ftNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<w_ftBehavior>();
 						}
 					}
 
@@ -277,6 +349,30 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			
 			return netBehavior;
 		}
+		[Obsolete("Use InstantiatePlayerCamera instead, its shorter and easier to type out ;)")]
+		public PlayerCameraBehavior InstantiatePlayerCameraNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(PlayerCameraNetworkObject[index]);
+			var netBehavior = go.GetComponent<PlayerCameraBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<PlayerCameraBehavior>().networkObject = (PlayerCameraNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use InstantiatePlayerVehicle instead, its shorter and easier to type out ;)")]
+		public PlayerVehicleBehavior InstantiatePlayerVehicleNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(PlayerVehicleNetworkObject[index]);
+			var netBehavior = go.GetComponent<PlayerVehicleBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<PlayerVehicleBehavior>().networkObject = (PlayerVehicleNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
 		[Obsolete("Use InstantiateTest instead, its shorter and easier to type out ;)")]
 		public TestBehavior InstantiateTestNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
@@ -284,6 +380,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<TestBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<TestBehavior>().networkObject = (TestNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use Instantiatew_ft instead, its shorter and easier to type out ;)")]
+		public w_ftBehavior Instantiatew_ftNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(w_ftNetworkObject[index]);
+			var netBehavior = go.GetComponent<w_ftBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<w_ftBehavior>().networkObject = (w_ftNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -536,6 +644,88 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			
 			return netBehavior;
 		}
+		public PlayerCameraBehavior InstantiatePlayerCamera(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(PlayerCameraNetworkObject[index]);
+			var netBehavior = go.GetComponent<PlayerCameraBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<PlayerCameraBehavior>().networkObject = (PlayerCameraNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		public PlayerVehicleBehavior InstantiatePlayerVehicle(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(PlayerVehicleNetworkObject[index]);
+			var netBehavior = go.GetComponent<PlayerVehicleBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<PlayerVehicleBehavior>().networkObject = (PlayerVehicleNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
 		public TestBehavior InstantiateTest(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
 			var go = Instantiate(TestNetworkObject[index]);
@@ -572,6 +762,47 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<TestBehavior>().networkObject = (TestNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		public w_ftBehavior Instantiatew_ft(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(w_ftNetworkObject[index]);
+			var netBehavior = go.GetComponent<w_ftBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<w_ftBehavior>().networkObject = (w_ftNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

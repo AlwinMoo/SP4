@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FlameThrower : MonoBehaviour {
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
+using System;
+public class FlameThrower : w_ftBehavior {
 	// Particle systems
 	public ParticleSystem smoke;
 	public ParticleSystem fire;
@@ -24,16 +26,22 @@ public class FlameThrower : MonoBehaviour {
            smoke.Play();
            fire.Play();
            glow.Play();
+			// Since there's a change in flamethrower state, send the rpc to all
+			networkObject.SendRpc (RPC_TOGGLE_FIRE, Receivers.All, true);
 		}
 		else 
 		{
 			smoke.Stop ();
 			fire.Stop ();
 			glow.Stop ();
+			// Since there's a change in flamethrower state, send the rpc to all
+			networkObject.SendRpc (RPC_TOGGLE_FIRE, Receivers.All, false);
 		}
 	}
 	// Update is called once per frame
 	void Update () {
+		if (!networkObject.IsServer)
+			return;
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -52,5 +60,10 @@ public class FlameThrower : MonoBehaviour {
         }
         else
             TriggerFire(false);
+	}
+
+	public override void ToggleFire(RpcArgs args)
+	{
+		TriggerFire (args.GetNext<bool> ());
 	}
 }

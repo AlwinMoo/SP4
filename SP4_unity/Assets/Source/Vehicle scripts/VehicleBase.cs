@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class VehicleBase : MonoBehaviour {
+using BeardedManStudios.Forge.Networking.Generated;
+public class VehicleBase : PlayerVehicleBehavior {
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
@@ -66,6 +66,12 @@ public class VehicleBase : MonoBehaviour {
     // Update is called once per frame
     public virtual void Update()
     {
+		// Update the information to the server or from
+		if (!networkObject.IsServer) {
+			transform.position = networkObject.Position;
+			transform.rotation = networkObject.rotation;
+			return;
+		} 
         rR_Wheel.motorTorque = 0;
         rL_Wheel.motorTorque = 0;
 
@@ -149,6 +155,11 @@ public class VehicleBase : MonoBehaviour {
             rL_Wheel.brakeTorque = 0;
             rR_Wheel.brakeTorque = 0;
         }
+
+		// Update the information to the server
+		networkObject.Position = transform.position;
+		networkObject.rotation = transform.rotation;
+
     }
     public virtual void GetInput()
     {
