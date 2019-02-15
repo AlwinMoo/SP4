@@ -20,7 +20,8 @@ public class MachineGun : MonoBehaviour {
         GunShotSource.clip = GunShot;
     }
 
-    void Update() {
+    void Update()
+    {
 		m_countDown -= Time.deltaTime;
 
 		if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
