@@ -6,7 +6,7 @@ using BeardedManStudios.Forge.Networking.Unity;
 
 public class enemy_spawner : MonoBehaviour {
     
-	public GameObject enemyPrefab;
+	//public List<GameObject[]> enemyPrefab;
 
 	public static List<GameObject> enemyList;
     public static float spawnTimer;
@@ -19,12 +19,6 @@ public class enemy_spawner : MonoBehaviour {
         spawnTimer = 0.0f;
 		enemyList = new List<GameObject>();
         Random.InitState((int)System.DateTime.Now.Ticks);
-
-        //objectPooler = ObjectPooler.Instance;
-        if (!enemyPrefab.GetComponent<EnemyBase>())
-        {
-            Debug.Break();
-        }
 
         waveCount = 1;
     }
@@ -45,11 +39,7 @@ public class enemy_spawner : MonoBehaviour {
             {
                 //Rigidbody newEnemy;
                 Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-				var newEnemy = NetworkManager.Instance.InstantiateEnemy(0, randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
-
-                bool Boolean = (Random.value > 0.5f);
-                newEnemy.GetComponent<NormalEnemy>().enabled = Boolean;
-                newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
+				var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, 1), randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
 
                 //if (Boolean)
                 //{
