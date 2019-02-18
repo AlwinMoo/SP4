@@ -16,6 +16,10 @@ TagManager:
   - FogOfWarPlane
   - Rocket
   - ShieldPowerUp
+  - Player2
+  - Player3
+  - Player4
+  - Player1
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class SliderValue : MonoBehaviour {
     public Slider HealthSlider;
     public Slider SpeedSlider;
     public Slider WeightSlider;
+    public Text CarName;
 
     public static int ID;
 
@@ -20,6 +21,8 @@ public class SliderValue : MonoBehaviour {
                     HealthSlider.value = 100;
                     SpeedSlider.value = 7;
                     WeightSlider.value = 1000;
+                    CarName.text = "Sedan";
+                    
                     break;
                 }
 
@@ -28,12 +31,11 @@ public class SliderValue : MonoBehaviour {
                     HealthSlider.value = 250;
                     SpeedSlider.value = 3;
                     WeightSlider.value = 1500;
+                    CarName.text = "Van";
                     break;
                 }
 
         }
-        
-
 	}
 
 }
