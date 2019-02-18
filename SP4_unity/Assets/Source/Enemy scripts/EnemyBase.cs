@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking.Unity;
+using BeardedManStudios.Forge.Networking;
+
+
+using System.Reflection;
+using System;
 
 public class EnemyBase : EnemyBehavior {
 
@@ -30,6 +35,69 @@ public class EnemyBase : EnemyBehavior {
         ENEMY_TANK,
     } 
     public enemytype enemyType{get; set;}
+
+    [System.Serializable]
+    public struct SerializableVector3
+    {
+        /// <summary>
+        /// x component
+        /// </summary>
+        public float x;
+
+        /// <summary>
+        /// y component
+        /// </summary>
+        public float y;
+
+        /// <summary>
+        /// z component
+        /// </summary>
+        public float z;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="rX"></param>
+        /// <param name="rY"></param>
+        /// <param name="rZ"></param>
+        public SerializableVector3(float rX, float rY, float rZ)
+        {
+            x = rX;
+            y = rY;
+            z = rZ;
+        }
+
+        /// <summary>
+        /// Returns a string representation of the object
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return String.Format("[{0}, {1}, {2}]", x, y, z);
+        }
+
+        /// <summary>
+        /// Automatic conversion from SerializableVector3 to Vector3
+        /// </summary>
+        /// <param name="rValue"></param>
+        /// <returns></returns>
+        public static implicit operator Vector3(SerializableVector3 rValue)
+        {
+            return new Vector3(rValue.x, rValue.y, rValue.z);
+        }
+
+        /// <summary>
+        /// Automatic conversion from Vector3 to SerializableVector3
+        /// </summary>
+        /// <param name="rValue"></param>
+        /// <returns></returns>
+        public static implicit operator SerializableVector3(Vector3 rValue)
+        {
+            return new SerializableVector3(rValue.x, rValue.y, rValue.z);
+        }
+    }
+
+    NavMeshPath netPath;
 
     // Use this for initialization
     public virtual void Awake()
@@ -62,15 +130,22 @@ public class EnemyBase : EnemyBehavior {
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
-			if (!networkObject.IsServer) 
-			{
-				transform.position = networkObject.position;
-			}
-            m_countDown = 0.0f;
+            if (!networkObject.IsServer) 
+            {
+                agent.SetDestination(networkObject.position);
+            }
+            else
+            {
+                agent.SetDestination(target.transform.position);
+                networkObject.position = target.transform.position;
+            }
 
-            agent.SetDestination(target.transform.position);
-			networkObject.position = transform.position;
+            m_countDown = 0.0f;
+            
             agent.stoppingDistance = 5;
+
+            byte[] bytes = Serializer.GetInstance().Serialize<SerializableVector3>(new SerializableVector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+            networkObject.SendRpc(RPC_GET_PATH, Receivers.All, bytes);
             //Debug.Log("updated destination");
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
@@ -112,5 +187,15 @@ public class EnemyBase : EnemyBehavior {
         //{
         //    collision.gameObject.GetComponent<VehicleBase>().health -= 5;
         //}
+    }
+
+    public override void GetPath(RpcArgs args)
+    {
+        GetPath(args.GetNext<byte[]>());
+    }
+
+    public void GetPath(byte[] path)
+    {
+        SerializableVector3 temp = Serializer.GetInstance().Deserialize<SerializableVector3>(path);
     }
 }
