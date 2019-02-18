@@ -19,16 +19,16 @@ public class PlayerManager : PlayerManagerBehavior {
 	GameState m_gameState;
 
 	[System.Serializable]
-	struct Player
+	public struct Player
 	{
 		public bool player_active;
 		public uint player_ID;
 		public string player_name;
         public bool player_slot_empty;
 	}
-	private Player[] m_players = new Player[4];
+	public Player[] m_players = new Player[4];
 	private uint m_playerIndex;
-    private int m_playerCount = 0;
+    public int m_playerCount = 0;
 	//private uint m_leader;
 	void Awake()
 	{

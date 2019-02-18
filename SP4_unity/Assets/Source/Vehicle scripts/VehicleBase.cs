@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BeardedManStudios.Forge.Networking.Generated;
 
-public class VehicleBase : MonoBehaviour {
+public class VehicleBase : PlayerVehicleBehavior {
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
