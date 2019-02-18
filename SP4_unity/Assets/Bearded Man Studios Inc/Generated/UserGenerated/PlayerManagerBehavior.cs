@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"byte[]\"][\"byte[]\"]]")]
+	[GeneratedRPC("{\"types\":[[\"byte[]\"][\"uint\"]]")]
 	[GeneratedRPCVariableNames("{\"types\":[[\"playerList\"][\"thePlayer\"]]")]
 	public abstract partial class PlayerManagerBehavior : NetworkBehavior
 	{
@@ -24,7 +24,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 			base.SetupHelperRpcs(networkObject);
 			networkObject.RegisterRpc("GetPlayerList", GetPlayerList, typeof(byte[]));
-			networkObject.RegisterRpc("AssignPlayer", AssignPlayer, typeof(byte[]));
+			networkObject.RegisterRpc("AssignPlayer", AssignPlayer, typeof(uint));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -108,7 +108,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		public abstract void GetPlayerList(RpcArgs args);
 		/// <summary>
 		/// Arguments:
-		/// byte[] thePlayer
+		/// uint thePlayer
 		/// </summary>
 		public abstract void AssignPlayer(RpcArgs args);
 

@@ -39,6 +39,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new ExampleProximityPlayerNetworkObject(networker, id, frame);
 						break;
+					case LobbyNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new LobbyNetworkObject(networker, id, frame);
+						break;
 					case NetworkCameraNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new NetworkCameraNetworkObject(networker, id, frame);
@@ -54,10 +58,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					case TestNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
-						break;
-					case LobbyNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new LobbyNetworkObject(networker, id, frame);
 						break;
 				}
 

@@ -1,10 +1,11 @@
 ﻿using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Generated;
-//using BeardedManStudios.Forge.Networking.Unity;
+using BeardedManStudios.Forge.Networking.Unity;
 using System;
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : PlayerManagerBehavior {
 	public static PlayerManager playerManager;
@@ -41,7 +42,8 @@ public class PlayerManager : PlayerManagerBehavior {
                 playerManager.m_players[i].player_slot_empty = true;
                 playerManager.m_players[i].player_ID = 0;
                 playerManager.m_players[i].player_name = "empty";
-            }
+
+			}
 		} 
 		else if (playerManager != this) 
 		{
@@ -49,17 +51,47 @@ public class PlayerManager : PlayerManagerBehavior {
 		}
 	}
 
+	void Start()
+	{
+		// If the current networker is the server, then setup the callbacks for when
+		// a player connects
+		if (NetworkManager.Instance.Networker is IServer)
+		{
+			// When a player is accepted on the server we need to send them the map
+			// information through the rpc attached to this object
+			NetworkManager.Instance.Networker.playerAccepted += PlayerAccepted;
+			playerManager.m_players[0].player_active = false;
+			playerManager.m_players[0].player_slot_empty = false;
+			playerManager.m_players[0].player_ID = 0;
+			playerManager.m_players[0].player_name = "Host";
+		}
+	}
+	private void Update()
+	{
+		// If the current networker is the server, then setup the callbacks for when
+		// a player connects
+		if (NetworkManager.Instance.Networker is IServer)
+		{
+			// When a player is accepted on the server we need to send them the map
+			// information through the rpc attached to this object
+			NetworkManager.Instance.Networker.playerAccepted += PlayerAccepted;
+		}
+	}
+
 	private void PlayerAccepted(NetworkingPlayer player, NetWorker sender)
 	{
+		Debug.Log ("this function has been called");
 		// Assign this player to a slot and 
 		// Send the list of players to this player
 		for (int i = 0; i < 4; ++i) 
 		{
+			if (m_players [i].player_ID == player.NetworkId)
+				return;
 			if (!m_players [i].player_slot_empty)
 				continue;
             ++m_playerCount;
 			m_players [i].player_ID = player.NetworkId;
-			m_players [i].player_name = "Player " + i;
+			m_players [i].player_name = "Player " + (i + 1);
 			m_players [i].player_slot_empty = false;
             m_players[i].player_active = false;
             // Send the assigned slot rpc to this player
@@ -67,6 +99,8 @@ public class PlayerManager : PlayerManagerBehavior {
 				Serializer.GetInstance().Serialize<Player[]>(m_players));
 			networkObject.SendRpc(player, RPC_ASSIGN_PLAYER, 
 				(uint)i);
+			Debug.Log ("this function has been called at i = " + i);
+			break;
 		}
 	}
 
@@ -103,4 +137,14 @@ public class PlayerManager : PlayerManagerBehavior {
         return m_players[index].player_ID;
     }
 	//TODO: disconnected function
+	private void DisconnectedFromServer(NetWorker sender)
+	{
+		NetworkManager.Instance.Networker.disconnected -= DisconnectedFromServer;
+
+		MainThreadManager.Run(() =>
+			{
+				NetworkManager.Instance.Disconnect();
+				SceneManager.LoadScene(0);
+			});
+	}
 }

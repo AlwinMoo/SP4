@@ -8,7 +8,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 	[GeneratedInterpol("{\"inter\":[0.15]")]
 	public partial class LobbyNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 9;
+		public const int IDENTITY = 5;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -16,35 +16,35 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		public event FieldChangedEvent fieldAltered;
 		#pragma warning restore 0067
 		[ForgeGeneratedField]
-		private float _ready_cd;
-		public event FieldEvent<float> ready_cdChanged;
-		public InterpolateFloat ready_cdInterpolation = new InterpolateFloat() { LerpT = 0.15f, Enabled = true };
-		public float ready_cd
+		private float _readycd;
+		public event FieldEvent<float> readycdChanged;
+		public InterpolateFloat readycdInterpolation = new InterpolateFloat() { LerpT = 0.15f, Enabled = true };
+		public float readycd
 		{
-			get { return _ready_cd; }
+			get { return _readycd; }
 			set
 			{
 				// Don't do anything if the value is the same
-				if (_ready_cd == value)
+				if (_readycd == value)
 					return;
 
 				// Mark the field as dirty for the network to transmit
 				_dirtyFields[0] |= 0x1;
-				_ready_cd = value;
+				_readycd = value;
 				hasDirtyFields = true;
 			}
 		}
 
-		public void Setready_cdDirty()
+		public void SetreadycdDirty()
 		{
 			_dirtyFields[0] |= 0x1;
 			hasDirtyFields = true;
 		}
 
-		private void RunChange_ready_cd(ulong timestep)
+		private void RunChange_readycd(ulong timestep)
 		{
-			if (ready_cdChanged != null) ready_cdChanged(_ready_cd, timestep);
-			if (fieldAltered != null) fieldAltered("ready_cd", _ready_cd, timestep);
+			if (readycdChanged != null) readycdChanged(_readycd, timestep);
+			if (fieldAltered != null) fieldAltered("readycd", _readycd, timestep);
 		}
 
 		protected override void OwnershipChanged()
@@ -55,24 +55,24 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		
 		public void SnapInterpolations()
 		{
-			ready_cdInterpolation.current = ready_cdInterpolation.target;
+			readycdInterpolation.current = readycdInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
 
 		protected override BMSByte WritePayload(BMSByte data)
 		{
-			UnityObjectMapper.Instance.MapBytes(data, _ready_cd);
+			UnityObjectMapper.Instance.MapBytes(data, _readycd);
 
 			return data;
 		}
 
 		protected override void ReadPayload(BMSByte payload, ulong timestep)
 		{
-			_ready_cd = UnityObjectMapper.Instance.Map<float>(payload);
-			ready_cdInterpolation.current = _ready_cd;
-			ready_cdInterpolation.target = _ready_cd;
-			RunChange_ready_cd(timestep);
+			_readycd = UnityObjectMapper.Instance.Map<float>(payload);
+			readycdInterpolation.current = _readycd;
+			readycdInterpolation.target = _readycd;
+			RunChange_readycd(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -81,7 +81,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			dirtyFieldsData.Append(_dirtyFields);
 
 			if ((0x1 & _dirtyFields[0]) != 0)
-				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _ready_cd);
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _readycd);
 
 			// Reset all the dirty fields
 			for (int i = 0; i < _dirtyFields.Length; i++)
@@ -100,15 +100,15 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 			if ((0x1 & readDirtyFlags[0]) != 0)
 			{
-				if (ready_cdInterpolation.Enabled)
+				if (readycdInterpolation.Enabled)
 				{
-					ready_cdInterpolation.target = UnityObjectMapper.Instance.Map<float>(data);
-					ready_cdInterpolation.Timestep = timestep;
+					readycdInterpolation.target = UnityObjectMapper.Instance.Map<float>(data);
+					readycdInterpolation.Timestep = timestep;
 				}
 				else
 				{
-					_ready_cd = UnityObjectMapper.Instance.Map<float>(data);
-					RunChange_ready_cd(timestep);
+					_readycd = UnityObjectMapper.Instance.Map<float>(data);
+					RunChange_readycd(timestep);
 				}
 			}
 		}
@@ -118,10 +118,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (IsOwner)
 				return;
 
-			if (ready_cdInterpolation.Enabled && !ready_cdInterpolation.current.UnityNear(ready_cdInterpolation.target, 0.0015f))
+			if (readycdInterpolation.Enabled && !readycdInterpolation.current.UnityNear(readycdInterpolation.target, 0.0015f))
 			{
-				_ready_cd = (float)ready_cdInterpolation.Interpolate();
-				//RunChange_ready_cd(ready_cdInterpolation.Timestep);
+				_readycd = (float)readycdInterpolation.Interpolate();
+				//RunChange_readycd(readycdInterpolation.Timestep);
 			}
 		}
 
