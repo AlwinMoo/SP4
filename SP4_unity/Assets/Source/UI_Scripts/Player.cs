@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
     public Text Name;
-    public Text Car;    
+    public Text Car;
+    public int slotNumber;
 
 	// Update is called once per frame
 	void Update () {
-
+        Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
 	}
 }
