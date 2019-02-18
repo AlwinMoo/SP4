@@ -55,6 +55,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
 						break;
+					case LobbyNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new LobbyNetworkObject(networker, id, frame);
+						break;
 				}
 
 				if (!availableCallback)
