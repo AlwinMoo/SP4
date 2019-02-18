@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking.Unity;
 
-public class EnemyBase : MonoBehaviour {
+public class EnemyBase : EnemyBehavior {
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
@@ -54,15 +56,20 @@ public class EnemyBase : MonoBehaviour {
             {
                 --QuestSystem.KillsLeft;
             }
-            enemy_spawner.enemyList.Remove(this.gameObject.GetComponent<Rigidbody>());
+            enemy_spawner.enemyList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
+			if (!networkObject.IsServer) 
+			{
+				transform.position = networkObject.position;
+			}
             m_countDown = 0.0f;
 
             agent.SetDestination(target.transform.position);
+			networkObject.position = transform.position;
             agent.stoppingDistance = 5;
             //Debug.Log("updated destination");
         }

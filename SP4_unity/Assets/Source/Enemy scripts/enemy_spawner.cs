@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking.Unity;
 
 public class enemy_spawner : MonoBehaviour {
     
-    public Rigidbody enemyPrefab;
+	public GameObject enemyPrefab;
 
-    public static List<Rigidbody> enemyList;
+	public static List<GameObject> enemyList;
     public static float spawnTimer;
 
     int waveCount;
@@ -15,7 +17,7 @@ public class enemy_spawner : MonoBehaviour {
     void Start ()
     {
         spawnTimer = 0.0f;
-        enemyList = new List<Rigidbody>();
+		enemyList = new List<GameObject>();
         Random.InitState((int)System.DateTime.Now.Ticks);
 
         //objectPooler = ObjectPooler.Instance;
@@ -41,10 +43,9 @@ public class enemy_spawner : MonoBehaviour {
         {
             for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
             {
-                Rigidbody newEnemy;
-                newEnemy = Instantiate(enemyPrefab) as Rigidbody;
+                //Rigidbody newEnemy;
                 Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-                newEnemy.transform.position = randPos;
+				var newEnemy = NetworkManager.Instance.InstantiateEnemy(0, randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
 
                 bool Boolean = (Random.value > 0.5f);
                 newEnemy.GetComponent<NormalEnemy>().enabled = Boolean;
@@ -63,7 +64,7 @@ public class enemy_spawner : MonoBehaviour {
                 //    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
                 //}
 
-                enemyList.Add(newEnemy);
+				enemyList.Add(newEnemy.gameObject);
                 spawnTimer = 0.0f;
             }
 
