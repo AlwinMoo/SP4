@@ -25,6 +25,7 @@ public class PlayerManager : PlayerManagerBehavior {
 		public uint player_ID;
 		public string player_name;
         public bool player_slot_empty;
+        public int player_car;
 	}
 	public Player[] m_players = new Player[4];
 	private uint m_playerIndex;
@@ -42,7 +43,7 @@ public class PlayerManager : PlayerManagerBehavior {
                 playerManager.m_players[i].player_slot_empty = true;
                 playerManager.m_players[i].player_ID = 0;
                 playerManager.m_players[i].player_name = "empty";
-
+                playerManager.m_players[i].player_car = 0;
 			}
 		} 
 		else if (playerManager != this) 
@@ -64,7 +65,8 @@ public class PlayerManager : PlayerManagerBehavior {
 			playerManager.m_players[0].player_slot_empty = false;
 			playerManager.m_players[0].player_ID = 0;
 			playerManager.m_players[0].player_name = "Host";
-		}
+            m_playerIndex = 0;
+        }
 	}
 	private void Update()
 	{
@@ -135,6 +137,11 @@ public class PlayerManager : PlayerManagerBehavior {
     public uint GetPlayerID(int index)
     {
         return m_players[index].player_ID;
+    }
+
+    public uint GetPlayerIndex()
+    {
+        return m_playerIndex;
     }
 	//TODO: disconnected function
 	private void DisconnectedFromServer(NetWorker sender)

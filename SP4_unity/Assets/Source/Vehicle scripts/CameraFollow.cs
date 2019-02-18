@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
-    public Transform target;            // The position that that camera will be following.
+    public static Transform target;            // The position that that camera will be following.
     public float smoothing = 5f;        // The speed with which the camera will be following.
 
 
@@ -12,7 +12,6 @@ public class CameraFollow : MonoBehaviour {
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("player").transform;
         // Calculate the initial offset.
         offset = transform.position - target.position;
     }

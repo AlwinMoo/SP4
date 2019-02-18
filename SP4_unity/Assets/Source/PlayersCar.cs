@@ -9,36 +9,25 @@ using System.IO;
 public class PlayersCar : MonoBehaviour {
 
     public static int PlayerscarID;
-    public GameObject CarBase;
+    public GameObject Van;
+    public GameObject Sedan;
 
     void Start()
     {
-        if (File.Exists(Application.persistentDataPath + "/DataFile.dat"))
-        {
-            BinaryFormatter BF = new BinaryFormatter();
-            // opens the file
-            FileStream file = File.Open(Application.persistentDataPath + "/DataFile.dat", FileMode.Open);
-            Data data = (Data)BF.Deserialize(file);
-            file.Close();
+        // This is using data persistance
+        //if (File.Exists(Application.persistentDataPath + "/DataFile.dat"))
+        //{
+        //    BinaryFormatter BF = new BinaryFormatter();
+        //    // opens the file
+        //    FileStream file = File.Open(Application.persistentDataPath + "/DataFile.dat", FileMode.Open);
+        //    Data data = (Data)BF.Deserialize(file);
+        //    file.Close();
 
-            PlayerscarID = data.SelectedvehicleID;
-        }
+        //    PlayerscarID = data.SelectedvehicleID;
+        //}
 
-        switch (PlayerscarID)
-        {
-            case 1:
-                {
-                    CarBase.GetComponent<Sedan>().enabled = true;
-                    CarBase.GetComponent<Van>().enabled = !CarBase.GetComponent<Sedan>().enabled;
-                }
-                break;
-            case 2:
-                {
-                    CarBase.GetComponent<Sedan>().enabled = false;
-                    CarBase.GetComponent<Van>().enabled = !CarBase.GetComponent<Sedan>().enabled;
-                }
-                break;
-        }
+        PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car = PlayerscarID;
+
 
     }
 

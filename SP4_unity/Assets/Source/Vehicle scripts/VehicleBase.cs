@@ -67,6 +67,10 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Update is called once per frame
     public virtual void Update()
     {
+        if (networkObject.IsServer)
+        {
+            CameraFollow.target = this.transform;
+        }
         rR_Wheel.motorTorque = 0;
         rL_Wheel.motorTorque = 0;
 
