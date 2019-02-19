@@ -23,6 +23,7 @@ public class GameLogic : MonoBehaviour
                 {
                     newCar.gameObject.AddComponent<Camera>();
                     newCar.gameObject.GetComponent<Camera>().gameObject.AddComponent<CameraFollow>();
+                    TextDisplay.CarBase = newCar.gameObject;
                 }
             }
         }
