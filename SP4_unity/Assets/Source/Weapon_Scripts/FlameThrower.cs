@@ -17,29 +17,13 @@ public class FlameThrower : FlamethrowerBehavior {
 		m_firing = true;
 	}
 		
-	public void TriggerFire(bool _fire)
-	{
-		if (m_firing == _fire)
-			return;
-		m_firing = _fire;
-		if (_fire)
-        {
-           smoke.Play();
-           fire.Play();
-           glow.Play();
-		}
-		else 
-		{
-			smoke.Stop ();
-			fire.Stop ();
-			glow.Stop ();
-		}
-	}
 	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetMouseButton(0))
         {
+            if (networkObject == null)
+                return;
             if (!networkObject.IsServer)
             {
                 transform.rotation = networkObject.rotation;
@@ -57,13 +41,36 @@ public class FlameThrower : FlamethrowerBehavior {
                 Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
                 transform.rotation = Quaternion.LookRotation(dir);
+
                 networkObject.rotation = transform.rotation;
                 networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, true);
             }
         }
         else
-            networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, false);
+        {
+            if (networkObject != null)
+                networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, false);
+        }
 	}
+
+    public void TriggerFire(bool _fire)
+    {
+        if (m_firing == _fire)
+            return;
+        m_firing = _fire;
+        if (_fire)
+        {
+            smoke.Play();
+            fire.Play();
+            glow.Play();
+        }
+        else
+        {
+            smoke.Stop();
+            fire.Stop();
+            glow.Stop();
+        }
+    }
 
     public override void TriggerFire(RpcArgs args)
     {

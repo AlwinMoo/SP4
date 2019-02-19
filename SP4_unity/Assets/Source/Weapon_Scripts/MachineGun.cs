@@ -11,13 +11,14 @@ public class MachineGun : MachineGunBehavior {
 	public float fireRate = 0.2f;
 	public GameObject flash;
     public AudioClip GunShot;
-    public AudioSource GunShotSource;
+    AudioSource GunShotSource;
 
 
     private float m_countDown = 0.0f;
 
 	private void Start()
 	{
+        GunShotSource = GameObject.FindGameObjectWithTag("BaseSFX").GetComponent<AudioSource>();
 		objectPooler = ObjectPooler.Instance;
         GunShotSource.clip = GunShot;
     }

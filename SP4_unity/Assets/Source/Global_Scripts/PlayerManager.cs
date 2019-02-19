@@ -66,6 +66,7 @@ public class PlayerManager : PlayerManagerBehavior {
 			playerManager.m_players[0].player_ID = 0;
 			playerManager.m_players[0].player_name = "Host";
             m_playerIndex = 0;
+            ++m_playerCount;
         }
 	}
 	private void Update()

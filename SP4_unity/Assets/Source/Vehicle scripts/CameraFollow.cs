@@ -12,13 +12,14 @@ public class CameraFollow : MonoBehaviour {
 
     void Start()
     {
+        target = this.transform;
         // Calculate the initial offset.
         offset = transform.position - target.position;
     }
 
-
     void FixedUpdate()
     {
+        target = this.transform;
         // Create a postion the camera is aiming for based on the offset from the target.
         Vector3 targetCamPos = target.position + offset;
 
