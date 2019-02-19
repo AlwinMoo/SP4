@@ -60,6 +60,11 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Use this for initialization
     public virtual void Start()
     {
+        if (networkObject.IsServer)
+        {
+            CameraFollow.target = this.transform;
+        }
+
         HealthSlider.maxValue = health;
         armour = 0;
     }
@@ -67,10 +72,6 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Update is called once per frame
     public virtual void Update()
     {
-        if (networkObject.IsServer)
-        {
-            CameraFollow.target = this.transform;
-        }
         rR_Wheel.motorTorque = 0;
         rL_Wheel.motorTorque = 0;
 

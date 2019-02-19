@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Unity;
 
-public class FlameThrower : MonoBehaviour {
+public class FlameThrower : FlamethrowerBehavior {
 	// Particle systems
 	public ParticleSystem smoke;
 	public ParticleSystem fire;
@@ -33,9 +36,16 @@ public class FlameThrower : MonoBehaviour {
 		}
 	}
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.GetMouseButton(0))
         {
+            if (!networkObject.IsServer)
+            {
+                transform.rotation = networkObject.rotation;
+                return;
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Plane plane = new Plane(Vector3.up, this.transform.position);
             float distToPlane;
@@ -47,10 +57,16 @@ public class FlameThrower : MonoBehaviour {
                 Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
                 transform.rotation = Quaternion.LookRotation(dir);
-                TriggerFire(true);
+                networkObject.rotation = transform.rotation;
+                networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, true);
             }
         }
         else
-            TriggerFire(false);
+            networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, false);
 	}
+
+    public override void TriggerFire(RpcArgs args)
+    {
+        TriggerFire(args.GetNext<bool>());
+    }
 }
