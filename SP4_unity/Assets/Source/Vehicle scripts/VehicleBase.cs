@@ -60,11 +60,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Use this for initialization
     public virtual void Start()
     {
-        if (networkObject.IsOwner)
-        {
-            CameraFollow.target = this.transform;
-        }
-
+        HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
     }

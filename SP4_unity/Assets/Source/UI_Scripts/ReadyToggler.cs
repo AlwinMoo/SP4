@@ -12,7 +12,7 @@ public class ReadyToggler : MonoBehaviour {
 
     void Start()
     {
-        PlayerToggle = GameObject.FindWithTag("Player"); // + put the players id in here);
+        PlayerToggle = GameObject.FindWithTag("Player1"); // + put the players id in here);
         ReadyToggle = PlayerToggle.GetComponent<Toggle>();
     }
 
