@@ -9146,6 +9146,68 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420010906}
   m_CullTransparentMesh: 0
+--- !u!1 &1429867489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429867491}
+  - component: {fileID: 1429867490}
+  m_Layer: 0
+  m_Name: GlobalPlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1429867490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429867489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341aa0b4e86fec949be9d63f018e69ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_players:
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  m_playerCount: 0
+--- !u!4 &1429867491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429867489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.1732645, y: 8.5479965, z: -6.697181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453984955
 GameObject:
   m_ObjectHideFlags: 0
@@ -9225,7 +9287,6 @@ GameObject:
   - component: {fileID: 1460464875}
   - component: {fileID: 1460464874}
   - component: {fileID: 1460464873}
-  - component: {fileID: 1460464876}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9293,39 +9354,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 36, y: -45, z: 0}
---- !u!114 &1460464876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460464872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341aa0b4e86fec949be9d63f018e69ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_players:
-  - player_active: 0
-    player_ID: 0
-    player_name: 
-    player_slot_empty: 0
-    player_car: 0
-  - player_active: 0
-    player_ID: 0
-    player_name: 
-    player_slot_empty: 0
-    player_car: 0
-  - player_active: 0
-    player_ID: 0
-    player_name: 
-    player_slot_empty: 0
-    player_car: 0
-  - player_active: 0
-    player_ID: 0
-    player_name: 
-    player_slot_empty: 0
-    player_car: 0
-  m_playerCount: 0
 --- !u!1 &1488796068
 GameObject:
   m_ObjectHideFlags: 0
