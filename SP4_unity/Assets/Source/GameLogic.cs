@@ -11,15 +11,19 @@ public class GameLogic : MonoBehaviour
     void Start ()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
-        for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
-        {
-            Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-            var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[i].player_car, randpos, transform.rotation, true);
 
-            if (PlayerManager.playerManager.m_players[i].player_ID == 0)
+        if (PlayerManager.playerManager.networkObject.IsServer)
+        {
+            for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
             {
-                newCar.gameObject.AddComponent<Camera>();
-                newCar.gameObject.GetComponent<Camera>().gameObject.AddComponent<CameraFollow>();
+                Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
+                var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[i].player_car, randpos, transform.rotation, true);
+
+                if (PlayerManager.playerManager.m_players[i].player_ID == 0)
+                {
+                    newCar.gameObject.AddComponent<Camera>();
+                    newCar.gameObject.GetComponent<Camera>().gameObject.AddComponent<CameraFollow>();
+                }
             }
         }
     }
