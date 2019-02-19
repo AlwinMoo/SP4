@@ -256,8 +256,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     public override void SetVehicleID(RpcArgs args)
     {
         // Check if new car id matches player identity
-        if (args.GetNext<int>() == (int)(PlayerManager.playerManager.GetPlayerID(
-            (int)PlayerManager.playerManager.GetPlayerIndex())))
+        if (args.GetNext<int>() == (int)(PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex())))
             networkObject.TakeOwnership();
         else
             return;

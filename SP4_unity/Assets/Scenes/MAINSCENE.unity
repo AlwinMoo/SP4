@@ -585,11 +585,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 270585320}
   m_CullTransparentMesh: 0
---- !u!1 &311332888 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 589777378}
 --- !u!1 &317628684
 GameObject:
   m_ObjectHideFlags: 0
@@ -14154,7 +14149,6 @@ MonoBehaviour:
   NextWave: {fileID: 1159528622}
   ObjectiveTitle: {fileID: 1121455156}
   ObjectiveDescription: {fileID: 2024759433}
-  CarBase: {fileID: 311332888}
 --- !u!114 &1936100550
 MonoBehaviour:
   m_ObjectHideFlags: 0

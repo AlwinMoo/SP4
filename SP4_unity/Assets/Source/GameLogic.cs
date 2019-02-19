@@ -19,13 +19,10 @@ public class GameLogic : MonoBehaviour
             {
                 Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
                 var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[i].player_car, randpos, transform.rotation, true);
-                newCar.networkObject.SendRpc(PlayerVehicleBehavior.RPC_SET_VEHICLE_I_D, Receivers.AllBuffered, PlayerManager.playerManager.GetPlayerID(i));
-                if (PlayerManager.playerManager.m_players[i].player_ID == 0)
-                {
-                    newCar.gameObject.AddComponent<Camera>();
-                    newCar.gameObject.GetComponent<Camera>().gameObject.AddComponent<CameraFollow>();
-                    TextDisplay.CarBase = newCar.gameObject;
-                }
+
+                newCar.networkObject.SendRpc(PlayerVehicleBehavior.RPC_SET_VEHICLE_I_D, Receivers.AllBuffered, (int)PlayerManager.playerManager.GetPlayerID(i));
+
+                TextDisplay.CarBase = newCar.gameObject;
             }
         }
     }
