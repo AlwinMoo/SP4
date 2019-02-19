@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
 
 public class VehicleBase : PlayerVehicleBehavior {
 
@@ -250,5 +251,17 @@ public class VehicleBase : PlayerVehicleBehavior {
                     break;
             }
         }
+    }
+
+    public override void SetVehicleID(RpcArgs args)
+    {
+        // Check if new car id matches player identity
+        if (args.GetNext<int>() == (int)(PlayerManager.playerManager.GetPlayerID(
+            (int)PlayerManager.playerManager.GetPlayerIndex())))
+            networkObject.TakeOwnership();
+        else
+            return;
+
+        //TO DO: CAMERA STUFF HERE
     }
 }

@@ -44,7 +44,8 @@ public class PlayerManager : PlayerManagerBehavior {
                 playerManager.m_players[i].player_ID = 0;
                 playerManager.m_players[i].player_name = "empty";
                 playerManager.m_players[i].player_car = 0;
-			}
+
+            }
 		} 
 		else if (playerManager != this) 
 		{
@@ -144,6 +145,7 @@ public class PlayerManager : PlayerManagerBehavior {
     {
         return m_playerIndex;
     }
+
 	//TODO: disconnected function
 	private void DisconnectedFromServer(NetWorker sender)
 	{
