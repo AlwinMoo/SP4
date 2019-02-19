@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0866362f3d66244cb75fc1478d40053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CARID: 4
+  CARID: 3
   Sedan: {fileID: 957690430}
   Van: {fileID: 1725902338}
 --- !u!95 &297725003
@@ -5422,7 +5422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0866362f3d66244cb75fc1478d40053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CARID: 3
+  CARID: 2
   Sedan: {fileID: 957690430}
   Van: {fileID: 1725902338}
 --- !u!95 &869842883
@@ -7900,6 +7900,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341aa0b4e86fec949be9d63f018e69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_players:
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  - player_active: 0
+    player_ID: 0
+    player_name: 
+    player_slot_empty: 0
+    player_car: 0
+  m_playerCount: 0
 --- !u!1 &1495592669
 GameObject:
   m_ObjectHideFlags: 0
@@ -9050,7 +9072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0866362f3d66244cb75fc1478d40053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CARID: 2
+  CARID: 1
   Sedan: {fileID: 957690430}
   Van: {fileID: 1725902338}
 --- !u!95 &1915229354
@@ -10191,7 +10213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0866362f3d66244cb75fc1478d40053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CARID: 1
+  CARID: 0
   Sedan: {fileID: 957690430}
   Van: {fileID: 1725902338}
 --- !u!95 &2080946843

@@ -19,7 +19,7 @@ public class CarSelection : MonoBehaviour {
     {
         switch (SliderValue.ID)
         {
-            case 1:
+            case 0:
                 {
                     if(Van != null)
                     {
@@ -28,7 +28,7 @@ public class CarSelection : MonoBehaviour {
                     Sedan.SetActive(true);
                     break;
                 }
-            case 2:
+            case 1:
                 {
                     if (Sedan != null)
                     {

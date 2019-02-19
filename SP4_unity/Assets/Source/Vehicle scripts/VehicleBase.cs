@@ -67,9 +67,15 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Update is called once per frame
     public virtual void Update()
     {
-        if (networkObject.IsServer)
+        // If the gameobject is not owned by the client
+        if (!networkObject.IsOwner)
         {
-            CameraFollow.target = this.transform;
+            // assign the gameobject's position to the position assigned on the server
+            transform.position = networkObject.position;
+            // assign the gameobject's rotation to the rotation assigned on the server
+            transform.rotation = networkObject.rotation;
+
+            return;
         }
         rR_Wheel.motorTorque = 0;
         rL_Wheel.motorTorque = 0;
@@ -154,6 +160,11 @@ public class VehicleBase : PlayerVehicleBehavior {
             rL_Wheel.brakeTorque = 0;
             rR_Wheel.brakeTorque = 0;
         }
+
+        // Update the client's position on the server
+        networkObject.position = transform.position;
+        // Update the client's rotaition on the server
+        networkObject.rotation = transform.rotation;
     }
     public virtual void GetInput()
     {

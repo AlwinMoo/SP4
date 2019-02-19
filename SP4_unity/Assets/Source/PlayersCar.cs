@@ -9,8 +9,6 @@ using System.IO;
 public class PlayersCar : MonoBehaviour {
 
     public static int PlayerscarID;
-    public GameObject Van;
-    public GameObject Sedan;
 
     void Start()
     {
