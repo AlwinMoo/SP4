@@ -317,7 +317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1907062777358054
 GameObject:
   m_ObjectHideFlags: 1
@@ -1202,6 +1202,7 @@ MonoBehaviour:
   fireRate: 0.1
   flash: {fileID: 1053867341297898}
   GunShot: {fileID: 8300000, guid: bc11a1feb1ff6ae4d89b89bc5d697e93, type: 3}
+  GunShotSource: {fileID: 0}
 --- !u!114 &114444435331361806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1213,6 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a7f61a6b192845b8cbc6fcaa2f708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Number: 1
 --- !u!114 &114593085040251324
 MonoBehaviour:
   m_ObjectHideFlags: 1
