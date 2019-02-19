@@ -25,7 +25,7 @@ public class RocketLauncher : MonoBehaviour
     {
         m_countDown -= Time.deltaTime;
         
-        if (Input.GetMouseButton(1) && m_countDown <= 0.0f /*&& !m_bMouse1State*/)
+        if (Input.GetMouseButton(1) && m_countDown <= 0.0f && !m_bMouse1State)
         {
             m_bMouse1State = true;
             if(increaseBulletForce)
@@ -64,7 +64,7 @@ public class RocketLauncher : MonoBehaviour
             m_countDown += fireRate;
         }
 
-        else if (m_countDown <= 0.0f && !Input.GetMouseButton(1) /*&& m_bMouse1State*/)
+        else if (m_countDown <= 0.0f && !Input.GetMouseButton(1) && m_bMouse1State)
         {
             m_countDown = fireRate;
             m_bMouse1State = false;

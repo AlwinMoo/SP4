@@ -12,17 +12,20 @@ public class MeshGenerator : MonoBehaviour
 
     public int xSize = 20;
     public int zSize = 20;
-
+    public float PerlinNoise;
+    public GameObject[] Obstacles;
+   
 	// Use this for initialization
 	void Start ()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        GetComponent<MeshCollider>().sharedMesh = mesh;
+        
 
         //StartCoroutine(CreateShape());
         CreateShape();
         UpdateMesh();
+        GetComponent<MeshCollider>().sharedMesh = mesh;
 	}
 
     //private void Update()
@@ -34,15 +37,13 @@ public class MeshGenerator : MonoBehaviour
     // IEnumerator CreateShape()
     void CreateShape()
     {
-      
-
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
         
         for(int i = 0, z = 0; z <= zSize; z++)
         {
             for(int x = 0; x <= xSize; x++)
             {
-                float y = Mathf.PerlinNoise(x * 0.4f, z * 0.4f) * 2f;
+                float y = Mathf.PerlinNoise(x * PerlinNoise, z * PerlinNoise) * 2f;
                 vertices[i] = new Vector3(x, y, z);
                 i++;
             }
