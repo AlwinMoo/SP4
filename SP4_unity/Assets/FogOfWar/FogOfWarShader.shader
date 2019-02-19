@@ -4,10 +4,10 @@
 		_MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
 		FogRadius("FogRadius", Float) = 1.0
 		_FogMaxRadius("FogMaxRadius", Float) = 0.5
-		Player1("Player1", Vector) = (0,0,0,1)
-		Player2("Player2", Vector) = (0,0,0,1)
-		Player3("Player3", Vector) = (0,0,0,1)
-		Player4("Player4", Vector) = (0,0,0,1)
+		Player1("Player0", Vector) = (0,0,0,1)
+		Player2("Player1", Vector) = (0,0,0,1)
+		Player3("Player2", Vector) = (0,0,0,1)
+		Player4("Player3", Vector) = (0,0,0,1)
 	}
 
 		SubShader{
@@ -23,10 +23,10 @@
 	fixed4 	_Color;
 	float 	FogRadius;
 	float 	_FogMaxRadius;
-	float4 	Player1;
-	float4  Player2;
-	float4 	Player3;
-	float4  Player4;
+	float4 	Player0;
+	float4  Player1;
+	float4 	Player2;
+	float4  Player3;
 
 	struct Input {
 		float2 uv_MainTex;
@@ -45,7 +45,7 @@
 	void surf(Input IN, inout SurfaceOutput o) {
 		fixed4 baseColor = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 
-		float alpha = (1.0 - (baseColor.a + powerForPos(Player1, IN.location) + powerForPos(Player2, IN.location) + powerForPos(Player3, IN.location) + powerForPos(Player4, IN.location)));
+		float alpha = (1.0 - (baseColor.a + powerForPos(Player0, IN.location) + powerForPos(Player1, IN.location) + powerForPos(Player2, IN.location) + powerForPos(Player3, IN.location)));
 
 		o.Albedo = baseColor.rgb;
 		o.Alpha = alpha;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FogOfWarPlayer : MonoBehaviour
 {
     GameObject FogPlane;
-    public int Number;
+    private uint Number;
     private float _fogRad;
     private float StartingFogRad;
 
@@ -15,6 +15,7 @@ public class FogOfWarPlayer : MonoBehaviour
     void Start()
     {
         StartingFogRad = 20;
+        Number = PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_ID;
     }
 
     // Update is called once per frame
