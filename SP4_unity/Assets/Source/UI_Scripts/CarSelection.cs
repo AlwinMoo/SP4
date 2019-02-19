@@ -13,6 +13,7 @@ public class CarSelection : MonoBehaviour {
     public void SelectID()
     {
         SliderValue.ID = CARID;
+        PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car = SliderValue.ID;
     }
 
     void Update()
