@@ -269,7 +269,21 @@ public class VehicleBase : PlayerVehicleBehavior {
 
     public override void triggerShoot(RpcArgs args)
     {
-        EventManager.TriggerEvent("MGShoot");
+        switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
+        {
+            case VehicleType.VEH_SEDAN:
+                {
+                    EventManager.TriggerEvent("MGShoot");
+                    break;
+                }
+            case VehicleType.VEH_VAN:
+                {
+                    EventManager.TriggerEvent("FireShoot");
+                    break;
+                }
+            default:
+                break;
+        }
 
         //int shooterID = args.GetNext<int>();
 

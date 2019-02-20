@@ -23,6 +23,7 @@ public class MachineGun : MonoBehaviour {
         GunShotSource = GameObject.FindGameObjectWithTag("BaseSFX").GetComponent<AudioSource>();
 		objectPooler = ObjectPooler.Instance;
         GunShotSource.clip = GunShot;
+
         Listener = new UnityAction(triggerShot);
     }
 

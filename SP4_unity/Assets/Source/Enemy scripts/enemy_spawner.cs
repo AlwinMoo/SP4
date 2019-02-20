@@ -82,4 +82,20 @@ public class enemy_spawner : EnemySpawnerBehavior {
     {
         networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index);
     }
+
+    public override void EnemyOnFire(RpcArgs args)
+    {
+        int count = args.GetNext<int>();
+        bool status = args.GetNext<bool>();
+
+        if (enemyList[count] != null)
+        {
+            enemyList[count].gameObject.GetComponent<EnemyBase>().m_burning = status;
+        }
+    }
+
+    public void EnemyOnFire(int _index, bool _status)
+    {
+        networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index, _status);
+    }
 }

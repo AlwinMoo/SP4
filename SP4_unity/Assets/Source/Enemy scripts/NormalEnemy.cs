@@ -14,7 +14,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
     public const float burnDuration = 3.0f;
     //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
     public float maxHealth;
-    private bool m_burning;
+    //private bool m_burning;
     private float m_countDownNormal;
     // Use this for initialization
     public override void Start ()
@@ -42,10 +42,14 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
             Destroy(this.gameObject);
         if (m_burning)
         {
+            GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
+
             m_countDownNormal -= Time.deltaTime;
             float damage;
             if (m_countDownNormal <= 0.0f)
             {
+                GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
+
                 m_burning = false;
                 // Set damage to be more accurate
                 damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDownNormal) * maxHealth;

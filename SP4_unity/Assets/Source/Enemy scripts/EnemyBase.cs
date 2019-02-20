@@ -33,7 +33,7 @@ public class EnemyBase : EnemyBehavior {
     } 
     public enemytype enemyType{get; set;}
 
-    NavMeshPath netPath;
+    public bool m_burning { get; set; }
 
     // Use this for initialization
     public virtual void Awake()

@@ -13,7 +13,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public float maxHealth;
 	 
-	private bool m_burning;
+	//private bool m_burning;
 	private float m_countDownTank;
 
     Rigidbody thisGO;
@@ -42,13 +42,18 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
         
 		if (m_burning) 
 		{
-			m_countDownTank -= Time.deltaTime;
+            GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
+
+            m_countDownTank -= Time.deltaTime;
 			float damage;
 			if (m_countDownTank <= 0.0f) 
 			{
 				m_burning = false;
-				// Set damage to be more accurate
-				damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDownTank) * maxHealth;
+
+                GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
+
+                // Set damage to be more accurate
+                damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDownTank) * maxHealth;
 				fire.Stop ();
 				glow.Stop ();
 			}

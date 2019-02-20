@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"Vector3\"][\"int\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"\"][\"_index\"]]")]
+	[GeneratedRPC("{\"types\":[[\"Vector3\"][\"int\"][\"int\", \"bool\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"\"][\"_index\"][\"_index\", \"_fireStatus\"]]")]
 	public abstract partial class EnemySpawnerBehavior : NetworkBehavior
 	{
 		public const byte RPC_START_INSTANTIATE = 0 + 5;
 		public const byte RPC_DESTROY_ENEMY = 1 + 5;
+		public const byte RPC_ENEMY_ON_FIRE = 2 + 5;
 		
 		public EnemySpawnerNetworkObject networkObject = null;
 
@@ -25,6 +26,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			base.SetupHelperRpcs(networkObject);
 			networkObject.RegisterRpc("StartInstantiate", StartInstantiate, typeof(Vector3));
 			networkObject.RegisterRpc("DestroyEnemy", DestroyEnemy, typeof(int));
+			networkObject.RegisterRpc("EnemyOnFire", EnemyOnFire, typeof(int), typeof(bool));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -111,6 +113,12 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		/// int _index
 		/// </summary>
 		public abstract void DestroyEnemy(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// int _index
+		/// bool _fireStatus
+		/// </summary>
+		public abstract void EnemyOnFire(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}
