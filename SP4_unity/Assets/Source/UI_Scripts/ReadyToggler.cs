@@ -8,15 +8,13 @@ using UnityEngine.SceneManagement;
 public class ReadyToggler : MonoBehaviour {
 
     public Toggle[] Togglers = new Toggle[4];
-    private Toggle ReadyToggle;
+    public Toggle ReadyToggle;
     public GameObject LobbysystemPrefab;
     private LobbyScript LobScript;
 
     void Start()
     {
-        uint index = PlayerManager.playerManager.GetPlayerIndex();
-        Debug.Log("Toggler" + index);
-        ReadyToggle = Togglers[index];
+       
     }
 
     void Update()
@@ -27,14 +25,15 @@ public class ReadyToggler : MonoBehaviour {
 
     public void ToggleOnOff()
     {
-        if(ReadyToggle.isOn)
+        uint index = PlayerManager.playerManager.GetPlayerIndex();
+        ReadyToggle = Togglers[index];
+        Debug.Log("Toggler" + index);
+        if (ReadyToggle.isOn)
         {
-            Debug.Log("NotReady");
             ReadyToggle.isOn = false;
         }
         else
         {
-            Debug.Log("Ready");
             ReadyToggle.isOn = true;
         }
 

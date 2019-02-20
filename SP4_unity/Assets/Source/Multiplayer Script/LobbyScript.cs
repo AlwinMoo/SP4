@@ -38,7 +38,7 @@ public class LobbyScript : LobbyBehavior {
         // Set the current player's ready to be toggled
 
 		uint index = PlayerManager.playerManager.GetPlayerIndex ();
-
+        Debug.Log("Current Players Index :" + index);
 		if (players [index] == 2)
 			players [index] = 1;
 		else
