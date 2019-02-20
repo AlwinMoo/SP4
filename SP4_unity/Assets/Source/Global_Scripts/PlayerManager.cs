@@ -83,7 +83,7 @@ public class PlayerManager : PlayerManagerBehavior {
 
 	private void PlayerAccepted(NetworkingPlayer player, NetWorker sender)
 	{
-		MainThreadManager.Run (() => {
+		//MainThreadManager.Run (() => {
 			Debug.Log ("this function has been called");
 			// Assign this player to a slot and 
 			// Send the list of players to this player
@@ -106,12 +106,12 @@ public class PlayerManager : PlayerManagerBehavior {
 				break;
 			}
 			;
-		});
+		//});
 	}
 
 	public override void GetPlayerList(RpcArgs args)
 	{
-		MainThreadManager.Run (() => {
+		//MainThreadManager.Run (() => {
 			m_players = Serializer.GetInstance ().Deserialize<Player[]> (args.GetNext<Byte[]> ());
 			m_playerCount = 0;
 			for (int i = 0; i < 4; ++i) {
@@ -120,15 +120,15 @@ public class PlayerManager : PlayerManagerBehavior {
 				++m_playerCount;
 			}
 			;
-		});
+		//});
 	}
 
 	public override void AssignPlayer(RpcArgs args)
 	{
 		// Assigning current player to this player
-		MainThreadManager.Run (() => {
+		//MainThreadManager.Run (() => {
 			m_playerIndex = args.GetNext<uint> ();
-		});
+		//});
 	}
 
     public int GetPlayerCount()

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
+using UnityEngine.Events;
 
 public class VehicleBase : PlayerVehicleBehavior {
 
@@ -64,9 +65,13 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
-        this.gameObject.tag = "Player" + ((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()) + 1);
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
-        SetCarID((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
+
+        if (this.gameObject.tag == "Player" + ((int)PlayerManager.playerManager.GetPlayerIndex() + 1))
+        {
+            Debug.Log("Owned by: " + networkObject.MyPlayerId);
+            networkObject.TakeOwnership();
+        }
     }
 
     // Update is called once per frame
@@ -82,6 +87,7 @@ public class VehicleBase : PlayerVehicleBehavior {
 
             return;
         }
+
         rR_Wheel.motorTorque = 0;
         rL_Wheel.motorTorque = 0;
 
@@ -126,6 +132,11 @@ public class VehicleBase : PlayerVehicleBehavior {
 
                 aimLine.SetPosition(0, transform.position);
                 aimLine.SetPosition(1, hitPos);
+
+                Vector3 dir = hitPos - transform.position;
+                dir.y = 0;
+                
+                networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1);
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -256,22 +267,22 @@ public class VehicleBase : PlayerVehicleBehavior {
         }
     }
 
-    public override void SetVehicleID(RpcArgs args)
+    public override void triggerShoot(RpcArgs args)
     {
-        // Check if new car id matches player identity
-        if (args.GetNext<int>() == (int)(PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex())))
-        {
-            networkObject.TakeOwnership();
-        }
-        else
-            return;
-
-        //TO DO: CAMERA STUFF HERE
-        //StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
+        EventManager.TriggerEvent("MGShoot");
     }
 
-    public void SetCarID(int ID)
-    {
-        networkObject.SendRpc(RPC_SET_VEHICLE_I_D, Receivers.All, ID);
-    }
+    //public override void SetVehicleID(RpcArgs args)
+    //{
+    //    // Check if new car id matches player identity
+    //    int thisID = args.GetNext<int>();
+    //    int findID = (int)(PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
+    //    if (thisID == findID)
+    //    {
+    //        networkObject.TakeOwnership();
+    //        //TO DO: SET WEAPON OWNER
+    //    }
+    //    else
+    //        return;
+    //}
 }

@@ -42,7 +42,7 @@ public class FogOfWarPlayer : MonoBehaviour
         if (Physics.Raycast(rayToPlayerPos, out hit, 1000))
         {
             FindFogPlane().GetComponent<Renderer>().material.SetVector("Player" + Number.ToString(), hit.point);
-            Debug.Log("IsFollowing");
+            //Debug.Log("IsFollowing");
         }
     }
 

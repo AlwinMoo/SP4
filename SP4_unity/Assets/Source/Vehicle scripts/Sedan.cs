@@ -12,8 +12,8 @@ public class Sedan : VehicleBase
         this.gameObject.GetComponent<Rigidbody>().mass = 1000;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
-        transform.Find("MachineGun").gameObject.SetActive(true);
-        transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
+        //transform.Find("MachineGun").gameObject.SetActive(true);
+        //transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
 
         motorForce = 1000;
         steerForce = 9000;

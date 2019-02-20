@@ -818,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   smoothing: 5
+  offset: {x: 0, y: 0, z: 0}
 --- !u!81 &345332415
 AudioListener:
   m_ObjectHideFlags: 0
@@ -24397,6 +24398,7 @@ GameObject:
   - component: {fileID: 1936100549}
   - component: {fileID: 1936100550}
   - component: {fileID: 1936100551}
+  - component: {fileID: 1936100552}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -24466,6 +24468,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85300ecdc07a07a48b15084cb2cc9d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1936100552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936100546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0ca21be3452614a893bd400a76a128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1936756869

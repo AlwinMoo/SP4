@@ -35,27 +35,17 @@ public class enemy_spawner : MonoBehaviour {
         //TO DO: SHOW ENEMIES LEFT
         if (spawnTimer >= 5)
         {
-            for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
+            if (NetworkManager.Instance.IsServer)
             {
-                //Rigidbody newEnemy;
-                Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-				var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, 1), randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
+                for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
+                {
+                    //Rigidbody newEnemy;
+                    Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
+                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, 1), randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
 
-                //if (Boolean)
-                //{
-                //    GameObject newEnemy = objectPooler.SpawnFromPool("Enemy_Normal", randPos, transform.rotation);
-                //    newEnemy.GetComponent<NormalEnemy>().enabled = true;
-                //    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
-                //}
-                //else
-                //{
-                //    GameObject newEnemy = objectPooler.SpawnFromPool("Enemy_Big", randPos, transform.rotation);
-                //    newEnemy.GetComponent<NormalEnemy>().enabled = false;
-                //    newEnemy.GetComponent<TankEnemy>().enabled = !newEnemy.GetComponent<NormalEnemy>().enabled;
-                //}
-
-				enemyList.Add(newEnemy.gameObject);
-                spawnTimer = 0.0f;
+                    enemyList.Add(newEnemy.gameObject);
+                    spawnTimer = 0.0f;
+                }
             }
 
             ++waveCount;

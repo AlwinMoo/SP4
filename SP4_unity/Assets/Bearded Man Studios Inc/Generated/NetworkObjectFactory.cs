@@ -43,13 +43,13 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new FlamethrowerNetworkObject(networker, id, frame);
 						break;
+					case GameLogicNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new GameLogicNetworkObject(networker, id, frame);
+						break;
 					case LobbyNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new LobbyNetworkObject(networker, id, frame);
-						break;
-					case MachineGunNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new MachineGunNetworkObject(networker, id, frame);
 						break;
 					case NetworkCameraNetworkObject.IDENTITY:
 						availableCallback = true;
@@ -66,10 +66,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					case TestNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
-						break;
-					case GameLogicNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new GameLogicNetworkObject(networker, id, frame);
 						break;
 				}
 
