@@ -266,7 +266,7 @@ public class VehicleBase : PlayerVehicleBehavior {
             return;
 
         //TO DO: CAMERA STUFF HERE
-        StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
+        //StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
     }
 
     public void SetCarID(int ID)

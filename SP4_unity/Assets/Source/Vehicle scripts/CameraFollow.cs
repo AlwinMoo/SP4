@@ -13,7 +13,9 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        
+        //target = GameObject.FindGameObjectWithTag("Player" + ((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()) + 1)).transform;
+        //    // Calculate the initial offset.
+        //offset = transform.position - target.position;
     }
 
     public IEnumerator LoadCamera()
