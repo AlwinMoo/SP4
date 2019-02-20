@@ -64,7 +64,7 @@ public class ObjectPooler : MonoBehaviour {
 		}
 
 		poolDictionary [_tag].Enqueue (objectToSpawn);
-		Debug.Log ("new size of " + _tag + " is now " + poolDictionary [_tag].Count);
+		//Debug.Log ("new size of " + _tag + " is now " + poolDictionary [_tag].Count);
 		return objectToSpawn;
 	}
 }

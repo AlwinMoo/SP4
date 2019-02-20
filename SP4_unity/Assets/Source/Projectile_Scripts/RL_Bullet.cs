@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RL_Bullet : MonoBehaviour, IPooledObject
 {
-    public float bulletForce;
+    public float bulletForce = 60.0f;
     public const float maxLifeTime = 3.0f;
     private float m_currLifeTime = maxLifeTime;
     public ParticleSystem explosion;
@@ -12,8 +12,6 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawn()
     {
-        var RL_BulletForce = this.gameObject.GetComponent<RocketLauncher>();
-        bulletForce = RL_BulletForce.bulletForce;
         m_currLifeTime = maxLifeTime;
         // direction vector for bullet's direction
         Vector3 shootDirection = this.transform.rotation * Vector3.forward;
@@ -21,6 +19,7 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
         Vector3 force = shootDirection * bulletForce;
         // Apply force to bullet
         GetComponent<Rigidbody>().velocity = force;
+        Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 	
 	// Update is called once per frame

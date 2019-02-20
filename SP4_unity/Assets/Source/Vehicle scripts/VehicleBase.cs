@@ -51,6 +51,7 @@ public class VehicleBase : MonoBehaviour {
     {
         VEH_SEDAN,
         VEH_VAN,
+        VEH_MONSTER_TRUCK,
     }
     public VehicleType vehicleType { get; set; }
 
@@ -228,6 +229,9 @@ public class VehicleBase : MonoBehaviour {
                     break;
                 case VehicleType.VEH_VAN:
                     collision.gameObject.GetComponent<EnemyBase>().health -= 15;
+                    break;
+                case VehicleType.VEH_MONSTER_TRUCK:
+                    collision.gameObject.GetComponent<EnemyBase>().health -= 20;
                     break;
                 default:
                     break;
