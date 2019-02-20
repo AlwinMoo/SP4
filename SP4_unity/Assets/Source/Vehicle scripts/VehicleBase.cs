@@ -64,6 +64,8 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
+        this.gameObject.tag = "Player" + ((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()) + 1);
+        StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
     }
 
     // Update is called once per frame
@@ -264,5 +266,11 @@ public class VehicleBase : PlayerVehicleBehavior {
             return;
 
         //TO DO: CAMERA STUFF HERE
+        StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
+    }
+
+    public void SetCarID(int ID)
+    {
+        networkObject.SendRpc(RPC_SET_VEHICLE_I_D, Receivers.All, ID);
     }
 }
