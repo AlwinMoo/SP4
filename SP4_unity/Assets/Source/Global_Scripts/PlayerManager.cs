@@ -128,6 +128,7 @@ public class PlayerManager : PlayerManagerBehavior {
 		// Assigning current player to this player
 		MainThreadManager.Run (() => {
 			m_playerIndex = args.GetNext<uint> ();
+            Debug.Log("assigned player Index of " + m_playerIndex);
 		});
 	}
 

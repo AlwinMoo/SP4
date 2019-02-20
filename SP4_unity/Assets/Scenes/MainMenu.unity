@@ -2739,6 +2739,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77fbe27d248f484dbd064b6c761faff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Togglers:
+  - {fileID: 645649344}
+  - {fileID: 1817443741}
+  - {fileID: 1256959874}
+  - {fileID: 1891674765}
+  LobbysystemPrefab: {fileID: 0}
 --- !u!114 &410036009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4417,7 +4423,7 @@ GameObject:
   - component: {fileID: 645649343}
   - component: {fileID: 645649344}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5574,6 +5580,46 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 804230926}
   m_CullTransparentMesh: 0
+--- !u!1 &806877017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806877019}
+  - component: {fileID: 806877018}
+  m_Layer: 0
+  m_Name: LobbyScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &806877018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806877017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db590426d2cbf3d40941d00cd05decdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &806877019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806877017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.60916305, y: 0.6184704, z: -1.300453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807321309
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,7 +8595,7 @@ GameObject:
   - component: {fileID: 1256959873}
   - component: {fileID: 1256959874}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11037,7 +11083,7 @@ GameObject:
   - component: {fileID: 1817443740}
   - component: {fileID: 1817443741}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11258,7 +11304,7 @@ GameObject:
   - component: {fileID: 1891674764}
   - component: {fileID: 1891674765}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

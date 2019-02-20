@@ -17,6 +17,7 @@ public class LobbyScript : LobbyBehavior {
 		}
 
 		int playerNumber = (int)PlayerManager.playerManager.GetPlayerIndex ();
+        Debug.Log("I just joined the lobby with playernumber " + playerNumber);
 		players [playerNumber] = 1;
 	}
 	
@@ -27,12 +28,15 @@ public class LobbyScript : LobbyBehavior {
 		players[1] = networkObject.player2;
 		players[2] = networkObject.player3;
 		players[3] = networkObject.player4;
+
+
 	}
 
 	// Toggles the ready of the current player
 	public void ReadyToggle()
 	{
-		// Set the current player's ready to be toggled
+        // Set the current player's ready to be toggled
+
 		uint index = PlayerManager.playerManager.GetPlayerIndex ();
 
 		if (players [index] == 2)

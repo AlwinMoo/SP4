@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
+        //Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
         
     }
 }
