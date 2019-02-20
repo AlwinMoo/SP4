@@ -257,7 +257,9 @@ public class VehicleBase : PlayerVehicleBehavior {
     {
         // Check if new car id matches player identity
         if (args.GetNext<int>() == (int)(PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex())))
+        {
             networkObject.TakeOwnership();
+        }
         else
             return;
 

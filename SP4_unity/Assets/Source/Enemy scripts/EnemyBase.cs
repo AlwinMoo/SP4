@@ -75,6 +75,8 @@ public class EnemyBase : EnemyBehavior {
             }
             else
             {
+                if (target == null)
+                    return;
                 agent.SetDestination(target.transform.position);
                 networkObject.position = target.transform.position;
             }

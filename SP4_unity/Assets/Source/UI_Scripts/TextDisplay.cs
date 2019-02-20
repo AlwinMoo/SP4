@@ -23,7 +23,12 @@ public class TextDisplay : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
+
+        if (CarBase == null)
+            return;
+
         //HighScore.text = playerKills.ToString();
         Health.text = "Health: " + CarBase.GetComponent<VehicleBase>().HealthSlider.value.ToString();
         Speed.text = "Speed: " + CarBase.GetComponent<Rigidbody>().velocity.magnitude.ToString("0");
