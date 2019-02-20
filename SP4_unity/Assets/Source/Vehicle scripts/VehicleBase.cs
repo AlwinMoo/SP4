@@ -66,6 +66,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         armour = 0;
         this.gameObject.tag = "Player" + ((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()) + 1);
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
+        SetCarID((int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
     }
 
     // Update is called once per frame
