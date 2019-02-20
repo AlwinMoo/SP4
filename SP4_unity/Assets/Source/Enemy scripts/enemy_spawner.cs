@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking.Unity;
+using BeardedManStudios.Forge.Networking;
 
-public class enemy_spawner : MonoBehaviour {
+public class enemy_spawner : EnemySpawnerBehavior {
     
-	//public List<GameObject[]> enemyPrefab;
+	public GameObject[] enemyPrefab;
 
 	public static List<GameObject> enemyList;
     public static float spawnTimer;
@@ -41,15 +42,10 @@ public class enemy_spawner : MonoBehaviour {
                 {
                     //Rigidbody newEnemy;
                     Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, 1), randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
+                    networkObject.SendRpc(RPC_START_INSTANTIATE, Receivers.All, randPos);
                     
-                    enemyList.Add(newEnemy.gameObject);
                     spawnTimer = 0.0f;
                 }
-            }
-            else
-            {
-                enemyList = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
             }
 
             ++waveCount;
@@ -62,5 +58,28 @@ public class enemy_spawner : MonoBehaviour {
             return MaxMinDiff / 2 * currentWave * currentWave * currentWave + startMobCount;
 
         return MaxMinDiff / 2 * ((currentWave -= 2) * currentWave * currentWave + 2) + startMobCount;
+    }
+
+    public override void StartInstantiate(RpcArgs args)
+    {
+        var newEnemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], args.GetNext<Vector3>(), transform.rotation);
+        //var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length), args.GetNext<Vector3>(), transform.rotation);
+
+        enemyList.Add(newEnemy.gameObject);
+    }
+
+    public override void DestroyEnemy(RpcArgs args)
+    {
+        int count = args.GetNext<int>();
+
+        if (enemyList[count] != null)
+        {
+            Destroy(enemyList[count].gameObject);
+        }
+    }
+
+    public void DestroyEnemy(int _index)
+    {
+        networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index);
     }
 }

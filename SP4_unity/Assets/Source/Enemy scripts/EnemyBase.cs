@@ -40,7 +40,7 @@ public class EnemyBase : EnemyBehavior {
     {
         m_countDown = 0.0f;
         agent = this.GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player1");
     }
 
     public virtual void Start()
@@ -65,26 +65,25 @@ public class EnemyBase : EnemyBehavior {
             {
                 if (enemy_spawner.enemyList[i].gameObject == this.gameObject)
                 {
-                    Destroy(this.gameObject);
-                    networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All, i);
-                    break;
+                    GameObject.Find("Global").GetComponent<enemy_spawner>().DestroyEnemy(i);
                 }
             }
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
-            if (!networkObject.IsServer) 
-            {
-                agent.SetDestination(networkObject.position);
-            }
-            else
-            {
+            //if (!networkObject.IsServer) 
+            //{
+            //    agent.SetDestination(networkObject.position);
+            //}
+            //else
+            //{
                 if (target == null)
                     return;
                 agent.SetDestination(target.transform.position);
-                networkObject.position = target.transform.position;
-            }
+            //TO DO SET NEAREST AS TARGET
+            //    networkObject.position = target.transform.position;
+            //}
 
             m_countDown = 0.0f;
             

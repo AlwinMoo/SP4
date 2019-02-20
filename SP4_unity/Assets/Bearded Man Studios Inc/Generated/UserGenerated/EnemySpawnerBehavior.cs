@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"string\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"_playerList\"]]")]
-	public abstract partial class GameLogicBehavior : NetworkBehavior
+	[GeneratedRPC("{\"types\":[[\"Vector3\"][\"int\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"\"][\"_index\"]]")]
+	public abstract partial class EnemySpawnerBehavior : NetworkBehavior
 	{
-		public const byte RPC_SEND_PLAYER_TAG = 0 + 5;
+		public const byte RPC_START_INSTANTIATE = 0 + 5;
+		public const byte RPC_DESTROY_ENEMY = 1 + 5;
 		
-		public GameLogicNetworkObject networkObject = null;
+		public EnemySpawnerNetworkObject networkObject = null;
 
 		public override void Initialize(NetworkObject obj)
 		{
@@ -18,11 +19,12 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (networkObject != null && networkObject.AttachedBehavior != null)
 				return;
 			
-			networkObject = (GameLogicNetworkObject)obj;
+			networkObject = (EnemySpawnerNetworkObject)obj;
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("SendPlayerTag", SendPlayerTag, typeof(string));
+			networkObject.RegisterRpc("StartInstantiate", StartInstantiate, typeof(Vector3));
+			networkObject.RegisterRpc("DestroyEnemy", DestroyEnemy, typeof(int));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -80,7 +82,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override void Initialize(NetWorker networker, byte[] metadata = null)
 		{
-			Initialize(new GameLogicNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
+			Initialize(new EnemySpawnerNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
 		}
 
 		private void DestroyGameObject(NetWorker sender)
@@ -91,7 +93,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override NetworkObject CreateNetworkObject(NetWorker networker, int createCode, byte[] metadata = null)
 		{
-			return new GameLogicNetworkObject(networker, this, createCode, metadata);
+			return new EnemySpawnerNetworkObject(networker, this, createCode, metadata);
 		}
 
 		protected override void InitializedTransform()
@@ -101,9 +103,14 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
-		/// string _playerList
+		/// Vector3
 		/// </summary>
-		public abstract void SendPlayerTag(RpcArgs args);
+		public abstract void StartInstantiate(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// int _index
+		/// </summary>
+		public abstract void DestroyEnemy(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

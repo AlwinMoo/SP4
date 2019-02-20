@@ -5,7 +5,7 @@ using BeardedManStudios.Forge.Networking.Unity;
 using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Generated;
 
-public class GameLogic : MonoBehaviour
+public class GameLogic : GameLogicBehavior
 {
     public static Transform serverTransform;
 
@@ -26,6 +26,8 @@ public class GameLogic : MonoBehaviour
 
                 string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1).ToString();
                  newCar.gameObject.tag = "Player" + playerID;
+
+                networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
                  TextDisplay.CarBase = newCar.gameObject;
             }
         }
@@ -38,6 +40,8 @@ public class GameLogic : MonoBehaviour
 
                 string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1).ToString();
                 newCar.gameObject.tag = "Player" + playerID;
+
+                networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
                 TextDisplay.CarBase = newCar.gameObject;
             }
         }
@@ -47,4 +51,10 @@ public class GameLogic : MonoBehaviour
 	void Update ()
     {
 	}
+
+    public override void SendPlayerTag(RpcArgs args)
+    {
+        if(GameObject.FindGameObjectWithTag("Player").gameObject)
+            GameObject.FindGameObjectWithTag("Player").gameObject.tag = args.GetNext<string>();
+    }
 }

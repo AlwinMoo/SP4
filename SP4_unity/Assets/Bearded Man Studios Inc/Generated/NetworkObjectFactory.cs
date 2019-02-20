@@ -35,6 +35,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new EnemyNetworkObject(networker, id, frame);
 						break;
+					case EnemySpawnerNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new EnemySpawnerNetworkObject(networker, id, frame);
+						break;
 					case ExampleProximityPlayerNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new ExampleProximityPlayerNetworkObject(networker, id, frame);
