@@ -42,10 +42,14 @@ public class enemy_spawner : MonoBehaviour {
                     //Rigidbody newEnemy;
                     Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
                     var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, 1), randPos, transform.rotation, true);//Instantiate(enemyPrefab) as Rigidbody;
-
+                    
                     enemyList.Add(newEnemy.gameObject);
                     spawnTimer = 0.0f;
                 }
+            }
+            else
+            {
+                enemyList = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
             }
 
             ++waveCount;

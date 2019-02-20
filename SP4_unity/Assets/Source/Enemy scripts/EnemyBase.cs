@@ -5,10 +5,7 @@ using UnityEngine.AI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking.Unity;
 using BeardedManStudios.Forge.Networking;
-
-
-using System.Reflection;
-using System;
+using System.Linq;
 
 public class EnemyBase : EnemyBehavior {
 
@@ -59,12 +56,20 @@ public class EnemyBase : EnemyBehavior {
         //TODO: switch to pooler?
         if (health <= 0)
         {
-            if(QuestSystem.ID == 2)
+            if (QuestSystem.ID == 2)
             {
                 --QuestSystem.KillsLeft;
             }
-            enemy_spawner.enemyList.Remove(this.gameObject);
-            Destroy(this.gameObject);
+            
+            for (int i = 0; i < enemy_spawner.enemyList.Count; ++i)
+            {
+                if (enemy_spawner.enemyList[i].gameObject == this.gameObject)
+                {
+                    Destroy(this.gameObject);
+                    networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All, i);
+                    break;
+                }
+            }
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
@@ -84,10 +89,7 @@ public class EnemyBase : EnemyBehavior {
             m_countDown = 0.0f;
             
             agent.stoppingDistance = 5;
-
-            SerializableVector3[] tempList = { new SerializableVector3(1, 1, 1), new SerializableVector3(2, 2, 2) };
-            byte[] bytes = Serializer.GetInstance().Serialize<SerializableVector3[]>(tempList);
-            networkObject.SendRpc(RPC_GET_PATH, Receivers.All, bytes);
+            
             //Debug.Log("updated destination");
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
@@ -131,13 +133,16 @@ public class EnemyBase : EnemyBehavior {
         //}
     }
 
-    public override void GetPath(RpcArgs args)
+    public override void SendDeath(RpcArgs args)
     {
-        GetPath(args.GetNext<byte[]>());
-    }
+        int count = args.GetNext<int>();
 
-    public void GetPath(byte[] path)
-    {
-        SerializableVector3[] temp = Serializer.GetInstance().Deserialize<SerializableVector3[]>(path);
+        if (count < enemy_spawner.enemyList.Count)
+        {
+            if (enemy_spawner.enemyList[count] != null)
+            {
+                Destroy(enemy_spawner.enemyList[count].gameObject);
+            }
+        }
     }
 }
