@@ -27,6 +27,10 @@ public class GameLogic : MonoBehaviour
                 newCar.gameObject.GetComponent<VehicleBase>().SetCarID((int)PlayerManager.playerManager.GetPlayerID(i));
 
                 TextDisplay.CarBase = newCar.gameObject;
+
+                newCar.gameObject.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[i].player_ID;
+
+                Debug.Log(PlayerManager.playerManager.m_players[i].player_ID);
             }
         }
     }

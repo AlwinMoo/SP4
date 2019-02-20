@@ -151,15 +151,26 @@ public class PlayerManager : PlayerManagerBehavior {
         return m_playerIndex;
     }
 
-	//TODO: disconnected function
 	private void DisconnectedFromServer(NetWorker sender)
 	{
+        Debug.Log("player disconnected");
+
 		NetworkManager.Instance.Networker.disconnected -= DisconnectedFromServer;
 
-		MainThreadManager.Run(() =>
+        m_players[m_playerIndex].player_slot_empty = true;
+        m_players[m_playerIndex].player_name = "player " + (m_playerIndex + 1);
+        m_players[m_playerIndex].player_car = 0;
+
+        MainThreadManager.Run(() =>
 			{
 				NetworkManager.Instance.Disconnect();
 				SceneManager.LoadScene(0);
 			});
-	}
+        // Send the new playerlist to everyone
+        networkObject.SendRpc(RPC_GET_PLAYER_LIST, Receivers.All,
+            Serializer.GetInstance().Serialize<Player[]>(m_players));
+
+        // TODO: situation where client disconnects DURING the game
+    }
+
 }
