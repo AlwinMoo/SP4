@@ -14,7 +14,7 @@ public class TextDisplay : MonoBehaviour {
     public Text NextWave;
     public Text ObjectiveTitle;
     public Text ObjectiveDescription;
-    public GameObject CarBase;
+    public static GameObject CarBase;
     private int TimeRemainingTillNextWave;
 
     void Start()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FogOfWarPlayer : MonoBehaviour
 {
     GameObject FogPlane;
-    private uint Number;
+    public uint Number;
     private float _fogRad;
     private float StartingFogRad;
 
@@ -37,10 +37,12 @@ public class FogOfWarPlayer : MonoBehaviour
             FindFogPlane().GetComponent<Renderer>().material.SetFloat("FogRadius", _fogRad);
         }
 
+        // This checks if hits the fog of war plane if does creates a hole to the player
         RaycastHit hit;
         if (Physics.Raycast(rayToPlayerPos, out hit, 1000))
         {
             FindFogPlane().GetComponent<Renderer>().material.SetVector("Player" + Number.ToString(), hit.point);
+            Debug.Log("IsFollowing");
         }
     }
 

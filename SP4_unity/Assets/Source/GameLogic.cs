@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BeardedManStudios.Forge.Networking.Unity;
-
+using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Generated;
 public class GameLogic : MonoBehaviour
 {
     public static Transform serverTransform;
@@ -19,15 +20,12 @@ public class GameLogic : MonoBehaviour
                 Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
                 var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[i].player_car, randpos, transform.rotation, true);
 
-                if (PlayerManager.playerManager.m_players[i].player_ID == 0)
-                {
-                    newCar.gameObject.AddComponent<Camera>();
-                    newCar.gameObject.GetComponent<Camera>().gameObject.AddComponent<CameraFollow>();
-                }
+                newCar.networkObject.SendRpc(PlayerVehicleBehavior.RPC_SET_VEHICLE_I_D, Receivers.AllBuffered, (int)PlayerManager.playerManager.GetPlayerID(i));
+
+                TextDisplay.CarBase = newCar.gameObject;
             }
         }
     }
-	
 	// Update is called once per frame
 	void Update ()
     {
