@@ -41,7 +41,7 @@ public class PlayerManager : PlayerManagerBehavior {
             {
                 playerManager.m_players[i].player_active = false;
                 playerManager.m_players[i].player_slot_empty = true;
-                playerManager.m_players[i].player_ID = 0;
+				playerManager.m_players[0].player_ID = 0;
                 playerManager.m_players[i].player_name = "empty";
                 playerManager.m_players[i].player_car = 0;
 			}
@@ -60,69 +60,74 @@ public class PlayerManager : PlayerManagerBehavior {
 		{
 			// When a player is accepted on the server we need to send them the map
 			// information through the rpc attached to this object
+			uint id = networkObject.Owner.NetworkId;
 			NetworkManager.Instance.Networker.playerAccepted += PlayerAccepted;
 			playerManager.m_players[0].player_active = false;
 			playerManager.m_players[0].player_slot_empty = false;
-			playerManager.m_players[0].player_ID = 0;
+			playerManager.m_players[0].player_ID = id;
 			playerManager.m_players[0].player_name = "Host";
             m_playerIndex = 0;
             ++m_playerCount;
         }
+		else
+		{
+			NetworkManager.Instance.Networker.disconnected += DisconnectedFromServer;
+		}
 	}
 	private void Update()
 	{
 		// If the current networker is the server, then setup the callbacks for when
 		// a player connects
-		if (NetworkManager.Instance.Networker is IServer)
-		{
-			// When a player is accepted on the server we need to send them the map
-			// information through the rpc attached to this object
-			NetworkManager.Instance.Networker.playerAccepted += PlayerAccepted;
-		}
 	}
 
 	private void PlayerAccepted(NetworkingPlayer player, NetWorker sender)
 	{
-		Debug.Log ("this function has been called");
-		// Assign this player to a slot and 
-		// Send the list of players to this player
-		for (int i = 0; i < 4; ++i) 
-		{
-			if (m_players [i].player_ID == player.NetworkId)
-				return;
-			if (!m_players [i].player_slot_empty)
-				continue;
-            ++m_playerCount;
-			m_players [i].player_ID = player.NetworkId;
-			m_players [i].player_name = "Player " + (i + 1);
-			m_players [i].player_slot_empty = false;
-            m_players[i].player_active = false;
-            // Send the assigned slot rpc to this player
-            networkObject.SendRpc( RPC_GET_PLAYER_LIST, Receivers.All, 
-				Serializer.GetInstance().Serialize<Player[]>(m_players));
-			networkObject.SendRpc(player, RPC_ASSIGN_PLAYER, 
-				(uint)i);
-			Debug.Log ("this function has been called at i = " + i);
-			break;
-		}
+		MainThreadManager.Run (() => {
+			Debug.Log ("this function has been called");
+			// Assign this player to a slot and 
+			// Send the list of players to this player
+			for (int i = 0; i < 4; ++i) {
+				if (m_players [i].player_ID == player.NetworkId)	// Bad workaround :(
+					return;
+				if (!m_players [i].player_slot_empty)
+					continue;
+				++m_playerCount;
+				m_players [i].player_ID = player.NetworkId;
+				m_players [i].player_name = "Player " + (i + 1);
+				m_players [i].player_slot_empty = false;
+				m_players [i].player_active = false;
+
+				// Send the assigned slot rpc to this player
+					networkObject.SendRpc (RPC_GET_PLAYER_LIST, Receivers.All, 
+						Serializer.GetInstance ().Serialize<Player[]> (m_players));
+					networkObject.SendRpc (player, RPC_ASSIGN_PLAYER, 
+						(uint)i);
+				break;
+			}
+			;
+		});
 	}
 
 	public override void GetPlayerList(RpcArgs args)
 	{
-		m_players = Serializer.GetInstance ().Deserialize<Player[]>(args.GetNext<Byte[]> ());
-        m_playerCount = 0;
-        for (int i = 0; i < 4; ++i)
-        {
-            if (m_players[i].player_slot_empty)
-                continue;
-            ++m_playerCount;
-        }
+		MainThreadManager.Run (() => {
+			m_players = Serializer.GetInstance ().Deserialize<Player[]> (args.GetNext<Byte[]> ());
+			m_playerCount = 0;
+			for (int i = 0; i < 4; ++i) {
+				if (m_players [i].player_slot_empty)
+					continue;
+				++m_playerCount;
+			}
+			;
+		});
 	}
 
 	public override void AssignPlayer(RpcArgs args)
 	{
 		// Assigning current player to this player
-		m_playerIndex = args.GetNext<uint>();
+		MainThreadManager.Run (() => {
+			m_playerIndex = args.GetNext<uint> ();
+		});
 	}
 
     public int GetPlayerCount()
