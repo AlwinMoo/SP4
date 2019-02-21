@@ -29,24 +29,18 @@ public class MachineGun : MonoBehaviour {
 
     void Update()
     {
-		m_countDown -= Time.deltaTime;
-
-        EventManager.StartListening("MGShoot", Listener, transform.parent.gameObject.tag);
-
-        if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
-        {
-            m_countDown += fireRate;
-            
-		}
-		// More accurate firerate if more than 1 shot is fired in a row
-		else if (m_countDown <= 0.0f) 
-		{
-			m_countDown = fireRate;
-        }
+		if (m_countDown > 0.0f)
+			m_countDown -= Time.deltaTime;
+		else if (m_countDown < 0.0f)
+			m_countDown = 0.0f;
+		EventManager.StartListening("MGShoot", Listener, transform.parent.gameObject.tag);
 	}
 
     void triggerShot()
     {
+		if (m_countDown > 0.0f)
+			return;
+		m_countDown += fireRate;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, this.transform.position);
         float distToPlane;
