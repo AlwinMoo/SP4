@@ -7,12 +7,10 @@ public class Player : MonoBehaviour {
 
     public Text Name;
     public Text Car;
-    public Toggle PlayerToggle;
     public int slotNumber;
 
 	// Update is called once per frame
 	void Update () {
-        //Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
-        
-    }
+        Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
+	}
 }

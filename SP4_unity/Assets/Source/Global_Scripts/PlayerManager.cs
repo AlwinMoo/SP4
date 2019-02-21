@@ -85,8 +85,6 @@ public class PlayerManager : PlayerManagerBehavior {
 	{
 		//MainThreadManager.Run (() => {
 			Debug.Log ("this function has been called");
-		MainThreadManager.Run (() => {
-			//Debug.Log ("this function has been called");
 			// Assign this player to a slot and 
 			// Send the list of players to this player
 			for (int i = 0; i < 4; ++i) {
@@ -108,7 +106,7 @@ public class PlayerManager : PlayerManagerBehavior {
 				break;
 			}
 			;
-		});
+		//});
 	}
 
 	public override void GetPlayerList(RpcArgs args)
@@ -128,13 +126,9 @@ public class PlayerManager : PlayerManagerBehavior {
 	public override void AssignPlayer(RpcArgs args)
 	{
 		// Assigning current player to this player
-		MainThreadManager.Run (() => {
+		//MainThreadManager.Run (() => {
 			m_playerIndex = args.GetNext<uint> ();
 		//});
-            Debug.Log("assigned player Index of " + m_playerIndex);
-
-             networkObject.SendRpc(LobbyScript.RPC_JOINED_LOBBY, Receivers.Server, (int)m_playerIndex);
-		});
 	}
 
     public int GetPlayerCount()
@@ -157,26 +151,15 @@ public class PlayerManager : PlayerManagerBehavior {
         return m_playerIndex;
     }
 
+	//TODO: disconnected function
 	private void DisconnectedFromServer(NetWorker sender)
 	{
-        Debug.Log("player disconnected");
-
 		NetworkManager.Instance.Networker.disconnected -= DisconnectedFromServer;
 
-        m_players[m_playerIndex].player_slot_empty = true;
-        m_players[m_playerIndex].player_name = "player " + (m_playerIndex + 1);
-        m_players[m_playerIndex].player_car = 0;
-
-        MainThreadManager.Run(() =>
+		MainThreadManager.Run(() =>
 			{
 				NetworkManager.Instance.Disconnect();
 				SceneManager.LoadScene(0);
 			});
-        // Send the new playerlist to everyone
-        networkObject.SendRpc(RPC_GET_PLAYER_LIST, Receivers.All,
-            Serializer.GetInstance().Serialize<Player[]>(m_players));
-
-        // TODO: situation where client disconnects DURING the game
-    }
-
+	}
 }

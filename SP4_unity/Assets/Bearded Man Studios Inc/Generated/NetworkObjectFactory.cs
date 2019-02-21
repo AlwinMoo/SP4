@@ -48,13 +48,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						obj = new FlamethrowerNetworkObject(networker, id, frame);
 						break;
 					case GameLogicNetworkObject.IDENTITY:
-<<<<<<< HEAD
-=======
-						availableCallback = true;
-						obj = new GameLogicNetworkObject(networker, id, frame);
-						break;
-					case LobbyNetworkObject.IDENTITY:
->>>>>>> Lobby_ready_check_branch
 						availableCallback = true;
 						obj = new GameLogicNetworkObject(networker, id, frame);
 						break;

@@ -19,7 +19,7 @@ public class GameLogic : GameLogicBehavior
 
         if (PlayerManager.playerManager.networkObject.IsServer)
         {
-            for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
+            //for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
             {
                 Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
                  var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_car, randpos, transform.rotation, true);
@@ -29,11 +29,6 @@ public class GameLogic : GameLogicBehavior
 
                 networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
                  TextDisplay.CarBase = newCar.gameObject;
-                TextDisplay.CarBase = newCar.gameObject;
-
-                newCar.gameObject.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[i].player_ID;
-
-                Debug.Log(PlayerManager.playerManager.m_players[i].player_ID);
             }
         }
         else
