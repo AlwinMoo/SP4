@@ -62,17 +62,17 @@ public class EnemyBase : EnemyBehavior, Flammable
                 --QuestSystem.KillsLeft;
             }
 
-            if (networkObject.IsServer)
-                networkObject.Destroy();
-            else
-                Destroy(this.gameObject);
+
+            networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
-            if (!networkObject.IsServer)
+            if (!networkObject.IsOwner)
             {
                 agent.SetDestination(networkObject.position);
+
+                //transform.position = networkObject.position;
                 transform.rotation = networkObject.rotation;
             }
             else
@@ -132,20 +132,12 @@ public class EnemyBase : EnemyBehavior, Flammable
         //}
     }
 
-    public virtual bool Ignited() { return false; }
-
     public override void SendDeath(RpcArgs args)
     {
-        int count = args.GetNext<int>();
-
-        if (count < enemy_spawner.enemyList.Count)
-        {
-            if (enemy_spawner.enemyList[count] != null)
-            {
-                Destroy(enemy_spawner.enemyList[count].gameObject);
-            }
-        }
+        networkObject.Destroy();
     }
+
+    public virtual bool Ignited() { return false; }
 
     public override void SendOnFire(RpcArgs args)
     {
