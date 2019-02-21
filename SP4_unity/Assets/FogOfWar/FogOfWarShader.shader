@@ -3,7 +3,7 @@
 		_Color("Main Color", Color) = (1,1,1,1)
 		_MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
 		FogRadius("FogRadius", Float) = 1.0
-		_FogMaxRadius("FogMaxRadius", Float) = 0.5
+		_FogMaxRadius("_FogMaxRadius", Float) = 0.5
 		Player0("Player0", Vector) = (0,0,0,1)
 		Player1("Player1", Vector) = (0,0,0,1)
 		Player2("Player2", Vector) = (0,0,0,1)
