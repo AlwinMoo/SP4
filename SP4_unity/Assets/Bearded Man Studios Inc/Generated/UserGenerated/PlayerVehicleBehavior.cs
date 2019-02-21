@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"int\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"Owner\"]]")]
+	[GeneratedRPC("{\"types\":[[\"int\"][\"string\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"Owner\"][\"_tag\"]]")]
 	public abstract partial class PlayerVehicleBehavior : NetworkBehavior
 	{
 		public const byte RPC_TRIGGER_SHOOT = 0 + 5;
+		public const byte RPC_SEND_TAG = 1 + 5;
 		
 		public PlayerVehicleNetworkObject networkObject = null;
 
@@ -23,6 +24,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 			base.SetupHelperRpcs(networkObject);
 			networkObject.RegisterRpc("triggerShoot", triggerShoot, typeof(int));
+			networkObject.RegisterRpc("SendTag", SendTag, typeof(string));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -104,6 +106,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		/// int Owner
 		/// </summary>
 		public abstract void triggerShoot(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// string _tag
+		/// </summary>
+		public abstract void SendTag(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

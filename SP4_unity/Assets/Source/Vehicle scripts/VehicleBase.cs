@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
 using UnityEngine.Events;
+using System;
 
 public class VehicleBase : PlayerVehicleBehavior {
 
@@ -65,13 +66,22 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
+
+        if (networkObject.IsOwner)
+        {
+            string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID).ToString();
+            this.gameObject.tag = "Player" + playerID;
+
+            networkObject.SendRpc(RPC_SEND_TAG, Receivers.Others, this.gameObject.tag);
+        }
+
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
 
-        if (this.gameObject.tag == "Player" + ((int)PlayerManager.playerManager.GetPlayerIndex() + 1))
-        {
-            Debug.Log("Owned by: " + networkObject.MyPlayerId);
-            networkObject.TakeOwnership();
-        }
+        //if (this.gameObject.tag == "Player" + ((int)PlayerManager.playerManager.GetPlayerIndex()))
+        //{
+        //    Debug.Log("Owned by: " + networkObject.MyPlayerId);
+        //    networkObject.TakeOwnership();
+        //}
     }
 
     // Update is called once per frame
@@ -136,7 +146,7 @@ public class VehicleBase : PlayerVehicleBehavior {
                 Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
                 
-                networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1);
+                networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID);
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -269,6 +279,11 @@ public class VehicleBase : PlayerVehicleBehavior {
 
     public override void triggerShoot(RpcArgs args)
     {
+        int ShooterID = args.GetNext<int>();
+
+        if (this.gameObject.tag != "Player" + ShooterID)
+            return;
+
         switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
         {
             case VehicleType.VEH_SEDAN:
@@ -284,23 +299,30 @@ public class VehicleBase : PlayerVehicleBehavior {
             default:
                 break;
         }
-
-        //int shooterID = args.GetNext<int>();
-
-        //GameObject.FindGameObjectWithTag("Player" + shooterID).gameObject.GetComponent<MachineGun>().triggerShooting();
+        
     }
 
-    //public override void SetVehicleID(RpcArgs args)
-    //{
-    //    // Check if new car id matches player identity
-    //    int thisID = args.GetNext<int>();
-    //    int findID = (int)(PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
-    //    if (thisID == findID)
-    //    {
-    //        networkObject.TakeOwnership();
-    //        //TO DO: SET WEAPON OWNER
-    //    }
-    //    else
-    //        return;
-    //}
+    public override void SendTag(RpcArgs args)
+    {
+        string SetName = args.GetNext<string>();
+
+        if (this.gameObject.tag != SetName)
+        {
+            //if (GameObject.FindGameObjectWithTag(SetName) != null)
+            //    return;
+
+            this.gameObject.tag = SetName;
+        }
+
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+        {
+            for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
+            {
+                if (GameObject.FindGameObjectWithTag("Player" + i))
+                    continue;
+
+                GameObject.FindGameObjectWithTag("Player").tag = "Player" + i;
+            }
+        }
+    }
 }
