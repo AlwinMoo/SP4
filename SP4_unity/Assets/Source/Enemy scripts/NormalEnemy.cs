@@ -106,6 +106,12 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
             case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
                 health -= _damage;
                 break;
+            case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+                health -= _damage;
+                break;
+            case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+                health -= _damage;
+                break;
         }
         return true;
     }

@@ -107,7 +107,13 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 			// Calculate based on max health instead
 			health -= _damage;
 			break;
-		}
+        case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+            health -= _damage;
+            break;
+        case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+            health -= _damage;
+            break;
+        }
 		return true;
 	}
 
