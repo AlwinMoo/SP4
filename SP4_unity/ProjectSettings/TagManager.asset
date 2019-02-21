@@ -17,6 +17,12 @@ TagManager:
   - Rocket
   - ShieldPowerUp
   - BaseSFX
+  - Player1
+  - Player2
+  - Player3
+  - Player0
+  - LobbySystem
+  - Player4
   layers:
   - Default
   - TransparentFX
