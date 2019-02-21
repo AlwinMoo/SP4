@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"int\"][]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"deathIndex\"][]]")]
+	[GeneratedRPC("{\"types\":[[][]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[][]]")]
 	public abstract partial class EnemyBehavior : NetworkBehavior
 	{
 		public const byte RPC_SEND_DEATH = 0 + 5;
@@ -23,7 +23,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("SendDeath", SendDeath, typeof(int));
+			networkObject.RegisterRpc("SendDeath", SendDeath);
 			networkObject.RegisterRpc("SendOnFire", SendOnFire);
 
 			networkObject.onDestroy += DestroyGameObject;
@@ -103,7 +103,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
-		/// int deathIndex
 		/// </summary>
 		public abstract void SendDeath(RpcArgs args);
 		/// <summary>
