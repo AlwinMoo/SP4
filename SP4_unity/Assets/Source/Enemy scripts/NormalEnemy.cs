@@ -38,6 +38,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
     {
         base.Update();
 
+        Debug.Log(" " + health);
         if (health <= 0)
             Destroy(this.gameObject);
         if (m_burning)
@@ -101,6 +102,9 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
                 health -= _damage;
                 break;
             case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
+                health -= _damage;
+                break;
+            case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
                 health -= _damage;
                 break;
         }

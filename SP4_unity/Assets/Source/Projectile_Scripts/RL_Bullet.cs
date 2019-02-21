@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RL_Bullet : MonoBehaviour, IPooledObject
 {
@@ -34,10 +35,25 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
 
     void OnCollisionEnter (Collision col)
     {
+        ILiveEntity target = col.gameObject.GetComponent<ILiveEntity>();
+
+        if (target != null)
+        {
+            target.TakeDamage(GlobalDamage.g_RocketDirectDamage, GlobalDamage.DamageTypes.DAMAGE_ROCKET);
+            //this.gameObject.SetActive(false);
+        }
+
+        if (col.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(col.collider, this.gameObject.GetComponent<Collider>());
+        }
+
         //TODO: fix rocket detonating on flamethrowers
         ObjectPooler.Instance.SpawnFromPool("RL_Explosion", transform.position, gameObject.transform.rotation);
         var explosionScript = this.gameObject.GetComponent<RL_Explosion>();
         explosionScript.Explosion();
         this.gameObject.SetActive(false);
+
+       
     }
 }

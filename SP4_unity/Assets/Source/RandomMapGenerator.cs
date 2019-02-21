@@ -9,11 +9,6 @@ public class RandomMapGenerator : MonoBehaviour
     // Collider of one tile of the map (for map generation)
     public GameObject floorPlane;
 
-    // Scale of the plane
-    public Vector3 planeScale;
-    // Positions of the obstacles
-    private Vector3[] obstaclePos;
-
     private GameObject plane;
 
     private BoxCollider tileCollider;
@@ -94,7 +89,7 @@ public class RandomMapGenerator : MonoBehaviour
         // set the original state back so that normal random generation can continue where it left off
         Random.state = temp;
 
-        Debug.Log(" " + newSeed);
+        //Debug.Log(" " + newSeed);
 
         return newSeed;
     }

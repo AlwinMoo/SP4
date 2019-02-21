@@ -60,6 +60,7 @@ public class VehicleBase : MonoBehaviour {
     // Use this for initialization
     public virtual void Start()
     {
+        HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
     }

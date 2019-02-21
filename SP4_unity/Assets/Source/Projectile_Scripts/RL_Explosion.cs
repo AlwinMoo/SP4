@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RL_Explosion : MonoBehaviour
 {
@@ -36,13 +37,45 @@ public class RL_Explosion : MonoBehaviour
         foreach (Collider hit in colliders)
         {
             Rigidbody rigidbody = hit.GetComponent<Rigidbody>();
+            ILiveEntity target = rigidbody.gameObject.GetComponent<ILiveEntity>();
+
             if (rigidbody != null)
             {
                 rigidbody.AddExplosionForce(power, explosionPosition, radius, upforce, ForceMode.Impulse);
             }
 
+            if (target != null && !hit.GetComponent<Rigidbody>())
+            {
+                rigidbody.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+                rigidbody.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                target.TakeDamage(GlobalDamage.g_RocketAOEDamage, GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE);
+                this.gameObject.SetActive(false);
+            }
+
+            if (rigidbody.gameObject.tag == "Player")
+            {
+                Physics.IgnoreCollision(rigidbody.GetComponent<Collider>(), this.gameObject.GetComponent<Collider>());
+            }
         }
 
 
     }
+
+    //void OnCollisionEnter(Collision col)
+    //{
+    //    ILiveEntity target = col.gameObject.GetComponent<ILiveEntity>();
+
+    //    if (target != null)
+    //    {
+    //        col.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+    //        col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+    //        target.TakeDamage(GlobalDamage.g_RocketAOEDamage, GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE);
+    //        this.gameObject.SetActive(false);
+    //    }
+
+    //    if (col.gameObject.tag == "Player")
+    //    {
+    //        Physics.IgnoreCollision(col.collider, this.gameObject.GetComponent<Collider>());
+    //    }
+    //}
 }

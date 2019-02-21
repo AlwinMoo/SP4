@@ -54,7 +54,7 @@ public class EnemyBase : MonoBehaviour {
             {
                 --QuestSystem.KillsLeft;
             }
-            enemy_spawner.enemyList.Remove(this.gameObject.GetComponent<Rigidbody>());
+            //enemy_spawner.enemyList.Remove(this.gameObject.GetComponent<Rigidbody>());
             Destroy(this.gameObject);
         }
 

@@ -56,8 +56,9 @@ public class RocketLauncher : MonoBehaviour
             //{
 
             //    // Play thegunfire light
-            //    flash.GetComponent<RL_Flash>().InitLight();
+
             //}
+            flash.GetComponent<RL_Flash>().InitLight();
             objectPooler.SpawnFromPool("RL_Bullet", transform.position, this.gameObject.transform.rotation);
             m_countDown = fireRate;
             firing = false;

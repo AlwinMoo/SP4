@@ -14,27 +14,27 @@ public class MeshGenerator : MonoBehaviour
     public int zSize = 20;
     public float PerlinNoise;
     public GameObject[] Obstacles;
-   
-	// Use this for initialization
-	void Start ()
+
+    private static Random.State seedGenerator;
+    // seed to generate seed 
+    private static int seedGeneratorSeed = 1;
+    private static bool seedGeneratorInitialised = false;
+
+    // Use this for initialization
+    void Start ()
     {
+        Random.InitState(GenerateSeed());
+        int rand = Random.Range(10, 20);
+
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         
-
-        //StartCoroutine(CreateShape());
         CreateShape();
         UpdateMesh();
+        CreateObstacles(rand);
         GetComponent<MeshCollider>().sharedMesh = mesh;
 	}
 
-    //private void Update()
-    //{
-    //    UpdateMesh();
-
-    //}
-
-    // IEnumerator CreateShape()
     void CreateShape()
     {
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
@@ -67,8 +67,7 @@ public class MeshGenerator : MonoBehaviour
 
                 vert++;
                 tris += 6;
-
-                //yield return new WaitForSeconds(0.01f);
+                
             }
             vert++;
         }
@@ -88,14 +87,59 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateBounds();
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    if (vertices == null)
-    //        return;
+    public static int GenerateSeed()
+    {
+        // remember the old seed
+        var temp = Random.state;
 
-    //    for (int i = 0; i < vertices.Length; i++)
-    //    {
-    //        Gizmos.DrawSphere(vertices[i], 0.1f);
-    //    }
-    //}
+        // initialise generator if not generated
+        if (!seedGeneratorInitialised)
+        {
+            Random.InitState(seedGeneratorSeed);
+            seedGenerator = Random.state;
+            seedGeneratorInitialised = true;
+        }
+
+        // set generator state to seed generator
+        Random.state = seedGenerator;
+        // generate new seed
+        var newSeed = Random.Range(int.MinValue, int.MaxValue);
+        // remember generator state
+        seedGenerator = Random.state;
+
+        // set the original state back so that normal random generation can continue where it left off
+        Random.state = temp;
+
+        //Debug.Log(" " + newSeed);
+
+        return newSeed;
+    }
+
+    // Creating obstacles on random parts of the tile
+    void CreateObstacles(int numOfObstacles)
+    {
+
+        for (int i = 0; i < numOfObstacles; ++i)
+        {
+            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.max.y /*+ 1.0f*/, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
+
+            //Debug.Log("randomPos: " + randPos);
+
+            int obstacleType = Random.Range(0, Obstacles.Length);
+
+            switch (obstacleType)
+            {
+                case 0:
+                    GameObject obstacle = Instantiate(Obstacles[0]);
+                    obstacle.transform.position = randPos;
+                    break;
+                case 1:
+                    obstacle = Instantiate(Obstacles[1]);
+                    obstacle.transform.position = randPos;
+                    break;
+            }
+        }
+
+
+    }
 }
