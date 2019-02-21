@@ -84,7 +84,7 @@ public class PlayerManager : PlayerManagerBehavior {
 	private void PlayerAccepted(NetworkingPlayer player, NetWorker sender)
 	{
 		MainThreadManager.Run (() => {
-			Debug.Log ("this function has been called");
+			//Debug.Log ("this function has been called");
 			// Assign this player to a slot and 
 			// Send the list of players to this player
 			for (int i = 0; i < 4; ++i) {
@@ -129,6 +129,8 @@ public class PlayerManager : PlayerManagerBehavior {
 		MainThreadManager.Run (() => {
 			m_playerIndex = args.GetNext<uint> ();
             Debug.Log("assigned player Index of " + m_playerIndex);
+
+             networkObject.SendRpc(LobbyScript.RPC_JOINED_LOBBY, Receivers.Server, (int)m_playerIndex);
 		});
 	}
 

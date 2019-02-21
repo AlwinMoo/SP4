@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using BeardedManStudios.Forge.Networking.Unity;
-using UnityEngine.SceneManagement;
 
 public class ReadyToggler : MonoBehaviour {
 
@@ -14,37 +12,29 @@ public class ReadyToggler : MonoBehaviour {
 
     void Start()
     {
-       
+
     }
 
     void Update()
     {
         LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");
         LobScript = LobbysystemPrefab.GetComponent<LobbyScript>();
+
+        for (int i = 0; i < 4; ++i)
+        {
+            if (LobbyScript.players[i] == 2)
+            {
+                Togglers[i].isOn = true;
+            }
+            else
+            {
+                Togglers[i].isOn = false;
+            }
+        }
     }
 
     public void ToggleOnOff()
     {
-        uint index = PlayerManager.playerManager.GetPlayerIndex();
-        ReadyToggle = Togglers[index];
-        Debug.Log("Toggler" + index);
-        if (ReadyToggle.isOn)
-        {
-            ReadyToggle.isOn = false;
-        }
-        else
-        {
-            ReadyToggle.isOn = true;
-        }
-
         LobScript.ReadyToggle();
-    }
-
-    public void changeScene()
-    {
-        if (NetworkManager.Instance.Networker.IsServer)
-        {
-            SceneManager.LoadScene(2, LoadSceneMode.Single);
-        }
     }
 }
