@@ -45,7 +45,7 @@ public class GameLogic : GameLogicBehavior
                 newCar.gameObject.tag = "Player" + playerID;
 
                 //itself so no need send message????
-                //networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
+                networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
                 TextDisplay.CarBase = newCar.gameObject;
 
                 newCar.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1;
