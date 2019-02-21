@@ -49,10 +49,16 @@ MonoBehaviour:
   ExampleProximityPlayerNetworkObject:
   - {fileID: 1000012738253334, guid: feb25ecf90a8d8b4ab922a455249997b, type: 2}
   FlamethrowerNetworkObject: []
+<<<<<<< HEAD
   GameLogicNetworkObject: []
   LobbyNetworkObject: []
   MachineGunNetworkObject:
   - {fileID: 1743072636725298, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
+=======
+  LobbyNetworkObject:
+  - {fileID: 1354919009866638, guid: 549afbfddc435824a8a7d4c1a25cc2ff, type: 2}
+  MachineGunNetworkObject: []
+>>>>>>> Lobby_ready_check_branch
   NetworkCameraNetworkObject:
   - {fileID: 139536, guid: 661f29f0c0c86fa47b6015bd602d0ac6, type: 2}
   PlayerManagerNetworkObject: []
@@ -60,6 +66,7 @@ MonoBehaviour:
   - {fileID: 1765245786757498, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
   - {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
   TestNetworkObject: []
+  GameLogicNetworkObject: []
   automaticScenes: 1
 --- !u!1001 &100100000
 Prefab:

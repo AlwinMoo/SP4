@@ -15,7 +15,7 @@ public class FogOfWarPlayer : MonoBehaviour
     void Start()
     {
         StartingFogRad = 20;
-        Number = PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_ID;
+       // Number = PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_ID;
     }
 
     // Update is called once per frame

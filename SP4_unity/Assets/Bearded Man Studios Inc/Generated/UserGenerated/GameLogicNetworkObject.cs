@@ -8,7 +8,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 	[GeneratedInterpol("{\"inter\":[]")]
 	public partial class GameLogicNetworkObject : NetworkObject
 	{
+<<<<<<< HEAD
 		public const int IDENTITY = 7;
+=======
+		public const int IDENTITY = 6;
+>>>>>>> Lobby_ready_check_branch
 
 		private byte[] _dirtyFields = new byte[0];
 
