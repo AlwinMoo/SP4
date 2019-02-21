@@ -41,7 +41,8 @@ public class GameLogic : GameLogicBehavior
                 string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID + 1).ToString();
                 newCar.gameObject.tag = "Player" + playerID;
 
-                networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
+                //itself so no need send message????
+                //networkObject.SendRpc(RPC_SEND_PLAYER_TAG, Receivers.Others, "Player" + playerID);
                 TextDisplay.CarBase = newCar.gameObject;
             }
         }
@@ -54,7 +55,7 @@ public class GameLogic : GameLogicBehavior
 
     public override void SendPlayerTag(RpcArgs args)
     {
-        if(GameObject.FindGameObjectWithTag("Player").gameObject)
+        if(GameObject.FindGameObjectWithTag("Player").gameObject != null)
             GameObject.FindGameObjectWithTag("Player").gameObject.tag = args.GetNext<string>();
     }
 }

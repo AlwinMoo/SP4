@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
 using System;
+using BeardedManStudios.Forge.Networking;
 
-public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
+public class NormalEnemy : EnemyBase, ILiveEntity {
 
     Rigidbody thisGO;
     public ParticleSystem fire;
@@ -42,13 +43,11 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
             Destroy(this.gameObject);
         if (m_burning)
         {
-            GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
 
             m_countDownNormal -= Time.deltaTime;
             float damage;
             if (m_countDownNormal <= 0.0f)
             {
-                GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
 
                 m_burning = false;
                 // Set damage to be more accurate
@@ -111,7 +110,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
         return true;
     }
 
-    public bool Ignited()
+    public override bool Ignited()
     {
         // If not already burning
         if (!m_burning)
@@ -121,6 +120,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity, Flammable {
             m_countDownNormal = burnDuration;
             glow.Play();
             fire.Play();
+            networkObject.SendRpc(RPC_SEND_ON_FIRE, Receivers.All);
             return true;
         }
         // If not, just reset the countdown

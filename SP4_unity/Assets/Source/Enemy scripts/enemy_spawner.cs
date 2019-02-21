@@ -42,8 +42,9 @@ public class enemy_spawner : EnemySpawnerBehavior {
                 {
                     //Rigidbody newEnemy;
                     Vector3 randPos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
-                    networkObject.SendRpc(RPC_START_INSTANTIATE, Receivers.All, randPos);
-                    
+                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length), randPos, transform.rotation);
+
+                    enemyList.Add(newEnemy.gameObject);
                     spawnTimer = 0.0f;
                 }
             }
@@ -60,42 +61,43 @@ public class enemy_spawner : EnemySpawnerBehavior {
         return MaxMinDiff / 2 * ((currentWave -= 2) * currentWave * currentWave + 2) + startMobCount;
     }
 
-    public override void StartInstantiate(RpcArgs args)
-    {
-        var newEnemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], args.GetNext<Vector3>(), transform.rotation);
-        //var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length), args.GetNext<Vector3>(), transform.rotation);
+    //public override void StartInstantiate(RpcArgs args)
+    //{
+    //    var newEnemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], args.GetNext<Vector3>(), transform.rotation);
+    //    //var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length), args.GetNext<Vector3>(), transform.rotation);
 
-        enemyList.Add(newEnemy.gameObject);
-    }
+    //    enemyList.Add(newEnemy.gameObject);
+    //}
 
-    public override void DestroyEnemy(RpcArgs args)
-    {
-        int count = args.GetNext<int>();
+    //public override void DestroyEnemy(RpcArgs args)
+    //{
+    //    int count = args.GetNext<int>();
 
-        if (enemyList[count] != null)
-        {
-            Destroy(enemyList[count].gameObject);
-        }
-    }
+    //    if (enemyList[count] != null)
+    //    {
+    //        Destroy(enemyList[count].gameObject);
+    //    }
+    //}
 
-    public void DestroyEnemy(int _index)
-    {
-        networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index);
-    }
+    //public void DestroyEnemy(int _index)
+    //{
+    //    networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index);
+    //}
 
-    public override void EnemyOnFire(RpcArgs args)
-    {
-        int count = args.GetNext<int>();
-        bool status = args.GetNext<bool>();
+    //public override void EnemyOnFire(RpcArgs args)
+    //{
+    //    int count = args.GetNext<int>();
+    //    bool status = args.GetNext<bool>();
 
-        if (enemyList[count] != null)
-        {
-            enemyList[count].gameObject.GetComponent<EnemyBase>().m_burning = status;
-        }
-    }
+    //    if (enemyList[count] != null)
+    //    {
+    //        enemyList[count].gameObject.GetComponent<EnemyBase>().m_burning = status;
+    //    }
+    //}
 
-    public void EnemyOnFire(int _index, bool _status)
-    {
-        networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, _index, _status);
-    }
+    //public void EnemyOnFire(int _index, bool _status)
+    //{
+    //    object[] param = { _index, _status };
+    //    networkObject.SendRpc(RPC_DESTROY_ENEMY, Receivers.All, param);
+    //}
 }
