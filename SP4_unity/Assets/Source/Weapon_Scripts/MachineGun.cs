@@ -31,17 +31,17 @@ public class MachineGun : MonoBehaviour {
     {
 		m_countDown -= Time.deltaTime;
 
-		if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
+        EventManager.StartListening("MGShoot", Listener, transform.parent.gameObject.tag);
+
+        if (Input.GetMouseButton (0) && m_countDown <= 0.0f)
         {
             m_countDown += fireRate;
-
-            EventManager.StartListening("MGShoot", Listener);
+            
 		}
 		// More accurate firerate if more than 1 shot is fired in a row
 		else if (m_countDown <= 0.0f) 
 		{
 			m_countDown = fireRate;
-            EventManager.StopListening("MGShoot", Listener);
         }
 	}
 
@@ -66,6 +66,6 @@ public class MachineGun : MonoBehaviour {
             GunShotSource.Play();
         }
 
-        EventManager.StopListening("MGShoot", Listener);
+        EventManager.StopListening("MGShoot", Listener, transform.parent.gameObject.tag);
     }
 }

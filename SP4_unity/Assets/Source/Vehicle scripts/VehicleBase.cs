@@ -273,12 +273,12 @@ public class VehicleBase : PlayerVehicleBehavior {
         {
             case VehicleType.VEH_SEDAN:
                 {
-                    EventManager.TriggerEvent("MGShoot");
+                    EventManager.TriggerEvent("MGShoot", this.gameObject.tag);
                     break;
                 }
             case VehicleType.VEH_VAN:
                 {
-                    EventManager.TriggerEvent("FireShoot");
+                    EventManager.TriggerEvent("FireShoot", this.gameObject.tag);
                     break;
                 }
             default:

@@ -50,13 +50,13 @@ public class FlameThrower : MonoBehaviour {
             //    //networkObject.rotation = transform.rotation;
             //    //networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, true);
             //}
-            EventManager.StartListening("FireShoot", Listener);
+            EventManager.StartListening("FireShoot", Listener, this.gameObject.tag);
         }
         else
         {
             //if (networkObject != null)
             //    networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, false);
-            EventManager.StopListening("FireShoot", Listener);
+            EventManager.StopListening("FireShoot", Listener, this.gameObject.tag);
             FireEffects(false);
         }
 	}
@@ -80,7 +80,7 @@ public class FlameThrower : MonoBehaviour {
             FireEffects(true);
         }
 
-        EventManager.StopListening("FireShoot", Listener);
+        EventManager.StopListening("FireShoot", Listener, this.gameObject.tag);
     }
 
     public void FireEffects(bool _fire)
