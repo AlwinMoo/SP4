@@ -7,7 +7,8 @@ using BeardedManStudios.Forge.Networking.Unity;
 using BeardedManStudios.Forge.Networking;
 using System.Linq;
 
-public class EnemyBase : EnemyBehavior {
+public class EnemyBase : EnemyBehavior, Flammable
+{
 
     public Vector3 u1 { get; set; }
     public Vector3 u2 { get; set; }
@@ -60,30 +61,29 @@ public class EnemyBase : EnemyBehavior {
             {
                 --QuestSystem.KillsLeft;
             }
-            
-            for (int i = 0; i < enemy_spawner.enemyList.Count; ++i)
-            {
-                if (enemy_spawner.enemyList[i].gameObject == this.gameObject)
-                {
-                    GameObject.Find("Global").GetComponent<enemy_spawner>().DestroyEnemy(i);
-                }
-            }
+
+            if (networkObject.IsServer)
+                networkObject.Destroy();
+            else
+                Destroy(this.gameObject);
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
-            //if (!networkObject.IsServer) 
-            //{
-            //    agent.SetDestination(networkObject.position);
-            //}
-            //else
-            //{
+            if (!networkObject.IsServer)
+            {
+                agent.SetDestination(networkObject.position);
+                transform.rotation = networkObject.rotation;
+            }
+            else
+            {
                 if (target == null)
                     return;
                 agent.SetDestination(target.transform.position);
             //TO DO SET NEAREST AS TARGET
-            //    networkObject.position = target.transform.position;
-            //}
+                networkObject.position = target.transform.position;
+                networkObject.rotation = transform.rotation;
+            }
 
             m_countDown = 0.0f;
             
@@ -132,6 +132,8 @@ public class EnemyBase : EnemyBehavior {
         //}
     }
 
+    public virtual bool Ignited() { return false; }
+
     public override void SendDeath(RpcArgs args)
     {
         int count = args.GetNext<int>();
@@ -143,5 +145,11 @@ public class EnemyBase : EnemyBehavior {
                 Destroy(enemy_spawner.enemyList[count].gameObject);
             }
         }
+    }
+
+    public override void SendOnFire(RpcArgs args)
+    {
+        // Play the animation if it hasn't been played
+        Ignited();
     }
 }

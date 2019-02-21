@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
 using System;
+using BeardedManStudios.Forge.Networking;
 
-public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
+public class TankEnemy : EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
@@ -42,15 +43,12 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
         
 		if (m_burning) 
 		{
-            GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
 
             m_countDownTank -= Time.deltaTime;
 			float damage;
 			if (m_countDownTank <= 0.0f) 
 			{
 				m_burning = false;
-
-                GameObject.Find("Global").GetComponent<enemy_spawner>().EnemyOnFire(enemy_spawner.enemyList.IndexOf(this.gameObject), m_burning);
 
                 // Set damage to be more accurate
                 damage = GlobalDamage.g_fireDamageTickRatio * (Time.deltaTime + m_countDownTank) * maxHealth;
@@ -113,7 +111,7 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 		return true;
 	}
 
-	public bool Ignited()
+	public override bool Ignited()
 	{
 		// If not already burning
 		if (!m_burning) 
@@ -123,7 +121,8 @@ public class TankEnemy : EnemyBase, ILiveEntity, Flammable {
 			m_countDownTank = burnDuration;
 			glow.Play();
 			fire.Play ();
-			return true;
+            networkObject.SendRpc(RPC_SEND_ON_FIRE, Receivers.All);
+            return true;
 		}
 		// If not, just reset the countdown
 		m_countDownTank = burnDuration;
