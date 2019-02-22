@@ -321,7 +321,12 @@ public class VehicleBase : PlayerVehicleBehavior {
                 if (GameObject.FindGameObjectWithTag("Player" + i))
                     continue;
 
-                GameObject.FindGameObjectWithTag("Player").tag = "Player" + i;
+                
+                var newCar = GameObject.FindGameObjectWithTag("Player");
+                newCar.tag = "Player" + i;
+                // Cant do this :/ the tag changes or sth 
+                //newCar.GetComponent<FogOfWarPlayer>().Number = i;
+
             }
         }
     }

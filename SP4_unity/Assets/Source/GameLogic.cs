@@ -24,7 +24,7 @@ public class GameLogic : GameLogicBehavior
 
         TextDisplay.CarBase = newCar.gameObject;
 
-        newCar.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID;
+        //newCar.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID;
         
     }
 

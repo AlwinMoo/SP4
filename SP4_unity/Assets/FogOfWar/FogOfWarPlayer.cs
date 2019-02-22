@@ -5,7 +5,7 @@ using UnityEngine;
 public class FogOfWarPlayer : MonoBehaviour
 {
     GameObject FogPlane;
-    public uint Number;
+    public int Number;
     private float _fogRad;
     private float _MaxfogRad;
     private float StartingFogRad;
@@ -19,9 +19,7 @@ public class FogOfWarPlayer : MonoBehaviour
     {
         StartingFogRad = 20;
         StartingMaxFogRad = 0.7f;
-        //Number = PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_ID;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -52,7 +50,7 @@ public class FogOfWarPlayer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(rayToPlayerPos, out hit, 1000))
         {
-            FindFogPlane().GetComponent<Renderer>().material.SetVector("Player" + Number.ToString(), hit.point);
+            FindFogPlane().GetComponent<Renderer>().material.SetVector(tag, hit.point);
             //Debug.Log("IsFollowing");
         }
     }
