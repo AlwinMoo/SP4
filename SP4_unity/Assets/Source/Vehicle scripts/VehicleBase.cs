@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Unity;
 using UnityEngine.Events;
 using System;
 
@@ -66,22 +67,23 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = health;
         armour = 0;
-
-        if (networkObject.IsOwner)
-        {
-            string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID).ToString();
-            this.gameObject.tag = "Player" + playerID;
-
-            networkObject.SendRpc(RPC_SEND_TAG, Receivers.Others, this.gameObject.tag);
-        }
-
+		if (networkObject.IsServer) {
+			// note: toowner
+			this.gameObject.tag = "Player" + networkObject.Owner.NetworkId;
+			networkObject.SendRpc (RPC_SEND_TAG, Receivers.All, this.gameObject.tag);
+		}
+		else if (networkObject.IsOwner) 
+		{
+			this.gameObject.tag = "Player" + networkObject.Owner.NetworkId;
+		}
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
 
         //if (this.gameObject.tag == "Player" + ((int)PlayerManager.playerManager.GetPlayerIndex()))
         //{
         //    Debug.Log("Owned by: " + networkObject.MyPlayerId);
         //    networkObject.TakeOwnership();
-        //}
+		//}
+
     }
 
     // Update is called once per frame
@@ -281,9 +283,11 @@ public class VehicleBase : PlayerVehicleBehavior {
     {
         int ShooterID = args.GetNext<int>();
 
-        if (this.gameObject.tag != "Player" + ShooterID)
-            return;
-
+		if (this.gameObject.tag != "Player" + ShooterID) {
+			Debug.Log ("Player" + ShooterID + " is not " + gameObject.tag + ". Shot failed");
+			return;
+		}
+		Debug.Log ("Player" + ShooterID + " is " + gameObject.tag + ". Shot pass");
         switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
         {
             case VehicleType.VEH_SEDAN:
@@ -305,29 +309,29 @@ public class VehicleBase : PlayerVehicleBehavior {
     public override void SendTag(RpcArgs args)
     {
         string SetName = args.GetNext<string>();
-
-        if (this.gameObject.tag != SetName)
+		Debug.Log ("Found name of: " + SetName + ". Checking with " + this.gameObject.tag);
+        if (this.gameObject.tag == "Player")
         {
             //if (GameObject.FindGameObjectWithTag(SetName) != null)
             //    return;
+			Debug.Log (this.gameObject.tag + " set to " + SetName);
 
             this.gameObject.tag = SetName;
         }
-
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
-        {
-            for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
-            {
-                if (GameObject.FindGameObjectWithTag("Player" + i))
-                    continue;
-
-                
-                var newCar = GameObject.FindGameObjectWithTag("Player");
-                newCar.tag = "Player" + i;
+        //if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+       //{
+       //     for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
+        //    {
+       //         if (GameObject.FindGameObjectWithTag("Player" + i))
+       //             continue;
+		//
+       //         
+       //         var newCar = GameObject.FindGameObjectWithTag("Player");
+       //         newCar.tag = "Player" + i;
                 // Cant do this :/ the tag changes or sth 
                 //newCar.GetComponent<FogOfWarPlayer>().Number = i;
 
-            }
-        }
+       //     }
+       // }
     }
 }

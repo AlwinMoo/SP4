@@ -18,7 +18,7 @@ public class HMG_Bullet : MonoBehaviour, IPooledObject
 		Vector3 force = view * bulletForce;
 		// Apply force
 		GetComponent<Rigidbody>().velocity = force;
-		Debug.Log ("shooting in " + this.transform.rotation);
+		//Debug.Log ("shooting in " + this.transform.rotation);
 	}
 
 	void Update()

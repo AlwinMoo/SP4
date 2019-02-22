@@ -34,7 +34,7 @@ public class HMG_Flash : MonoBehaviour {
 			return;
 		}
 		m_lt.intensity = startIntensity * (m_countDown / duration);
-		Debug.Log ("new intensity of muzzle flash is " + m_lt.intensity);
+		//Debug.Log ("new intensity of muzzle flash is " + m_lt.intensity);
 	}
 
 }
