@@ -443,6 +443,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSize: 20
   zSize: 20
+  PerlinNoise: 0.2
+  Obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!23 &2068018560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -508,7 +512,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}

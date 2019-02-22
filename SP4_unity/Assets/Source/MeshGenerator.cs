@@ -31,8 +31,8 @@ public class MeshGenerator : MonoBehaviour
 
         CreateShape();
         UpdateMesh();
-        CreateObstacles(rand);
         GetComponent<MeshCollider>().sharedMesh = mesh;
+        CreateObstacles(rand);
     }
 
     void CreateShape()
@@ -43,8 +43,17 @@ public class MeshGenerator : MonoBehaviour
         {
             for (int x = 0; x <= xSize; x++)
             {
-                float y = Mathf.PerlinNoise(x * PerlinNoise, z * PerlinNoise) * 2f;
-                vertices[i] = new Vector3(x, y, z);
+                if((x > 0 || x < xSize) && (z > 0 || z < zSize))
+                {
+                    float y = Mathf.PerlinNoise(x * PerlinNoise, z * PerlinNoise) * 2f;
+                    vertices[i] = new Vector3(x, y, z);
+                }
+                else
+                {
+                    float y = 10;
+                    vertices[i] = new Vector3(x, y, z);
+                }
+                
                 i++;
             }
         }
