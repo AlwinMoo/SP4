@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Unity;
 
 [RequireComponent(typeof(MeshFilter))]
-public class MeshGenerator : MonoBehaviour
+public class MeshGenerator : NetworkMapGenerationBehavior
 {
     Mesh mesh;
 
@@ -31,8 +34,9 @@ public class MeshGenerator : MonoBehaviour
 
         CreateShape();
         UpdateMesh();
-        CreateObstacles(rand);
         GetComponent<MeshCollider>().sharedMesh = mesh;
+        CreateObstacles(rand);
+        
     }
 
     void CreateShape()
@@ -43,8 +47,17 @@ public class MeshGenerator : MonoBehaviour
         {
             for (int x = 0; x <= xSize; x++)
             {
-                float y = Mathf.PerlinNoise(x * PerlinNoise, z * PerlinNoise) * 2f;
-                vertices[i] = new Vector3(x, y, z);
+                if((x == 0 || x == xSize) || (z == 0 || z == zSize))
+                {
+                    float y = 10.0f;
+                    vertices[i] = new Vector3(x, y, z);
+                }
+                else
+                {
+                    float y = Mathf.PerlinNoise(x * PerlinNoise, z * PerlinNoise) * 2f;
+                    vertices[i] = new Vector3(x, y, z);
+                }
+               
                 i++;
             }
         }
@@ -87,32 +100,41 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateBounds();
     }
 
-    public static int GenerateSeed()
+    public int GenerateSeed()
     {
-        // remember the old seed
-        var temp = Random.state;
-
-        // initialise generator if not generated
-        if (!seedGeneratorInitialised)
+        if (networkObject.IsServer)
         {
-            Random.InitState(seedGeneratorSeed);
+            // remember the old seed
+            var temp = Random.state;
+
+            // initialise generator if not generated
+            if (!seedGeneratorInitialised)
+            {
+                Random.InitState(seedGeneratorSeed);
+                seedGenerator = Random.state;
+                seedGeneratorInitialised = true;
+            }
+
+            // set generator state to seed generator
+            Random.state = seedGenerator;
+            // generate new seed
+            var newSeed = Random.Range(int.MinValue, int.MaxValue);
+            // remember generator state
             seedGenerator = Random.state;
-            seedGeneratorInitialised = true;
+
+            // set the original state back so that normal random generation can continue where it left off
+            Random.state = temp;
+
+            Debug.Log(" " + newSeed);
+
+            networkObject._seed = newSeed;
+
+            return newSeed;
         }
-
-        // set generator state to seed generator
-        Random.state = seedGenerator;
-        // generate new seed
-        var newSeed = Random.Range(int.MinValue, int.MaxValue);
-        // remember generator state
-        seedGenerator = Random.state;
-
-        // set the original state back so that normal random generation can continue where it left off
-        Random.state = temp;
-
-        //Debug.Log(" " + newSeed);
-
-        return newSeed;
+        else
+        {
+            return networkObject._seed;
+        }
     }
 
     // Creating obstacles on random parts of the tile
@@ -141,5 +163,10 @@ public class MeshGenerator : MonoBehaviour
         }
 
 
+    }
+
+    public override void SetSeed(RpcArgs args)
+    {
+        throw new System.NotImplementedException();
     }
 }
