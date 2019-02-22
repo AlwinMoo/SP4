@@ -55,6 +55,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     {
         VEH_SEDAN,
         VEH_VAN,
+        VEH_MONSTER_TRUCK,
     }
     public VehicleType vehicleType { get; set; }
 
@@ -271,6 +272,9 @@ public class VehicleBase : PlayerVehicleBehavior {
                 case VehicleType.VEH_VAN:
                     collision.gameObject.GetComponent<EnemyBase>().health -= 15;
                     break;
+                case VehicleType.VEH_MONSTER_TRUCK:
+                    collision.gameObject.GetComponent<EnemyBase>().health -= 20;
+                    break;
                 default:
                     break;
             }
@@ -294,6 +298,11 @@ public class VehicleBase : PlayerVehicleBehavior {
             case VehicleType.VEH_VAN:
                 {
                     EventManager.TriggerEvent("FireShoot", this.gameObject.tag);
+                    break;
+                }
+            case VehicleType.VEH_MONSTER_TRUCK:
+                {
+                    EventManager.TriggerEvent("RocketShoot", this.gameObject.tag);
                     break;
                 }
             default:
