@@ -19,12 +19,14 @@ public class EnemyBase : EnemyBehavior, Flammable
 
     public float health { get; set; }
     public float mass { get; set; }
+	public float damageTakenTickRate = 0.3f;
 
     GameObject target;
     public NavMeshAgent agent { get; set; }
 
     private float m_countDown;
-
+	private float m_damageTakenCD;
+	private float m_damageTaken;
     private float damageTickCD;
 
     public enum enemytype
@@ -63,7 +65,10 @@ public class EnemyBase : EnemyBehavior, Flammable
             }
 
 
-            networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
+			// TODO: decide on death of enemy
+            //networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
+			// Attempted method: use ondeath local function
+			EnemyDeath();
         }
 
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
@@ -132,6 +137,11 @@ public class EnemyBase : EnemyBehavior, Flammable
         //}
     }
 
+	private void EnemyDeath()
+	{
+		networkObject.Destroy();
+	}
+
     public override void SendDeath(RpcArgs args)
     {
         networkObject.Destroy();
@@ -139,9 +149,28 @@ public class EnemyBase : EnemyBehavior, Flammable
 
     public virtual bool Ignited() { return false; }
 
+	public virtual void TakeTickDamage(float _damage)
+	{
+		m_damageTaken += _damage;
+	}
+
+	private void UnloadTickDamage()
+	{
+		health -= m_damageTaken;
+		m_damageTaken = 0.0f;
+	}
+
     public override void SendOnFire(RpcArgs args)
     {
         // Play the animation if it hasn't been played
         Ignited();
     }
+
+	public override void TakeDamage(RpcArgs args)
+	{
+		float damage = args.GetNext<float> ();
+		this.health -= damage;
+		if (health < 0.0f)
+			EnemyDeath;
+	}
 }

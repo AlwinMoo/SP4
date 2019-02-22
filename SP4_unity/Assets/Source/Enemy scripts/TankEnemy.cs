@@ -41,7 +41,7 @@ public class TankEnemy : EnemyBase, ILiveEntity {
     {
         base.Update();
         
-		if (m_burning) 
+		if (networkObject.IsServer && m_burning)
 		{
 
             m_countDownTank -= Time.deltaTime;
@@ -94,26 +94,46 @@ public class TankEnemy : EnemyBase, ILiveEntity {
         if (!this.enabled)
             return false;
 
-        switch (_type) 
+		if (networkObject.IsServer) {
+			switch (_type) {
+			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+				health -= _damage;
+				break;
+			}
+		} 
+		else 
 		{
-		case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
-			health -= _damage;
-			break;
-		case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-			health -= _damage;
-			// state
-			break;
-		case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-			// Calculate based on max health instead
-			health -= _damage;
-			break;
-        case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
-            health -= _damage;
-            break;
-        case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
-            health -= _damage;
-            break;
-        }
+			switch (_type)
+			{
+			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+				TakeTickDamage(_damage);
+				break;
+			}
+		}
 		return true;
 	}
 

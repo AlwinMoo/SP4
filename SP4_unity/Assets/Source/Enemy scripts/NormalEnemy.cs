@@ -41,9 +41,9 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
 
         if (health <= 0)
             Destroy(this.gameObject);
-        if (m_burning)
+		// Let the server handle fire damage
+		if (networkObject.IsServer && m_burning)
         {
-
             m_countDownNormal -= Time.deltaTime;
             float damage;
             if (m_countDownNormal <= 0.0f)
@@ -94,25 +94,46 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
     {
         if (!this.enabled)
             return false;
-
-        switch (_type)
-        {
-            case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
-                health -= _damage;
-                break;
-            case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-                health -= _damage;
-                break;
-            case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-                health -= _damage;
-                break;
-            case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
-                health -= _damage;
-                break;
-            case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
-                health -= _damage;
-                break;
-        }
+		if (networkObject.IsServer) {
+			switch (_type) {
+			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+				health -= _damage;
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+				health -= _damage;
+				break;
+			}
+		} 
+		else 
+		{
+			switch (_type)
+			{
+			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
+				TakeTickDamage(_damage);
+				break;
+			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
+				TakeTickDamage(_damage);
+				break;
+			}
+		}
         return true;
     }
 
