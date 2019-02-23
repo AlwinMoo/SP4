@@ -127,13 +127,13 @@ public class MeshGenerator : NetworkMapGenerationBehavior
 
             Debug.Log(" " + newSeed);
 
-            networkObject._seed = newSeed;
+            networkObject.seed = newSeed;
 
             return newSeed;
         }
         else
         {
-            return networkObject._seed;
+            return networkObject.seed;
         }
     }
 

@@ -59,7 +59,7 @@ public class EnemyBase : EnemyBehavior, Flammable
         //TODO: switch to pooler?
         if (health <= 0)
         {
-            if (QuestSystem.ID == 2)
+            if (QuestSystem.QuestID == 2)
             {
                 --QuestSystem.KillsLeft;
             }
@@ -166,11 +166,13 @@ public class EnemyBase : EnemyBehavior, Flammable
         Ignited();
     }
 
-	public override void TakeDamage(RpcArgs args)
-	{
-		float damage = args.GetNext<float> ();
-		this.health -= damage;
-		if (health < 0.0f)
-			EnemyDeath;
-	}
+    // this gave me error
+
+	//public override void TakeDamage(RpcArgs args)
+	//{
+	//	float damage = args.GetNext<float> ();
+	//	this.health -= damage;
+	//	if (health < 0.0f)
+	//		EnemyDeath;
+	//}
 }

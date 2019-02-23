@@ -63,6 +63,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new NetworkMapGenerationNetworkObject(networker, id, frame);
 						break;
+					case ObjectiveObjectNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new ObjectiveObjectNetworkObject(networker, id, frame);
+						break;
 					case PlayerManagerNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new PlayerManagerNetworkObject(networker, id, frame);
@@ -70,6 +74,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					case PlayerVehicleNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new PlayerVehicleNetworkObject(networker, id, frame);
+						break;
+					case QuestSystemNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new QuestSystemNetworkObject(networker, id, frame);
 						break;
 					case TestNetworkObject.IDENTITY:
 						availableCallback = true;

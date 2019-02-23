@@ -20,8 +20,10 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public GameObject[] LobbyNetworkObject = null;
 		public GameObject[] NetworkCameraNetworkObject = null;
 		public GameObject[] NetworkMapGenerationNetworkObject = null;
+		public GameObject[] ObjectiveObjectNetworkObject = null;
 		public GameObject[] PlayerManagerNetworkObject = null;
 		public GameObject[] PlayerVehicleNetworkObject = null;
+		public GameObject[] QuestSystemNetworkObject = null;
 		public GameObject[] TestNetworkObject = null;
 
 		private void SetupObjectCreatedEvent()
@@ -270,6 +272,29 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						objectInitialized(newObj, obj);
 				});
 			}
+			else if (obj is ObjectiveObjectNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (ObjectiveObjectNetworkObject.Length > 0 && ObjectiveObjectNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(ObjectiveObjectNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<ObjectiveObjectBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
 			else if (obj is PlayerManagerNetworkObject)
 			{
 				MainThreadManager.Run(() =>
@@ -304,6 +329,29 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						{
 							var go = Instantiate(PlayerVehicleNetworkObject[obj.CreateCode]);
 							newObj = go.GetComponent<PlayerVehicleBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
+			else if (obj is QuestSystemNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (QuestSystemNetworkObject.Length > 0 && QuestSystemNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(QuestSystemNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<QuestSystemBehavior>();
 						}
 					}
 
@@ -469,6 +517,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			
 			return netBehavior;
 		}
+		[Obsolete("Use InstantiateObjectiveObject instead, its shorter and easier to type out ;)")]
+		public ObjectiveObjectBehavior InstantiateObjectiveObjectNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ObjectiveObjectNetworkObject[index]);
+			var netBehavior = go.GetComponent<ObjectiveObjectBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<ObjectiveObjectBehavior>().networkObject = (ObjectiveObjectNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
 		[Obsolete("Use InstantiatePlayerManager instead, its shorter and easier to type out ;)")]
 		public PlayerManagerBehavior InstantiatePlayerManagerNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
@@ -488,6 +548,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<PlayerVehicleBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<PlayerVehicleBehavior>().networkObject = (PlayerVehicleNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use InstantiateQuestSystem instead, its shorter and easier to type out ;)")]
+		public QuestSystemBehavior InstantiateQuestSystemNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(QuestSystemNetworkObject[index]);
+			var netBehavior = go.GetComponent<QuestSystemBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<QuestSystemBehavior>().networkObject = (QuestSystemNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -1017,6 +1089,57 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			return netBehavior;
 		}
 		/// <summary>
+		/// Instantiate an instance of ObjectiveObject
+		/// </summary>
+		/// <returns>
+		/// A local instance of ObjectiveObjectBehavior
+		/// </returns>
+		/// <param name="index">The index of the ObjectiveObject prefab in the NetworkManager to Instantiate</param>
+		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
+		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
+		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
+		public ObjectiveObjectBehavior InstantiateObjectiveObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ObjectiveObjectNetworkObject[index]);
+			var netBehavior = go.GetComponent<ObjectiveObjectBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<ObjectiveObjectBehavior>().networkObject = (ObjectiveObjectNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		/// <summary>
 		/// Instantiate an instance of PlayerManager
 		/// </summary>
 		/// <returns>
@@ -1113,6 +1236,57 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<PlayerVehicleBehavior>().networkObject = (PlayerVehicleNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		/// <summary>
+		/// Instantiate an instance of QuestSystem
+		/// </summary>
+		/// <returns>
+		/// A local instance of QuestSystemBehavior
+		/// </returns>
+		/// <param name="index">The index of the QuestSystem prefab in the NetworkManager to Instantiate</param>
+		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
+		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
+		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
+		public QuestSystemBehavior InstantiateQuestSystem(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(QuestSystemNetworkObject[index]);
+			var netBehavior = go.GetComponent<QuestSystemBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<QuestSystemBehavior>().networkObject = (QuestSystemNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

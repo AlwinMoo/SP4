@@ -8,7 +8,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 	[GeneratedInterpol("{\"inter\":[0]")]
 	public partial class NetworkMapGenerationNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 14;
+		public const int IDENTITY = 10;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -16,35 +16,35 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		public event FieldChangedEvent fieldAltered;
 		#pragma warning restore 0067
 		[ForgeGeneratedField]
-		private int __seed;
-		public event FieldEvent<int> _seedChanged;
-		public Interpolated<int> _seedInterpolation = new Interpolated<int>() { LerpT = 0f, Enabled = false };
-		public int _seed
+		private int _seed;
+		public event FieldEvent<int> seedChanged;
+		public Interpolated<int> seedInterpolation = new Interpolated<int>() { LerpT = 0f, Enabled = false };
+		public int seed
 		{
-			get { return __seed; }
+			get { return _seed; }
 			set
 			{
 				// Don't do anything if the value is the same
-				if (__seed == value)
+				if (_seed == value)
 					return;
 
 				// Mark the field as dirty for the network to transmit
 				_dirtyFields[0] |= 0x1;
-				__seed = value;
+				_seed = value;
 				hasDirtyFields = true;
 			}
 		}
 
-		public void Set_seedDirty()
+		public void SetseedDirty()
 		{
 			_dirtyFields[0] |= 0x1;
 			hasDirtyFields = true;
 		}
 
-		private void RunChange__seed(ulong timestep)
+		private void RunChange_seed(ulong timestep)
 		{
-			if (_seedChanged != null) _seedChanged(__seed, timestep);
-			if (fieldAltered != null) fieldAltered("_seed", __seed, timestep);
+			if (seedChanged != null) seedChanged(_seed, timestep);
+			if (fieldAltered != null) fieldAltered("seed", _seed, timestep);
 		}
 
 		protected override void OwnershipChanged()
@@ -55,24 +55,24 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		
 		public void SnapInterpolations()
 		{
-			_seedInterpolation.current = _seedInterpolation.target;
+			seedInterpolation.current = seedInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
 
 		protected override BMSByte WritePayload(BMSByte data)
 		{
-			UnityObjectMapper.Instance.MapBytes(data, __seed);
+			UnityObjectMapper.Instance.MapBytes(data, _seed);
 
 			return data;
 		}
 
 		protected override void ReadPayload(BMSByte payload, ulong timestep)
 		{
-			__seed = UnityObjectMapper.Instance.Map<int>(payload);
-			_seedInterpolation.current = __seed;
-			_seedInterpolation.target = __seed;
-			RunChange__seed(timestep);
+			_seed = UnityObjectMapper.Instance.Map<int>(payload);
+			seedInterpolation.current = _seed;
+			seedInterpolation.target = _seed;
+			RunChange_seed(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -81,7 +81,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			dirtyFieldsData.Append(_dirtyFields);
 
 			if ((0x1 & _dirtyFields[0]) != 0)
-				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, __seed);
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _seed);
 
 			// Reset all the dirty fields
 			for (int i = 0; i < _dirtyFields.Length; i++)
@@ -100,15 +100,15 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 			if ((0x1 & readDirtyFlags[0]) != 0)
 			{
-				if (_seedInterpolation.Enabled)
+				if (seedInterpolation.Enabled)
 				{
-					_seedInterpolation.target = UnityObjectMapper.Instance.Map<int>(data);
-					_seedInterpolation.Timestep = timestep;
+					seedInterpolation.target = UnityObjectMapper.Instance.Map<int>(data);
+					seedInterpolation.Timestep = timestep;
 				}
 				else
 				{
-					__seed = UnityObjectMapper.Instance.Map<int>(data);
-					RunChange__seed(timestep);
+					_seed = UnityObjectMapper.Instance.Map<int>(data);
+					RunChange_seed(timestep);
 				}
 			}
 		}
@@ -118,10 +118,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (IsOwner)
 				return;
 
-			if (_seedInterpolation.Enabled && !_seedInterpolation.current.UnityNear(_seedInterpolation.target, 0.0015f))
+			if (seedInterpolation.Enabled && !seedInterpolation.current.UnityNear(seedInterpolation.target, 0.0015f))
 			{
-				__seed = (int)_seedInterpolation.Interpolate();
-				//RunChange__seed(_seedInterpolation.Timestep);
+				_seed = (int)seedInterpolation.Interpolate();
+				//RunChange_seed(seedInterpolation.Timestep);
 			}
 		}
 
