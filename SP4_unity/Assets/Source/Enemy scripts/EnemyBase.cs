@@ -166,13 +166,11 @@ public class EnemyBase : EnemyBehavior, Flammable
         Ignited();
     }
 
-    // this gave me error
-
-	//public override void TakeDamage(RpcArgs args)
-	//{
-	//	float damage = args.GetNext<float> ();
-	//	this.health -= damage;
-	//	if (health < 0.0f)
-	//		EnemyDeath;
-	//}
+	public override void TakeDamage(RpcArgs args)
+	{
+		float damage = args.GetNext<float> ();
+		this.health -= damage;
+		if (health < 0.0f)
+			EnemyDeath();
+	}
 }
