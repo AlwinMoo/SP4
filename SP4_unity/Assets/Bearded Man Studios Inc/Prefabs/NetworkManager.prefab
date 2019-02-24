@@ -57,6 +57,8 @@ MonoBehaviour:
   - {fileID: 139536, guid: 661f29f0c0c86fa47b6015bd602d0ac6, type: 2}
   NetworkMapGenerationNetworkObject:
   - {fileID: 1304520806868262, guid: 94876add81c26bb4f9ba1027fd848a2f, type: 2}
+  ObjectiveObjectNetworkObject:
+  - {fileID: 1498155546434178, guid: 5b382eefa196f8943aca0b184879166e, type: 2}
   PlayerManagerNetworkObject: []
   PlayerVehicleNetworkObject:
   - {fileID: 1765245786757498, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
