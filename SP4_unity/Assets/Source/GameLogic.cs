@@ -25,8 +25,7 @@ public class GameLogic : GameLogicBehavior
         TextDisplay.CarBase = newCar.gameObject;
 
         //newCar.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID;
-
-        NetworkManager.Instance.InstantiateNetworkMapGeneration(0);
+        
     }
 
 	// Update is called once per frame
