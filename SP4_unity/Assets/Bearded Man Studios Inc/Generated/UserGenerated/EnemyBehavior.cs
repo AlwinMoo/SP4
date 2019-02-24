@@ -5,7 +5,7 @@ using UnityEngine;
 namespace BeardedManStudios.Forge.Networking.Generated
 {
 	[GeneratedRPC("{\"types\":[[][][\"float\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[][][\"damage\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[][][\"_dmg\"]]")]
 	public abstract partial class EnemyBehavior : NetworkBehavior
 	{
 		public const byte RPC_SEND_DEATH = 0 + 5;

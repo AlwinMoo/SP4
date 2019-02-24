@@ -171,6 +171,6 @@ public class EnemyBase : EnemyBehavior, Flammable
 		float damage = args.GetNext<float> ();
 		this.health -= damage;
 		if (health < 0.0f)
-			EnemyDeath;
+			EnemyDeath();
 	}
 }
