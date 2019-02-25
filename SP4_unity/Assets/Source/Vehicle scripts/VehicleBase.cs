@@ -151,7 +151,9 @@ public class VehicleBase : PlayerVehicleBehavior {
 
                 Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
-                
+
+                networkObject.WeaponRotation = dir;
+
                 networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID);
             }
         }
@@ -300,6 +302,7 @@ public class VehicleBase : PlayerVehicleBehavior {
             case VehicleType.VEH_SEDAN:
                 {
                     EventManager.TriggerEvent("MGShoot", this.gameObject.tag);
+                    this.gameObject.GetComponent<MachineGun>().Rotation(networkObject.WeaponRotation);
                     break;
                 }
             case VehicleType.VEH_VAN:

@@ -16,6 +16,9 @@ public class MachineGun : MonoBehaviour {
 
     UnityAction Listener;
 
+    public Vector3 networkDir;
+    bool networked;
+
     private float m_countDown = 0.0f;
 
     private void Start()
@@ -25,6 +28,8 @@ public class MachineGun : MonoBehaviour {
         GunShotSource.clip = GunShot;
 
         Listener = new UnityAction(triggerShot);
+
+        networked = false;
     }
 
     void Update()
@@ -38,9 +43,22 @@ public class MachineGun : MonoBehaviour {
 
     void triggerShot()
     {
+        
 		if (m_countDown > 0.0f)
 			return;
 		m_countDown += fireRate;
+
+        if (networked)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(networkDir), 1);
+            objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
+
+            // Play thegunfire light
+            flash.GetComponent<HMG_Flash>().StartLight();
+            GunShotSource.volume = SFX.SFXvolchanger.audioSrc.volume;
+            GunShotSource.Play();
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, this.transform.position);
         float distToPlane;
@@ -52,7 +70,8 @@ public class MachineGun : MonoBehaviour {
             Vector3 dir = hitPos - transform.position;
             dir.y = 0;
 
-            objectPooler.SpawnFromPool("HMG_Bullet", transform.position, Quaternion.LookRotation(dir));
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), 1);
+            objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
 
             // Play thegunfire light
             flash.GetComponent<HMG_Flash>().StartLight();
@@ -61,5 +80,11 @@ public class MachineGun : MonoBehaviour {
         }
 
         EventManager.StopListening("MGShoot", Listener, transform.parent.gameObject.tag);
+    }
+
+    public void Rotation(Vector3 rotation)
+    {
+        networkDir = rotation;
+        networked = true;
     }
 }

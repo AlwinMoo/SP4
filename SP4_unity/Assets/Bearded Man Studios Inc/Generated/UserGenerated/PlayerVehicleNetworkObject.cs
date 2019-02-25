@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15,0.15]")]
+	[GeneratedInterpol("{\"inter\":[0.15,0.15,0.15]")]
 	public partial class PlayerVehicleNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 14;
+		public const int IDENTITY = 17;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -77,6 +77,37 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (rotationChanged != null) rotationChanged(_rotation, timestep);
 			if (fieldAltered != null) fieldAltered("rotation", _rotation, timestep);
 		}
+		[ForgeGeneratedField]
+		private Vector3 _WeaponRotation;
+		public event FieldEvent<Vector3> WeaponRotationChanged;
+		public InterpolateVector3 WeaponRotationInterpolation = new InterpolateVector3() { LerpT = 0.15f, Enabled = true };
+		public Vector3 WeaponRotation
+		{
+			get { return _WeaponRotation; }
+			set
+			{
+				// Don't do anything if the value is the same
+				if (_WeaponRotation == value)
+					return;
+
+				// Mark the field as dirty for the network to transmit
+				_dirtyFields[0] |= 0x4;
+				_WeaponRotation = value;
+				hasDirtyFields = true;
+			}
+		}
+
+		public void SetWeaponRotationDirty()
+		{
+			_dirtyFields[0] |= 0x4;
+			hasDirtyFields = true;
+		}
+
+		private void RunChange_WeaponRotation(ulong timestep)
+		{
+			if (WeaponRotationChanged != null) WeaponRotationChanged(_WeaponRotation, timestep);
+			if (fieldAltered != null) fieldAltered("WeaponRotation", _WeaponRotation, timestep);
+		}
 
 		protected override void OwnershipChanged()
 		{
@@ -88,6 +119,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		{
 			positionInterpolation.current = positionInterpolation.target;
 			rotationInterpolation.current = rotationInterpolation.target;
+			WeaponRotationInterpolation.current = WeaponRotationInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
@@ -96,6 +128,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		{
 			UnityObjectMapper.Instance.MapBytes(data, _position);
 			UnityObjectMapper.Instance.MapBytes(data, _rotation);
+			UnityObjectMapper.Instance.MapBytes(data, _WeaponRotation);
 
 			return data;
 		}
@@ -110,6 +143,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			rotationInterpolation.current = _rotation;
 			rotationInterpolation.target = _rotation;
 			RunChange_rotation(timestep);
+			_WeaponRotation = UnityObjectMapper.Instance.Map<Vector3>(payload);
+			WeaponRotationInterpolation.current = _WeaponRotation;
+			WeaponRotationInterpolation.target = _WeaponRotation;
+			RunChange_WeaponRotation(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -121,6 +158,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _position);
 			if ((0x2 & _dirtyFields[0]) != 0)
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _rotation);
+			if ((0x4 & _dirtyFields[0]) != 0)
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _WeaponRotation);
 
 			// Reset all the dirty fields
 			for (int i = 0; i < _dirtyFields.Length; i++)
@@ -163,6 +202,19 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					RunChange_rotation(timestep);
 				}
 			}
+			if ((0x4 & readDirtyFlags[0]) != 0)
+			{
+				if (WeaponRotationInterpolation.Enabled)
+				{
+					WeaponRotationInterpolation.target = UnityObjectMapper.Instance.Map<Vector3>(data);
+					WeaponRotationInterpolation.Timestep = timestep;
+				}
+				else
+				{
+					_WeaponRotation = UnityObjectMapper.Instance.Map<Vector3>(data);
+					RunChange_WeaponRotation(timestep);
+				}
+			}
 		}
 
 		public override void InterpolateUpdate()
@@ -179,6 +231,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				_rotation = (Quaternion)rotationInterpolation.Interpolate();
 				//RunChange_rotation(rotationInterpolation.Timestep);
+			}
+			if (WeaponRotationInterpolation.Enabled && !WeaponRotationInterpolation.current.UnityNear(WeaponRotationInterpolation.target, 0.0015f))
+			{
+				_WeaponRotation = (Vector3)WeaponRotationInterpolation.Interpolate();
+				//RunChange_WeaponRotation(WeaponRotationInterpolation.Timestep);
 			}
 		}
 
