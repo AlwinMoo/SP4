@@ -8,7 +8,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 	[GeneratedInterpol("{\"inter\":[0,0,0,0,0,0,0]")]
 	public partial class QuestSystemNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 16;
+		public const int IDENTITY = 14;
 
 		private byte[] _dirtyFields = new byte[1];
 

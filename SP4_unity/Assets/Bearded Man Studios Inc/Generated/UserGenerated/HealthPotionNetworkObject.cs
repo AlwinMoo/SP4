@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15,0.15]")]
-	public partial class EnemyNetworkObject : NetworkObject
+	[GeneratedInterpol("{\"inter\":[0,0]")]
+	public partial class HealthPotionNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 3;
+		public const int IDENTITY = 16;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -18,7 +18,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		[ForgeGeneratedField]
 		private Vector3 _position;
 		public event FieldEvent<Vector3> positionChanged;
-		public InterpolateVector3 positionInterpolation = new InterpolateVector3() { LerpT = 0.15f, Enabled = true };
+		public InterpolateVector3 positionInterpolation = new InterpolateVector3() { LerpT = 0f, Enabled = false };
 		public Vector3 position
 		{
 			get { return _position; }
@@ -47,10 +47,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (fieldAltered != null) fieldAltered("position", _position, timestep);
 		}
 		[ForgeGeneratedField]
-		private Quaternion _rotation;
-		public event FieldEvent<Quaternion> rotationChanged;
-		public InterpolateQuaternion rotationInterpolation = new InterpolateQuaternion() { LerpT = 0.15f, Enabled = true };
-		public Quaternion rotation
+		private Vector3 _rotation;
+		public event FieldEvent<Vector3> rotationChanged;
+		public InterpolateVector3 rotationInterpolation = new InterpolateVector3() { LerpT = 0f, Enabled = false };
+		public Vector3 rotation
 		{
 			get { return _rotation; }
 			set
@@ -106,7 +106,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			positionInterpolation.current = _position;
 			positionInterpolation.target = _position;
 			RunChange_position(timestep);
-			_rotation = UnityObjectMapper.Instance.Map<Quaternion>(payload);
+			_rotation = UnityObjectMapper.Instance.Map<Vector3>(payload);
 			rotationInterpolation.current = _rotation;
 			rotationInterpolation.target = _rotation;
 			RunChange_rotation(timestep);
@@ -154,12 +154,12 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				if (rotationInterpolation.Enabled)
 				{
-					rotationInterpolation.target = UnityObjectMapper.Instance.Map<Quaternion>(data);
+					rotationInterpolation.target = UnityObjectMapper.Instance.Map<Vector3>(data);
 					rotationInterpolation.Timestep = timestep;
 				}
 				else
 				{
-					_rotation = UnityObjectMapper.Instance.Map<Quaternion>(data);
+					_rotation = UnityObjectMapper.Instance.Map<Vector3>(data);
 					RunChange_rotation(timestep);
 				}
 			}
@@ -177,7 +177,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			}
 			if (rotationInterpolation.Enabled && !rotationInterpolation.current.UnityNear(rotationInterpolation.target, 0.0015f))
 			{
-				_rotation = (Quaternion)rotationInterpolation.Interpolate();
+				_rotation = (Vector3)rotationInterpolation.Interpolate();
 				//RunChange_rotation(rotationInterpolation.Timestep);
 			}
 		}
@@ -189,9 +189,9 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		}
 
-		public EnemyNetworkObject() : base() { Initialize(); }
-		public EnemyNetworkObject(NetWorker networker, INetworkBehavior networkBehavior = null, int createCode = 0, byte[] metadata = null) : base(networker, networkBehavior, createCode, metadata) { Initialize(); }
-		public EnemyNetworkObject(NetWorker networker, uint serverId, FrameStream frame) : base(networker, serverId, frame) { Initialize(); }
+		public HealthPotionNetworkObject() : base() { Initialize(); }
+		public HealthPotionNetworkObject(NetWorker networker, INetworkBehavior networkBehavior = null, int createCode = 0, byte[] metadata = null) : base(networker, networkBehavior, createCode, metadata) { Initialize(); }
+		public HealthPotionNetworkObject(NetWorker networker, uint serverId, FrameStream frame) : base(networker, serverId, frame) { Initialize(); }
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}
