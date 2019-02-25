@@ -11,6 +11,8 @@ public class ObjectiveObject : ObjectiveObjectBehavior
 
     private int health;
     public Slider HealthSlider;
+    private bool remove;
+    private float temp;
 
     // Use this for initialization
     void Awake()
@@ -23,12 +25,34 @@ public class ObjectiveObject : ObjectiveObjectBehavior
     // Update is called once per frame
     void Update()
     {
+
+        if (gameObject.transform.position.y >= 3)
+        {
+            gameObject.transform.position.Set(gameObject.transform.position.x, gameObject.transform.position.y - 9.8f, gameObject.transform.position.z);
+        }
+        else
+        {
+            gameObject.transform.position.Set(gameObject.transform.position.x, 3, gameObject.transform.position.z);
+        }
+
         HealthSlider.value = health;
+
+        if(remove)
+        {
+            temp -= Time.deltaTime;
+            gameObject.transform.position.Set(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z);
+            if (temp <= 0)
+            {
+                networkObject.SendRpc(RPC_SEND_REMOVE, Receivers.All);
+
+            }
+        }
+
     }
 
     public void SendRemove()
     {
-        networkObject.SendRpc(RPC_SEND_REMOVE, Receivers.All);
+        remove = true;
     }
 
 
