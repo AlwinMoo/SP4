@@ -26,7 +26,7 @@ public class CarSelection : MonoBehaviour {
                     {
                         Van.SetActive(false);
                     }
-                    Sedan.SetActive(true);
+    
                     break;
                 }
             case 1:

@@ -23,6 +23,7 @@ TagManager:
   - Player0
   - LobbySystem
   - Player4
+  - Objective
   layers:
   - Default
   - TransparentFX
