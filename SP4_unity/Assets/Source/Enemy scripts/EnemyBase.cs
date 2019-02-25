@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking.Unity;
 using BeardedManStudios.Forge.Networking;
@@ -43,7 +44,7 @@ public class EnemyBase : EnemyBehavior, Flammable
     {
         m_countDown = 0.0f;
         agent = this.GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player1");
+        target = GameObject.FindGameObjectWithTag("Player0");
     }
 
     public virtual void Start()
@@ -106,7 +107,7 @@ public class EnemyBase : EnemyBehavior, Flammable
 
     public virtual void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.GetComponent<VehicleBase>() != null)
         {
             damageTickCD += Time.deltaTime;
 
@@ -124,6 +125,11 @@ public class EnemyBase : EnemyBehavior, Flammable
                         break;
                 }
                 damageTickCD = 0.0f;
+
+                float floatHP = collision.gameObject.GetComponent<VehicleBase>().health / collision.gameObject.GetComponent<VehicleBase>().maxHealth;
+
+                if (collision.gameObject.GetComponentInChildren<Healthbar>() != null)
+                    collision.gameObject.GetComponentInChildren<Healthbar>().hpBar.fillAmount = floatHP;
             }
         }
     }
