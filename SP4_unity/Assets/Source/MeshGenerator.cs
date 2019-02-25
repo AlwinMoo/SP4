@@ -4,6 +4,7 @@ using UnityEngine;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Unity;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(MeshFilter))]
 public class MeshGenerator : NetworkMapGenerationBehavior
@@ -36,11 +37,9 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         UpdateMesh();
         GetComponent<MeshCollider>().sharedMesh = mesh;
 
-        //Vector3 newPos = new Vector3(4, -7.0469f, -4);
-        //transform.position = newPos;
-        //transform.localScale = new Vector3(4, 1, 4);
-
         CreateObstacles(rand);
+
+        GameObject.Find("NavMesh").GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     void CreateShape()

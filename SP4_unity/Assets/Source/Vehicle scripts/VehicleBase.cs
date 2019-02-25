@@ -18,6 +18,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     public float m2 { get; set; }
 
     public float health { get; set; } //arbitrary health unit
+    public float maxHealth { get; set; }
     public float mass { get; set; }
     public float armour { get; set; }
 
@@ -65,8 +66,9 @@ public class VehicleBase : PlayerVehicleBehavior {
     // Use this for initialization
     public virtual void Start()
     {
+        maxHealth = health;
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
-        HealthSlider.maxValue = health;
+        HealthSlider.maxValue = maxHealth;
         armour = 0;
 		if (networkObject.IsServer) {
 			// note: toowner
