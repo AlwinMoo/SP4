@@ -7,14 +7,10 @@ using BeardedManStudios.Forge.Networking.Generated;
 
 public class HealthPotion : HealthPotionBehavior {
     
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        gameObject.transform.RotateAround(gameObject.transform.position, Vector3.up, 45 * Time.deltaTime);
+        networkObject.rotation.Set(0, networkObject.rotation.y + 10, 0);
     }
 
 	void OnTriggerEnter(Collider other)
@@ -23,7 +19,6 @@ public class HealthPotion : HealthPotionBehavior {
         {
             if(other.CompareTag("Player" + i))
             {
-                Debug.Log("Player" + i);
                 PickUp(other);
             }
         }
@@ -35,7 +30,7 @@ public class HealthPotion : HealthPotionBehavior {
 
         Player.GetComponent<VehicleBase>().health += 30;
 
-        Debug.Log("Removed");
+
         // this only does for one of the players need to sync it online
         RemoveGameObject();
     }

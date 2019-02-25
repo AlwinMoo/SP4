@@ -49,7 +49,7 @@ public class QuestSystem : QuestSystemBehavior
                             if (!Done)
                             {
                                 networkObject.HoldOutTime = 10;
-                                gameObjectPosition = new Vector3(Random.Range(-30, 30), 30, Random.Range(-30, 30));
+                                gameObjectPosition = new Vector3(Random.Range(-30, 30), -3, Random.Range(-30, 30));
 
                                 var newGO = NetworkManager.Instance.InstantiateObjectiveObject(0, gameObjectPosition, transform.rotation, true);
 
