@@ -69,7 +69,8 @@ public class VehicleBase : PlayerVehicleBehavior {
         maxHealth = health;
         HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = maxHealth;
-        armour = 0;
+        armour = 1;
+
 		if (networkObject.IsServer) {
 			// note: toowner
 			this.gameObject.tag = "Player" + networkObject.Owner.NetworkId;
