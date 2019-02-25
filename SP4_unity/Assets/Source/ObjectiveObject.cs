@@ -20,6 +20,8 @@ public class ObjectiveObject : ObjectiveObjectBehavior
         health = 50;
         HealthSlider.maxValue = health;
         HealthSlider.value = health;
+        temp = 3;
+        remove = false;
     }
 
     // Update is called once per frame
@@ -28,7 +30,13 @@ public class ObjectiveObject : ObjectiveObjectBehavior
 
         if (gameObject.transform.position.y >= 3)
         {
-            gameObject.transform.position.Set(gameObject.transform.position.x, gameObject.transform.position.y - 9.8f, gameObject.transform.position.z);
+           // gameObject.transform.position.Set(gameObject.transform.position.x, 3, gameObject.transform.position.z);
+
+            float newTrf = gameObject.transform.position.y;
+            newTrf -= 9.81f;
+            gameObject.transform.position.Set(gameObject.transform.position.x, newTrf, gameObject.transform.position.z);
+
+            //Debug.Log(gameObject.transform.position);
         }
         else
         {
@@ -41,10 +49,10 @@ public class ObjectiveObject : ObjectiveObjectBehavior
         {
             temp -= Time.deltaTime;
             gameObject.transform.position.Set(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z);
+            Debug.Log(temp);
             if (temp <= 0)
             {
                 networkObject.SendRpc(RPC_SEND_REMOVE, Receivers.All);
-
             }
         }
 

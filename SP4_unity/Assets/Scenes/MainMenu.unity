@@ -5358,8 +5358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CARID: 0
-  Sedan: {fileID: 1765245786757498, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
-  Van: {fileID: 1765245786757498, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
+  Sedan: {fileID: 1284209154681884, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
+  Van: {fileID: 1962795683774018, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
 --- !u!1 &720324026
 GameObject:
   m_ObjectHideFlags: 0
