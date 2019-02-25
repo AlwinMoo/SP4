@@ -544,7 +544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &197035841
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,7 +1925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &625081360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13807,6 +13807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c173f2ce29bc43b138f08b57211f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTakenTickRate: 0.3
   fire: {fileID: 1601105410}
   glow: {fileID: 841589143}
   maxHealth: 100
@@ -13822,6 +13823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cda4ff7d82d364e904d916c2b13e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTakenTickRate: 0.3
   fire: {fileID: 1601105410}
   glow: {fileID: 841589143}
   maxHealth: 100
@@ -29375,7 +29377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddaa4d7ea612d44c9c4d763f4373dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldOutObject: {fileID: 2034003427}
 --- !u!4 &1998932748
 Transform:
   m_ObjectHideFlags: 0
@@ -29653,7 +29654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2038739375
 SphereCollider:
   m_ObjectHideFlags: 0

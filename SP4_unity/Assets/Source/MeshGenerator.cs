@@ -35,8 +35,12 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         CreateShape();
         UpdateMesh();
         GetComponent<MeshCollider>().sharedMesh = mesh;
+
+        //Vector3 newPos = new Vector3(4, -7.0469f, -4);
+        //transform.position = newPos;
+        //transform.localScale = new Vector3(4, 1, 4);
+
         CreateObstacles(rand);
-        
     }
 
     void CreateShape()
@@ -143,7 +147,8 @@ public class MeshGenerator : NetworkMapGenerationBehavior
 
         for (int i = 0; i < numOfObstacles; ++i)
         {
-            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.max.y /*+ 1.0f*/, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
+            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.min.y /*+ 1.0f*/, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
+            randPos.y = this.transform.position.y;
 
             //Debug.Log("randomPos: " + randPos);
 
@@ -157,6 +162,14 @@ public class MeshGenerator : NetworkMapGenerationBehavior
                     break;
                 case 1:
                     obstacle = Instantiate(Obstacles[1]);
+                    obstacle.transform.position = randPos;
+                    break;
+                case 2:
+                    obstacle = Instantiate(Obstacles[2]);
+                    obstacle.transform.position = randPos;
+                    break;
+                default:
+                    obstacle = Instantiate(Obstacles[0]);
                     obstacle.transform.position = randPos;
                     break;
             }
