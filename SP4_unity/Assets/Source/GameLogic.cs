@@ -35,7 +35,7 @@ public class GameLogic : GameLogicBehavior
 	// Update is called once per frame
 	void Update ()
     {
-        networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+        //networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
 	}
 
     public override void UpdatePlayerHealth(RpcArgs args)
