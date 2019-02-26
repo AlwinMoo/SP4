@@ -8,6 +8,7 @@ public class CarSelection : MonoBehaviour {
 
     public GameObject Sedan;
     public GameObject Van;
+    public GameObject Monstertruck;
 
 
     public void SelectID()
@@ -23,19 +24,28 @@ public class CarSelection : MonoBehaviour {
             case 0:
                 {
                     if(Van != null)
-                    {
                         Van.SetActive(false);
-                    }
-    
+                    if (Monstertruck != null)
+                        Monstertruck.SetActive(false);
+                    Sedan.SetActive(true);
                     break;
                 }
             case 1:
                 {
                     if (Sedan != null)
-                    {
                         Sedan.SetActive(false);
-                    }
+                    if (Monstertruck != null)
+                        Monstertruck.SetActive(false);
                     Van.SetActive(true);
+                    break;
+                }
+            case 2:
+                {
+                    if(Sedan != null)
+                        Sedan.SetActive(false);
+                    if (Van != null)
+                        Van.SetActive(false);
+                    Monstertruck.SetActive(true);
                     break;
                 }
         }

@@ -132,7 +132,8 @@ public class QuestSystem : QuestSystemBehavior
                     break;
                 case 2:
                     {
-
+                        Title = "Kill Enemies";
+                        
                     }
                     break;
             }
