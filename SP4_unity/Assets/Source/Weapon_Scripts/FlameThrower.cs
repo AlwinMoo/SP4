@@ -25,6 +25,7 @@ public class FlameThrower : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        FireEffects(false);
         EventManager.StartListening("FireShoot", Listener, transform.parent.gameObject.tag);
 	}
 
