@@ -22,23 +22,30 @@ public class ObjectiveObject : ObjectiveObjectBehavior
         HealthSlider.value = health;
         temp = 3;
         remove = false;
+        this.gameObject.transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        HealthSlider.value = health;
+        this.gameObject.transform.localScale = Vector3.Lerp(this.gameObject.transform.localScale, new Vector3(4, 4, 4), Time.deltaTime * 1);
 
-        if(remove)
-        {
-            temp -= Time.deltaTime;
-            gameObject.transform.position.Set(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z);
-            Debug.Log(temp);
-            if (temp <= 0)
-            {
-                networkObject.SendRpc(RPC_SEND_REMOVE, Receivers.All);
-            }
+    
+         HealthSlider.value = health;
+
+         if (remove)
+         {
+             temp -= Time.deltaTime;
+             this.gameObject.transform.localScale = Vector3.Lerp(this.gameObject.transform.localScale, Vector3.zero, Time.deltaTime * 1);
+             if (temp <= 0 && networkObject.IsServer)
+             {
+                 networkObject.SendRpc(RPC_SEND_REMOVE, Receivers.All);
+             }
         }
+
+        
+
+
 
     }
 
