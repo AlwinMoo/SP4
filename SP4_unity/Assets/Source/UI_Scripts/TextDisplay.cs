@@ -33,7 +33,7 @@ public class TextDisplay : MonoBehaviour {
         Health.text = "Health: " + CarBase.GetComponent<VehicleBase>().HealthSlider.value.ToString();
         Speed.text = "Speed: " + CarBase.GetComponent<Rigidbody>().velocity.magnitude.ToString("0");
         Armour.text = "Armour: " + CarBase.GetComponent<VehicleBase>().armour.ToString();
-        EnemiesLeft.text = "Enemies Remaining: " + enemy_spawner.enemyList.Count.ToString();
+        EnemiesLeft.text = "Enemies Remaining: " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
         NextWave.text = "Time Till Next Wave: " + (TimeRemainingTillNextWave - enemy_spawner.spawnTimer).ToString("0");
         ObjectiveTitle.text = QuestSystem.Title;
         ObjectiveDescription.text = QuestSystem.Description;

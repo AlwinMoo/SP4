@@ -27,8 +27,9 @@ public class enemy_spawner : EnemySpawnerBehavior {
 	// Update is called once per frame
 	void Update ()
     {
-        if (enemyList.Count == 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
+            enemyList.Clear();
             //TO DO: SHOW TIME LEFT TILL NEXT WAVE
             spawnTimer += Time.deltaTime;
         }
