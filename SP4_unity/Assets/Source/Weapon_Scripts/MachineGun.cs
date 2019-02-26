@@ -48,43 +48,14 @@ public class MachineGun : MonoBehaviour {
 			return;
 		m_countDown += fireRate;
 
-        if (networked)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(networkDir), 1);
-            objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(VehicleBase.parentDir), Time.deltaTime * 15);
+        objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
 
-            // Play thegunfire light
-            flash.GetComponent<HMG_Flash>().StartLight();
-            GunShotSource.volume = SFX.SFXvolchanger.audioSrc.volume;
-            GunShotSource.Play();
-        }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, this.transform.position);
-        float distToPlane;
-
-        if (plane.Raycast(ray, out distToPlane))
-        {
-            Vector3 hitPos = ray.GetPoint(distToPlane);
-
-            Vector3 dir = hitPos - transform.position;
-            dir.y = 0;
-
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), 1);
-            objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
-
-            // Play thegunfire light
-            flash.GetComponent<HMG_Flash>().StartLight();
-            GunShotSource.volume = SFX.SFXvolchanger.audioSrc.volume;
-            GunShotSource.Play();
-        }
+        // Play thegunfire light
+        flash.GetComponent<HMG_Flash>().StartLight();
+        GunShotSource.volume = SFX.SFXvolchanger.audioSrc.volume;
+        GunShotSource.Play();
 
         EventManager.StopListening("MGShoot", Listener, transform.parent.gameObject.tag);
-    }
-
-    public void Rotation(Vector3 rotation)
-    {
-        networkDir = rotation;
-        networked = true;
     }
 }

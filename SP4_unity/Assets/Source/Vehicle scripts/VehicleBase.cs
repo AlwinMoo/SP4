@@ -63,6 +63,8 @@ public class VehicleBase : PlayerVehicleBehavior {
 
     public Slider HealthSlider;
 
+    public static Vector3 parentDir;
+
     // Use this for initialization
     public virtual void Start()
     {
@@ -100,6 +102,8 @@ public class VehicleBase : PlayerVehicleBehavior {
             transform.position = networkObject.position;
             // assign the gameobject's rotation to the rotation assigned on the server
             transform.rotation = networkObject.rotation;
+
+            parentDir = networkObject.WeaponRotation;
 
             return;
         }
@@ -153,6 +157,7 @@ public class VehicleBase : PlayerVehicleBehavior {
                 dir.y = 0;
 
                 networkObject.WeaponRotation = dir;
+                parentDir = networkObject.WeaponRotation;
 
                 networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID);
             }
@@ -302,7 +307,6 @@ public class VehicleBase : PlayerVehicleBehavior {
             case VehicleType.VEH_SEDAN:
                 {
                     EventManager.TriggerEvent("MGShoot", this.gameObject.tag);
-                    this.gameObject.GetComponent<MachineGun>().Rotation(networkObject.WeaponRotation);
                     break;
                 }
             case VehicleType.VEH_VAN:
