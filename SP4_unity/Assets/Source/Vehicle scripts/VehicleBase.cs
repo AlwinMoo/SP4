@@ -67,7 +67,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     public virtual void Start()
     {
         maxHealth = health;
-        HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+            HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         HealthSlider.maxValue = maxHealth;
         armour = 1;
 

@@ -27,22 +27,6 @@ public class ObjectiveObject : ObjectiveObjectBehavior
     // Update is called once per frame
     void Update()
     {
-
-        if (gameObject.transform.position.y >= 3)
-        {
-           // gameObject.transform.position.Set(gameObject.transform.position.x, 3, gameObject.transform.position.z);
-
-            float newTrf = gameObject.transform.position.y;
-            newTrf -= 9.81f;
-            gameObject.transform.position.Set(gameObject.transform.position.x, newTrf, gameObject.transform.position.z);
-
-            //Debug.Log(gameObject.transform.position);
-        }
-        else
-        {
-            gameObject.transform.position.Set(gameObject.transform.position.x, 3, gameObject.transform.position.z);
-        }
-
         HealthSlider.value = health;
 
         if(remove)

@@ -1172,6 +1172,7 @@ MonoBehaviour:
   fireRate: 0.1
   flash: {fileID: 1369939554613148}
   GunShot: {fileID: 8300000, guid: bc11a1feb1ff6ae4d89b89bc5d697e93, type: 3}
+  networkDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114695848927708336
 MonoBehaviour:
   m_ObjectHideFlags: 1

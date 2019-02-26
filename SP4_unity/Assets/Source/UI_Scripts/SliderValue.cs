@@ -34,6 +34,14 @@ public class SliderValue : MonoBehaviour {
                     CarName.text = "Van";
                     break;
                 }
+            case 2:
+                {
+                    HealthSlider.value = 200;
+                    SpeedSlider.value = 5;
+                    WeightSlider.value = 1250;
+                    CarName.text = "MonsterTruck";
+                    break;
+                }
 
         }
 	}
