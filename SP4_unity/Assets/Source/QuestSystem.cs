@@ -12,8 +12,6 @@ public class QuestSystem : QuestSystemBehavior
     private Vector3 gameObjectPosition;
     GameObject theObj;
 
-    GameObject Reward;
-
     public static string Title;
     public static string Description;
     public static int QuestID;
@@ -68,7 +66,7 @@ public class QuestSystem : QuestSystemBehavior
 
                                 for(int i = 0; i < Random.Range(1,5); ++i)
                                 {
-                                    var newGO = NetworkManager.Instance.InstantiateObjectiveObject(1, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
+                                    var newGO = NetworkManager.Instance.InstantiateHealthPotion(0, new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 101)), transform.rotation, true);
                                 }
                             }
                             else if (theObj.GetComponent<ObjectiveObject>().HealthSlider.value <= 0)
@@ -103,7 +101,7 @@ public class QuestSystem : QuestSystemBehavior
 
                                 for (int i = 0; i < Random.Range(1, 5); ++i)
                                 {
-                                    var newGO = NetworkManager.Instance.InstantiateObjectiveObject(1, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
+                                    var newGO = NetworkManager.Instance.InstantiateHealthPotion (0, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
                                 }
                             }
                             else if (networkObject.HoldOutTime <= 0)
