@@ -157,7 +157,7 @@ public class QuestSystem : QuestSystemBehavior
                 case 2:
                     {
                         Title = "Cleaing the Area";
-                        Description = "Kill " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString() + "Enemies in: " + networkObject.HoldOutTime.ToString("0");
+                        Description = "Kill: " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString() + " Enemies in: " + networkObject.HoldOutTime.ToString("0");
                     }
                     break;
             }
