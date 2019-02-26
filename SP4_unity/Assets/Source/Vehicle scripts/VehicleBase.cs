@@ -248,6 +248,12 @@ public class VehicleBase : PlayerVehicleBehavior {
         UpdateWheelPose(rR_Wheel, rR_T);
         UpdateWheelPose(rL_Wheel, rL_T);
     }
+    
+    public virtual void InitWheelScale( Transform _transform, Vector3 _wheelScale)
+    {
+        _transform.localScale = _wheelScale;
+    }
+
     public virtual void UpdateWheelPose(WheelCollider _collider, Transform _transform)
     {
         Vector3 _pos = _transform.position;
@@ -256,7 +262,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         _collider.GetWorldPose(out _pos, out _quat);
         _transform.position = _pos;
         _transform.rotation = _quat;
-        _transform.localScale = new Vector3(0.3f, 0.6f, 0.6f);
+        //_transform.localScale = new Vector3(0.3f, 0.6f, 0.6f);
     }
 
     public virtual void FixedUpdate()

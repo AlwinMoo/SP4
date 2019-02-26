@@ -31,6 +31,7 @@ public class Van : VehicleBase
         driveTrain = VehicleBase.DriveTrain.DRIVE_AWD;
         vehicleType = VehicleType.VEH_VAN;
 
+        InitWheelScale(this.gameObject.GetComponent<Transform>(), new Vector3(1, 1, 1));
         base.Start();
     }
 
