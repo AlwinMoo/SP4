@@ -34,6 +34,7 @@ public class EnemyBase : EnemyBehavior, Flammable
     {
         ENEMY_NORMAL,
         ENEMY_TANK,
+		ENEMY_SPIDER
     } 
     public enemytype enemyType{get; set;}
 
