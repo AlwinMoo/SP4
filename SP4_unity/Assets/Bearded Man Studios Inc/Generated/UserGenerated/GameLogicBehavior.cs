@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"string\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"_playerList\"]]")]
+	[GeneratedRPC("{\"types\":[[\"float\", \"string\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"_hp\", \"_senderTag\"]]")]
 	public abstract partial class GameLogicBehavior : NetworkBehavior
 	{
-		public const byte RPC_SEND_PLAYER_TAG = 0 + 5;
+		public const byte RPC_UPDATE_PLAYER_HEALTH = 0 + 5;
 		
 		public GameLogicNetworkObject networkObject = null;
 
@@ -22,7 +22,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("SendPlayerTag", SendPlayerTag, typeof(string));
+			networkObject.RegisterRpc("UpdatePlayerHealth", UpdatePlayerHealth, typeof(float), typeof(string));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -101,9 +101,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
-		/// string _playerList
+		/// float _hp
+		/// string _senderTag
 		/// </summary>
-		public abstract void SendPlayerTag(RpcArgs args);
+		public abstract void UpdatePlayerHealth(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

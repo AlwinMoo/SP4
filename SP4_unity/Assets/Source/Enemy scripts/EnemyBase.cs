@@ -120,10 +120,8 @@ public class EnemyBase : EnemyBehavior, Flammable
                 }
                 damageTickCD = 0.0f;
 
-                float floatHP = collision.gameObject.GetComponent<VehicleBase>().health / collision.gameObject.GetComponent<VehicleBase>().maxHealth;
+                collision.gameObject.GetComponentInChildren<Healthbar>().hpBar.fillAmount = collision.gameObject.GetComponent<VehicleBase>().health / collision.gameObject.GetComponent<VehicleBase>().maxHealth;
 
-                if (collision.gameObject.GetComponentInChildren<Healthbar>() != null)
-                    collision.gameObject.GetComponentInChildren<Healthbar>().hpBar.fillAmount = floatHP;
             }
         }
     }

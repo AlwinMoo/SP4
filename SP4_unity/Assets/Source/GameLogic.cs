@@ -9,6 +9,8 @@ public class GameLogic : GameLogicBehavior
 {
     public static Transform serverTransform;
 
+    GameObject thePlayerInfo;
+
     //List<GameObject> PlayerCarList;
 
     // Use this for initialization
@@ -27,20 +29,20 @@ public class GameLogic : GameLogicBehavior
         //newCar.GetComponent<FogOfWarPlayer>().Number = PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID;
 
         var plane = NetworkManager.Instance.InstantiateNetworkMapGeneration(0);
+        thePlayerInfo = newCar.gameObject;
     }
 
 	// Update is called once per frame
 	void Update ()
     {
+        networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
 	}
 
-    public override void SendPlayerTag(RpcArgs args)
+    public override void UpdatePlayerHealth(RpcArgs args)
     {
-        //string SetName = args.GetNext<string>();
+        float newHP = args.GetNext<float>();
+        string playerTag = args.GetNext<string>();
 
-        //if (GameObject.FindGameObjectWithTag(SetName) != null)
-        //    return;
-
-        //GameObject.FindGameObjectWithTag("Player").gameObject.tag = SetName;
+        GameObject.FindGameObjectWithTag(playerTag).GetComponent<VehicleBase>().health = newHP;
     }
 }
