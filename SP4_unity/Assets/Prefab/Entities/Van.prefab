@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224072323186426522}
   - component: {fileID: 222097206599706102}
   - component: {fileID: 114173256225380956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4427096724823562}
   - component: {fileID: 20403500499670378}
   - component: {fileID: 81668073513837684}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 33627017035096224}
   - component: {fileID: 23740831067914370}
   - component: {fileID: 65817954690216084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4516576721811588}
   - component: {fileID: 33919921245496954}
   - component: {fileID: 23786392992059690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Front_R_Wheel
   m_TagString: FR_Transform
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4193539187050110}
   - component: {fileID: 146255960361898120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rear_L_WheelC
   m_TagString: RL_Collider
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 33316044006963178}
   - component: {fileID: 23577756724115022}
   - component: {fileID: 65464940788170296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 4252840186138066}
   - component: {fileID: 33133944250332528}
   - component: {fileID: 23263171879103088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rear_R_Wheel
   m_TagString: RR_Transform
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 224765291591472978}
   - component: {fileID: 222819249101378782}
   - component: {fileID: 114375435796032844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4971062489570262}
   - component: {fileID: 146087716804033880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rear_R_WheelC
   m_TagString: RR_Collider
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4650813270332286}
   - component: {fileID: 33797966334007194}
   - component: {fileID: 23790226432269654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rear_L_Wheel
   m_TagString: RL_Transform
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4027282563861042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,8 +205,24 @@ GameObject:
   m_Component:
   - component: {fileID: 4101587920246378}
   - component: {fileID: 114694304433130798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlameThrower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1432616428565924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4767384996812080}
+  - component: {fileID: 119572905484005408}
+  m_Layer: 0
+  m_Name: BlobLightProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +239,7 @@ GameObject:
   - component: {fileID: 198644462582813878}
   - component: {fileID: 114405275756728252}
   - component: {fileID: 199051599985597136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PS_Fire_ADD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +258,7 @@ GameObject:
   - component: {fileID: 114748876114561262}
   - component: {fileID: 114019370242280716}
   - component: {fileID: 114222898721815226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +275,7 @@ GameObject:
   - component: {fileID: 4227261740240990}
   - component: {fileID: 198342426894810442}
   - component: {fileID: 199920120546152688}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PS_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +292,7 @@ GameObject:
   - component: {fileID: 4643201747678468}
   - component: {fileID: 33096647773871436}
   - component: {fileID: 23935979009271304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Front_L_Wheel
   m_TagString: FL_Transform
   m_Icon: {fileID: 0}
@@ -293,7 +309,7 @@ GameObject:
   - component: {fileID: 4718070536551050}
   - component: {fileID: 198336238735561334}
   - component: {fileID: 199049562078864754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PS_Fire_ALPHA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4181506895852104}
   - component: {fileID: 146839575025148006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Front_R_WheelC
   m_TagString: FR_Collider
   m_Icon: {fileID: 0}
@@ -325,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4114026295795426}
   - component: {fileID: 108726222243471896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866287829979390}
   - component: {fileID: 146836600467717512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Front_L_WheelC
   m_TagString: FL_Collider
   m_Icon: {fileID: 0}
@@ -357,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745398853005948}
   - component: {fileID: 108768662706703276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +395,7 @@ GameObject:
   - component: {fileID: 114385363599715146}
   - component: {fileID: 114623042329243120}
   - component: {fileID: 65466319933975144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Van
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -397,6 +413,7 @@ Transform:
   m_LocalPosition: {x: 67.98717, y: 46.643513, z: -114.04701}
   m_LocalScale: {x: 2.4098, y: 1, z: 4.8927}
   m_Children:
+  - {fileID: 4767384996812080}
   - {fileID: 4181506895852104}
   - {fileID: 4866287829979390}
   - {fileID: 4193539187050110}
@@ -442,7 +459,7 @@ Transform:
   - {fileID: 4500965974314916}
   - {fileID: 4027282563861042}
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4114026295795426
 Transform:
@@ -455,7 +472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4131422459267808
 Transform:
@@ -470,7 +487,7 @@ Transform:
   m_Children:
   - {fileID: 224730346047402728}
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4181506895852104
 Transform:
@@ -483,7 +500,7 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 1, z: 0.20438612}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4193539187050110
 Transform:
@@ -496,7 +513,7 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 1, z: 0.20438612}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4227261740240990
 Transform:
@@ -522,7 +539,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4427096724823562
 Transform:
@@ -535,7 +552,7 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 0.5824799, z: 0.6219063}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 26.031002, y: 180.00002, z: 0}
 --- !u!4 &4500965974314916
 Transform:
@@ -561,7 +578,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4643201747678468
 Transform:
@@ -574,7 +591,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4650813270332286
 Transform:
@@ -587,7 +604,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4664765947008162
 Transform:
@@ -626,8 +643,21 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 1, z: 0.20438612}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &4767384996812080
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432616428565924}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4025744649262998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4866287829979390
 Transform:
   m_ObjectHideFlags: 1
@@ -639,7 +669,7 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 1, z: 0.20438612}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4971062489570262
 Transform:
@@ -652,7 +682,7 @@ Transform:
   m_LocalScale: {x: 0.4149722, y: 1, z: 0.20438612}
   m_Children: []
   m_Father: {fileID: 4025744649262998}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20403500499670378
 Camera:
@@ -1288,6 +1318,24 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!119 &119572905484005408
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432616428565924}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.1
+  m_FarClipPlane: 20
+  m_FieldOfView: 60
+  m_AspectRatio: 1
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: c8c80c5b03f5c7e40b07eb2170e667e5, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 823
 --- !u!146 &146087716804033880
 WheelCollider:
   m_ObjectHideFlags: 1
