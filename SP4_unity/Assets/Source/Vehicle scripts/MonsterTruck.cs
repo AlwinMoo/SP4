@@ -7,20 +7,24 @@ public class MonsterTruck : VehicleBase
 {
     public override void Start()
     {
-        health = 350;
-        this.gameObject.GetComponent<Rigidbody>().mass = 2000;
+        health = 200;
+        this.gameObject.GetComponent<Rigidbody>().mass = 1250;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 
         //transform.Find("RocketLauncher").gameObject.SetActive(true);
-
+        
         motorForce = 800;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
 
         fR_Wheel = GameObject.FindWithTag("FR_Collider").GetComponent<WheelCollider>();
+        //InitWheelScale(fR_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         fL_Wheel = GameObject.FindWithTag("FL_Collider").GetComponent<WheelCollider>();
+        //InitWheelScale(fL_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         rR_Wheel = GameObject.FindWithTag("RR_Collider").GetComponent<WheelCollider>();
+        //InitWheelScale(rR_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         rL_Wheel = GameObject.FindWithTag("RL_Collider").GetComponent<WheelCollider>();
+        //InitWheelScale(rL_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
 
         fR_T = GameObject.FindWithTag("FR_Transform").GetComponent<Transform>();
         fL_T = GameObject.FindWithTag("FL_Transform").GetComponent<Transform>();
@@ -30,6 +34,7 @@ public class MonsterTruck : VehicleBase
         driveTrain = DriveTrain.DRIVE_RWD;
         vehicleType = VehicleType.VEH_MONSTER_TRUCK;
 
+        
         base.Start();
     }
 
