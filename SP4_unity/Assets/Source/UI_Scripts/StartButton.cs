@@ -9,7 +9,7 @@ public class StartButton : MonoBehaviour {
     public GameObject startButton;
     public GameObject readyButton;
 
-    public Toggle[] Togglers = new Toggle[4];
+    public Toggle[] Togglers = new Toggle[3];
     public GameObject LobbysystemPrefab;
     private LobbyScript LobScript;
 
@@ -29,7 +29,7 @@ public class StartButton : MonoBehaviour {
         LobScript = LobbysystemPrefab.GetComponent<LobbyScript>();
 
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 2; ++i)
         {
             if (LobbyScript.players[i] == 2)
             {

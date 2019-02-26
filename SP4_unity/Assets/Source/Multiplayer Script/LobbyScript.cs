@@ -9,7 +9,7 @@ using BeardedManStudios.Forge.Networking.Unity;
 
 public class LobbyScript : LobbyBehavior
 {
-    public static short[] players = new short[4];
+    public static short[] players = new short[3];
     public static bool ready;
 
     // Use this for initialization
@@ -43,10 +43,9 @@ public class LobbyScript : LobbyBehavior
         //Debug.Log("Player 2 " + (networkObject.player2));
         //Debug.Log("Player 3 " + (networkObject.player3));
         //Debug.Log("Player 4 " + (networkObject.player4));
-        players[0] = networkObject.player1;
-        players[1] = networkObject.player2;
-        players[2] = networkObject.player3;
-        players[3] = networkObject.player4;
+        players[0] = networkObject.player2;
+        players[1] = networkObject.player3;
+        players[2] = networkObject.player4;
         CheckIfAllReady();
     }
     // Toggles the ready of the current player
