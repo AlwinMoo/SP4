@@ -60,12 +60,6 @@ public class EnemyBase : EnemyBehavior, Flammable
         //TODO: switch to pooler?
         if (health <= 0)
         {
-            if (QuestSystem.QuestID == 2)
-            {
-                --QuestSystem.KillsLeft;
-            }
-
-
 			// TODO: decide on death of enemy
             //networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
 			// Attempted method: use ondeath local function
