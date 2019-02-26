@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ReadyToggler : MonoBehaviour
 {
 
-    public Toggle[] Togglers = new Toggle[4];
+    public Toggle[] Togglers = new Toggle[3];
     public Toggle ReadyToggle;
     public GameObject LobbysystemPrefab;
     private LobbyScript LobScript;
