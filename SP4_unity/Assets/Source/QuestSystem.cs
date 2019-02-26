@@ -12,13 +12,14 @@ public class QuestSystem : QuestSystemBehavior
     private Vector3 gameObjectPosition;
     GameObject theObj;
 
+    GameObject Reward;
+
     public static string Title;
     public static string Description;
     public static int QuestID;
     private float temp;
 
     private float HoldOutTime;
-    public static float KillsLeft;
     private float randomTime;
     private bool Done;
 
@@ -30,7 +31,6 @@ public class QuestSystem : QuestSystemBehavior
         if (networkObject.IsServer)
         {
             randomTime = Random.Range(5, 10);
-            KillsLeft = 3;
         }
     }
 
@@ -65,6 +65,11 @@ public class QuestSystem : QuestSystemBehavior
                                 // Destroy the objective object
                                 if(theObj != null)
                                     theObj.GetComponent<ObjectiveObject>().SendRemove();
+
+                                for(int i = 0; i < Random.Range(1,5); ++i)
+                                {
+                                    var newGO = NetworkManager.Instance.InstantiateObjectiveObject(1, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
+                                }
                             }
                             else if (theObj.GetComponent<ObjectiveObject>().HealthSlider.value <= 0)
                             {
@@ -82,9 +87,31 @@ public class QuestSystem : QuestSystemBehavior
                     break;
                 case 2:
                     {
-                        if (networkObject.IsActive)
+                        if (networkObject.IsServer)
                         {
+                            // server side
+                            // This is the Init of the quests
+                            if (!Done)
+                            {
+                                networkObject.HoldOutTime = 20;
+                                Done = true;
+                            }
 
+                            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                            {
+                                networkObject.IsPassed = true;
+
+                                for (int i = 0; i < Random.Range(1, 5); ++i)
+                                {
+                                    var newGO = NetworkManager.Instance.InstantiateObjectiveObject(1, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
+                                }
+                            }
+                            else if (networkObject.HoldOutTime <= 0)
+                            {
+                                networkObject.IsFailed = true;
+                            }
+
+                            networkObject.HoldOutTime -= Time.deltaTime;
                         }
                     }
                     break;
@@ -96,7 +123,7 @@ public class QuestSystem : QuestSystemBehavior
             if (temp >= randomTime)
             {
                 temp = 0;
-                QuestID = Random.Range(1, 2);
+                QuestID = Random.Range(1, 3);
                 networkObject.QuestID = QuestID;
                 networkObject.IsActive = true;
                 networkObject.IsFailed = false;
@@ -111,14 +138,13 @@ public class QuestSystem : QuestSystemBehavior
         {
             Title = "Success!!";
             Description = null;
-            networkObject.IsPassed = false;
-
+            networkObject.IsActive = false;
         }
         else if (networkObject.IsFailed)
         {
             Title = "Objective Failed";
             Description = null;
-            networkObject.IsFailed = false;
+            networkObject.IsActive = false;
         }
         else
         {
@@ -132,8 +158,8 @@ public class QuestSystem : QuestSystemBehavior
                     break;
                 case 2:
                     {
-                        Title = "Kill Enemies";
-                        
+                        Title = "Cleaing the Area";
+                        Description = "Kill " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString() + "Enemies in: " + networkObject.HoldOutTime.ToString("0");
                     }
                     break;
             }
