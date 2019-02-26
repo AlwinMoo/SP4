@@ -17,7 +17,6 @@ public class MachineGun : MonoBehaviour {
     UnityAction Listener;
 
     public Vector3 networkDir;
-    bool networked;
 
     private float m_countDown = 0.0f;
 
@@ -28,8 +27,6 @@ public class MachineGun : MonoBehaviour {
         GunShotSource.clip = GunShot;
 
         Listener = new UnityAction(triggerShot);
-
-        networked = false;
     }
 
     void Update()

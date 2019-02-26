@@ -27,60 +27,20 @@ public class FlameThrower : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
-            //if (networkObject == null)
-            //    return;
-            //if (!networkObject.IsServer)
-            //{
-            //    transform.rotation = networkObject.rotation;
-            //    return;
-            //}
-
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //Plane plane = new Plane(Vector3.up, this.transform.position);
-            //float distToPlane;
-
-            //if (plane.Raycast(ray, out distToPlane))
-            //{
-            //    Vector3 hitPos = ray.GetPoint(distToPlane);
-
-            //    Vector3 dir = hitPos - transform.position;
-            //    dir.y = 0;
-            //    transform.rotation = Quaternion.LookRotation(dir);
-
-            //    //networkObject.rotation = transform.rotation;
-            //    //networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, true);
-            //}
-            EventManager.StartListening("FireShoot", Listener, this.gameObject.tag);
+            EventManager.StartListening("FireShoot", Listener, transform.parent.gameObject.tag);
         }
         else
         {
-            //if (networkObject != null)
-            //    networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, false);
-            EventManager.StopListening("FireShoot", Listener, this.gameObject.tag);
+            EventManager.StopListening("FireShoot", Listener, transform.parent.gameObject.tag);
             FireEffects(false);
         }
 	}
 
     public void TriggerFire()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, this.transform.position);
-        float distToPlane;
-
-        if (plane.Raycast(ray, out distToPlane))
-        {
-            Vector3 hitPos = ray.GetPoint(distToPlane);
-
-            Vector3 dir = hitPos - transform.position;
-            dir.y = 0;
-            transform.rotation = Quaternion.LookRotation(dir);
-
-            //networkObject.rotation = transform.rotation;
-            //networkObject.SendRpc(RPC_TRIGGER_FIRE, Receivers.All, true);
-            FireEffects(true);
-        }
-
-        EventManager.StopListening("FireShoot", Listener, this.gameObject.tag);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(VehicleBase.parentDir), Time.deltaTime * 2);
+        FireEffects(true);
+        EventManager.StopListening("FireShoot", Listener, transform.parent.gameObject.tag);
     }
 
     public void FireEffects(bool _fire)

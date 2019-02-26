@@ -69,7 +69,8 @@ public class VehicleBase : PlayerVehicleBehavior {
     public virtual void Start()
     {
         maxHealth = health;
-            HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+        HealthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+
         HealthSlider.maxValue = maxHealth;
         armour = 1;
 
@@ -297,11 +298,11 @@ public class VehicleBase : PlayerVehicleBehavior {
     {
         int ShooterID = args.GetNext<int>();
 
-		if (this.gameObject.tag != "Player" + ShooterID) {
-			Debug.Log ("Player" + ShooterID + " is not " + gameObject.tag + ". Shot failed");
+		if (this.gameObject.tag != "Player" + ShooterID)
+        {
 			return;
 		}
-		Debug.Log ("Player" + ShooterID + " is " + gameObject.tag + ". Shot pass");
+
         switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
         {
             case VehicleType.VEH_SEDAN:
@@ -337,20 +338,5 @@ public class VehicleBase : PlayerVehicleBehavior {
 
             this.gameObject.tag = SetName;
         }
-        //if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
-       //{
-       //     for (int i = 0; i < PlayerManager.playerManager.m_playerCount; ++i)
-        //    {
-       //         if (GameObject.FindGameObjectWithTag("Player" + i))
-       //             continue;
-		//
-       //         
-       //         var newCar = GameObject.FindGameObjectWithTag("Player");
-       //         newCar.tag = "Player" + i;
-                // Cant do this :/ the tag changes or sth 
-                //newCar.GetComponent<FogOfWarPlayer>().Number = i;
-
-       //     }
-       // }
     }
 }
