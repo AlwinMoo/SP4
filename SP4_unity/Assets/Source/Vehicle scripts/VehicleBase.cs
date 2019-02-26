@@ -40,10 +40,9 @@ public class VehicleBase : PlayerVehicleBehavior {
     public Transform rL_T { get; set; }
 
     GameObject aimingRay;
-
     static Material lineMaterial;
-
     float maxSteerAngle = 30;
+    bool cancelShoot;
 
     public enum DriveTrain
     {
@@ -160,11 +159,15 @@ public class VehicleBase : PlayerVehicleBehavior {
                 networkObject.WeaponRotation = dir;
                 parentDir = networkObject.WeaponRotation;
 
-                networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID);
+                cancelShoot = true;
+                networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID, true);
             }
         }
-        if (Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0) && cancelShoot != false)
         {
+            cancelShoot = false;
+            networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID, false);
             GameObject.Destroy(aimingRay);
         }
 
@@ -297,8 +300,9 @@ public class VehicleBase : PlayerVehicleBehavior {
     public override void triggerShoot(RpcArgs args)
     {
         int ShooterID = args.GetNext<int>();
+        bool ShootingStatus = args.GetNext<bool>();
 
-		if (this.gameObject.tag != "Player" + ShooterID)
+        if (this.gameObject.tag != "Player" + ShooterID)
         {
 			return;
 		}
@@ -312,6 +316,12 @@ public class VehicleBase : PlayerVehicleBehavior {
                 }
             case VehicleType.VEH_VAN:
                 {
+                    if (!ShootingStatus)
+                    {
+                        EventManager.TriggerEvent("CancelFire", this.gameObject.tag);
+                        break;
+                    }
+
                     EventManager.TriggerEvent("FireShoot", this.gameObject.tag);
                     break;
                 }

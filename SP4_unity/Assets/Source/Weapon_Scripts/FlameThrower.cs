@@ -13,27 +13,38 @@ public class FlameThrower : MonoBehaviour {
 	public ParticleSystem glow;
 
     UnityAction Listener;
+    UnityAction CancelListener;
 
-	private bool m_firing;
+    private bool m_firing;
 	// Use this for initialization
 	void Start ()
     {
-		m_firing = true;
+		m_firing = false;
         Listener = new UnityAction(TriggerFire);
+        CancelListener = new UnityAction(ResetFire);
     }
 		
 	// Update is called once per frame
 	void Update ()
     {
-        FireEffects(false);
+        EventManager.StartListening("CancelFire", CancelListener, transform.parent.gameObject.tag);
         EventManager.StartListening("FireShoot", Listener, transform.parent.gameObject.tag);
-	}
+    }
 
     public void TriggerFire()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(VehicleBase.parentDir), Time.deltaTime * 2);
         FireEffects(true);
+
         EventManager.StopListening("FireShoot", Listener, transform.parent.gameObject.tag);
+    }
+
+    public void ResetFire()
+    {
+        FireEffects(false);
+        m_firing = false;
+
+        EventManager.StartListening("CancelFire", CancelListener, transform.parent.gameObject.tag);
     }
 
     public void FireEffects(bool _fire)
@@ -41,6 +52,7 @@ public class FlameThrower : MonoBehaviour {
         if (m_firing == _fire)
             return;
         m_firing = _fire;
+
         if (_fire)
         {
             smoke.Play();
@@ -52,6 +64,7 @@ public class FlameThrower : MonoBehaviour {
             smoke.Stop();
             fire.Stop();
             glow.Stop();
+            m_firing = false;
         }
     }
 }
