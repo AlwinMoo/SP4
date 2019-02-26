@@ -791,7 +791,6 @@ MonoBehaviour:
   startButton: {fileID: 1016411399}
   readyButton: {fileID: 410036006}
   Togglers:
-  - {fileID: 0}
   - {fileID: 1817443741}
   - {fileID: 1256959874}
   - {fileID: 1891674765}
@@ -6085,7 +6084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &815332544
 RectTransform:
   m_ObjectHideFlags: 0
