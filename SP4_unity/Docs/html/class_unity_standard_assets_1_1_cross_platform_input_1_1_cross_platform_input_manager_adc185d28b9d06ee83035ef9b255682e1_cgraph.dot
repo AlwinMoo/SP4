@@ -1,0 +1,10 @@
+digraph "UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.SetButtonUp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node30 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetButtonUp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node30 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lButtonUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#a03e5f4e3650d7322569b5b39f53a8522",tooltip=" "];
+}

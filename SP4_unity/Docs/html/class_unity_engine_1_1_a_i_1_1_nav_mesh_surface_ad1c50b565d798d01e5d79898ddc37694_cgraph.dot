@@ -1,0 +1,21 @@
+digraph "UnityEngine.AI.NavMeshSurface.OnEnable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node30 [label="UnityEngine.AI.NavMeshSurface.\lOnEnable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node30 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="UnityEngine.AI.NavMeshSurface.\lRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#ade9f0ceb52c0ce6d9fea3f8c5818864f",tooltip=" "];
+  Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="UnityEngine.AI.NavMeshSurface.\lUpdateActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a318bc5523c96326b3540aeacd44ea96b",tooltip=" "];
+  Node32 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="UnityEngine.AI.NavMeshSurface.\lUpdateDataIfTransformChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a7e169bc2513c2614c14138578d8fe2f3",tooltip=" "];
+  Node33 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="UnityEngine.AI.NavMeshSurface.\lHasTransformChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a018608bac16f89e07985094c49d28203",tooltip=" "];
+  Node33 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="UnityEngine.AI.NavMeshSurface.\lRemoveData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#ab172d2aeaa1fc33361ec519b34e30bda",tooltip=" "];
+  Node33 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="UnityEngine.AI.NavMeshSurface.\lAddData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a59cb54cd1345b7f9f5ec569740249fbc",tooltip=" "];
+  Node30 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

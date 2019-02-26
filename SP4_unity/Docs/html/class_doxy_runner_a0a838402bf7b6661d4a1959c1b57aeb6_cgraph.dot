@@ -1,0 +1,22 @@
+digraph "DoxyRunner.RunThreadedDoxy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node6 [label="DoxyRunner.RunThreadedDoxy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="DoxyRunner.updateOuputString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a4474ed980f895f97ac3517fe85834259",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DoxyThreadSafeOutput.WriteLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#ab2083e9efa17a35c72d3c2c784ef6800",tooltip=" "];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="DoxyRunner.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a7458975df0c43d397051f225d6def184",tooltip="Runs the specified executable with the provided arguments and returns the process' exit code."];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="DoxyRunner.FindExePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a0923bf6769c3b99b4fb8e9ce67877a94",tooltip="Expands environment variables and, if unqualified, locates the exe in the working directory or the ev..."];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="DoxyRunner.EscapeArguments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a9e1ad0bb37f42899aeac2e2fb59cb769",tooltip="Quotes all arguments that contain whitespace, or begin with a quote and returns a single argument str..."];
+  Node6 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="DoxyThreadSafeOutput.Write\lFullLog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#aa831eccd758e59c835fd3486c39a4a8c",tooltip=" "];
+  Node6 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="DoxyThreadSafeOutput.Set\lFinished",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#a97e2149569e2bb5e749851daa2781423",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.HealthPotionBehavior.InitializedTransform"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node22 [label="BeardedManStudios.Forge.\lNetworking.Generated.HealthPotion\lBehavior.InitializedTransform",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="BeardedManStudios.Forge.\lNetworking.Generated.HealthPotion\lNetworkObject.SnapInterpolations",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_health_potion_network_object.html#a83ca0d244c1fc7df58d3fc825c4315d1",tooltip=" "];
+}

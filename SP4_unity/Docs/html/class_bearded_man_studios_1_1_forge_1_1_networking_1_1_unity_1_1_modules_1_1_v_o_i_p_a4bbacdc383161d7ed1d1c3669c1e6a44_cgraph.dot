@@ -1,0 +1,18 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Modules.VOIP.StartVOIP"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node39 [label="BeardedManStudios.Forge.\lNetworking.Unity.Modules.VOIP.\lStartVOIP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node39 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a7af2419cbe4e68c03830072a2fb535b8",tooltip="Add a function to the list of functions to call on the main thread via the Update function"];
+  Node40 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lCreate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a1c20676eb649b3ce5d53a15f1d57c7e4",tooltip="This will create a main thread manager if one is not already created"];
+  Node39 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="BeardedManStudios.Forge.\lNetworking.Unity.Modules.VOIP.\lVOIPWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_modules_1_1_v_o_i_p.html#a8a98fef5b75794b3663afe0e077829ee",tooltip=" "];
+  Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="BeardedManStudios.Forge.\lNetworking.Unity.Modules.VOIP.\lToByteArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_modules_1_1_v_o_i_p.html#a710f78075f3ff971bb03b8d5c802a54d",tooltip=" "];
+  Node42 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lThreadSleep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#ae2446c139bb39ebd7f88f3f11528fc76",tooltip=" "];
+}

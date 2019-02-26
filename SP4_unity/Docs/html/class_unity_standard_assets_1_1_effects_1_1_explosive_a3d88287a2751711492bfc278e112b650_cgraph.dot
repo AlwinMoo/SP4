@@ -1,0 +1,12 @@
+digraph "UnityStandardAssets.Effects.Explosive.OnCollisionEnter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="UnityStandardAssets.Effects.\lExplosive.OnCollisionEnter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="UnityStandardAssets.Utility.\lObjectResetter.DelayedReset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_utility_1_1_object_resetter.html#ab44d29e021b02f8bf2a65fdd9500669f",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="UnityStandardAssets.Utility.\lObjectResetter.ResetCoroutine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_utility_1_1_object_resetter.html#a9f642e892d90f0720be3d1dbff5d8d93",tooltip=" "];
+}

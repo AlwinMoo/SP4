@@ -1,0 +1,10 @@
+digraph "UnityStandardAssets.CrossPlatformInput.Inspector.CrossPlatformInitialize.SetEnabled"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="UnityStandardAssets.Cross\lPlatformInput.Inspector.CrossPlatform\lInitialize.SetEnabled",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="UnityStandardAssets.Cross\lPlatformInput.Inspector.CrossPlatform\lInitialize.GetDefinesList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_inspector_1_1_cross_platform_initialize.html#a74ceecb766e5622625a939cbf4c6158d",tooltip=" "];
+}

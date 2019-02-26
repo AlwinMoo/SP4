@@ -1,0 +1,22 @@
+digraph "UnityEngine.AI.NavMeshSurface.UpdateNavMesh"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node59 [label="UnityEngine.AI.NavMeshSurface.\lUpdateNavMesh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node59 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="UnityEngine.AI.NavMeshSurface.\lCollectSources",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a9601967a4c230416d0d3e59950bda3f1",tooltip=" "];
+  Node60 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="UnityEngine.AI.NavMeshSurface.\lGetWorldBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a150ec663d0fe35cb17dde4cae86bfc8c",tooltip=" "];
+  Node61 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="UnityEngine.AI.NavMeshSurface.Abs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#ada1d98991b8fe1ded55c3f12601e9aa8",tooltip=" "];
+  Node60 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="UnityEngine.AI.NavMeshSurface.\lAppendModifierVolumes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#ab7d94cb7ef7119ca7cc3a7a30f1c8cb2",tooltip=" "];
+  Node59 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="UnityEngine.AI.NavMeshSurface.\lCalculateWorldBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a0661fa8406d166aca8ae06007cce13b2",tooltip=" "];
+  Node64 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 -> Node65 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="UnityEngine.AI.NavMeshSurface.\lGetBuildSettings",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_engine_1_1_a_i_1_1_nav_mesh_surface.html#a29b3013714ce2cb0f40489b0094cde15",tooltip=" "];
+}

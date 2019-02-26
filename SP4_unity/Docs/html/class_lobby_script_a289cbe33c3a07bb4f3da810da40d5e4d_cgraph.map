@@ -1,0 +1,5 @@
+<map id="LobbyScript.Start" name="LobbyScript.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="372,5,575,32"/>
+<area shape="rect" id="node3" href="$class_lobby_script.html#a66620ed0900c53949384dfdac0aff376" title=" " alt="" coords="176,31,324,57"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HealthPotion.PickUp" name="HealthPotion.PickUp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$class_health_potion.html#aa96f1373fd345bdfac03137fa2a1cc02" title=" " alt="" coords="196,5,415,32"/>
+</map>

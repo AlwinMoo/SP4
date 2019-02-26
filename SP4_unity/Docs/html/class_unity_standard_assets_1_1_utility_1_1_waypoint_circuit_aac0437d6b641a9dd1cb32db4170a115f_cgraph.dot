@@ -1,0 +1,12 @@
+digraph "UnityStandardAssets.Utility.WaypointCircuit.GetRoutePoint"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="UnityStandardAssets.Utility.\lWaypointCircuit.GetRoutePoint",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UnityStandardAssets.Utility.\lWaypointCircuit.GetRoutePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit.html#a7f3f7803b415864a93ae5c51829a2bcd",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="UnityStandardAssets.Utility.\lWaypointCircuit.CatmullRom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit.html#a261cd06b90b6bd32e69087d151164a28",tooltip=" "];
+}

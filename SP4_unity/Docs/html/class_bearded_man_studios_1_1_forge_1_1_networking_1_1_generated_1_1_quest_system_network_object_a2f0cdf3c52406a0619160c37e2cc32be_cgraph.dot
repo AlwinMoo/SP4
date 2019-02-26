@@ -1,0 +1,32 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.QuestSystemNetworkObject.ReadDirtyFields"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node11 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.ReadDirtyFields",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.Initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a3cbf514921a9253d61a2dfe6d2480c03",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#a257ff895e140a2248a418de3405c9009",tooltip="Map a type of object from a FrameStream to a object"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aebbfb72c566d9ee0733f66bfa3ee5e5c",tooltip="Get a Vector2 out of a FrameStream"];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aa245f139867a275b4a750fe4187396bd",tooltip="Get a Vector3 out of a FrameStream"];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aef41215d1be1b6dd60b4535e787b5f53",tooltip="Get a Vector4 out of a FrameStream"];
+  Node11 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#adf6e4dc3196fe47c88e8f050644c04d7",tooltip=" "];
+  Node11 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_rotation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a37b16af3eabe9647dbbb6c19642c74ff",tooltip=" "];
+  Node11 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_QuestID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a0eab261d86bf3bad30c2976498ccc520",tooltip=" "];
+  Node11 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_HoldOutTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a59a46b8a2ee0e086430395bffb9abfb7",tooltip=" "];
+  Node11 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_IsActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a5b5b0fc1e7e47270208531e17268244c",tooltip=" "];
+  Node11 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_IsFailed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#a7089606cc919e2ea00636214338d05c0",tooltip=" "];
+  Node11 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lNetworkObject.RunChange_IsPassed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_network_object.html#ab2ca274a90d119d9b825ad62fe511199",tooltip=" "];
+}

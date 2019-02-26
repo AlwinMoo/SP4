@@ -1,0 +1,12 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Modules.VOIP.VOIPWorker"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node50 [label="BeardedManStudios.Forge.\lNetworking.Unity.Modules.VOIP.\lVOIPWorker",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node50 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="BeardedManStudios.Forge.\lNetworking.Unity.Modules.VOIP.\lToByteArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_modules_1_1_v_o_i_p.html#a710f78075f3ff971bb03b8d5c802a54d",tooltip=" "];
+  Node50 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lThreadSleep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#ae2446c139bb39ebd7f88f3f11528fc76",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Lobby.LobbyPlayerItem.KickPlayer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.KickPlayer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.KickPlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a1f9b5442e3607480942c97fd482b4755",tooltip=" "];
+}

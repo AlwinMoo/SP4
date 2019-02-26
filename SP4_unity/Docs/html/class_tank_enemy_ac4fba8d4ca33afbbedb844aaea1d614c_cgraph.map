@@ -1,0 +1,5 @@
+<map id="TankEnemy.Update" name="TankEnemy.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node2" href="$class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9" title=" " alt="" coords="189,5,360,32"/>
+<area shape="rect" id="node3" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="408,5,605,32"/>
+</map>

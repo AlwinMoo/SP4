@@ -1,0 +1,19 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.NetworkManager.InstantiateHealthPotionNetworkObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node133 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lInstantiateHealthPotionNetworkObject",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node133 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="BeardedManStudios.Forge.\lNetworking.Generated.HealthPotion\lBehavior.CreateNetworkObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_health_potion_behavior.html#ae3ffd20adbc6ff1e4f8ed28bd9bf78de",tooltip=" "];
+  Node133 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lFinalizeInitialization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#a96650852c8bd8da55ff8bf730db311be",tooltip=" "];
+  Node135 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lInitializedObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#ae686c351a1670cc0c3d285edfeb844cb",tooltip=" "];
+  Node135 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lProcessOthers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#aea7250d4e3af6034f73a5f902f511c88",tooltip=" "];
+  Node137 -> Node138 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node138 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkBehavior.\lCreateNetworkObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_behavior.html#a091715ed99cf83053ae02e18d6cd2092",tooltip=" "];
+  Node137 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

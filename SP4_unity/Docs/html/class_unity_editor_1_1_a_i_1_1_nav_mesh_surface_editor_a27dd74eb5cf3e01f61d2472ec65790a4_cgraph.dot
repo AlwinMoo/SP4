@@ -1,0 +1,10 @@
+digraph "UnityEditor.AI.NavMeshSurfaceEditor.RenderBoxGizmoNotSelected"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node34 [label="UnityEditor.AI.NavMeshSurface\lEditor.RenderBoxGizmoNotSelected",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node34 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="UnityEditor.AI.NavMeshSurface\lEditor.RenderBoxGizmo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_surface_editor.html#a53d78573dea22b29fb609e72752dbb86",tooltip=" "];
+}

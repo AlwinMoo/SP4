@@ -1,0 +1,7 @@
+<map id="MachineGun.Start" name="MachineGun.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,132,57"/>
+<area shape="rect" id="node2" href="$class_machine_gun.html#a44371f221028a7d8b7a353ab3c08ddff" title=" " alt="" coords="180,31,343,57"/>
+<area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="391,5,587,32"/>
+<area shape="rect" id="node5" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="395,56,582,83"/>
+<area shape="rect" id="node4" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="635,5,836,32"/>
+</map>

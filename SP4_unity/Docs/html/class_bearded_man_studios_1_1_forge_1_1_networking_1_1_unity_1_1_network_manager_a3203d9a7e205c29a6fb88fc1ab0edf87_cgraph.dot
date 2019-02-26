@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.NetworkManager.RegisterOnMasterServer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node273 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lRegisterOnMasterServer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node273 -> Node274 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node274 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lNetworkerDisconnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#a2a387dbb0a7e00649b481ba45d7674a8",tooltip=" "];
+}

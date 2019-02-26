@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.ObjectiveObjectBehavior.InitializedTransform"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node22 [label="BeardedManStudios.Forge.\lNetworking.Generated.Objective\lObjectBehavior.InitializedTransform",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="BeardedManStudios.Forge.\lNetworking.Generated.Objective\lObjectNetworkObject.SnapInterpolations",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_objective_object_network_object.html#addd69dff2066c8b5537b22fccfa5ae37",tooltip=" "];
+}

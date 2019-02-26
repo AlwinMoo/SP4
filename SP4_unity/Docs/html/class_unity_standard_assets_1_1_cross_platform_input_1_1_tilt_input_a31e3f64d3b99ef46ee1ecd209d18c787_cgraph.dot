@@ -1,0 +1,20 @@
+digraph "UnityStandardAssets.CrossPlatformInput.TiltInput.Update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="UnityStandardAssets.Cross\lPlatformInput.TiltInput.Update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetVirtualMousePositionX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a6170d9de0c506b1d6a6215df7d4accee",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lVirtualMousePositionX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#a7eec67e6da5890b0d14ec6e9f1adb43d",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetVirtualMousePositionY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a48f3e5dbfe6617a6dedcf49e8788162f",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lVirtualMousePositionY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#acf54ec0ee9e7e54bb603538e49ff3d61",tooltip=" "];
+  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetVirtualMousePositionZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a94556375cf07502e86568bf9157a9f70",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lVirtualMousePositionZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#a2f5097b2d04f3af6db5a1bad128fbaa1",tooltip=" "];
+}

@@ -1,0 +1,16 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.NetworkManager.OnDisable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node250 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lOnDisable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node250 -> Node251 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node251 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lOnLevelFinishedLoading",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#a59222d4735c6a944c88e1d4d25dcb585",tooltip=" "];
+  Node251 -> Node252 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node252 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lSceneReady",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#af2542b44fc2a0a7bb27c06ad00e819f8",tooltip=" "];
+  Node252 -> Node253 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node253 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lSendFrame",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#ae69882559d100673bd0934cdab530ff3",tooltip="A wrapper around the various raw send methods for the client and server types"];
+  Node252 -> Node254 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node254 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkManager.\lCreatePendingObjects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_manager.html#ad119f6f9622a59e6ffd8f7a40d21f718",tooltip=" "];
+}

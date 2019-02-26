@@ -1,0 +1,18 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.ExampleProximityPlayerNetworkObject.ReadPayload"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node18 [label="BeardedManStudios.Forge.\lNetworking.Generated.Example\lProximityPlayerNetworkObject.ReadPayload",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#a257ff895e140a2248a418de3405c9009",tooltip="Map a type of object from a FrameStream to a object"];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aebbfb72c566d9ee0733f66bfa3ee5e5c",tooltip="Get a Vector2 out of a FrameStream"];
+  Node19 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aa245f139867a275b4a750fe4187396bd",tooltip="Get a Vector3 out of a FrameStream"];
+  Node19 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aef41215d1be1b6dd60b4535e787b5f53",tooltip="Get a Vector4 out of a FrameStream"];
+  Node18 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="BeardedManStudios.Forge.\lNetworking.Generated.Example\lProximityPlayerNetworkObject.RunChange\l_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_example_proximity_player_network_object.html#aa31ab3ff85a8dd433dd28e99911c5387",tooltip=" "];
+}

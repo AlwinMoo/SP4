@@ -1,0 +1,4 @@
+<map id="Fire.OnParticleCollision" name="Fire.OnParticleCollision">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$interface_flammable.html#ab39d4d712b1dd53d4d402f99d1bea1b0" title=" " alt="" coords="212,5,340,32"/>
+</map>

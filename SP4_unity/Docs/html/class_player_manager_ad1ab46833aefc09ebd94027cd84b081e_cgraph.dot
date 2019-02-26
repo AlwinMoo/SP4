@@ -1,0 +1,12 @@
+digraph "PlayerManager.AssignPlayer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="PlayerManager.AssignPlayer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a7af2419cbe4e68c03830072a2fb535b8",tooltip="Add a function to the list of functions to call on the main thread via the Update function"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lCreate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a1c20676eb649b3ce5d53a15f1d57c7e4",tooltip="This will create a main thread manager if one is not already created"];
+}

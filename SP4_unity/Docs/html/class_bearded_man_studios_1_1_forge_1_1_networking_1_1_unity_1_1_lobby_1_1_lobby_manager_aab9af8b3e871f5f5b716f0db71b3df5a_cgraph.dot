@@ -1,0 +1,51 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Lobby.LobbyManager.SetupComplete"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node127 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.SetupComplete",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node127 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GetNewPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a2e757989e35aa5db2fa699433b71bb50",tooltip=" "];
+  Node128 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.CreateNewPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a82ac65d0caa90dfbb79b94b9117fa714",tooltip=" "];
+  Node129 -> Node130 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node130 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a16880947aec4efd06cf18c1b64d61cc1",tooltip=" "];
+  Node128 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ToggleObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#ad3062cd289f1ad71d6b874be7d4156d7",tooltip=" "];
+  Node128 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.SetParent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a5830a5bdfcc09044abeb32d9f402fd73",tooltip=" "];
+  Node127 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node133 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.PutBackToPool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a03e0d181d1bdbc45749580549eb3d051",tooltip=" "];
+  Node133 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ToggleInteractables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a430ff8864852dd67ce208604f8cbcf11",tooltip=" "];
+  Node133 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabPlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a1e92208289f18b60fa2103fec63e579d",tooltip=" "];
+  Node127 -> Node130 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.Setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a8cf1332cf3923871a66412f9dbd09e12",tooltip=" "];
+  Node136 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeAvatarID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9d5a8d95b1cf70f6e7f8ed87fa9e1b28",tooltip=" "];
+  Node136 -> Node138 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node138 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#aec157ab3177d70ca12eded527d7e4200",tooltip=" "];
+  Node136 -> Node139 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node139 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeTeam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a794773569a51e5e80578cd79f498b96d",tooltip=" "];
+  Node127 -> Node140 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.OnFNPlayerConnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a4bb866bab1492219ebd0c594be1170cf",tooltip=" "];
+  Node140 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 -> Node141 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.OnFNTeamChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a9b78b3b8747172795ed64ff2b70b96a2",tooltip=" "];
+  Node141 -> Node139 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 -> Node142 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node142 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabLobbyPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a2926f9c419dc243610b8e1c097226ce1",tooltip=" "];
+  Node140 -> Node143 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node143 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a7af2419cbe4e68c03830072a2fb535b8",tooltip="Add a function to the list of functions to call on the main thread via the Update function"];
+  Node143 -> Node144 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node144 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lCreate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a1c20676eb649b3ce5d53a15f1d57c7e4",tooltip="This will create a main thread manager if one is not already created"];
+  Node140 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

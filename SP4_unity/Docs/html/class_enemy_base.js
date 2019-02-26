@@ -1,0 +1,36 @@
+var class_enemy_base =
+[
+    [ "enemytype", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92", [
+      [ "ENEMY_NORMAL", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92a065fbd1ec4b2640a6242e99ab6fd9696", null ],
+      [ "ENEMY_TANK", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92a19b3458f3720d7ad9edadccc1ee3aa47", null ]
+    ] ],
+    [ "Awake", "class_enemy_base.html#a3fbb90444f174f44e311edc8e5d49174", null ],
+    [ "EnemyDeath", "class_enemy_base.html#a8c68f5c0f3c811b9649c3e900443a89c", null ],
+    [ "Ignited", "class_enemy_base.html#afbdcbe50851bebbc49679dff840806cd", null ],
+    [ "OnCollisionEnter", "class_enemy_base.html#ae485646d2166cc0b69eb4076bbb935dc", null ],
+    [ "OnTriggerStay", "class_enemy_base.html#a677360581e87a6b4221df8fb5ff6c36d", null ],
+    [ "SendDeath", "class_enemy_base.html#a16adac3b17bc1e0929dfb7cacaa7beab", null ],
+    [ "SendOnFire", "class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848", null ],
+    [ "Start", "class_enemy_base.html#afa5ee82be2fab97633a629e5e43dfac4", null ],
+    [ "TakeDamage", "class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f", null ],
+    [ "TakeTickDamage", "class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312", null ],
+    [ "UnloadTickDamage", "class_enemy_base.html#a8526c058fba66e1e23ed6e1d955cb896", null ],
+    [ "Update", "class_enemy_base.html#a8bda6712b2baa5726a62e555eda1c473", null ],
+    [ "damageTakenTickRate", "class_enemy_base.html#a2a3607f35a98699596646aaa94227aa7", null ],
+    [ "damageTickCD", "class_enemy_base.html#ad32b24fc20572889a44f498dcb512e8d", null ],
+    [ "m_countDown", "class_enemy_base.html#a30ee9d2321ac4dc50377f0fa72daab0c", null ],
+    [ "m_damageTaken", "class_enemy_base.html#a90abc90029f1edbeb3c1087ef09158ca", null ],
+    [ "m_damageTakenCD", "class_enemy_base.html#ad024dbcc5e2ccfe6231d90367741152a", null ],
+    [ "target", "class_enemy_base.html#a68feee3e9e331f03a5bda7688c3fe509", null ],
+    [ "agent", "class_enemy_base.html#aaf6ef776108cdbf838d9a01f2b3aff78", null ],
+    [ "enemyType", "class_enemy_base.html#a7fac08ed070c9a5921f3fc976d26b2f2", null ],
+    [ "health", "class_enemy_base.html#ab374b875d914f66d7b6c57ee1952baea", null ],
+    [ "m1", "class_enemy_base.html#a64ff9eabc45516c9d7e0d9cc3d66ab2e", null ],
+    [ "m2", "class_enemy_base.html#aedbf80beea3875994eadfc7cedbae3c9", null ],
+    [ "m_burning", "class_enemy_base.html#a996347fd9b15521671fda7599a8ec998", null ],
+    [ "mass", "class_enemy_base.html#ab0fc7eda759c490c9c6bf362603e40ba", null ],
+    [ "u1", "class_enemy_base.html#abc3026ec34c4d59acd842044dd2f16e8", null ],
+    [ "u2", "class_enemy_base.html#af3972a71cd6cc8c69aa49ea549b6a5e8", null ],
+    [ "v1", "class_enemy_base.html#a8502fd76a3da659e93b8f79607b8e3c3", null ],
+    [ "v2", "class_enemy_base.html#ab0208a3817a8f5e2b222e234e089406b", null ]
+];

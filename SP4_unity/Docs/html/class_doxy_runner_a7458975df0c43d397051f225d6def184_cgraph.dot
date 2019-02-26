@@ -1,0 +1,12 @@
+digraph "DoxyRunner.Run"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="DoxyRunner.Run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Runs the specified executable with the provided arguments and returns the process' exit code."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DoxyRunner.FindExePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a0923bf6769c3b99b4fb8e9ce67877a94",tooltip="Expands environment variables and, if unqualified, locates the exe in the working directory or the ev..."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DoxyRunner.EscapeArguments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a9e1ad0bb37f42899aeac2e2fb59cb769",tooltip="Quotes all arguments that contain whitespace, or begin with a quote and returns a single argument str..."];
+}

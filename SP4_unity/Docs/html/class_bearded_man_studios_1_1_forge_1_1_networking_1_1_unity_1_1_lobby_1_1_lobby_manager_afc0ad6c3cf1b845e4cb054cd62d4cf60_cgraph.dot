@@ -1,0 +1,14 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Lobby.LobbyManager.OnFNAvatarIDChanged"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node75 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.OnFNAvatarIDChanged",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node75 -> Node76 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabPlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a1e92208289f18b60fa2103fec63e579d",tooltip=" "];
+  Node75 -> Node77 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeAvatarID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9d5a8d95b1cf70f6e7f8ed87fa9e1b28",tooltip=" "];
+  Node75 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabLobbyPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a2926f9c419dc243610b8e1c097226ce1",tooltip=" "];
+}

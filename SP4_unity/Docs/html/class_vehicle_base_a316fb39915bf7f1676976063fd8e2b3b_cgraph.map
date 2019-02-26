@@ -1,0 +1,6 @@
+<map id="VehicleBase.Start" name="VehicleBase.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,132,57"/>
+<area shape="rect" id="node2" href="$class_camera_follow.html#a14a391a9fb2a6f45850836c9394ac6da" title=" " alt="" coords="180,31,361,57"/>
+<area shape="rect" id="node3" href="$class_player_manager.html#a33fff53f6a86a9c26b7eaab0d5fd870f" title=" " alt="" coords="419,5,602,32"/>
+<area shape="rect" id="node4" href="$class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="409,56,612,83"/>
+</map>

@@ -1,0 +1,12 @@
+digraph "DoxygenWindow.LoadConfig"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node23 [label="DoxygenWindow.LoadConfig",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node23 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="DoxygenWindow.readBaseConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxygen_window.html#a5ba38d9b1d93fa627bc3b53cdd1dda17",tooltip=" "];
+  Node23 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="DoxygenWindow.LoadSavedConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxygen_window.html#a719e851548f08011b7cc1f1d0de44cda",tooltip=" "];
+}

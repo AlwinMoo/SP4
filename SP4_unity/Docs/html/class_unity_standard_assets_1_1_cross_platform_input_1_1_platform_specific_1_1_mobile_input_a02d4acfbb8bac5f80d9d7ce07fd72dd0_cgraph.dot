@@ -1,0 +1,14 @@
+digraph "UnityStandardAssets.CrossPlatformInput.PlatformSpecific.MobileInput.GetButton"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="UnityStandardAssets.Cross\lPlatformInput.PlatformSpecific.\lMobileInput.GetButton",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="UnityStandardAssets.Cross\lPlatformInput.PlatformSpecific.\lMobileInput.AddButton",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#aa707553f1d49951cde3480903dcf7f19",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.RegisterVirtualButton",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a2a1a682607122996df9e363a996bc4ad",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Register\lVirtualButton",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#a6073a4d0dc59419c956d3454217f07c3",tooltip=" "];
+}

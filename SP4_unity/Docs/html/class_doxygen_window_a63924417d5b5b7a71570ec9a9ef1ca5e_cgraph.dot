@@ -1,0 +1,28 @@
+digraph "DoxygenWindow.RunDoxygen"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node59 [label="DoxygenWindow.RunDoxygen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node59 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="DoxyThreadSafeOutput.Set\lStarted",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#ad08186c77f145bc3cb1ddb50259ef589",tooltip=" "];
+  Node59 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="DoxygenWindow.OnDoxygenFinished",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxygen_window.html#a2809a93b756a6cfc371ee76a9d7168d7",tooltip=" "];
+  Node59 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="DoxyRunner.RunThreadedDoxy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a0a838402bf7b6661d4a1959c1b57aeb6",tooltip=" "];
+  Node62 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="DoxyRunner.updateOuputString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a4474ed980f895f97ac3517fe85834259",tooltip=" "];
+  Node63 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="DoxyThreadSafeOutput.WriteLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#ab2083e9efa17a35c72d3c2c784ef6800",tooltip=" "];
+  Node62 -> Node65 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="DoxyRunner.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a7458975df0c43d397051f225d6def184",tooltip="Runs the specified executable with the provided arguments and returns the process' exit code."];
+  Node65 -> Node66 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node66 [label="DoxyRunner.FindExePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a0923bf6769c3b99b4fb8e9ce67877a94",tooltip="Expands environment variables and, if unqualified, locates the exe in the working directory or the ev..."];
+  Node65 -> Node67 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node67 [label="DoxyRunner.EscapeArguments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_runner.html#a9e1ad0bb37f42899aeac2e2fb59cb769",tooltip="Quotes all arguments that contain whitespace, or begin with a quote and returns a single argument str..."];
+  Node62 -> Node68 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node68 [label="DoxyThreadSafeOutput.Write\lFullLog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#aa831eccd758e59c835fd3486c39a4a8c",tooltip=" "];
+  Node62 -> Node69 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node69 [label="DoxyThreadSafeOutput.Set\lFinished",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_doxy_thread_safe_output.html#a97e2149569e2bb5e749851daa2781423",tooltip=" "];
+}

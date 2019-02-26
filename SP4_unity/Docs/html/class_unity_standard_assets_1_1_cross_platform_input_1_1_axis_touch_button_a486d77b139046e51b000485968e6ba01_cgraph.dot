@@ -1,0 +1,22 @@
+digraph "UnityStandardAssets.CrossPlatformInput.AxisTouchButton.OnEnable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="UnityStandardAssets.Cross\lPlatformInput.AxisTouchButton.\lOnEnable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.AxisExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a2b2ce7bfb83e8cc7f23b9f7fcf6dff5f",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Axis\lExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#ab5744afc94aa095e2f8149bc44920360",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.RegisterVirtualAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a343c5d5b8bc64c0bace025f52e5e9c2d",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Register\lVirtualAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#aa530866e5a5597cee5f56a80b5074914",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.VirtualAxisReference",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#ab494bb21f494748f2036d20a05d496df",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Virtual\lAxisReference",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#af19a8841bf61b55baa6d791a82f67cdd",tooltip=" "];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UnityStandardAssets.Cross\lPlatformInput.AxisTouchButton.\lFindPairedButton",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_axis_touch_button.html#a9c105241897864df983162333ca012e2",tooltip=" "];
+}

@@ -1,0 +1,12 @@
+digraph "UnityStandardAssets.CrossPlatformInput.ButtonHandler.SetAxisNegativeState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="UnityStandardAssets.Cross\lPlatformInput.ButtonHandler.Set\lAxisNegativeState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetAxisNegative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a2f7717dab92a1288e0cc6fdfbac750f1",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lAxisNegative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#ad3af2e79617bf02ba1d9dd51162a404a",tooltip=" "];
+}

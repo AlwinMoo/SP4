@@ -1,0 +1,27 @@
+var class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item =
+[
+    [ "ChangeAvatarID", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9d5a8d95b1cf70f6e7f8ed87fa9e1b28", null ],
+    [ "ChangeName", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#aec157ab3177d70ca12eded527d7e4200", null ],
+    [ "ChangeTeam", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a794773569a51e5e80578cd79f498b96d", null ],
+    [ "Init", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a16880947aec4efd06cf18c1b64d61cc1", null ],
+    [ "KickPlayer", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a5ad218e2250ca26dc65203386931b7b6", null ],
+    [ "RequestChangeAvatarID", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a7fc3b7eddd9a9b0ef1a2078c66ac67bd", null ],
+    [ "RequestChangeName", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9ee4cfa9052afb2186ec50704cb0eefa", null ],
+    [ "RequestChangeTeam", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a8ede8a9092aac078cb5ee7577a342849", null ],
+    [ "SetParent", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a5830a5bdfcc09044abeb32d9f402fd73", null ],
+    [ "Setup", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a8cf1332cf3923871a66412f9dbd09e12", null ],
+    [ "ToggleInteractables", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a430ff8864852dd67ce208604f8cbcf11", null ],
+    [ "ToggleObject", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#ad3062cd289f1ad71d6b874be7d4156d7", null ],
+    [ "_manager", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#acce1f258ef4f2d4219425eb37e73efce", null ],
+    [ "AvatarBG", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a90b9db25f73fa15d0ac27152e75fb31d", null ],
+    [ "AvatarColors", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#afc0bcebba26b264e51081afa7fb68022", null ],
+    [ "AvatarID", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a325dd9681e1f37087ebcbeca6a8f4c3d", null ],
+    [ "Buttons", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#af38e95ba6bbc3455b00815d56265d2c2", null ],
+    [ "KickButton", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#af7f80c4ebff27476e9dd587758ef183d", null ],
+    [ "PlayerName", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a52571c59cc1f1485b1b927f74e7d5901", null ],
+    [ "PlayerTeamID", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#abc766e7762547d74fc3c6c0a3d8ab1f1", null ],
+    [ "TeamColors", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#ac007ad52a1ca4b1cbfae870da072c803", null ],
+    [ "ThisGameObject", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#acd13801616018a1a93ac4d27dbad38b7", null ],
+    [ "ThisTransform", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a03356dfeb2257f13d86accc0856ed27c", null ],
+    [ "AssociatedPlayer", "class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a8704bb74831076e1069dc8e9ccfab9ae", null ]
+];

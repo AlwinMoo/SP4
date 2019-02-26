@@ -1,0 +1,16 @@
+digraph "UnityEditor.AI.NavMeshLinkEditor.OnInspectorGUI"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node9 [label="UnityEditor.AI.NavMeshLink\lEditor.OnInspectorGUI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.AgentTypePopup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a21e6bc162db0568182bde0d0f5289864",tooltip=" "];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="UnityEditor.AI.NavMeshLink\lEditor.AlignTransformToEndPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_link_editor.html#af02f8083c51162f05741f00f7b702bcc",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="UnityEditor.AI.NavMeshLink\lEditor.UnscaledLocalToWorldMatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_link_editor.html#a5e3d7106e4931c7d028fe3b11dad796e",tooltip=" "];
+  Node9 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.AreaPopup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a3a766aa7560b9342338bae8d406c87fb",tooltip=" "];
+}

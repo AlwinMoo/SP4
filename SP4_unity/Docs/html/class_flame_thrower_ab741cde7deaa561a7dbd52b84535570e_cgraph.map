@@ -1,0 +1,6 @@
+<map id="FlameThrower.Update" name="FlameThrower.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,153,83"/>
+<area shape="rect" id="node2" href="$class_event_manager.html#aa52304d79a4c5fef28b5cf5d2c16c965" title=" " alt="" coords="201,5,389,32"/>
+<area shape="rect" id="node3" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="202,56,389,83"/>
+<area shape="rect" id="node4" href="$class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="211,107,380,133"/>
+</map>

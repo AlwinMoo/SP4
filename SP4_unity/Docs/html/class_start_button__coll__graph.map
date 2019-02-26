@@ -1,0 +1,6 @@
+<map id="StartButton" name="StartButton">
+<area shape="rect" id="node1" title=" " alt="" coords="58,171,146,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,116,108"/>
+<area shape="rect" id="node3" href="$class_lobby_script.html" title=" " alt="" coords="141,81,231,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="133,5,239,32"/>
+</map>

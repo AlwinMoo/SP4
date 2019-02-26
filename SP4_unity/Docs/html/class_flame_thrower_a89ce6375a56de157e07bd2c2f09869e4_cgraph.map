@@ -1,0 +1,5 @@
+<map id="FlameThrower.TriggerFire" name="FlameThrower.TriggerFire">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,173,57"/>
+<area shape="rect" id="node2" href="$class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="230,5,399,32"/>
+<area shape="rect" id="node3" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="221,56,408,83"/>
+</map>

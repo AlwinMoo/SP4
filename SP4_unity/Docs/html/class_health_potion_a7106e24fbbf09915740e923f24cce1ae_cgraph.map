@@ -1,0 +1,5 @@
+<map id="HealthPotion.OnTriggerEnter" name="HealthPotion.OnTriggerEnter">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$class_health_potion.html#aa394c44d427b22e7889e8efe25166fc4" title=" " alt="" coords="240,5,383,32"/>
+<area shape="rect" id="node3" href="$class_health_potion.html#aa96f1373fd345bdfac03137fa2a1cc02" title=" " alt="" coords="431,5,649,32"/>
+</map>

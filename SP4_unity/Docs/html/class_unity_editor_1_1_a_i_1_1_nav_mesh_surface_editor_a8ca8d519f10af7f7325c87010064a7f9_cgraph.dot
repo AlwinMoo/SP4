@@ -1,0 +1,10 @@
+digraph "UnityEditor.AI.NavMeshSurfaceEditor.CreateNavMeshAsset"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="UnityEditor.AI.NavMeshSurface\lEditor.CreateNavMeshAsset",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="UnityEditor.AI.NavMeshSurface\lEditor.GetAndEnsureTargetPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_surface_editor.html#ac963cccd1c664932dda539e375189821",tooltip=" "];
+}

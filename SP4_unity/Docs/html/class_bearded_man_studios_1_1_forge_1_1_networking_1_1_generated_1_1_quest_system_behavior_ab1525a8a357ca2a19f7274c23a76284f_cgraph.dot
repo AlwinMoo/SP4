@@ -1,0 +1,23 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.QuestSystemBehavior.Initialize"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node12 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lBehavior.Initialize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lBehavior.Initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_behavior.html#a8b320d7d7e7db1d712a2e297a57d9a26",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="BeardedManStudios.Forge.\lNetworking.Generated.QuestSystem\lBehavior.DestroyGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_quest_system_behavior.html#a5b2000b576e3d0e995d0bc99c7b643cc",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a7af2419cbe4e68c03830072a2fb535b8",tooltip="Add a function to the list of functions to call on the main thread via the Update function"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lCreate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a1c20676eb649b3ce5d53a15f1d57c7e4",tooltip="This will create a main thread manager if one is not already created"];
+  Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkBehavior.\lProcessOthers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_behavior.html#a2ceaaf2ded90d5a010ee347c860d0b1f",tooltip=" "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkBehavior.\lNetworkStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_behavior.html#a1882dec445bea7dd37bb67f5d004e757",tooltip=" "];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="BeardedManStudios.Forge.\lNetworking.Unity.NetworkBehavior.\lCompleteRegistration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_network_behavior.html#a7f643955f4a6071446390d3678385eec",tooltip=" "];
+}

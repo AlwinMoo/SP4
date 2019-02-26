@@ -1,0 +1,42 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.TestNetworkObject.ReadDirtyFields"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.ReadDirtyFields",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.Initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#a36636d0658e1bc798aa44f3ad8ca775a",tooltip=" "];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#a257ff895e140a2248a418de3405c9009",tooltip="Map a type of object from a FrameStream to a object"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aebbfb72c566d9ee0733f66bfa3ee5e5c",tooltip="Get a Vector2 out of a FrameStream"];
+  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aa245f139867a275b4a750fe4187396bd",tooltip="Get a Vector3 out of a FrameStream"];
+  Node12 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="BeardedManStudios.Forge.\lNetworking.Unity.UnityObject\lMapper.MapVector4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_unity_object_mapper.html#aef41215d1be1b6dd60b4535e787b5f53",tooltip="Get a Vector4 out of a FrameStream"];
+  Node10 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldByte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#a25fbeb37bede249b0304b7061f7f6a14",tooltip=" "];
+  Node10 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldChar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#a3686dfee7ecf00d8e24c7b2bff1482f7",tooltip=" "];
+  Node10 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldShort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#aa4f16bd8208d5a798f7c42758b0cc964",tooltip=" "];
+  Node10 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldUShort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#aaf477a9c0f5b440b775df807a6bc2db9",tooltip=" "];
+  Node10 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldBool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#ad2eb6b1b3c8b4d2756e58a31939384e8",tooltip=" "];
+  Node10 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#af46d0713853de23b142058c92b57c9ee",tooltip=" "];
+  Node10 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldUInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#ae5bd29045c66d0e27c4893d854c9c59e",tooltip=" "];
+  Node10 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldFloat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#adc51f8be696437b60a6ba8736121a2b0",tooltip=" "];
+  Node10 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldFloatInterpolate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#abf3a3af4798d4d34a5fa076db31ea991",tooltip=" "];
+  Node10 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldLong",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#a220c6128e4f80024f87a92cc46f5f85c",tooltip=" "];
+  Node10 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldULong",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#a4cde71f01f82e14164e5f9e68eaf9767",tooltip=" "];
+  Node10 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.RunChange_fieldDouble",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#ae8a404572e0bcfc39b3b0e0be03d1e0d",tooltip=" "];
+}

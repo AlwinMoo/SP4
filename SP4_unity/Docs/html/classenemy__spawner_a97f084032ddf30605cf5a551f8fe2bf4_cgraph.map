@@ -1,0 +1,4 @@
+<map id="enemy_spawner.Update" name="enemy_spawner.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,167,32"/>
+<area shape="rect" id="node2" href="$classenemy__spawner.html#a36c26d8a3af7f3c62de4064c12118fdf" title=" " alt="" coords="215,5,411,32"/>
+</map>

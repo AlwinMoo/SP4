@@ -1,0 +1,5 @@
+<map id="NormalEnemy.Update" name="NormalEnemy.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$class_normal_enemy.html#a147f4a16c9b30865e135249ee8a95e60" title=" " alt="" coords="203,5,387,32"/>
+<area shape="rect" id="node3" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="435,5,632,32"/>
+</map>

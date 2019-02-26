@@ -1,0 +1,10 @@
+digraph "UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.SetVirtualMousePositionZ"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node36 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetVirtualMousePositionZ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node36 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node37 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lVirtualMousePositionZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#a2f5097b2d04f3af6db5a1bad128fbaa1",tooltip=" "];
+}

@@ -1,0 +1,12 @@
+digraph "UnityStandardAssets.CrossPlatformInput.ButtonHandler.SetAxisPositiveState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="UnityStandardAssets.Cross\lPlatformInput.ButtonHandler.Set\lAxisPositiveState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetAxisPositive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a69563e20d7a30525e6873a03508ee127",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lAxisPositive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#abd4920b94dff2454bac3daa6c355c71d",tooltip=" "];
+}

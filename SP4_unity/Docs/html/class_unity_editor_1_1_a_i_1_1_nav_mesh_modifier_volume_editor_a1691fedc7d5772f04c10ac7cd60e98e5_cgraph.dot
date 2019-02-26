@@ -1,0 +1,27 @@
+digraph "UnityEditor.AI.NavMeshModifierVolumeEditor.OnInspectorGUI"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="UnityEditor.AI.NavMeshModifier\lVolumeEditor.OnInspectorGUI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="UnityEditor.AI.NavMeshModifier\lVolumeEditor.GetBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_modifier_volume_editor.html#a33a5fc0d3e3476635fdf7300d9c4a92b",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.AreaPopup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a3a766aa7560b9342338bae8d406c87fb",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.AgentMaskPopup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#abb5263aab6b9c095d0f9c2cc781d9378",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.GetAgentMaskLabelName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#abade3a2164052b32e16faf74a9b638ab",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.IsAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a38d45726ada15e0626fe1b3a9c1ee3b5",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.SetAgentMaskNone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#aae436ef00fc091ddd415f08dfd90ca56",tooltip=" "];
+  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.SetAgentMaskAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a42e98a786f1c90e425f996393d123897",tooltip=" "];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.AgentMaskHasSelectedAgentTypeID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a828a12550cc67fd4d2961448d39629d4",tooltip=" "];
+  Node8 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.ToggleAgentMaskItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#a2e71d4c629a72e7e1f06da7c17106b9b",tooltip=" "];
+}

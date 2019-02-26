@@ -1,0 +1,12 @@
+digraph "UnityStandardAssets.CrossPlatformInput.ButtonHandler.SetDownState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="UnityStandardAssets.Cross\lPlatformInput.ButtonHandler.Set\lDownState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="UnityStandardAssets.Cross\lPlatformInput.CrossPlatformInput\lManager.SetButtonDown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_cross_platform_input_manager.html#a2e30cf8aa09003f7501c1f0d59c1dd0b",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="UnityStandardAssets.Cross\lPlatformInput.VirtualInput.Set\lButtonDown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_standard_assets_1_1_cross_platform_input_1_1_virtual_input.html#aff10ff821f722ce82e9a48b5406e836e",tooltip=" "];
+}

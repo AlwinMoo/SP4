@@ -1,0 +1,10 @@
+digraph "UnityEditor.AI.NavMeshLinkEditor.CreateNavMeshLink"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="UnityEditor.AI.NavMeshLink\lEditor.CreateNavMeshLink",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="UnityEditor.AI.NavMeshComponents\lGUIUtility.CreateAndSelectGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_unity_editor_1_1_a_i_1_1_nav_mesh_components_g_u_i_utility.html#adc59157802b2c08b3e28397278779906",tooltip=" "];
+}

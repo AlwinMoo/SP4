@@ -1,0 +1,6 @@
+<map id="PlayerManager.Start" name="PlayerManager.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,147,61"/>
+<area shape="rect" id="node2" href="$class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9" title=" " alt="" coords="195,5,400,32"/>
+<area shape="rect" id="node4" href="$class_player_manager.html#a404ac6a2db218a213218198206aab69d" title=" " alt="" coords="201,57,393,98"/>
+<area shape="rect" id="node3" href="$class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="448,35,599,61"/>
+</map>

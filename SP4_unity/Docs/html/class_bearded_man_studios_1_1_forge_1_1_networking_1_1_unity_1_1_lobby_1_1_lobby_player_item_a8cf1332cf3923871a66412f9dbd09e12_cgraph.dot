@@ -1,0 +1,16 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Lobby.LobbyPlayerItem.Setup"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.Setup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ToggleInteractables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a430ff8864852dd67ce208604f8cbcf11",tooltip=" "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeAvatarID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9d5a8d95b1cf70f6e7f8ed87fa9e1b28",tooltip=" "];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#aec157ab3177d70ca12eded527d7e4200",tooltip=" "];
+  Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeTeam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a794773569a51e5e80578cd79f498b96d",tooltip=" "];
+}

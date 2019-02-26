@@ -1,0 +1,56 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node2" href="$class_enemy_base.html" title=" " alt="" coords="184,5,277,32"/>
+<area shape="rect" id="node3" href="$class_normal_enemy.html" title=" " alt="" coords="344,5,448,32"/>
+<area shape="rect" id="node4" href="$class_tank_enemy.html" title=" " alt="" coords="351,56,441,83"/>
+<area shape="rect" id="node5" href="$interface_flammable.html" title=" " alt="" coords="18,81,105,108"/>
+<area shape="rect" id="node6" href="$class_ignited_object.html" title=" " alt="" coords="181,107,280,133"/>
+<area shape="rect" id="node7" href="$interface_i_live_entity.html" title=" " alt="" coords="190,56,271,83"/>
+<area shape="rect" id="node8" href="$interface_i_pooled_object.html" title=" " alt="" coords="10,208,113,235"/>
+<area shape="rect" id="node9" href="$class_h_m_g___bullet.html" title=" " alt="" coords="185,157,277,184"/>
+<area shape="rect" id="node10" href="$class_r_l___bullet.html" title=" " alt="" coords="191,208,270,235"/>
+<area shape="rect" id="node11" href="$class_r_l___explosion_p_s.html" title=" " alt="" coords="171,259,291,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="6,1247,117,1273"/>
+<area shape="rect" id="node13" href="$class_b_g_m.html" title=" " alt="" coords="205,1221,257,1248"/>
+<area shape="rect" id="node14" href="$class_b_g_m_slider.html" title=" " alt="" coords="188,1272,273,1299"/>
+<area shape="rect" id="node15" href="$class_camera_follow.html" title=" " alt="" coords="179,1323,283,1349"/>
+<area shape="rect" id="node16" href="$class_car___controller.html" title=" " alt="" coords="179,1373,283,1400"/>
+<area shape="rect" id="node17" href="$class_car_selection.html" title=" " alt="" coords="183,1424,279,1451"/>
+<area shape="rect" id="node18" href="$class_car_select_model.html" title=" " alt="" coords="173,1475,288,1501"/>
+<area shape="rect" id="node19" href="$class_car_spawner.html" title=" " alt="" coords="185,1525,277,1552"/>
+<area shape="rect" id="node20" href="$class_event_manager.html" title=" " alt="" coords="179,1576,283,1603"/>
+<area shape="rect" id="node21" href="$class_fire.html" title=" " alt="" coords="209,1627,253,1653"/>
+<area shape="rect" id="node22" href="$class_flame.html" title=" " alt="" coords="201,1677,260,1704"/>
+<area shape="rect" id="node23" href="$class_flame_thrower.html" title=" " alt="" coords="179,1728,282,1755"/>
+<area shape="rect" id="node24" href="$class_global_damage.html" title=" " alt="" coords="177,1779,284,1805"/>
+<area shape="rect" id="node25" href="$class_healthbar.html" title=" " alt="" coords="192,1829,269,1856"/>
+<area shape="rect" id="node26" href="$class_h_m_g___flash.html" title=" " alt="" coords="185,1880,276,1907"/>
+<area shape="rect" id="node27" href="$class_lobby_scene.html" title=" " alt="" coords="183,1931,278,1957"/>
+<area shape="rect" id="node28" href="$class_machine_gun.html" title=" " alt="" coords="183,1981,278,2008"/>
+<area shape="rect" id="node29" href="$class_movement.html" title=" " alt="" coords="190,2032,271,2059"/>
+<area shape="rect" id="node30" href="$class_nuke_power_up.html" title=" " alt="" coords="179,2083,283,2109"/>
+<area shape="rect" id="node31" href="$class_object_pooler.html" title=" " alt="" coords="182,2133,279,2160"/>
+<area shape="rect" id="node32" href="$class_panel_toggler.html" title=" " alt="" coords="182,2184,279,2211"/>
+<area shape="rect" id="node33" href="$class_persistant_data.html" title=" " alt="" coords="177,2235,285,2261"/>
+<area shape="rect" id="node34" href="$class_player.html" title=" " alt="" coords="201,2285,260,2312"/>
+<area shape="rect" id="node35" href="$class_player_lobby.html" title=" " alt="" coords="183,2336,278,2363"/>
+<area shape="rect" id="node36" href="$class_ready_toggler.html" title=" " alt="" coords="180,2387,281,2413"/>
+<area shape="rect" id="node37" href="$class_r_l___explosion.html" title=" " alt="" coords="179,309,282,336"/>
+<area shape="rect" id="node38" href="$class_r_l___flash.html" title=" " alt="" coords="192,360,269,387"/>
+<area shape="rect" id="node39" href="$class_rocket_launcher.html" title=" " alt="" coords="173,411,289,437"/>
+<area shape="rect" id="node40" href="$class_scene_changer.html" title=" " alt="" coords="177,461,284,488"/>
+<area shape="rect" id="node41" href="$class_seed_manager.html" title=" " alt="" coords="179,512,282,539"/>
+<area shape="rect" id="node42" href="$class_serializer.html" title=" " alt="" coords="193,563,269,589"/>
+<area shape="rect" id="node43" href="$class_s_f_x.html" title=" " alt="" coords="207,613,254,640"/>
+<area shape="rect" id="node44" href="$class_s_f_x_slider.html" title=" " alt="" coords="191,664,270,691"/>
+<area shape="rect" id="node45" href="$class_s_f_x_sound.html" title=" " alt="" coords="189,715,272,741"/>
+<area shape="rect" id="node46" href="$class_shield_power_up.html" title=" " alt="" coords="175,765,286,792"/>
+<area shape="rect" id="node47" href="$class_slider_value.html" title=" " alt="" coords="187,816,275,843"/>
+<area shape="rect" id="node48" href="$class_start_button.html" title=" " alt="" coords="187,867,275,893"/>
+<area shape="rect" id="node49" href="$class_sun.html" title=" " alt="" coords="208,917,253,944"/>
+<area shape="rect" id="node50" href="$class_text_display.html" title=" " alt="" coords="185,968,276,995"/>
+<area shape="rect" id="node51" href="$classthird_per_cam.html" title=" " alt="" coords="183,1019,278,1045"/>
+<area shape="rect" id="node52" href="$class_time_slow_power_up.html" title=" " alt="" coords="165,1069,296,1096"/>
+<area shape="rect" id="node53" href="$class_world_clock.html" title=" " alt="" coords="186,1120,275,1147"/>
+<area shape="rect" id="node54" href="$class_zombie_animation.html" title=" " alt="" coords="169,1171,292,1197"/>
+</map>

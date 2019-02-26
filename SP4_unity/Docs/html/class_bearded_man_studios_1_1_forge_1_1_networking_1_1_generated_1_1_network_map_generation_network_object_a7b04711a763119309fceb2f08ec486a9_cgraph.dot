@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.NetworkMapGenerationNetworkObject.NetworkMapGenerationNetworkObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="BeardedManStudios.Forge.\lNetworking.Generated.Network\lMapGenerationNetworkObject.Network\lMapGenerationNetworkObject",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="BeardedManStudios.Forge.\lNetworking.Generated.Network\lMapGenerationNetworkObject.Initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_network_map_generation_network_object.html#af71dfde3b3862f7d9584085ae2b4a711",tooltip=" "];
+}

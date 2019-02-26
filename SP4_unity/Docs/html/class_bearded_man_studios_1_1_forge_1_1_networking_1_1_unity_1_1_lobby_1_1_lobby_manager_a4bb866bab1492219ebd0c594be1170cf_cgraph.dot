@@ -1,0 +1,40 @@
+digraph "BeardedManStudios.Forge.Networking.Unity.Lobby.LobbyManager.OnFNPlayerConnected"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node83 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.OnFNPlayerConnected",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node83 -> Node84 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabPlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a1e92208289f18b60fa2103fec63e579d",tooltip=" "];
+  Node83 -> Node85 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.OnFNTeamChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a9b78b3b8747172795ed64ff2b70b96a2",tooltip=" "];
+  Node85 -> Node86 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeTeam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a794773569a51e5e80578cd79f498b96d",tooltip=" "];
+  Node85 -> Node87 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GrabLobbyPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a2926f9c419dc243610b8e1c097226ce1",tooltip=" "];
+  Node83 -> Node88 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.Run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a7af2419cbe4e68c03830072a2fb535b8",tooltip="Add a function to the list of functions to call on the main thread via the Update function"];
+  Node88 -> Node89 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="BeardedManStudios.Forge.\lNetworking.Unity.MainThreadManager.\lCreate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_main_thread_manager.html#a1c20676eb649b3ce5d53a15f1d57c7e4",tooltip="This will create a main thread manager if one is not already created"];
+  Node83 -> Node90 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node90 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.GetNewPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a2e757989e35aa5db2fa699433b71bb50",tooltip=" "];
+  Node90 -> Node91 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node91 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lManager.CreateNewPlayerItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_manager.html#a82ac65d0caa90dfbb79b94b9117fa714",tooltip=" "];
+  Node91 -> Node92 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node92 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a16880947aec4efd06cf18c1b64d61cc1",tooltip=" "];
+  Node90 -> Node93 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node93 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ToggleObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#ad3062cd289f1ad71d6b874be7d4156d7",tooltip=" "];
+  Node90 -> Node94 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node94 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.SetParent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a5830a5bdfcc09044abeb32d9f402fd73",tooltip=" "];
+  Node83 -> Node95 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node95 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.Setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a8cf1332cf3923871a66412f9dbd09e12",tooltip=" "];
+  Node95 -> Node96 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node96 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ToggleInteractables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a430ff8864852dd67ce208604f8cbcf11",tooltip=" "];
+  Node95 -> Node97 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node97 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeAvatarID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#a9d5a8d95b1cf70f6e7f8ed87fa9e1b28",tooltip=" "];
+  Node95 -> Node98 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node98 [label="BeardedManStudios.Forge.\lNetworking.Unity.Lobby.Lobby\lPlayerItem.ChangeName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_unity_1_1_lobby_1_1_lobby_player_item.html#aec157ab3177d70ca12eded527d7e4200",tooltip=" "];
+  Node95 -> Node86 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 -> Node94 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

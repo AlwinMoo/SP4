@@ -1,0 +1,10 @@
+digraph "BeardedManStudios.Forge.Networking.Generated.TestNetworkObject.OwnershipChanged"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.OwnershipChanged",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="BeardedManStudios.Forge.\lNetworking.Generated.TestNetwork\lObject.SnapInterpolations",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bearded_man_studios_1_1_forge_1_1_networking_1_1_generated_1_1_test_network_object.html#ab46f89db5a19f6b1243692934cc9aaff",tooltip=" "];
+}
