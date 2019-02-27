@@ -16,7 +16,7 @@ public class Sedan : VehicleBase
         //transform.Find("MachineGun").gameObject.SetActive(true);
         //transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
 
-        motorForce = 1000;
+        motorForce = 2000;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
 

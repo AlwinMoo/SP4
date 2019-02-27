@@ -73,7 +73,8 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider.maxValue = maxHealth;
         armour = 1;
 
-		if (networkObject.IsServer) {
+		if (networkObject.IsServer)
+        {
 			// note: toowner
 			this.gameObject.tag = "Player" + networkObject.Owner.NetworkId;
 			networkObject.SendRpc (RPC_SEND_TAG, Receivers.All, this.gameObject.tag);
@@ -84,11 +85,7 @@ public class VehicleBase : PlayerVehicleBehavior {
 		}
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().LoadCamera());
 
-        //if (this.gameObject.tag == "Player" + ((int)PlayerManager.playerManager.GetPlayerIndex()))
-        //{
-        //    Debug.Log("Owned by: " + networkObject.MyPlayerId);
-        //    networkObject.TakeOwnership();
-		//}
+        networkObject.isActive = this.gameObject.activeSelf;
 
     }
 
@@ -104,6 +101,8 @@ public class VehicleBase : PlayerVehicleBehavior {
             transform.rotation = networkObject.rotation;
 
             parentDir = networkObject.WeaponRotation;
+
+            gameObject.SetActive(networkObject.isActive);
 
             return;
         }
@@ -204,11 +203,6 @@ public class VehicleBase : PlayerVehicleBehavior {
             rR_Wheel.brakeTorque = 0;
         }
 
-        //if (transform.eulerAngles.z > 80 || transform.eulerAngles.z < -80)
-        //{
-        //    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z, -80f, 80f));
-        //}
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
@@ -218,6 +212,15 @@ public class VehicleBase : PlayerVehicleBehavior {
         networkObject.position = transform.position;
         // Update the client's rotaition on the server
         networkObject.rotation = transform.rotation;
+
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
+            networkObject.isActive = false;
+        }
+
+        if (this.transform.position.y >= -3f)
+            this.transform.position = new Vector3(this.transform.position .x, -3f, this.transform.position.z);
     }
     public virtual void GetInput()
     {
@@ -294,8 +297,10 @@ public class VehicleBase : PlayerVehicleBehavior {
 
     public virtual void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
+
             switch (this.gameObject.GetComponent<VehicleBase>().vehicleType)
             {
                 case VehicleType.VEH_SEDAN:

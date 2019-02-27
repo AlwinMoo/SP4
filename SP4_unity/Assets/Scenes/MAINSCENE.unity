@@ -13870,6 +13870,7 @@ MonoBehaviour:
   fire: {fileID: 1601105410}
   glow: {fileID: 841589143}
   maxHealth: 100
+  anim: {fileID: 0}
 --- !u!114 &1528660106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24273,6 +24274,7 @@ MonoBehaviour:
   smoke: {fileID: 1959703084}
   fire: {fileID: 648400912}
   glow: {fileID: 1564595181}
+  SoundClip: {fileID: 0}
 --- !u!1 &1918893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -24577,9 +24579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252d5c726fb6faa40af3f39e7f99a752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab:
-  - {fileID: 1433484063748296, guid: 7567501afee2fd4448417554dff24fe0, type: 2}
-  - {fileID: 1433484063748296, guid: 3b410f4fb8f5d2f40b58e2781c8d0df6, type: 2}
+  enemyPrefabCount: 3
 --- !u!114 &1936100551
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class GameLogic : GameLogicBehavior
         float newHP = args.GetNext<float>();
         string playerTag = args.GetNext<string>();
 
-        GameObject.FindGameObjectWithTag(playerTag).GetComponent<VehicleBase>().health = newHP;
+        if (GameObject.FindGameObjectWithTag(playerTag) != null)
+            GameObject.FindGameObjectWithTag(playerTag).GetComponent<VehicleBase>().health = newHP;
     }
 }

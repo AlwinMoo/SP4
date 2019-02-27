@@ -7,7 +7,7 @@ using BeardedManStudios.Forge.Networking;
 
 public class enemy_spawner : EnemySpawnerBehavior {
     
-	public GameObject[] enemyPrefab;
+	public int enemyPrefabCount;
 
 	public static List<GameObject> enemyList;
     public static float spawnTimer;
@@ -55,7 +55,7 @@ public class enemy_spawner : EnemySpawnerBehavior {
                 {
                     //Rigidbody newEnemy;
                     Vector3 randPos = new Vector3(Random.Range(0, 20), -1, Random.Range(0, 20));
-                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length + 1), randPos, transform.rotation);
+                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(0/*Random.Range(0, enemyPrefab.Length)*/, randPos, transform.rotation);
 
                     enemyList.Add(newEnemy.gameObject);
                     networkObject.RespawnTimer = 0.0f;

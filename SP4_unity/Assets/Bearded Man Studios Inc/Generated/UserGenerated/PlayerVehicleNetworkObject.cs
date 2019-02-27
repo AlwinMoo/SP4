@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15,0.15,0.15]")]
+	[GeneratedInterpol("{\"inter\":[0.15,0.15,0.15,0]")]
 	public partial class PlayerVehicleNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 15;
+		public const int IDENTITY = 18;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -108,6 +108,37 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (WeaponRotationChanged != null) WeaponRotationChanged(_WeaponRotation, timestep);
 			if (fieldAltered != null) fieldAltered("WeaponRotation", _WeaponRotation, timestep);
 		}
+		[ForgeGeneratedField]
+		private bool _isActive;
+		public event FieldEvent<bool> isActiveChanged;
+		public Interpolated<bool> isActiveInterpolation = new Interpolated<bool>() { LerpT = 0f, Enabled = false };
+		public bool isActive
+		{
+			get { return _isActive; }
+			set
+			{
+				// Don't do anything if the value is the same
+				if (_isActive == value)
+					return;
+
+				// Mark the field as dirty for the network to transmit
+				_dirtyFields[0] |= 0x8;
+				_isActive = value;
+				hasDirtyFields = true;
+			}
+		}
+
+		public void SetisActiveDirty()
+		{
+			_dirtyFields[0] |= 0x8;
+			hasDirtyFields = true;
+		}
+
+		private void RunChange_isActive(ulong timestep)
+		{
+			if (isActiveChanged != null) isActiveChanged(_isActive, timestep);
+			if (fieldAltered != null) fieldAltered("isActive", _isActive, timestep);
+		}
 
 		protected override void OwnershipChanged()
 		{
@@ -120,6 +151,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			positionInterpolation.current = positionInterpolation.target;
 			rotationInterpolation.current = rotationInterpolation.target;
 			WeaponRotationInterpolation.current = WeaponRotationInterpolation.target;
+			isActiveInterpolation.current = isActiveInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
@@ -129,6 +161,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			UnityObjectMapper.Instance.MapBytes(data, _position);
 			UnityObjectMapper.Instance.MapBytes(data, _rotation);
 			UnityObjectMapper.Instance.MapBytes(data, _WeaponRotation);
+			UnityObjectMapper.Instance.MapBytes(data, _isActive);
 
 			return data;
 		}
@@ -147,6 +180,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			WeaponRotationInterpolation.current = _WeaponRotation;
 			WeaponRotationInterpolation.target = _WeaponRotation;
 			RunChange_WeaponRotation(timestep);
+			_isActive = UnityObjectMapper.Instance.Map<bool>(payload);
+			isActiveInterpolation.current = _isActive;
+			isActiveInterpolation.target = _isActive;
+			RunChange_isActive(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -160,6 +197,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _rotation);
 			if ((0x4 & _dirtyFields[0]) != 0)
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _WeaponRotation);
+			if ((0x8 & _dirtyFields[0]) != 0)
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _isActive);
 
 			// Reset all the dirty fields
 			for (int i = 0; i < _dirtyFields.Length; i++)
@@ -215,6 +254,19 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					RunChange_WeaponRotation(timestep);
 				}
 			}
+			if ((0x8 & readDirtyFlags[0]) != 0)
+			{
+				if (isActiveInterpolation.Enabled)
+				{
+					isActiveInterpolation.target = UnityObjectMapper.Instance.Map<bool>(data);
+					isActiveInterpolation.Timestep = timestep;
+				}
+				else
+				{
+					_isActive = UnityObjectMapper.Instance.Map<bool>(data);
+					RunChange_isActive(timestep);
+				}
+			}
 		}
 
 		public override void InterpolateUpdate()
@@ -236,6 +288,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				_WeaponRotation = (Vector3)WeaponRotationInterpolation.Interpolate();
 				//RunChange_WeaponRotation(WeaponRotationInterpolation.Timestep);
+			}
+			if (isActiveInterpolation.Enabled && !isActiveInterpolation.current.UnityNear(isActiveInterpolation.target, 0.0015f))
+			{
+				_isActive = (bool)isActiveInterpolation.Interpolate();
+				//RunChange_isActive(isActiveInterpolation.Timestep);
 			}
 		}
 
