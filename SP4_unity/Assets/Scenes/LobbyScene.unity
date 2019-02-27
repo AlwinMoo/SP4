@@ -872,11 +872,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Togglers:
-  - {fileID: 0}
   - {fileID: 1802028408}
   - {fileID: 2096832811}
   - {fileID: 1122530736}
-  ReadyToggle: {fileID: 0}
   LobbysystemPrefab: {fileID: 0}
 --- !u!114 &253263086
 MonoBehaviour:

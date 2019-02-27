@@ -7,7 +7,6 @@ public class ReadyToggler : MonoBehaviour
 {
 
     public Toggle[] Togglers = new Toggle[3];
-    public Toggle ReadyToggle;
     public GameObject LobbysystemPrefab;
     private LobbyScript LobScript;
 
@@ -21,7 +20,7 @@ public class ReadyToggler : MonoBehaviour
         LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");
         LobScript = LobbysystemPrefab.GetComponent<LobbyScript>();
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 2; ++i)
         {
             if (LobbyScript.players[i] == 2)
             {
