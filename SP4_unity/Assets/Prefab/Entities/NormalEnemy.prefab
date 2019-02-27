@@ -1873,6 +1873,7 @@ MonoBehaviour:
   fire: {fileID: 198772549982397684}
   glow: {fileID: 198765606828670328}
   maxHealth: 100
+  anim: {fileID: 95528265621008078}
 --- !u!136 &136833385183531550
 CapsuleCollider:
   m_ObjectHideFlags: 1

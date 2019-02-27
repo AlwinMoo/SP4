@@ -18,6 +18,9 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
     //private bool m_burning;
     private float m_countDownNormal;
     // Use this for initialization
+	public Animator anim;
+	// Hashes for calling animation triggers
+	private int m_aAttackHash = Animator.StringToHash("attack");
     public override void Start ()
     {
         health = 20;
@@ -42,6 +45,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
         //if (health <= 0)
        //     Destroy(this.gameObject);
 		// Let the server handle fire damage
+		CheckAlive();
 		if (networkObject.IsServer && m_burning)
         {
             m_countDownNormal -= Time.deltaTime;
@@ -61,6 +65,13 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
             TakeDamage(damage, GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL);
         }
     }
+
+	public override void OnTriggerStay(Collider collision)
+	{
+		base.OnTriggerStay(collision);
+		if (anim.GetCurrentAnimatorStateInfo (0).fullPathHash != m_aAttackHash)
+			anim.SetTrigger (m_aAttackHash);
+	}
 
     public override void OnCollisionEnter(Collision collision)
     {

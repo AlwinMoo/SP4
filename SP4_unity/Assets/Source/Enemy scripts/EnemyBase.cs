@@ -116,6 +116,9 @@ public class EnemyBase : EnemyBehavior, Flammable
                     case enemytype.ENEMY_TANK:
                         collision.gameObject.GetComponent<VehicleBase>().health -= (20 * collision.gameObject.GetComponent<VehicleBase>().armour);
                         break;
+				case enemytype.ENEMY_SPIDER:
+					collision.gameObject.GetComponent<VehicleBase>().health -= (15 * collision.gameObject.GetComponent<VehicleBase>().armour);
+					break;
                     default:
                         break;
                 }

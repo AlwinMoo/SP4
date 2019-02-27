@@ -47,8 +47,9 @@ MonoBehaviour:
   CubeForgeGameNetworkObject: []
   EnemyNetworkObject:
   - {fileID: 1100291244234100, guid: 5af32f3d2455b0543b4e12548d6e6dd2, type: 2}
-  - {fileID: 1474570771535980, guid: 5bcbf31ded2e353449622ec74f8954da, type: 2}
+  - {fileID: 1638100616818112, guid: 5bcbf31ded2e353449622ec74f8954da, type: 2}
   - {fileID: 1838564470075906, guid: 507962717b434e24586709bbe2ac7895, type: 2}
+  - {fileID: 1005730790054542, guid: 5de00eb32d0138a46b948fe32cb60e83, type: 2}
   EnemySpawnerNetworkObject: []
   ExampleProximityPlayerNetworkObject:
   - {fileID: 1000012738253334, guid: feb25ecf90a8d8b4ab922a455249997b, type: 2}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using BeardedManStudios.Forge.Networking;
 
-public class SpiderEnemy :  EnemyBase, ILiveEntity {
+public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD

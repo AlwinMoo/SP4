@@ -76,9 +76,9 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		}
     }
 
-	public virtual void OnTriggerStay(Collider collision)
+	public override void OnTriggerStay(Collider collision)
 	{
-		//base.OnTriggerStay(collision);
+		base.OnTriggerStay(collision);
 		if (anim.GetCurrentAnimatorStateInfo (0).fullPathHash != m_aAttackHash)
 			anim.SetTrigger (m_aAttackHash);
 	}

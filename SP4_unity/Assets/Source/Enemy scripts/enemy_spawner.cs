@@ -55,7 +55,7 @@ public class enemy_spawner : EnemySpawnerBehavior {
                 {
                     //Rigidbody newEnemy;
                     Vector3 randPos = new Vector3(Random.Range(0, 20), -1, Random.Range(0, 20));
-                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(0/*Random.Range(0, enemyPrefab.Length)*/, randPos, transform.rotation);
+                    var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefabCount), randPos, transform.rotation);
 
                     enemyList.Add(newEnemy.gameObject);
                     networkObject.RespawnTimer = 0.0f;
