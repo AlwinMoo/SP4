@@ -13,7 +13,7 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 	public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public float maxHealth;
-	 
+	public Animator anim;
 	//private bool m_burning;
 	private float m_countDownTank;
 
