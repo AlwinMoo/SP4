@@ -28,7 +28,7 @@ public class MeshGenerator : NetworkMapGenerationBehavior
     void Start()
     {
         Random.InitState(GenerateSeed());
-        int rand = Random.Range(10, 20);
+        int rand = Random.Range(20, 30);
 
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
@@ -36,7 +36,7 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         CreateShape();
         UpdateMesh();
         GetComponent<MeshCollider>().sharedMesh = mesh;
-
+        
         CreateObstacles(rand);
 
         GameObject.Find("NavMesh").GetComponent<NavMeshSurface>().BuildNavMesh();
@@ -93,7 +93,6 @@ public class MeshGenerator : NetworkMapGenerationBehavior
 
     void UpdateMesh()
     {
-
         mesh.Clear();
 
         mesh.vertices = vertices;
@@ -146,8 +145,8 @@ public class MeshGenerator : NetworkMapGenerationBehavior
 
         for (int i = 0; i < numOfObstacles; ++i)
         {
-            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.min.y /*+ 1.0f*/, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
-            randPos.y = this.transform.position.y;
+            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.min.y, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
+            randPos.y = this.transform.position.y + 1.0f;
 
             //Debug.Log("randomPos: " + randPos);
 

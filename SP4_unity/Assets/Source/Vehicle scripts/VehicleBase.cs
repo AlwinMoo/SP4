@@ -258,7 +258,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         UpdateWheelPose(rL_Wheel, rL_T);
     }
     
-    public virtual void InitWheelScale( Transform _transform, Vector3 _wheelScale)
+    public virtual void InitWheelScale(Transform _transform, Vector3 _wheelScale)
     {
         _transform.localScale = _wheelScale;
     }

@@ -18,22 +18,24 @@ public class MonsterTruck : VehicleBase
         brakeForce = 5 * motorForce;
 
         fR_Wheel = GameObject.FindWithTag("FR_Collider").GetComponent<WheelCollider>();
-        //InitWheelScale(fR_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         fL_Wheel = GameObject.FindWithTag("FL_Collider").GetComponent<WheelCollider>();
-        //InitWheelScale(fL_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         rR_Wheel = GameObject.FindWithTag("RR_Collider").GetComponent<WheelCollider>();
-        //InitWheelScale(rR_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
         rL_Wheel = GameObject.FindWithTag("RL_Collider").GetComponent<WheelCollider>();
-        //InitWheelScale(rL_Wheel.GetComponent<Transform>(), new Vector3(1f, 1f, 1f));
 
         fR_T = GameObject.FindWithTag("FR_Transform").GetComponent<Transform>();
+        InitWheelScale(fR_T.transform, new Vector3(1f, 3.5f, 4f));
+       
         fL_T = GameObject.FindWithTag("FL_Transform").GetComponent<Transform>();
+        InitWheelScale(fL_T.GetComponent<Transform>(), new Vector3(1f, 3.5f, 4f));
+        
         rR_T = GameObject.FindWithTag("RR_Transform").GetComponent<Transform>();
+        InitWheelScale(rR_T.GetComponent<Transform>(), new Vector3(1f, 3.5f, 4f));
+
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
+        InitWheelScale(rL_T.GetComponent<Transform>(), new Vector3(1f, 3.5f, 4f));
 
         driveTrain = DriveTrain.DRIVE_RWD;
         vehicleType = VehicleType.VEH_MONSTER_TRUCK;
-
         
         base.Start();
     }

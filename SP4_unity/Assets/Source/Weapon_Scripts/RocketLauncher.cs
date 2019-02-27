@@ -7,67 +7,32 @@ public class RocketLauncher : MonoBehaviour
     ObjectPooler objectPooler;
     public float fireRate = 2.0f;
     public GameObject flash;
-    public bool m_bMouse1State = false;
-    public float bulletForce = 0.0f;
-    private bool increaseBulletForce = true;
-    private bool decreaseBulletForce = false;
-
+    private bool firing = false;
     private float m_countDown = 0.0f;
 
-	// Use this for initialization
-	private void Start ()
+    // Use this for initialization
+    private void Start()
     {
         objectPooler = ObjectPooler.Instance;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        m_countDown -= Time.deltaTime;
-        
-        if (Input.GetMouseButton(1) && m_countDown <= 0.0f /*&& !m_bMouse1State*/)
+        // lower cooldown if cooldown is above 0 and isn't firing
+        if (!firing && m_countDown > 0.0f)
+            m_countDown -= Time.deltaTime;
+
+        // if right clicked and cooldown is below 0
+        if (Input.GetMouseButton(1) && m_countDown <= 0.0f)
         {
-            m_bMouse1State = true;
-            if(increaseBulletForce)
-            {
-                bulletForce += Time.deltaTime * 500;
-                if(bulletForce >= 100)
-                {
-                    bulletForce = 100.0f;
-                    increaseBulletForce = false;
-                    decreaseBulletForce = true;
-                }
-            }
-            else if(decreaseBulletForce)
-            {
-                bulletForce -= Time.deltaTime * 500;
-                if(bulletForce <= 0)
-                {
-                    bulletForce = 10.0f;
-                    increaseBulletForce = true;
-                    decreaseBulletForce = false;
-                }
-            }
-            Debug.Log("spawning RL_Bullet");
-            Debug.Log("Bullet Force: " + bulletForce);
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            firing = true;
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                objectPooler.SpawnFromPool("RL_Bullet", transform.position, Quaternion.LookRotation(hit.point - transform.position));
-
-                // Play thegunfire light
-                flash.GetComponent<RL_Flash>().InitLight();
-            }
-            
-            m_countDown += fireRate;
-        }
-
-        else if (m_countDown <= 0.0f && !Input.GetMouseButton(1) /*&& m_bMouse1State*/)
-        {
+            flash.GetComponent<RL_Flash>().InitLight();
+            objectPooler.SpawnFromPool("RL_Bullet", transform.position, this.gameObject.transform.rotation);
             m_countDown = fireRate;
-            m_bMouse1State = false;
+            firing = false;
+
         }
     }
 }
