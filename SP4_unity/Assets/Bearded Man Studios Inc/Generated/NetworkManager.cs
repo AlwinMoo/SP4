@@ -26,6 +26,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public GameObject[] PlayerVehicleNetworkObject = null;
 		public GameObject[] QuestSystemNetworkObject = null;
 		public GameObject[] TestNetworkObject = null;
+		public GameObject[] ArmourNetworkObject = null;
 
 		private void SetupObjectCreatedEvent()
 		{
@@ -411,6 +412,29 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						objectInitialized(newObj, obj);
 				});
 			}
+			else if (obj is ArmourNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (ArmourNetworkObject.Length > 0 && ArmourNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(ArmourNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<ArmourBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
 		}
 
 		private void InitializedObject(INetworkBehavior behavior, NetworkObject obj)
@@ -608,6 +632,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<TestBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<TestBehavior>().networkObject = (TestNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use InstantiateArmour instead, its shorter and easier to type out ;)")]
+		public ArmourBehavior InstantiateArmourNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ArmourNetworkObject[index]);
+			var netBehavior = go.GetComponent<ArmourBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<ArmourBehavior>().networkObject = (ArmourNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -1425,6 +1461,57 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<TestBehavior>().networkObject = (TestNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		/// <summary>
+		/// Instantiate an instance of Armour
+		/// </summary>
+		/// <returns>
+		/// A local instance of ArmourBehavior
+		/// </returns>
+		/// <param name="index">The index of the Armour prefab in the NetworkManager to Instantiate</param>
+		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
+		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
+		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
+		public ArmourBehavior InstantiateArmour(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ArmourNetworkObject[index]);
+			var netBehavior = go.GetComponent<ArmourBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<ArmourBehavior>().networkObject = (ArmourNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

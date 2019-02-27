@@ -87,6 +87,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
 						break;
+					case ArmourNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new ArmourNetworkObject(networker, id, frame);
+						break;
 				}
 
 				if (!availableCallback)

@@ -68,6 +68,8 @@ MonoBehaviour:
   - {fileID: 1487782952363076, guid: 0b35dc679fafc5448b64bc95dd8015bf, type: 2}
   QuestSystemNetworkObject: []
   TestNetworkObject: []
+  ArmourNetworkObject:
+  - {fileID: 1347393118584476, guid: e69ed93fa3d81604080d3eba879d7f8f, type: 2}
   automaticScenes: 1
 --- !u!1001 &100100000
 Prefab:

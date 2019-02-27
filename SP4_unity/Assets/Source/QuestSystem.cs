@@ -66,8 +66,18 @@ public class QuestSystem : QuestSystemBehavior
 
                                 for(int i = 0; i < Random.Range(1,5); ++i)
                                 {
-                                    var newGO = NetworkManager.Instance.InstantiateHealthPotion(0, new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 101)), transform.rotation, true);
+                                    int random = Random.Range(1, 3);
+                                    if(random == 1)
+                                    {
+                                        var newGO = NetworkManager.Instance.InstantiateHealthPotion(0, new Vector3(Random.Range(-100, 101), -5, Random.Range(-100, 101)), transform.rotation, true);
+                                    }
+                                    else
+                                    {
+                                        var newGO = NetworkManager.Instance.InstantiateArmour(0, new Vector3(Random.Range(-100, 101), -5, Random.Range(-100, 101)), transform.rotation, true);
+                                    }
                                 }
+                                networkObject.IsActive = false;
+
                             }
                             else if (theObj.GetComponent<ObjectiveObject>().HealthSlider.value <= 0)
                             {
@@ -77,6 +87,8 @@ public class QuestSystem : QuestSystemBehavior
                                 // Destroy the objective object
                                 if (theObj != null)
                                     theObj.GetComponent<ObjectiveObject>().SendRemove();
+
+                                networkObject.IsActive = false;
                             }
 
                             networkObject.HoldOutTime -= Time.deltaTime;    
@@ -101,12 +113,23 @@ public class QuestSystem : QuestSystemBehavior
 
                                 for (int i = 0; i < Random.Range(1, 5); ++i)
                                 {
-                                    var newGO = NetworkManager.Instance.InstantiateHealthPotion (0, new Vector3(Random.Range(-100, 101), -3, Random.Range(-100, 101)), transform.rotation, true);
+                                    int random = Random.Range(1, 3);
+                                    if (random == 1)
+                                    {
+                                        var newGO = NetworkManager.Instance.InstantiateHealthPotion(0, new Vector3(Random.Range(-100, 101), -5, Random.Range(-100, 101)), transform.rotation, true);
+                                    }
+                                    else
+                                    {
+                                        var newGO = NetworkManager.Instance.InstantiateArmour(0, new Vector3(Random.Range(-100, 101), -5, Random.Range(-100, 101)), transform.rotation, true);
+                                    }
                                 }
+                                networkObject.IsActive = false;
+
                             }
                             else if (networkObject.HoldOutTime <= 0)
                             {
                                 networkObject.IsFailed = true;
+                                networkObject.IsActive = false;
                             }
 
                             networkObject.HoldOutTime -= Time.deltaTime;
@@ -136,13 +159,11 @@ public class QuestSystem : QuestSystemBehavior
         {
             Title = "Success!!";
             Description = null;
-            networkObject.IsActive = false;
         }
         else if (networkObject.IsFailed)
         {
             Title = "Objective Failed";
             Description = null;
-            networkObject.IsActive = false;
         }
         else
         {
