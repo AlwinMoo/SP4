@@ -15,7 +15,7 @@ public class Van : VehicleBase
         //transform.Find("MachineGun").gameObject.SetActive(false);
         //transform.Find("FlameThrower").gameObject.SetActive(!transform.Find("MachineGun").gameObject.activeSelf);
 
-        motorForce = 600;
+        motorForce = 800;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
 
