@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 114112428419153138}
   - component: {fileID: 65449034539683446}
   - component: {fileID: 65924066864639420}
+  - component: {fileID: 65852698598767892}
   m_Layer: 0
   m_Name: Sedan
   m_TagString: Player
@@ -934,6 +935,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 6.564994}
   m_Center: {x: -2.20104e-15, y: -4.9020306e-16, z: 0.10043669}
+--- !u!65 &65852698598767892
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1284209154681884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1009166, y: 1.2713361, z: 5.4525137}
+  m_Center: {x: 2.848449e-17, y: -0.054281622, z: -0.031929612}
 --- !u!65 &65924066864639420
 BoxCollider:
   m_ObjectHideFlags: 1

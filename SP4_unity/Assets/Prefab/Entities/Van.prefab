@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 114623042329243120}
   - component: {fileID: 65466319933975144}
   - component: {fileID: 65026576943335198}
+  - component: {fileID: 65579788918446000}
   m_Layer: 0
   m_Name: Van
   m_TagString: Player
@@ -1039,6 +1040,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.403368, y: 1, z: 7.094636}
   m_Center: {x: 0.0058836937, y: 2.0565621e-15, z: -0.14158094}
+--- !u!65 &65579788918446000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962795683774018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2059674, y: 1.8568432, z: 5.92298}
+  m_Center: {x: -8.406615e-17, y: 0.1602011, z: -4.553189e-15}
 --- !u!65 &65817954690216084
 BoxCollider:
   m_ObjectHideFlags: 1
