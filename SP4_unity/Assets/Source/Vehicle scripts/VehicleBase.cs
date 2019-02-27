@@ -215,6 +215,8 @@ public class VehicleBase : PlayerVehicleBehavior {
 
         if (health <= 0)
         {
+            transform.position = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
             TextDisplay.Isdead();
             gameObject.SetActive(false);
             networkObject.isActive = false;

@@ -51,8 +51,6 @@ public class GameLogic : GameLogicBehavior
                 thePlayerInfo.SetActive(true);
                 thePlayerInfo.GetComponent<VehicleBase>().health = thePlayerInfo.GetComponent<VehicleBase>().maxHealth;
                 respawnTimer = 0;
-                thePlayerInfo.transform.position.Set(0, 0, 0);
-                thePlayerInfo.transform.rotation.eulerAngles.Set(0, 0, 0);
             }
         }
 
