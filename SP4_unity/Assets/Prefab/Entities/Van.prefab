@@ -411,7 +411,7 @@ Transform:
   m_GameObject: {fileID: 1962795683774018}
   m_LocalRotation: {x: -0.00000020275301, y: 0.00000069148666, z: 0.0000000066633015,
     w: 1}
-  m_LocalPosition: {x: 19.369503, y: -4.29, z: -1.4604979}
+  m_LocalPosition: {x: -57.453247, y: 6.937583, z: -90.884476}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4342095878616452}
@@ -1310,6 +1310,7 @@ MonoBehaviour:
   smoke: {fileID: 198336238735561334}
   fire: {fileID: 198644462582813878}
   glow: {fileID: 198342426894810442}
+  SoundClip: {fileID: 8300000, guid: ef9b38c42d37a514fab8f1bbb0a246da, type: 3}
 --- !u!114 &114748876114561262
 MonoBehaviour:
   m_ObjectHideFlags: 1
