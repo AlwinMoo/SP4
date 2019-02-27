@@ -17,13 +17,20 @@ public class TextDisplay : MonoBehaviour {
     public static GameObject CarBase;
     private int TimeRemainingTillNextWave;
 
+    public static GameObject GUIpanel;
+    public static GameObject RespawnPanel;
+
     void Start()
     {
+        GUIpanel = GameObject.FindWithTag("GUIpanel");
+        RespawnPanel = GameObject.FindWithTag("RespawnPanel");
+        RespawnPanel.SetActive(false);
+
         TimeRemainingTillNextWave = 5;
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
 
         if (CarBase == null)
@@ -37,5 +44,17 @@ public class TextDisplay : MonoBehaviour {
         NextWave.text = "Time Till Next Wave: " + (TimeRemainingTillNextWave - enemy_spawner.spawnTimer).ToString("0");
         ObjectiveTitle.text = QuestSystem.Title;
         ObjectiveDescription.text = QuestSystem.Description;
+    }
+
+    public static void Isdead()
+    {
+        GUIpanel.SetActive(false);
+        RespawnPanel.SetActive(true);
+    }
+
+    public static void IsAlive()
+    {
+        GUIpanel.SetActive(true);
+        RespawnPanel.SetActive(false);
     }
 }

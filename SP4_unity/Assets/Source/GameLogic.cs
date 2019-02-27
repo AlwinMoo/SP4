@@ -10,7 +10,7 @@ public class GameLogic : GameLogicBehavior
     public static Transform serverTransform;
 
     GameObject thePlayerInfo;
-
+    private float respawnTimer;
 
     private float HPUpdateDebounce;
     //List<GameObject> PlayerCarList;
@@ -19,7 +19,7 @@ public class GameLogic : GameLogicBehavior
     void Start()
     {
         HPUpdateDebounce = 0f;
-
+        respawnTimer = 0;
         Random.InitState((int)System.DateTime.Now.Ticks);
 
         Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
@@ -40,6 +40,21 @@ public class GameLogic : GameLogicBehavior
 	void Update ()
     {
         HPUpdateDebounce += Time.deltaTime;
+         
+        if(!thePlayerInfo.gameObject.activeInHierarchy)
+        {
+            respawnTimer += Time.deltaTime;
+            Debug.Log(respawnTimer);
+            if (respawnTimer >= 3)
+            {
+                TextDisplay.IsAlive();
+                thePlayerInfo.SetActive(true);
+                thePlayerInfo.GetComponent<VehicleBase>().health = thePlayerInfo.GetComponent<VehicleBase>().maxHealth;
+                respawnTimer = 0;
+                thePlayerInfo.transform.position.Set(0, 0, 0);
+                thePlayerInfo.transform.rotation.eulerAngles.Set(0, 0, 0);
+            }
+        }
 
         if (HPUpdateDebounce > 2f)
         {
