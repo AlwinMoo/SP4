@@ -27,17 +27,29 @@ public class enemy_spawner : EnemySpawnerBehavior {
 	// Update is called once per frame
 	void Update ()
     {
+        // For client(if no enemy clear enemy_list)
+        // sync the respawntimer always
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             enemyList.Clear();
             //TO DO: SHOW TIME LEFT TILL NEXT WAVE
-            spawnTimer += Time.deltaTime;
+            spawnTimer = networkObject.RespawnTimer;
         }
 
-        //TO DO: SHOW ENEMIES LEFT
-        if (spawnTimer >= 5)
+
+        if (NetworkManager.Instance.IsServer)
         {
-            if (NetworkManager.Instance.IsServer)
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            {
+                enemyList.Clear();
+                //TO DO: SHOW TIME LEFT TILL NEXT WAVE
+                networkObject.RespawnTimer += Time.deltaTime;
+                spawnTimer = networkObject.RespawnTimer;
+            }
+
+            //TO DO: SHOW ENEMIES LEFT
+
+            if (networkObject.RespawnTimer >= 5)
             {
                 for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
                 {
@@ -46,12 +58,15 @@ public class enemy_spawner : EnemySpawnerBehavior {
                     var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefab.Length + 1), randPos, transform.rotation);
 
                     enemyList.Add(newEnemy.gameObject);
-                    spawnTimer = 0.0f;
+                    networkObject.RespawnTimer = 0.0f;
                 }
+                ++waveCount;
             }
 
-            ++waveCount;
+            
         }
+
+       
     }
 
     float SpawnerCalc(float currentWave, float startMobCount, float MaxMinDiff, float MaxWave)
