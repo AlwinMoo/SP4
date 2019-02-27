@@ -16,7 +16,12 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 	public Animator anim;
 	//private bool m_burning;
 	private float m_countDownTank;
-
+	// Hashes for calling animation triggers
+	private int m_aStaggeredHash;
+	private int m_aDeathHash;
+	private int m_aAttackHash;
+	private bool m_deathPlayed = false;	// For animations to play before destroy()
+	private float m_deathTimer = 0.6f;
     Rigidbody thisGO;
 
     // Use this for initialization
@@ -35,10 +40,19 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		m_countDownTank = 0.0f;
 		fire.Stop ();
 		glow.Stop ();
+
+		m_aStaggeredHash = Animator.StringToHash("staggered");
+		m_aDeathHash = Animator.StringToHash("death");
+		m_aAttackHash = Animator.StringToHash("attack");
 	}
 
     public override void Update()
     {
+		CheckAlive ();
+		if (m_deathPlayed) {
+			m_deathTimer -= Time.deltaTime;
+			return;
+		}
         base.Update();
         
 		if (networkObject.IsServer && m_burning)
@@ -61,6 +75,13 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 			TakeDamage(damage, GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL);
 		}
     }
+
+	public virtual void OnTriggerStay(Collider collision)
+	{
+		//base.OnTriggerStay(collision);
+		if (anim.GetCurrentAnimatorStateInfo (0).fullPathHash != m_aAttackHash)
+			anim.SetTrigger (m_aAttackHash);
+	}
 
     public override void OnCollisionEnter(Collision collision)
     {
@@ -153,5 +174,19 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		// If not, just reset the countdown
 		m_countDownTank = burnDuration;
 		return false;
+	}
+
+	public override void CheckAlive ()
+	{
+		if (health <= 0) 
+		{
+			if (!m_deathPlayed) {
+				m_deathPlayed = true;
+				anim.SetTrigger (m_aDeathHash);
+				return;
+			}	
+			if (m_deathTimer <= 0.0f)
+				networkObject.Destroy();
+		}
 	}
 }

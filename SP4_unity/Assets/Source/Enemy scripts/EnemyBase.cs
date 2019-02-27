@@ -59,14 +59,14 @@ public class EnemyBase : EnemyBehavior, Flammable
         m_countDown += Time.deltaTime;
 
         //TODO: switch to pooler?
-        if (health <= 0)
-        {
+        //if (health <= 0)
+        //{
 			// TODO: decide on death of enemy
             //networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
 			// Attempted method: use ondeath local function
-			EnemyDeath();
-        }
-
+		//	EnemyDeath();
+        //}
+		//CheckAlive();
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
             if (!networkObject.IsOwner)
@@ -146,6 +146,10 @@ public class EnemyBase : EnemyBehavior, Flammable
         networkObject.Destroy();
     }
 
+	public override void Stagger(RpcArgs args)
+	{
+	}
+
     public virtual bool Ignited() { return false; }
 
 	public virtual void TakeTickDamage(float _damage)
@@ -171,5 +175,11 @@ public class EnemyBase : EnemyBehavior, Flammable
 		this.health -= damage;
 		if (health < 0.0f)
 			EnemyDeath();
+	}
+	// For compatibility with animations
+	public virtual void CheckAlive()
+	{
+		if (health <= 0)
+			EnemyDeath ();
 	}
 }

@@ -39,8 +39,8 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
     {
         base.Update();
 
-        if (health <= 0)
-            Destroy(this.gameObject);
+        //if (health <= 0)
+       //     Destroy(this.gameObject);
 		// Let the server handle fire damage
 		if (networkObject.IsServer && m_burning)
         {
@@ -154,4 +154,13 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
         m_countDownNormal = burnDuration;
         return false;
     }
+
+	public override void CheckAlive()
+	{
+		if (health <= 0) 
+		{
+			// Call an animation blood splatter to play at this location
+			networkObject.Destroy();
+		}
+	}
 }

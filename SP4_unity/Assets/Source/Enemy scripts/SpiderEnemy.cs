@@ -11,13 +11,17 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 	public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public const float maxHealth = 200;
-	public const float poise = 50;
 	//private bool m_burning;
 	private float m_countDownSpider;
-	private Animator anim;
+	public Animator anim;
 
-	// Hashes for calling animations
-	private int m_;
+	// Hashes for calling animation triggers
+	private int m_aStaggeredHash = Animator.StringToHash("staggered");
+	private int m_aDeathHash = Animator.StringToHash("death");
+	private int m_aAttackHash = Animator.StringToHash("attack");
+	private bool m_deathPlayed = false;	// For animations to play before destroy()
+	private float m_deathTimer = 1.5f;
+
 	Rigidbody thisGO;
 	// Use this for initialization
 	void Start () {
@@ -28,17 +32,23 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		mass = thisGO.mass;
 
 		enemyType = enemytype.ENEMY_SPIDER;
-		anim = GetComponent<Animator> ();
 		agent.speed = 1.5f;
 		m_burning = false;
 		m_countDownSpider = 0.0f;
+		// TODO: make the particle systems disable play on awake
 		fire.Stop ();
 		glow.Stop ();
+		m_deathPlayed = false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		CheckAlive ();
+		if (m_deathPlayed) {
+			m_deathTimer -= Time.deltaTime;
+			return;
+		}
 		base.Update();
 
 		if (networkObject.IsServer && m_burning)
@@ -59,6 +69,13 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 			// Apply tick damage based on time delta
 			TakeDamage(damage, GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL);
 		}
+	}
+
+	public virtual void OnTriggerStay(Collider collision)
+	{
+		base.OnTriggerStay(collision);
+		if (anim.GetCurrentAnimatorStateInfo (0).fullPathHash != m_aAttackHash)
+			anim.SetTrigger (m_aAttackHash);
 	}
 
 	public override void OnCollisionEnter(Collision collision)
@@ -120,8 +137,8 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 				TakeTickDamage(_damage);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-				TakeTickDamage(_damage);
-				break;
+				// Stagger when they take this damage
+
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
 				TakeTickDamage(_damage);
 				break;
@@ -152,5 +169,19 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		// If not, just reset the countdown
 		m_countDownSpider = burnDuration;
 		return false;
+	}
+
+	public override void CheckAlive()
+	{
+		if (health <= 0) 
+		{
+			if (!m_deathPlayed) {
+				m_deathPlayed = true;
+				anim.SetTrigger (m_aDeathHash);
+				return;
+			}	
+			if (m_deathTimer <= 0.0f)
+				networkObject.Destroy();
+		}
 	}
 }

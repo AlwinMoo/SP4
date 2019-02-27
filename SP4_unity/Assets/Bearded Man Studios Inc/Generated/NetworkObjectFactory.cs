@@ -23,6 +23,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				switch (identity)
 				{
+					case ArmourNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new ArmourNetworkObject(networker, id, frame);
+						break;
 					case ChatManagerNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new ChatManagerNetworkObject(networker, id, frame);
@@ -86,10 +90,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					case TestNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
-						break;
-					case ArmourNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new ArmourNetworkObject(networker, id, frame);
 						break;
 				}
 
