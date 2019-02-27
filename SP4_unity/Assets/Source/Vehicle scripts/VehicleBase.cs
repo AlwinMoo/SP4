@@ -73,7 +73,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         HealthSlider.maxValue = maxHealth;
         armour = 1;
 
-		if (networkObject.IsServer)
+        if (networkObject.IsServer)
         {
 			// note: toowner
 			this.gameObject.tag = "Player" + networkObject.Owner.NetworkId;
@@ -215,8 +215,13 @@ public class VehicleBase : PlayerVehicleBehavior {
 
         if (health <= 0)
         {
+            TextDisplay.Isdead();
             gameObject.SetActive(false);
             networkObject.isActive = false;
+        }
+        else
+        {
+            networkObject.isActive = true;
         }
 
         if (this.transform.position.y >= -3f)
