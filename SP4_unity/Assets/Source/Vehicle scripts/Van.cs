@@ -24,14 +24,17 @@ public class Van : VehicleBase
         rL_Wheel = GameObject.FindWithTag("RL_Collider").GetComponent<WheelCollider>();
 
         fR_T = GameObject.FindWithTag("FR_Transform").GetComponent<Transform>();
+        InitWheelScale(fR_T, new Vector3(1f, 1f, 1f));
         fL_T = GameObject.FindWithTag("FL_Transform").GetComponent<Transform>();
+        InitWheelScale(fL_T, new Vector3(1f, 1f, 1f));
         rR_T = GameObject.FindWithTag("RR_Transform").GetComponent<Transform>();
+        InitWheelScale(rR_T, new Vector3(1f, 1f, 1f));
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
+        InitWheelScale(rL_T, new Vector3(1f, 1f, 1f));
 
         driveTrain = VehicleBase.DriveTrain.DRIVE_AWD;
         vehicleType = VehicleType.VEH_VAN;
 
-        InitWheelScale(this.gameObject.GetComponent<Transform>(), new Vector3(1, 1, 1));
         base.Start();
     }
 

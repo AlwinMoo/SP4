@@ -11,11 +11,15 @@ public class GameLogic : GameLogicBehavior
 
     GameObject thePlayerInfo;
 
+
+    private float HPUpdateDebounce;
     //List<GameObject> PlayerCarList;
 
     // Use this for initialization
     void Start()
     {
+        HPUpdateDebounce = 0f;
+
         Random.InitState((int)System.DateTime.Now.Ticks);
 
         Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
@@ -35,7 +39,13 @@ public class GameLogic : GameLogicBehavior
 	// Update is called once per frame
 	void Update ()
     {
-        //networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+        HPUpdateDebounce += Time.deltaTime;
+
+        if (HPUpdateDebounce > 2f)
+        {
+            networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+            HPUpdateDebounce = 0f;
+        }
 	}
 
     public override void UpdatePlayerHealth(RpcArgs args)

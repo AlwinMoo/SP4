@@ -204,6 +204,16 @@ public class VehicleBase : PlayerVehicleBehavior {
             rR_Wheel.brakeTorque = 0;
         }
 
+        //if (transform.eulerAngles.z > 80 || transform.eulerAngles.z < -80)
+        //{
+        //    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z, -80f, 80f));
+        //}
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+        }
+
         // Update the client's position on the server
         networkObject.position = transform.position;
         // Update the client's rotaition on the server
@@ -212,7 +222,7 @@ public class VehicleBase : PlayerVehicleBehavior {
     public virtual void GetInput()
     {
         m_horizonetalInput = Input.GetAxis("Horizontal");
-        m_verticalInput = -Input.GetAxis("Vertical");
+        m_verticalInput = Input.GetAxis("Vertical");
     }
     public virtual void Steer()
     {
