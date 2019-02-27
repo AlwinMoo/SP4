@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 33888985688625572}
   - component: {fileID: 23900526994692612}
   - component: {fileID: 65452334439422986}
+  - component: {fileID: 114570973335108498}
   m_Layer: 0
   m_Name: Box With Wrench
   m_TagString: Untagged
@@ -553,7 +554,7 @@ Transform:
   m_GameObject: {fileID: 1347393118584476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 324.52, y: 174.50668, z: 19.408607}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4479465713880604}
   - {fileID: 4123053912998716}
@@ -1530,3 +1531,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114570973335108498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347393118584476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed7095aa203524ca3a7cb2c1ec4df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

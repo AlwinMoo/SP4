@@ -8,6 +8,7 @@ public class MonsterTruck : VehicleBase
     public override void Start()
     {
         health = 200;
+        maxHealth = 200;
         this.gameObject.GetComponent<Rigidbody>().mass = 1250;
         mass = this.gameObject.GetComponent<Rigidbody>().mass;
 

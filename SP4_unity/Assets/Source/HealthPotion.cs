@@ -38,8 +38,6 @@ public class HealthPotion : HealthPotionBehavior {
         if (Player.GetComponent<VehicleBase>().health >= Player.GetComponent<VehicleBase>().maxHealth)
             Player.GetComponent<VehicleBase>().health = Player.GetComponent<VehicleBase>().maxHealth;
 
-
-        Debug.Log("Removed");
         // this only does for one of the players need to sync it online
         RemoveGameObject();
     }
