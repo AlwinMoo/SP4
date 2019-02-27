@@ -11,6 +11,9 @@ public class FlameThrower : MonoBehaviour {
 	public ParticleSystem smoke;
 	public ParticleSystem fire;
 	public ParticleSystem glow;
+    public AudioClip SoundClip;
+    AudioSource SoundSource;
+
 
     UnityAction Listener;
     UnityAction CancelListener;
@@ -19,7 +22,11 @@ public class FlameThrower : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		m_firing = false;
+        SoundSource = GameObject.FindGameObjectWithTag("BaseSFX").GetComponent<AudioSource>();
+        SoundSource.clip = SoundClip;
+
+
+        m_firing = false;
         Listener = new UnityAction(TriggerFire);
         CancelListener = new UnityAction(ResetFire);
     }
@@ -58,6 +65,8 @@ public class FlameThrower : MonoBehaviour {
             smoke.Play();
             fire.Play();
             glow.Play();
+            SoundSource.volume = SFX.SFXvolchanger.audioSrc.volume;
+            SoundSource.Play();
         }
         else
         {
