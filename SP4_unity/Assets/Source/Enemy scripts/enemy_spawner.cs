@@ -54,7 +54,7 @@ public class enemy_spawner : EnemySpawnerBehavior {
                 for (int i = 0; i <= (int)SpawnerCalc(waveCount, 3, 37, 40); ++i)
                 {
                     //Rigidbody newEnemy;
-                    Vector3 randPos = new Vector3(Random.Range(0, 20), -1, Random.Range(0, 20));
+                    Vector3 randPos = new Vector3(Random.Range(-100, 101), -1, Random.Range(-100, 101));
                     var newEnemy = NetworkManager.Instance.InstantiateEnemy(Random.Range(0, enemyPrefabCount), randPos, transform.rotation);
 
                     enemyList.Add(newEnemy.gameObject);

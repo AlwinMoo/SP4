@@ -22,7 +22,7 @@ public class GameLogic : GameLogicBehavior
         respawnTimer = 0;
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        Vector3 randpos = new Vector3(Random.Range(0, 20), 0, Random.Range(0, 20));
+        Vector3 randpos = new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 101));
          var newCar = NetworkManager.Instance.InstantiatePlayerVehicle(PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_car, randpos, transform.rotation, true);
 
         //string playerID = (PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID).ToString();
