@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthSlider: {fileID: 0}
+  parentDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114652690483293796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1280,7 +1281,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -1309,7 +1310,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -1338,7 +1339,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -1367,7 +1368,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
