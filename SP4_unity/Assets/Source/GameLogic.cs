@@ -10,7 +10,7 @@ public class GameLogic : GameLogicBehavior
     public static Transform serverTransform;
 
     GameObject thePlayerInfo;
-    private float respawnTimer;
+    public static float respawnTimer;
 
     private float HPUpdateDebounce;
     //List<GameObject> PlayerCarList;

@@ -17,8 +17,8 @@ public class FogOfWarPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartingFogRad = 20;
-        StartingMaxFogRad = 0.7f;
+        StartingFogRad = 25;
+        StartingMaxFogRad = 0.9f;
     }
     // Update is called once per frame
     void Update()
