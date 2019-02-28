@@ -1,4 +1,4 @@
 <map id="FogOfWarPlayer.Update" name="FogOfWarPlayer.Update">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node2" href="$class_fog_of_war_player.html#a5e1df1fabdd82b384cfebf8b06759f0d" title="finds the fogofwarplane gameobject" alt="" coords="216,5,419,32"/>
+<area shape="rect" id="node2" href="$class_fog_of_war_player.html#a5e1df1fabdd82b384cfebf8b06759f0d" title="Finds the fogofwarplane gameobject" alt="" coords="216,5,419,32"/>
 </map>

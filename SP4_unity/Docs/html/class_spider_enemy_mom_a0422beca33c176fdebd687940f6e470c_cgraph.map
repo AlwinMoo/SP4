@@ -1,0 +1,9 @@
+<map id="SpiderEnemyMom.Update" name="SpiderEnemyMom.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,92,180,119"/>
+<area shape="rect" id="node2" href="$class_spider_enemy_mom.html#a5767092fe46518d97543e0c91d898a6d" title="Checks if the Enemy is alive." alt="" coords="234,64,431,91"/>
+<area shape="rect" id="node6" href="$class_spider_enemy_mom.html#ab9a46808fcce493c8894ddc6ba09f5e7" title="Deduct health accordingly to what damaged it" alt="" coords="228,119,437,145"/>
+<area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="486,5,682,32"/>
+<area shape="rect" id="node5" href="$classenemy__spawner.html#acaf34e1ea92c2ac1330772ff98002ad5" title=" " alt="" coords="486,57,682,98"/>
+<area shape="rect" id="node4" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="731,5,932,32"/>
+<area shape="rect" id="node7" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="485,123,683,149"/>
+</map>

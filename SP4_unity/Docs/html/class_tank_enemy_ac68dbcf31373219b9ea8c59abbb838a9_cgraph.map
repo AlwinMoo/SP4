@@ -1,4 +1,4 @@
 <map id="TankEnemy.TakeDamage" name="TankEnemy.TakeDamage">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node1" title="Deduct health accordingly to what damaged it" alt="" coords="5,5,176,32"/>
 <area shape="rect" id="node2" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="224,5,421,32"/>
 </map>

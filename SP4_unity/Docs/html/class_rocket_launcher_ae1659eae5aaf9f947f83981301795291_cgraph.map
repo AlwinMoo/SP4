@@ -1,5 +1,5 @@
 <map id="RocketLauncher.triggerRocket" name="RocketLauncher.triggerRocket">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,203,57"/>
+<area shape="rect" id="node1" title="Stops the barrel from rotating when player fires Shoots the rocket bullet" alt="" coords="5,31,203,57"/>
 <area shape="rect" id="node2" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="251,5,447,32"/>
 <area shape="rect" id="node4" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="255,56,442,83"/>
 <area shape="rect" id="node3" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="495,5,696,32"/>

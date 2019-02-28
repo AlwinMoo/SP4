@@ -1,6 +1,6 @@
 <map id="RocketLauncher.Start" name="RocketLauncher.Start">
 <area shape="rect" id="node1" title=" " alt="" coords="5,31,153,57"/>
-<area shape="rect" id="node2" href="$class_rocket_launcher.html#ae1659eae5aaf9f947f83981301795291" title=" " alt="" coords="201,31,399,57"/>
+<area shape="rect" id="node2" href="$class_rocket_launcher.html#ae1659eae5aaf9f947f83981301795291" title="Stops the barrel from rotating when player fires Shoots the rocket bullet" alt="" coords="201,31,399,57"/>
 <area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="447,5,643,32"/>
 <area shape="rect" id="node5" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="451,56,638,83"/>
 <area shape="rect" id="node4" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="691,5,892,32"/>
