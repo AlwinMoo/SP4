@@ -7,7 +7,6 @@ public class TextDisplay : MonoBehaviour {
 
     //public Text HighScore;
 
-    public Text Speed;
     public Text Armour;
     public Text Health;
     public Text EnemiesLeft;
@@ -19,6 +18,8 @@ public class TextDisplay : MonoBehaviour {
 
     public static GameObject GUIpanel;
     public static GameObject RespawnPanel;
+
+    public GameObject speechBubble;
 
     void Start()
     {
@@ -36,14 +37,26 @@ public class TextDisplay : MonoBehaviour {
         if (CarBase == null)
             return;
 
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            speechBubble.SetActive(true);
+        }
+        else
+        {
+            speechBubble.SetActive(false);
+        }
+
         //HighScore.text = playerKills.ToString();
         Health.text = "Health: " + CarBase.GetComponent<VehicleBase>().HealthSlider.value.ToString();
         Speedometer.ShowSpeed(CarBase.GetComponent<Rigidbody>().velocity.magnitude, 0, 30);
-        Armour.text = "Armour: " + CarBase.GetComponent<VehicleBase>().armour.ToString();
-        EnemiesLeft.text = "Enemies Remaining: " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
-        NextWave.text = "Time Till Next Wave: " + (TimeRemainingTillNextWave - enemy_spawner.spawnTimer).ToString("0");
+        Armour.text = (1 - CarBase.GetComponent<VehicleBase>().armour).ToString("2");
+        EnemiesLeft.text = "X" + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
+        NextWave.text = (TimeRemainingTillNextWave - enemy_spawner.spawnTimer).ToString("0");
         ObjectiveTitle.text = QuestSystem.Title;
         ObjectiveDescription.text = QuestSystem.Description;
+
+        
+
     }
 
     public static void Isdead()

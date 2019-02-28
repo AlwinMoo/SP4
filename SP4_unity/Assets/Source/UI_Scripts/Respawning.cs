@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sun : MonoBehaviour {
+public class Respawning : MonoBehaviour {
 
+
+    public Text RespawnTimer;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +15,8 @@ public class Sun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.RotateAround(Vector3.zero, Vector3.right, 15f * Time.deltaTime);
-        transform.LookAt(Vector3.zero);
 
-	}
+        RespawnTimer.text = "Respawning in: " + (3.0f - GameLogic.respawnTimer).ToString("0");
+
+    }
 }

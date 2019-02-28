@@ -22,7 +22,7 @@ public class ShieldPowerUp : ArmourBehavior {
 
     void PickUp(Collider Player)
     {
-        Player.gameObject.GetComponent<VehicleBase>().armour = 0.5f;
+        Player.gameObject.GetComponent<VehicleBase>().armour *= 0.5f;
         networkObject.SendRpc(RPC_SEND_DESTROY, Receivers.All);
     }
 

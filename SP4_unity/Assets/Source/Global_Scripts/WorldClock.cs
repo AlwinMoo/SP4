@@ -20,5 +20,8 @@ public class WorldClock : MonoBehaviour {
             _worldTime = 0;
         }
         _worldTime += Time.deltaTime;
+
+        ClockHand.ShowSpeed(_worldTime, 0, 24);
+
     }
 }
