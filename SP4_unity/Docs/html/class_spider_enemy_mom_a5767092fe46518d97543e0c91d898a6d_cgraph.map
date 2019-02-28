@@ -1,0 +1,6 @@
+<map id="SpiderEnemyMom.CheckAlive" name="SpiderEnemyMom.CheckAlive">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,203,61"/>
+<area shape="rect" id="node2" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="251,5,447,32"/>
+<area shape="rect" id="node4" href="$classenemy__spawner.html#acaf34e1ea92c2ac1330772ff98002ad5" title=" " alt="" coords="251,57,447,98"/>
+<area shape="rect" id="node3" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="495,5,696,32"/>
+</map>

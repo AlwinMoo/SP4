@@ -1,0 +1,4 @@
+<map id="TextDisplay.Update" name="TextDisplay.Update">
+<area shape="rect" id="node1" title="print the texts for the HUD" alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node2" href="$class_speedometer.html#ae687fdc6ceb44fdc04d0b882be612b04" title="rotate the hand like a clock" alt="" coords="188,5,360,32"/>
+</map>

@@ -1,7 +1,9 @@
 <map id="EnemyBase" name="EnemyBase">
-<area shape="rect" id="node1" title=" " alt="" coords="76,80,169,107"/>
-<area shape="rect" id="node4" href="$class_normal_enemy.html" title=" " alt="" coords="11,155,115,181"/>
-<area shape="rect" id="node5" href="$class_tank_enemy.html" title=" " alt="" coords="139,155,229,181"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node3" href="$interface_flammable.html" title=" " alt="" coords="142,5,229,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="207,80,300,107"/>
+<area shape="rect" id="node4" href="$class_normal_enemy.html" title=" " alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node5" href="$class_spider_enemy.html" title=" " alt="" coords="134,155,234,181"/>
+<area shape="rect" id="node6" href="$class_spider_enemy_mom.html" title=" " alt="" coords="258,155,387,181"/>
+<area shape="rect" id="node7" href="$class_tank_enemy.html" title=" " alt="" coords="412,155,503,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="136,5,248,32"/>
+<area shape="rect" id="node3" href="$interface_flammable.html" title=" " alt="" coords="273,5,359,32"/>
 </map>

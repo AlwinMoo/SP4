@@ -9,9 +9,6 @@ var dir_0e15be3b1460d36103325fd9f75671ec =
     [ "CarSelection.cs", "_car_selection_8cs.html", [
       [ "CarSelection", "class_car_selection.html", "class_car_selection" ]
     ] ],
-    [ "CarSelectModel.cs", "_car_select_model_8cs.html", [
-      [ "CarSelectModel", "class_car_select_model.html", "class_car_select_model" ]
-    ] ],
     [ "PanelToggler.cs", "_panel_toggler_8cs.html", [
       [ "PanelToggler", "class_panel_toggler.html", "class_panel_toggler" ]
     ] ],
@@ -24,6 +21,9 @@ var dir_0e15be3b1460d36103325fd9f75671ec =
     [ "ReadyToggler.cs", "_ready_toggler_8cs.html", [
       [ "ReadyToggler", "class_ready_toggler.html", "class_ready_toggler" ]
     ] ],
+    [ "Respawning.cs", "_respawning_8cs.html", [
+      [ "Respawning", "class_respawning.html", "class_respawning" ]
+    ] ],
     [ "SFX.cs", "_s_f_x_8cs.html", [
       [ "SFX", "class_s_f_x.html", "class_s_f_x" ]
     ] ],
@@ -35,6 +35,9 @@ var dir_0e15be3b1460d36103325fd9f75671ec =
     ] ],
     [ "SliderValue.cs", "_slider_value_8cs.html", [
       [ "SliderValue", "class_slider_value.html", "class_slider_value" ]
+    ] ],
+    [ "Speedometer.cs", "_speedometer_8cs.html", [
+      [ "Speedometer", "class_speedometer.html", "class_speedometer" ]
     ] ],
     [ "StartButton.cs", "_start_button_8cs.html", [
       [ "StartButton", "class_start_button.html", "class_start_button" ]

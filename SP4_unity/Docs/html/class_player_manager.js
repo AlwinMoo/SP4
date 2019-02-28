@@ -8,6 +8,7 @@ var class_player_manager =
     [ "AssignPlayer", "class_player_manager.html#ad1ab46833aefc09ebd94027cd84b081e", null ],
     [ "Awake", "class_player_manager.html#a1416e7628e83873973f7e6bf513e2e11", null ],
     [ "DisconnectedFromServer", "class_player_manager.html#a404ac6a2db218a213218198206aab69d", null ],
+    [ "GetPlayerCar", "class_player_manager.html#a5ac1e53a500c458bf1923d6a6a666283", null ],
     [ "GetPlayerCount", "class_player_manager.html#ac86926a420132e3cc22bc939e7a18f71", null ],
     [ "GetPlayerID", "class_player_manager.html#a33fff53f6a86a9c26b7eaab0d5fd870f", null ],
     [ "GetPlayerIndex", "class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3", null ],

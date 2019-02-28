@@ -2,15 +2,18 @@ var class_enemy_base =
 [
     [ "enemytype", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92", [
       [ "ENEMY_NORMAL", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92a065fbd1ec4b2640a6242e99ab6fd9696", null ],
-      [ "ENEMY_TANK", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92a19b3458f3720d7ad9edadccc1ee3aa47", null ]
+      [ "ENEMY_TANK", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92a19b3458f3720d7ad9edadccc1ee3aa47", null ],
+      [ "ENEMY_SPIDER", "class_enemy_base.html#a306d91552c1050f47bad589b88010f92adce209ba911b06379b391691a25f542d", null ]
     ] ],
     [ "Awake", "class_enemy_base.html#a3fbb90444f174f44e311edc8e5d49174", null ],
+    [ "CheckAlive", "class_enemy_base.html#a0807d2290c0f815563dbb8877aa10e1d", null ],
     [ "EnemyDeath", "class_enemy_base.html#a8c68f5c0f3c811b9649c3e900443a89c", null ],
     [ "Ignited", "class_enemy_base.html#afbdcbe50851bebbc49679dff840806cd", null ],
     [ "OnCollisionEnter", "class_enemy_base.html#ae485646d2166cc0b69eb4076bbb935dc", null ],
     [ "OnTriggerStay", "class_enemy_base.html#a677360581e87a6b4221df8fb5ff6c36d", null ],
     [ "SendDeath", "class_enemy_base.html#a16adac3b17bc1e0929dfb7cacaa7beab", null ],
     [ "SendOnFire", "class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848", null ],
+    [ "Stagger", "class_enemy_base.html#a311c7263e4ce46cfd9bdff8c9cea7555", null ],
     [ "Start", "class_enemy_base.html#afa5ee82be2fab97633a629e5e43dfac4", null ],
     [ "TakeDamage", "class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f", null ],
     [ "TakeTickDamage", "class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312", null ],

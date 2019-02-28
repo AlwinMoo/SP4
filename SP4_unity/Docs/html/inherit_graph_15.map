@@ -1,7 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,156,83"/>
-<area shape="rect" id="node2" href="$class_vehicle_base.html" title=" " alt="" coords="204,56,299,83"/>
-<area shape="rect" id="node3" href="$class_monster_truck.html" title=" " alt="" coords="347,5,448,32"/>
-<area shape="rect" id="node4" href="$class_sedan.html" title=" " alt="" coords="368,56,427,83"/>
-<area shape="rect" id="node5" href="$class_van.html" title=" " alt="" coords="375,107,420,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$class_shield_power_up.html" title=" " alt="" coords="167,5,277,32"/>
 </map>

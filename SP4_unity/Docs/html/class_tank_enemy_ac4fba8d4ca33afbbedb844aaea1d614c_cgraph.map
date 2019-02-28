@@ -1,5 +1,8 @@
 <map id="TankEnemy.Update" name="TankEnemy.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,32"/>
-<area shape="rect" id="node2" href="$class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9" title=" " alt="" coords="189,5,360,32"/>
-<area shape="rect" id="node3" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="408,5,605,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,141,57"/>
+<area shape="rect" id="node2" href="$class_tank_enemy.html#ae14fde783fc26592d881c40d45e1b38d" title=" " alt="" coords="195,5,354,32"/>
+<area shape="rect" id="node5" href="$class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9" title=" " alt="" coords="189,56,360,83"/>
+<area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="409,5,605,32"/>
+<area shape="rect" id="node4" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="653,5,855,32"/>
+<area shape="rect" id="node6" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="408,56,605,83"/>
 </map>

@@ -1,19 +1,19 @@
 var searchData=
 [
   ['tag',['tag',['../class_object_pooler_1_1_pool.html#a84020b654be4df9380d87b5bcdaa6a06',1,'ObjectPooler::Pool']]],
-  ['takedamage',['TakeDamage',['../class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f',1,'EnemyBase.TakeDamage()'],['../class_normal_enemy.html#a147f4a16c9b30865e135249ee8a95e60',1,'NormalEnemy.TakeDamage()'],['../class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9',1,'TankEnemy.TakeDamage()'],['../interface_i_live_entity.html#aed7150100ae425a9c7d445f39421f1cd',1,'ILiveEntity.TakeDamage()']]],
+  ['takedamage',['TakeDamage',['../class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f',1,'EnemyBase.TakeDamage()'],['../class_normal_enemy.html#a147f4a16c9b30865e135249ee8a95e60',1,'NormalEnemy.TakeDamage()'],['../class_spider_enemy.html#a7ee9f7a4214b8c367bdda90e23584b6c',1,'SpiderEnemy.TakeDamage()'],['../class_spider_enemy_mom.html#ab9a46808fcce493c8894ddc6ba09f5e7',1,'SpiderEnemyMom.TakeDamage()'],['../class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9',1,'TankEnemy.TakeDamage()'],['../interface_i_live_entity.html#aed7150100ae425a9c7d445f39421f1cd',1,'ILiveEntity.TakeDamage()']]],
   ['taketickdamage',['TakeTickDamage',['../class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312',1,'EnemyBase']]],
   ['tankenemy',['TankEnemy',['../class_tank_enemy.html',1,'']]],
   ['tankenemy_2ecs',['TankEnemy.cs',['../_tank_enemy_8cs.html',1,'']]],
   ['target',['target',['../class_enemy_base.html#a68feee3e9e331f03a5bda7688c3fe509',1,'EnemyBase.target()'],['../class_camera_follow.html#a2ef2d3655fd0cb86d18e6324b75c0a59',1,'CameraFollow.target()']]],
-  ['temp',['temp',['../class_objective_object.html#a41dbc13ecbe3a26c796fea578b9fe08b',1,'ObjectiveObject.temp()'],['../class_quest_system.html#a1df1705889b62bdf94b38d6dcb1e76d2',1,'QuestSystem.temp()']]],
+  ['temp',['temp',['../class_fog_of_war_player.html#a737534868db287c95cc6e237efc0766e',1,'FogOfWarPlayer.temp()'],['../class_objective_object.html#a41dbc13ecbe3a26c796fea578b9fe08b',1,'ObjectiveObject.temp()'],['../class_quest_system.html#a1df1705889b62bdf94b38d6dcb1e76d2',1,'QuestSystem.temp()']]],
   ['textdisplay',['TextDisplay',['../class_text_display.html',1,'']]],
   ['textdisplay_2ecs',['TextDisplay.cs',['../_text_display_8cs.html',1,'']]],
   ['theobj',['theObj',['../class_quest_system.html#a347053a2d1ca9cf1e427bbbe4b47d470',1,'QuestSystem']]],
+  ['theplayerinfo',['thePlayerInfo',['../class_game_logic.html#a8ecf975e241da1a514247f579d89c83c',1,'GameLogic']]],
   ['thirdpercam',['thirdPerCam',['../classthird_per_cam.html',1,'']]],
   ['thirdpercam_2ecs',['thirdPerCam.cs',['../third_per_cam_8cs.html',1,'']]],
-  ['thisgo',['thisGO',['../class_normal_enemy.html#a12276f09e5f24bf3ecfb11b1f287a519',1,'NormalEnemy.thisGO()'],['../class_tank_enemy.html#a0cdef377af9f01de3916b1285e13b10e',1,'TankEnemy.thisGO()']]],
-  ['timeofday',['TimeOfDay',['../class_sun.html#acbbb5a35ee9d1a6c6185ad253b4ce107',1,'Sun']]],
+  ['thisgo',['thisGO',['../class_normal_enemy.html#a12276f09e5f24bf3ecfb11b1f287a519',1,'NormalEnemy.thisGO()'],['../class_spider_enemy.html#a5dee1f288d27962570ac5355d8f01b30',1,'SpiderEnemy.thisGO()'],['../class_spider_enemy_mom.html#a7b580a0e0ebb328ea5cec2108c025b9d',1,'SpiderEnemyMom.thisGO()'],['../class_tank_enemy.html#a0cdef377af9f01de3916b1285e13b10e',1,'TankEnemy.thisGO()']]],
   ['timeremainingtillnextwave',['TimeRemainingTillNextWave',['../class_text_display.html#a71bef27853f9c4141dc0012605387a1b',1,'TextDisplay']]],
   ['timeslowpowerup',['TimeSlowPowerUp',['../class_time_slow_power_up.html',1,'']]],
   ['timeslowpowerup_2ecs',['TimeSlowPowerUp.cs',['../_time_slow_power_up_8cs.html',1,'']]],
@@ -25,6 +25,7 @@ var searchData=
   ['triangles',['triangles',['../class_mesh_generator.html#a6c95af5d6982bad5167784fe24ebb0b0',1,'MeshGenerator']]],
   ['triggerevent',['TriggerEvent',['../class_event_manager.html#a6c21511b223de8452ede93e2308a5c64',1,'EventManager']]],
   ['triggerfire',['TriggerFire',['../class_flame_thrower.html#a89ce6375a56de157e07bd2c2f09869e4',1,'FlameThrower']]],
+  ['triggerrocket',['triggerRocket',['../class_rocket_launcher.html#ae1659eae5aaf9f947f83981301795291',1,'RocketLauncher']]],
   ['triggershoot',['triggerShoot',['../class_vehicle_base.html#a7733c6bd2c3586e0897dc9a3297297cf',1,'VehicleBase']]],
   ['triggershot',['triggerShot',['../class_machine_gun.html#a44371f221028a7d8b7a353ab3c08ddff',1,'MachineGun']]]
 ];

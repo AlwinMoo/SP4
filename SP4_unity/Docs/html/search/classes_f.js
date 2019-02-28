@@ -10,6 +10,9 @@ var searchData=
   ['sfxsound',['SFXSound',['../class_s_f_x_sound.html',1,'']]],
   ['shieldpowerup',['ShieldPowerUp',['../class_shield_power_up.html',1,'']]],
   ['slidervalue',['SliderValue',['../class_slider_value.html',1,'']]],
+  ['speedometer',['Speedometer',['../class_speedometer.html',1,'']]],
+  ['spiderenemy',['SpiderEnemy',['../class_spider_enemy.html',1,'']]],
+  ['spiderenemymom',['SpiderEnemyMom',['../class_spider_enemy_mom.html',1,'']]],
   ['startbutton',['StartButton',['../class_start_button.html',1,'']]],
   ['sun',['Sun',['../class_sun.html',1,'']]]
 ];

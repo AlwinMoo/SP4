@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['fallover',['FallOver',['../class_zombie_animation.html#a6559818c87a0970981990a24e1faed71',1,'ZombieAnimation']]],
-  ['fire',['Fire',['../class_fire.html',1,'Fire'],['../class_normal_enemy.html#afeaf49e126418119112848f578237dee',1,'NormalEnemy.fire()'],['../class_tank_enemy.html#a7642c1336b5843fdf0d59015b34cb5a8',1,'TankEnemy.fire()'],['../class_ignited_object.html#ae19ffecfe58260b24041dd2496444db2',1,'IgnitedObject.fire()'],['../class_flame_thrower.html#aa6cb3f6bc6ee22ddd29fcf15426b7844',1,'FlameThrower.fire()']]],
+  ['findfogplane',['FindFogPlane',['../class_fog_of_war_player.html#a5e1df1fabdd82b384cfebf8b06759f0d',1,'FogOfWarPlayer']]],
+  ['fire',['Fire',['../class_fire.html',1,'Fire'],['../class_normal_enemy.html#afeaf49e126418119112848f578237dee',1,'NormalEnemy.fire()'],['../class_spider_enemy.html#a1847d4d0fc49c43beaf0b5139569cc9d',1,'SpiderEnemy.fire()'],['../class_spider_enemy_mom.html#a78781030eeca2142782e6a5f460845ae',1,'SpiderEnemyMom.fire()'],['../class_tank_enemy.html#a7642c1336b5843fdf0d59015b34cb5a8',1,'TankEnemy.fire()'],['../class_ignited_object.html#ae19ffecfe58260b24041dd2496444db2',1,'IgnitedObject.fire()'],['../class_flame_thrower.html#aa6cb3f6bc6ee22ddd29fcf15426b7844',1,'FlameThrower.fire()']]],
   ['fire_2ecs',['Fire.cs',['../_fire_8cs.html',1,'']]],
   ['fireeffects',['FireEffects',['../class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d',1,'FlameThrower']]],
   ['firerate',['fireRate',['../class_machine_gun.html#a1efffd2022c6a41b93cf95d5a7e3975f',1,'MachineGun.fireRate()'],['../class_rocket_launcher.html#a3648789df5ad3306944e6d51141c7b7c',1,'RocketLauncher.fireRate()']]],
@@ -16,6 +16,9 @@ var searchData=
   ['flammable_2ecs',['Flammable.cs',['../_flammable_8cs.html',1,'']]],
   ['flash',['flash',['../class_machine_gun.html#a241b7dfe5e15db5344a941f90404b1dd',1,'MachineGun.flash()'],['../class_rocket_launcher.html#a8a7a688c72796f34605d7bd937dd7e86',1,'RocketLauncher.flash()']]],
   ['flashduration',['flashDuration',['../class_r_l___flash.html#acdd4a652beec1acdbeb30b691a3097e3',1,'RL_Flash']]],
+  ['fogofwarplayer',['FogOfWarPlayer',['../class_fog_of_war_player.html',1,'']]],
+  ['fogofwarplayer_2ecs',['FogOfWarPlayer.cs',['../_fog_of_war_player_8cs.html',1,'']]],
+  ['fogplane',['FogPlane',['../class_fog_of_war_player.html#a48a93ca9cdc55dbe6ae5a51d7524a0f6',1,'FogOfWarPlayer']]],
   ['fr_5ft',['fR_T',['../class_car___controller.html#a2777fbdfad29fb2ab8cde0248d04f0ac',1,'Car_Controller.fR_T()'],['../class_vehicle_base.html#a0c9bf05bd883cb7658474ab8d75be934',1,'VehicleBase.fR_T()']]],
   ['fr_5fwheel',['fR_Wheel',['../class_car___controller.html#abdb19165b280ab193d73bd4263a055fd',1,'Car_Controller.fR_Wheel()'],['../class_vehicle_base.html#a5ed15b03fb17b017f75b58c424bbcb5a',1,'VehicleBase.fR_Wheel()']]]
 ];

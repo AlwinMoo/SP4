@@ -1,0 +1,8 @@
+<map id="SpiderEnemy.Update" name="SpiderEnemy.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,151,57"/>
+<area shape="rect" id="node2" href="$class_spider_enemy.html#a37098e8e8c71f53ef64995704bca5d17" title=" " alt="" coords="205,5,373,32"/>
+<area shape="rect" id="node5" href="$class_spider_enemy.html#a7ee9f7a4214b8c367bdda90e23584b6c" title=" " alt="" coords="199,56,379,83"/>
+<area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="427,5,623,32"/>
+<area shape="rect" id="node4" href="$interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3" title=" " alt="" coords="672,5,873,32"/>
+<area shape="rect" id="node6" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="427,56,624,83"/>
+</map>

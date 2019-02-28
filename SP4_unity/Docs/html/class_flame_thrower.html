@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SP4: FlameThrower Class Reference</title>
+<title>SP4 - Mr Tang: FlameThrower Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SP4
+   <div id="projectname">SP4 - Mr Tang
    </div>
    <div id="projectbrief">SP4 Survival Game</div>
   </td>
@@ -119,6 +119,8 @@ Collaboration diagram for FlameThrower:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a89ce6375a56de157e07bd2c2f09869e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a89ce6375a56de157e07bd2c2f09869e4">TriggerFire</a> ()</td></tr>
 <tr class="separator:a89ce6375a56de157e07bd2c2f09869e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109a0ec40d76003963b3967bede0df46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a109a0ec40d76003963b3967bede0df46">ResetFire</a> ()</td></tr>
+<tr class="separator:a109a0ec40d76003963b3967bede0df46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a63079171cb2263ddc7211c0479a43d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d">FireEffects</a> (bool _fire)</td></tr>
 <tr class="separator:a4a63079171cb2263ddc7211c0479a43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -130,6 +132,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa6cb3f6bc6ee22ddd29fcf15426b7844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6340395cbb5b78e9e4eaeb66dffd4001"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a6340395cbb5b78e9e4eaeb66dffd4001">glow</a></td></tr>
 <tr class="separator:a6340395cbb5b78e9e4eaeb66dffd4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a0155eb59d72500cdb7b4f2ce2b08e"><td class="memItemLeft" align="right" valign="top">AudioClip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a02a0155eb59d72500cdb7b4f2ce2b08e">SoundClip</a></td></tr>
+<tr class="separator:a02a0155eb59d72500cdb7b4f2ce2b08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -140,8 +144,12 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a8b1dec2ecd165975c87fc4c130f88cdb"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a8b1dec2ecd165975c87fc4c130f88cdb">SoundSource</a></td></tr>
+<tr class="separator:a8b1dec2ecd165975c87fc4c130f88cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae11971c51b4e9c1edf3f7357d6c82cd7"><td class="memItemLeft" align="right" valign="top">UnityAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#ae11971c51b4e9c1edf3f7357d6c82cd7">Listener</a></td></tr>
 <tr class="separator:ae11971c51b4e9c1edf3f7357d6c82cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74bf09417df362b53b2defa13e7bfeb3"><td class="memItemLeft" align="right" valign="top">UnityAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#a74bf09417df362b53b2defa13e7bfeb3">CancelListener</a></td></tr>
+<tr class="separator:a74bf09417df362b53b2defa13e7bfeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af53687ceb6d384cf8e5779b4b3474d91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flame_thrower.html#af53687ceb6d384cf8e5779b4b3474d91">m_firing</a></td></tr>
 <tr class="separator:af53687ceb6d384cf8e5779b4b3474d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -165,7 +173,36 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00086">86</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00057">57</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+
+</div>
+</div>
+<a id="a109a0ec40d76003963b3967bede0df46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109a0ec40d76003963b3967bede0df46">&#9670;&nbsp;</a></span>ResetFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FlameThrower.ResetFire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00049">49</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_flame_thrower_a109a0ec40d76003963b3967bede0df46_cgraph.png" border="0" usemap="#class_flame_thrower_a109a0ec40d76003963b3967bede0df46_cgraph" alt=""/></div>
+<map name="class_flame_thrower_a109a0ec40d76003963b3967bede0df46_cgraph" id="class_flame_thrower_a109a0ec40d76003963b3967bede0df46_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,31,168,57"/>
+<area shape="rect"  href="class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="225,5,395,32"/>
+<area shape="rect"  href="class_event_manager.html#aa52304d79a4c5fef28b5cf5d2c16c965" title=" " alt="" coords="216,56,404,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -192,16 +229,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00019">19</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00023">23</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flame_thrower_aae9967d924d8b460062873201ab83b63_cgraph.png" border="0" usemap="#class_flame_thrower_aae9967d924d8b460062873201ab83b63_cgraph" alt=""/></div>
 <map name="class_flame_thrower_aae9967d924d8b460062873201ab83b63_cgraph" id="class_flame_thrower_aae9967d924d8b460062873201ab83b63_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,31,140,57"/>
+<area shape="rect"  title=" " alt="" coords="5,56,140,83"/>
 <area shape="rect"  href="class_flame_thrower.html#a89ce6375a56de157e07bd2c2f09869e4" title=" " alt="" coords="188,31,356,57"/>
-<area shape="rect"  href="class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="413,5,582,32"/>
-<area shape="rect"  href="class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="404,56,591,83"/>
+<area shape="rect"  href="class_flame_thrower.html#a109a0ec40d76003963b3967bede0df46" title=" " alt="" coords="191,81,353,108"/>
+<area shape="rect"  href="class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="413,56,583,83"/>
+<area shape="rect"  href="class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="405,5,591,32"/>
+<area shape="rect"  href="class_event_manager.html#aa52304d79a4c5fef28b5cf5d2c16c965" title=" " alt="" coords="404,107,592,133"/>
 </map>
 </div>
 
@@ -222,7 +261,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00064">64</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00041">41</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -259,22 +298,44 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00026">26</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00035">35</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flame_thrower_ab741cde7deaa561a7dbd52b84535570e_cgraph.png" border="0" usemap="#class_flame_thrower_ab741cde7deaa561a7dbd52b84535570e_cgraph" alt=""/></div>
 <map name="class_flame_thrower_ab741cde7deaa561a7dbd52b84535570e_cgraph" id="class_flame_thrower_ab741cde7deaa561a7dbd52b84535570e_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,56,153,83"/>
+<area shape="rect"  title=" " alt="" coords="5,5,153,32"/>
 <area shape="rect"  href="class_event_manager.html#aa52304d79a4c5fef28b5cf5d2c16c965" title=" " alt="" coords="201,5,389,32"/>
-<area shape="rect"  href="class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="202,56,389,83"/>
-<area shape="rect"  href="class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="211,107,380,133"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a74bf09417df362b53b2defa13e7bfeb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74bf09417df362b53b2defa13e7bfeb3">&#9670;&nbsp;</a></span>CancelListener</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UnityAction FlameThrower.CancelListener</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00019">19</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+
+</div>
+</div>
 <a id="aa6cb3f6bc6ee22ddd29fcf15426b7844"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6cb3f6bc6ee22ddd29fcf15426b7844">&#9670;&nbsp;</a></span>fire</h2>
 
@@ -327,7 +388,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00015">15</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00018">18</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
 
 </div>
 </div>
@@ -351,7 +412,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00017">17</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00021">21</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
 
 </div>
 </div>
@@ -371,6 +432,46 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a02a0155eb59d72500cdb7b4f2ce2b08e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a0155eb59d72500cdb7b4f2ce2b08e">&#9670;&nbsp;</a></span>SoundClip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip FlameThrower.SoundClip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00014">14</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8b1dec2ecd165975c87fc4c130f88cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b1dec2ecd165975c87fc4c130f88cdb">&#9670;&nbsp;</a></span>SoundSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioSource FlameThrower.SoundSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_flame_thrower_8cs_source.html#l00015">15</a> of file <a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/alien/Desktop/SP4_Repo/SP4/SP4_unity/Assets/Source/Weapon_Scripts/<a class="el" href="_flame_thrower_8cs_source.html">FlameThrower.cs</a></li>
 </ul>
@@ -380,7 +481,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_flame_thrower.html">FlameThrower</a></li>
-    <li class="footer">Generated on Tue Feb 26 2019 11:00:15 for SP4 by
+    <li class="footer">Generated on Thu Feb 28 2019 16:22:27 for SP4 - Mr Tang by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

@@ -1,6 +1,8 @@
 <map id="FlameThrower.Start" name="FlameThrower.Start">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,140,57"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,140,83"/>
 <area shape="rect" id="node2" href="$class_flame_thrower.html#a89ce6375a56de157e07bd2c2f09869e4" title=" " alt="" coords="188,31,356,57"/>
-<area shape="rect" id="node3" href="$class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="413,5,582,32"/>
-<area shape="rect" id="node4" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="404,56,591,83"/>
+<area shape="rect" id="node5" href="$class_flame_thrower.html#a109a0ec40d76003963b3967bede0df46" title=" " alt="" coords="191,81,353,108"/>
+<area shape="rect" id="node3" href="$class_flame_thrower.html#a4a63079171cb2263ddc7211c0479a43d" title=" " alt="" coords="413,56,583,83"/>
+<area shape="rect" id="node4" href="$class_event_manager.html#a8ea3b269604f71bdcf48925e31fe800f" title=" " alt="" coords="405,5,591,32"/>
+<area shape="rect" id="node6" href="$class_event_manager.html#aa52304d79a4c5fef28b5cf5d2c16c965" title=" " alt="" coords="404,107,592,133"/>
 </map>

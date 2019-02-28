@@ -6,7 +6,7 @@ var searchData=
   ['emptypanel4',['EmptyPanel4',['../class_player_lobby.html#a11982aab3bb3416d80d9b6cfa633a06e',1,'PlayerLobby']]],
   ['enemiesleft',['EnemiesLeft',['../class_text_display.html#adac755742fbe788f4ba6efa270a03d99',1,'TextDisplay']]],
   ['enemylist',['enemyList',['../classenemy__spawner.html#a8e3d568b1e4b549d710f52488f3b6834',1,'enemy_spawner']]],
-  ['enemyprefab',['enemyPrefab',['../classenemy__spawner.html#a61a7f1c02575528b61971950eb0dd433',1,'enemy_spawner']]],
+  ['enemyprefabcount',['enemyPrefabCount',['../classenemy__spawner.html#aecd43d0ad5b1659f0a21795a64e8a216',1,'enemy_spawner']]],
   ['eventmanager',['eventManager',['../class_event_manager.html#a8d0d8ab42da1ba97f200f912f76e2c52',1,'EventManager']]],
-  ['explosion',['explosion',['../class_r_l___bullet.html#a20f012bdb8ffb80e6f125b2af22ad9c9',1,'RL_Bullet.explosion()'],['../class_r_l___explosion_p_s.html#a72d0b14bca6cda171538c9ad54eb5146',1,'RL_ExplosionPS.explosion()']]]
+  ['explosion',['explosion',['../class_r_l___explosion_p_s.html#a72d0b14bca6cda171538c9ad54eb5146',1,'RL_ExplosionPS']]]
 ];

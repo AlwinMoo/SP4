@@ -11,5 +11,6 @@ var searchData=
   ['hmg_5fflash',['HMG_Flash',['../class_h_m_g___flash.html',1,'']]],
   ['hmg_5fflash_2ecs',['HMG_Flash.cs',['../_h_m_g___flash_8cs.html',1,'']]],
   ['holdouttime',['HoldOutTime',['../class_quest_system.html#a1879afc45869f20a07490c2e386b5902',1,'QuestSystem']]],
-  ['hpbar',['hpBar',['../class_healthbar.html#a6c30f990b7882ae83e86de24c0e204b4',1,'Healthbar']]]
+  ['hpbar',['hpBar',['../class_healthbar.html#a6c30f990b7882ae83e86de24c0e204b4',1,'Healthbar']]],
+  ['hpupdatedebounce',['HPUpdateDebounce',['../class_game_logic.html#aa4f31e8c78aaa7c23bd1e10a40ca23dc',1,'GameLogic']]]
 ];

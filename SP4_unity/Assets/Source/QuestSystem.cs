@@ -42,7 +42,7 @@ public class QuestSystem : QuestSystemBehavior
                     {
                         if (networkObject.IsServer)
                         {
-                            /// server side
+                            /// Server side
                             /// This is the Init of the quests
                             if (!Done)
                             {

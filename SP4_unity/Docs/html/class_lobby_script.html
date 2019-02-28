@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SP4: LobbyScript Class Reference</title>
+<title>SP4 - Mr Tang: LobbyScript Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SP4
+   <div id="projectname">SP4 - Mr Tang
    </div>
    <div id="projectbrief">SP4 Survival Game</div>
   </td>
@@ -126,10 +126,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a93ead7296ceafc0356b54393670b65b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1ef5eadc57ba82ec5707b90431458bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#aa1ef5eadc57ba82ec5707b90431458bf">CheckIfAllReady</a> ()</td></tr>
 <tr class="separator:aa1ef5eadc57ba82ec5707b90431458bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad832f63abe5fd77272e22202c771ddf6"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#ad832f63abe5fd77272e22202c771ddf6">ChangedCar</a> (RpcArgs args)</td></tr>
+<tr class="separator:ad832f63abe5fd77272e22202c771ddf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1e9cd3213590ff6238237bda55d2b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#a9e1e9cd3213590ff6238237bda55d2b7">UpdatePlayerCar</a> (int ID)</td></tr>
+<tr class="separator:a9e1e9cd3213590ff6238237bda55d2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a2b718d9fdaecca00b6e43138419e9532"><td class="memItemLeft" align="right" valign="top">static short []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#a2b718d9fdaecca00b6e43138419e9532">players</a> = new short[4]</td></tr>
+<tr class="memitem:a2b718d9fdaecca00b6e43138419e9532"><td class="memItemLeft" align="right" valign="top">static short []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#a2b718d9fdaecca00b6e43138419e9532">players</a> = new short[3]</td></tr>
 <tr class="separator:a2b718d9fdaecca00b6e43138419e9532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50cb05f151437fc220851de6b88430a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#ab50cb05f151437fc220851de6b88430a">ready</a></td></tr>
 <tr class="separator:ab50cb05f151437fc220851de6b88430a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +145,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a66620ed0900c53949384dfdac0aff376"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#a66620ed0900c53949384dfdac0aff376">LateStart</a> (float waitTime)</td></tr>
 <tr class="separator:a66620ed0900c53949384dfdac0aff376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796c458e41e393879b8eba68c2743520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lobby_script.html#a796c458e41e393879b8eba68c2743520">Update</a> ()</td></tr>
+<tr class="memdesc:a796c458e41e393879b8eba68c2743520"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of toggles needed to start the game  <a href="#a796c458e41e393879b8eba68c2743520">More...</a><br /></td></tr>
 <tr class="separator:a796c458e41e393879b8eba68c2743520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -163,7 +168,27 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00070">70</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00072">72</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad832f63abe5fd77272e22202c771ddf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad832f63abe5fd77272e22202c771ddf6">&#9670;&nbsp;</a></span>ChangedCar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void LobbyScript.ChangedCar </td>
+          <td>(</td>
+          <td class="paramtype">RpcArgs&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00140">140</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 
 </div>
 </div>
@@ -182,7 +207,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00124">124</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00126">126</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 
 </div>
 </div>
@@ -202,7 +227,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00106">106</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00108">108</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 
 </div>
 </div>
@@ -258,7 +283,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00053">53</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00055">55</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -324,7 +349,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00074">74</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00076">76</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 
 </div>
 </div>
@@ -351,14 +376,46 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00038">38</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<p>The amount of toggles needed to start the game </p>
+
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00041">41</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_lobby_script_a796c458e41e393879b8eba68c2743520_cgraph.png" border="0" usemap="#class_lobby_script_a796c458e41e393879b8eba68c2743520_cgraph" alt=""/></div>
 <map name="class_lobby_script_a796c458e41e393879b8eba68c2743520_cgraph" id="class_lobby_script_a796c458e41e393879b8eba68c2743520_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect"  title="The amount of toggles needed to start the game" alt="" coords="5,5,141,32"/>
 <area shape="rect"  href="class_lobby_script.html#aa1ef5eadc57ba82ec5707b90431458bf" title=" " alt="" coords="189,5,380,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9e1e9cd3213590ff6238237bda55d2b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1e9cd3213590ff6238237bda55d2b7">&#9670;&nbsp;</a></span>UpdatePlayerCar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LobbyScript.UpdatePlayerCar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_lobby_script_8cs_source.html#l00153">153</a> of file <a class="el" href="_lobby_script_8cs_source.html">LobbyScript.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lobby_script_a9e1e9cd3213590ff6238237bda55d2b7_cgraph.png" border="0" usemap="#class_lobby_script_a9e1e9cd3213590ff6238237bda55d2b7_cgraph" alt=""/></div>
+<map name="class_lobby_script_a9e1e9cd3213590ff6238237bda55d2b7_cgraph" id="class_lobby_script_a9e1e9cd3213590ff6238237bda55d2b7_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,31,199,57"/>
+<area shape="rect"  href="class_player_manager.html#a33fff53f6a86a9c26b7eaab0d5fd870f" title=" " alt="" coords="257,5,439,32"/>
+<area shape="rect"  href="class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="247,56,449,83"/>
 </map>
 </div>
 
@@ -375,7 +432,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">short [] LobbyScript.players = new short[4]</td>
+          <td class="memname">short [] LobbyScript.players = new short[3]</td>
         </tr>
       </table>
   </td>
@@ -422,7 +479,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_lobby_script.html">LobbyScript</a></li>
-    <li class="footer">Generated on Tue Feb 26 2019 11:00:16 for SP4 by
+    <li class="footer">Generated on Thu Feb 28 2019 16:22:28 for SP4 - Mr Tang by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

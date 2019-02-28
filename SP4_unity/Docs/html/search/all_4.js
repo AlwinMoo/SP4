@@ -9,7 +9,6 @@ var searchData=
   ['damagetickcd',['damageTickCD',['../class_enemy_base.html#ad32b24fc20572889a44f498dcb512e8d',1,'EnemyBase']]],
   ['damagetypes',['DamageTypes',['../class_global_damage.html#aa623d7998b2ebb362ff677fc44913594',1,'GlobalDamage']]],
   ['data',['Data',['../class_data.html',1,'']]],
-  ['decreasebulletforce',['decreaseBulletForce',['../class_rocket_launcher.html#a7404863de4e0bc1b6817e270ef1d8b8e',1,'RocketLauncher']]],
   ['description',['Description',['../class_quest_system.html#a74433408d59ceed171c2d7fcc3408824',1,'QuestSystem']]],
   ['deserialize_3c_20t_20_3e',['Deserialize&lt; T &gt;',['../class_serializer.html#a809ba151c0eae351db2c463cb5112e48',1,'Serializer']]],
   ['disconnectedfromserver',['DisconnectedFromServer',['../class_player_manager.html#a404ac6a2db218a213218198206aab69d',1,'PlayerManager']]],

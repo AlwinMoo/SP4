@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "SP4", "index.html", [
+  [ "SP4 - Mr Tang", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -45,9 +45,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_b_g_m_8cs.html",
-"class_game_logic.html#afc1960f0d415a35e84302f4eb1080ec1",
-"class_rocket_launcher.html#a7462fc51b56c624a70561fc1dd2ddeb1",
-"functions_vars_t.html"
+"class_flame.html#a82b82d6b4793069426a08fb67cf50717",
+"class_r_l___bullet.html#abbf440dd85688daab4bf2bf0c9e7c063",
+"classenemy__spawner.html#a057df02653be19cb8ea37efefaca054e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

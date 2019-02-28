@@ -1,0 +1,4 @@
+<map id="ShieldPowerUp.OnTriggerEnter" name="ShieldPowerUp.OnTriggerEnter">
+<area shape="rect" id="node1" title="Check if a player picked up the powerup" alt="" coords="5,5,207,32"/>
+<area shape="rect" id="node2" href="$class_shield_power_up.html#aac5c29d3da7b443382c3737fc1326a47" title="if pick up delete the gameobject" alt="" coords="255,5,411,32"/>
+</map>

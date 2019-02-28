@@ -1,4 +1,4 @@
 <map id="LobbyScript.Update" name="LobbyScript.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node1" title="The amount of toggles needed to start the game" alt="" coords="5,5,141,32"/>
 <area shape="rect" id="node2" href="$class_lobby_script.html#aa1ef5eadc57ba82ec5707b90431458bf" title=" " alt="" coords="189,5,380,32"/>
 </map>

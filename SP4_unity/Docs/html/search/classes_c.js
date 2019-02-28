@@ -2,7 +2,7 @@ var searchData=
 [
   ['paneltoggler',['PanelToggler',['../class_panel_toggler.html',1,'']]],
   ['persistantdata',['PersistantData',['../class_persistant_data.html',1,'']]],
-  ['player',['Player',['../class_player.html',1,'Player'],['../struct_player_manager_1_1_player.html',1,'PlayerManager.Player']]],
+  ['player',['Player',['../struct_player_manager_1_1_player.html',1,'PlayerManager.Player'],['../class_player.html',1,'Player']]],
   ['playerhealth',['PlayerHealth',['../class_player_health.html',1,'']]],
   ['playerlobby',['PlayerLobby',['../class_player_lobby.html',1,'']]],
   ['playermanager',['PlayerManager',['../class_player_manager.html',1,'']]],

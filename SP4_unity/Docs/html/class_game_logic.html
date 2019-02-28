@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SP4: GameLogic Class Reference</title>
+<title>SP4 - Mr Tang: GameLogic Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SP4
+   <div id="projectname">SP4 - Mr Tang
    </div>
    <div id="projectbrief">SP4 Survival Game</div>
   </td>
@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('class_game_logic.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_game_logic-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameLogic Class Reference</div>  </div>
@@ -116,13 +117,17 @@ Collaboration diagram for GameLogic:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa646c2c79a440603d426cd723a1b332d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#aa646c2c79a440603d426cd723a1b332d">SendPlayerTag</a> (RpcArgs args)</td></tr>
-<tr class="separator:aa646c2c79a440603d426cd723a1b332d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571aed1ef1f42fd7d8017b50aa01f948"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#a571aed1ef1f42fd7d8017b50aa01f948">UpdatePlayerHealth</a> (RpcArgs args)</td></tr>
+<tr class="separator:a571aed1ef1f42fd7d8017b50aa01f948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac723aad06db111eb8721fff2232841c3"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#ac723aad06db111eb8721fff2232841c3">SetPlayerActive</a> (RpcArgs args)</td></tr>
+<tr class="separator:ac723aad06db111eb8721fff2232841c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a408f8ce6d12fed15b29388f74629efd5"><td class="memItemLeft" align="right" valign="top">static Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#a408f8ce6d12fed15b29388f74629efd5">serverTransform</a></td></tr>
 <tr class="separator:a408f8ce6d12fed15b29388f74629efd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c1cd89acef09ac1da8f24c46a2d0b0"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#a77c1cd89acef09ac1da8f24c46a2d0b0">respawnTimer</a></td></tr>
+<tr class="separator:a77c1cd89acef09ac1da8f24c46a2d0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -130,19 +135,26 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a5c8a5055ff4a003a255bcdf52cbd4d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1960f0d415a35e84302f4eb1080ec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#afc1960f0d415a35e84302f4eb1080ec1">Update</a> ()</td></tr>
 <tr class="separator:afc1960f0d415a35e84302f4eb1080ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8ecf975e241da1a514247f579d89c83c"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#a8ecf975e241da1a514247f579d89c83c">thePlayerInfo</a></td></tr>
+<tr class="separator:a8ecf975e241da1a514247f579d89c83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f31e8c78aaa7c23bd1e10a40ca23dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_logic.html#aa4f31e8c78aaa7c23bd1e10a40ca23dc">HPUpdateDebounce</a></td></tr>
+<tr class="separator:aa4f31e8c78aaa7c23bd1e10a40ca23dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00008">8</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa646c2c79a440603d426cd723a1b332d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa646c2c79a440603d426cd723a1b332d">&#9670;&nbsp;</a></span>SendPlayerTag()</h2>
+<a id="ac723aad06db111eb8721fff2232841c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac723aad06db111eb8721fff2232841c3">&#9670;&nbsp;</a></span>SetPlayerActive()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override void GameLogic.SendPlayerTag </td>
+          <td class="memname">override void GameLogic.SetPlayerActive </td>
           <td>(</td>
           <td class="paramtype">RpcArgs&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -151,7 +163,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00037">37</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00076">76</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
 
 </div>
 </div>
@@ -178,7 +190,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00015">15</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00019">19</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -214,11 +226,88 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00033">33</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00040">40</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_logic_afc1960f0d415a35e84302f4eb1080ec1_cgraph.png" border="0" usemap="#class_game_logic_afc1960f0d415a35e84302f4eb1080ec1_cgraph" alt=""/></div>
+<map name="class_game_logic_afc1960f0d415a35e84302f4eb1080ec1_cgraph" id="class_game_logic_afc1960f0d415a35e84302f4eb1080ec1_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect"  href="class_text_display.html#a7bb076ca93555c56cdd03db863f9b06a" title=" " alt="" coords="187,5,317,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a571aed1ef1f42fd7d8017b50aa01f948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a571aed1ef1f42fd7d8017b50aa01f948">&#9670;&nbsp;</a></span>UpdatePlayerHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void GameLogic.UpdatePlayerHealth </td>
+          <td>(</td>
+          <td class="paramtype">RpcArgs&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00067">67</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa4f31e8c78aaa7c23bd1e10a40ca23dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f31e8c78aaa7c23bd1e10a40ca23dc">&#9670;&nbsp;</a></span>HPUpdateDebounce</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameLogic.HPUpdateDebounce</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00015">15</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a77c1cd89acef09ac1da8f24c46a2d0b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77c1cd89acef09ac1da8f24c46a2d0b0">&#9670;&nbsp;</a></span>respawnTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameLogic.respawnTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00013">13</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+
+</div>
+</div>
 <a id="a408f8ce6d12fed15b29388f74629efd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a408f8ce6d12fed15b29388f74629efd5">&#9670;&nbsp;</a></span>serverTransform</h2>
 
@@ -243,6 +332,30 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a8ecf975e241da1a514247f579d89c83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecf975e241da1a514247f579d89c83c">&#9670;&nbsp;</a></span>thePlayerInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject GameLogic.thePlayerInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_logic_8cs_source.html#l00012">12</a> of file <a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/alien/Desktop/SP4_Repo/SP4/SP4_unity/Assets/Source/<a class="el" href="_game_logic_8cs_source.html">GameLogic.cs</a></li>
 </ul>
@@ -252,7 +365,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_game_logic.html">GameLogic</a></li>
-    <li class="footer">Generated on Tue Feb 26 2019 11:00:15 for SP4 by
+    <li class="footer">Generated on Thu Feb 28 2019 16:22:27 for SP4 - Mr Tang by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

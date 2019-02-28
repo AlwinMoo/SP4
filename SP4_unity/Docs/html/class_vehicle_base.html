@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SP4: VehicleBase Class Reference</title>
+<title>SP4 - Mr Tang: VehicleBase Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SP4
+   <div id="projectname">SP4 - Mr Tang
    </div>
    <div id="projectbrief">SP4 Survival Game</div>
   </td>
@@ -143,10 +143,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abf4e91b77ea9a4ab17eadc1cc7b30582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a584ec50be42ae0e7fc65b9803d0d2ff8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a584ec50be42ae0e7fc65b9803d0d2ff8">Steer</a> ()</td></tr>
 <tr class="separator:a584ec50be42ae0e7fc65b9803d0d2ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f49458d7872800993033fda99b57bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a60f49458d7872800993033fda99b57bf">SetComponentActive</a> (bool _status)</td></tr>
+<tr class="separator:a60f49458d7872800993033fda99b57bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c5cd467273c1639e7489e4a0cb17ff1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a7c5cd467273c1639e7489e4a0cb17ff1">Accelerate</a> ()</td></tr>
 <tr class="separator:a7c5cd467273c1639e7489e4a0cb17ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb3db1f27f754f27f9bfad5948b14b5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#aeb3db1f27f754f27f9bfad5948b14b5d">UpdateWheelPoses</a> ()</td></tr>
 <tr class="separator:aeb3db1f27f754f27f9bfad5948b14b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbec9b42899aef418ac73231f7311e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a8dbec9b42899aef418ac73231f7311e5">InitWheelScale</a> (Transform _transform, Vector3 _wheelScale)</td></tr>
+<tr class="separator:a8dbec9b42899aef418ac73231f7311e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eb4ecd646d2b00366fbd104dd2b9006"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a8eb4ecd646d2b00366fbd104dd2b9006">UpdateWheelPose</a> (WheelCollider _collider, Transform _transform)</td></tr>
 <tr class="separator:a8eb4ecd646d2b00366fbd104dd2b9006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3084a4e823f369b500f9f74e3c5cdc55"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a3084a4e823f369b500f9f74e3c5cdc55">FixedUpdate</a> ()</td></tr>
@@ -162,6 +166,8 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aeb812df6d67eea6a542257fadfc83a30"><td class="memItemLeft" align="right" valign="top">Slider&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#aeb812df6d67eea6a542257fadfc83a30">HealthSlider</a></td></tr>
 <tr class="separator:aeb812df6d67eea6a542257fadfc83a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6addac4efa506b557aa69e335af6a3aa"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a6addac4efa506b557aa69e335af6a3aa">parentDir</a></td></tr>
+<tr class="separator:a6addac4efa506b557aa69e335af6a3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -224,6 +230,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a89af6e5146f0e47a940f510ecbe17cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23e8e0ba649269155399e35d260235a4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a23e8e0ba649269155399e35d260235a4">maxSteerAngle</a> = 30</td></tr>
 <tr class="separator:a23e8e0ba649269155399e35d260235a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacacceebd0abbe0718d90bdfcb86240d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#aacacceebd0abbe0718d90bdfcb86240d">cancelShoot</a></td></tr>
+<tr class="separator:aacacceebd0abbe0718d90bdfcb86240d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -259,7 +267,7 @@ Static Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="ae3bc42b6b0692643fac7b8581365962aaaa057c00ee8cb9482350e861d18c3f80"></a>DRIVE_FWD&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00048">48</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00047">47</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -288,7 +296,7 @@ Static Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="affc4a5e93cbff519a2dfdc45000fd4e1a44764adb18457d9239f90c63ec0db458"></a>VEH_MONSTER_TRUCK&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00056">56</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00055">55</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -316,7 +324,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00215">215</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00272">272</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -343,7 +351,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00262">262</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00325">325</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -383,7 +391,45 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00203">203</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00234">234</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8dbec9b42899aef418ac73231f7311e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbec9b42899aef418ac73231f7311e5">&#9670;&nbsp;</a></span>InitWheelScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void VehicleBase.InitWheelScale </td>
+          <td>(</td>
+          <td class="paramtype">Transform&#160;</td>
+          <td class="paramname"><em>_transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector3&#160;</td>
+          <td class="paramname"><em>_wheelScale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00309">309</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -411,9 +457,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_sedan.html#a434617f0c498baddb94475aa69c35f60">Sedan</a>, <a class="el" href="class_van.html#a60a5220951a02766dda1deb5db44a396">Van</a>, and <a class="el" href="class_monster_truck.html#a834ae3cd7406ef521220dce0ce673ad5">MonsterTruck</a>.</p>
+<p>Reimplemented in <a class="el" href="class_monster_truck.html#a834ae3cd7406ef521220dce0ce673ad5">MonsterTruck</a>, <a class="el" href="class_sedan.html#a434617f0c498baddb94475aa69c35f60">Sedan</a>, and <a class="el" href="class_van.html#a60a5220951a02766dda1deb5db44a396">Van</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00270">270</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00333">333</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -433,7 +479,37 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00324">324</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00395">395</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+
+</div>
+</div>
+<a id="a60f49458d7872800993033fda99b57bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f49458d7872800993033fda99b57bf">&#9670;&nbsp;</a></span>SetComponentActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void VehicleBase.SetComponentActive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set children</p>
+<p>Set monobehavior components </p>
+
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00247">247</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -462,7 +538,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="class_sedan.html#a98f57828900da57624dcc2ec83f179cc">Sedan</a>, <a class="el" href="class_monster_truck.html#ac080f7919c855c308c0e1c99c95498f9">MonsterTruck</a>, and <a class="el" href="class_van.html#abec12755dcc24b926e54315809e1f292">Van</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00067">67</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00068">68</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -500,7 +576,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00208">208</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00239">239</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -520,7 +596,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00291">291</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00356">356</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -556,14 +632,16 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00094">94</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00093">93</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_vehicle_base_a8b9c0bf2c77ef12e19cd9a3a63abd56b_cgraph.png" border="0" usemap="#class_vehicle_base_a8b9c0bf2c77ef12e19cd9a3a63abd56b_cgraph" alt=""/></div>
 <map name="class_vehicle_base_a8b9c0bf2c77ef12e19cd9a3a63abd56b_cgraph" id="class_vehicle_base_a8b9c0bf2c77ef12e19cd9a3a63abd56b_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,145,32"/>
-<area shape="rect"  href="class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="193,5,396,32"/>
+<area shape="rect"  title=" " alt="" coords="5,71,145,98"/>
+<area shape="rect"  href="class_vehicle_base.html#a60f49458d7872800993033fda99b57bf" title=" " alt="" coords="202,5,387,47"/>
+<area shape="rect"  href="class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="193,71,396,98"/>
+<area shape="rect"  href="class_text_display.html#a021d196174d25b39b3e87bb3415487bd" title=" " alt="" coords="229,122,361,149"/>
 </map>
 </div>
 
@@ -603,7 +681,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00251">251</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00314">314</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -630,7 +708,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00243">243</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00300">300</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -668,6 +746,30 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="aacacceebd0abbe0718d90bdfcb86240d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacacceebd0abbe0718d90bdfcb86240d">&#9670;&nbsp;</a></span>cancelShoot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VehicleBase.cancelShoot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00045">45</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+
+</div>
+</div>
 <a id="aeb812df6d67eea6a542257fadfc83a30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb812df6d67eea6a542257fadfc83a30">&#9670;&nbsp;</a></span>HealthSlider</h2>
 
@@ -680,7 +782,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00064">64</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00063">63</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -704,7 +806,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00044">44</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00043">43</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -728,7 +830,23 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00046">46</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00044">44</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+
+</div>
+</div>
+<a id="a6addac4efa506b557aa69e335af6a3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6addac4efa506b557aa69e335af6a3aa">&#9670;&nbsp;</a></span>parentDir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 VehicleBase.parentDir</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00065">65</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -801,7 +919,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00054">54</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00053">53</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -1353,7 +1471,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00062">62</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00061">61</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1484,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_vehicle_base.html">VehicleBase</a></li>
-    <li class="footer">Generated on Tue Feb 26 2019 11:00:18 for SP4 by
+    <li class="footer">Generated on Thu Feb 28 2019 16:22:32 for SP4 - Mr Tang by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

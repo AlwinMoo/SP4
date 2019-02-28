@@ -1,0 +1,4 @@
+<map id="SpiderEnemyMom.TakeDamage" name="SpiderEnemyMom.TakeDamage">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,215,32"/>
+<area shape="rect" id="node2" href="$class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312" title=" " alt="" coords="263,5,460,32"/>
+</map>

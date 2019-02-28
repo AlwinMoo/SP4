@@ -12,6 +12,9 @@ var dir_c9c6142f6c519032dcef8ee106c3b2b8 =
     [ "EventManager.cs", "_event_manager_8cs.html", [
       [ "EventManager", "class_event_manager.html", "class_event_manager" ]
     ] ],
+    [ "FogOfWarPlayer.cs", "_fog_of_war_player_8cs.html", [
+      [ "FogOfWarPlayer", "class_fog_of_war_player.html", "class_fog_of_war_player" ]
+    ] ],
     [ "GameLogic.cs", "_game_logic_8cs.html", [
       [ "GameLogic", "class_game_logic.html", "class_game_logic" ]
     ] ],

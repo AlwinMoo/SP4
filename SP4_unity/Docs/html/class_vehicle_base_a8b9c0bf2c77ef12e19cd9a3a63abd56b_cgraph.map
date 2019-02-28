@@ -1,4 +1,6 @@
 <map id="VehicleBase.Update" name="VehicleBase.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,145,32"/>
-<area shape="rect" id="node2" href="$class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="193,5,396,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,145,98"/>
+<area shape="rect" id="node2" href="$class_vehicle_base.html#a60f49458d7872800993033fda99b57bf" title=" " alt="" coords="202,5,387,47"/>
+<area shape="rect" id="node3" href="$class_player_manager.html#afd2883fec6735df53418e1f22c09c4b3" title=" " alt="" coords="193,71,396,98"/>
+<area shape="rect" id="node4" href="$class_text_display.html#a021d196174d25b39b3e87bb3415487bd" title=" " alt="" coords="229,122,361,149"/>
 </map>
