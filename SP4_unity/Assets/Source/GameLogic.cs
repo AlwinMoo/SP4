@@ -41,15 +41,18 @@ public class GameLogic : GameLogicBehavior
     {
         HPUpdateDebounce += Time.deltaTime;
          
-        if(!thePlayerInfo.gameObject.activeInHierarchy)
+        if((thePlayerInfo.gameObject.GetComponent(typeof(Renderer)) as Renderer).enabled == false)
         {
             respawnTimer += Time.deltaTime;
             Debug.Log(respawnTimer);
             if (respawnTimer >= 3)
             {
                 TextDisplay.IsAlive();
-                thePlayerInfo.SetActive(true);
+                thePlayerInfo.GetComponent<VehicleBase>().SetComponentActive(true);
+                networkObject.SendRpc(RPC_SET_PLAYER_ACTIVE, Receivers.All, thePlayerInfo.tag, true);
                 thePlayerInfo.GetComponent<VehicleBase>().health = thePlayerInfo.GetComponent<VehicleBase>().maxHealth;
+                networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+
                 respawnTimer = 0;
             }
         }
@@ -68,5 +71,13 @@ public class GameLogic : GameLogicBehavior
 
         if (GameObject.FindGameObjectWithTag(playerTag) != null)
             GameObject.FindGameObjectWithTag(playerTag).GetComponent<VehicleBase>().health = newHP;
+    }
+
+    public override void SetPlayerActive(RpcArgs args)
+    {
+        string playerTag = args.GetNext<string>();
+        bool activeStatus = args.GetNext<bool>();
+
+        GameObject.FindGameObjectWithTag(playerTag).GetComponent<VehicleBase>().SetComponentActive(true);
     }
 }

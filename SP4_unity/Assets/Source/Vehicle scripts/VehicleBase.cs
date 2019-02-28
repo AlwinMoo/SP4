@@ -102,7 +102,7 @@ public class VehicleBase : PlayerVehicleBehavior {
 
             parentDir = networkObject.WeaponRotation;
 
-            gameObject.SetActive(networkObject.isActive);
+            gameObject.GetComponent<VehicleBase>().SetComponentActive(networkObject.isActive);
 
             return;
         }
@@ -115,7 +115,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         
         HealthSlider.value = health;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && (this.gameObject.GetComponent(typeof(Renderer)) as Renderer) != false)
         {
             //RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -218,7 +218,9 @@ public class VehicleBase : PlayerVehicleBehavior {
             transform.position = new Vector3(0, 0, 0);
             transform.eulerAngles = new Vector3(0, 0, 0);
             TextDisplay.Isdead();
-            gameObject.SetActive(false);
+
+            SetComponentActive(false);
+
             networkObject.isActive = false;
         }
         else
@@ -241,6 +243,32 @@ public class VehicleBase : PlayerVehicleBehavior {
         fL_Wheel.steerAngle = m_steeringAngle;
         fR_Wheel.steerAngle = m_steeringAngle;
     }
+
+    public virtual void SetComponentActive(bool _status)
+    {
+        ///Set children
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            transform.GetChild(i).gameObject.SetActive(_status);
+        }
+
+        ///Set monobehavior components
+        MonoBehaviour[] component = GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour c in component)
+        {
+            c.enabled = _status;
+        }
+
+        foreach (var c in this.gameObject.GetComponents(typeof(Collider)))
+        {
+            (c as Collider).enabled = _status;
+        }
+
+        (this.gameObject.GetComponent(typeof(Renderer)) as Renderer).enabled = _status;
+
+        GetComponent<VehicleBase>().enabled = true;
+    }
+
     public virtual void Accelerate()
     {
         // Simulate all wheel drive
