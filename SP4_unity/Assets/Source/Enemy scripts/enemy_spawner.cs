@@ -80,7 +80,7 @@ public class enemy_spawner : EnemySpawnerBehavior {
 	public void SpawnSpiderSwarm (Transform _transform)
 	{
 		// spawn 10 spiders in the area
-		for (int i = 0; i < 10; ++i) 
+		for (int i = 0; i < 5; ++i) 
 		{
 			var newEnemy = NetworkManager.Instance.InstantiateEnemy(enemyPrefabCount, _transform.position, _transform.rotation);
 
