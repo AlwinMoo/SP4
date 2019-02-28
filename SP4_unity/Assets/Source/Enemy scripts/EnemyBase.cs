@@ -72,7 +72,7 @@ public class EnemyBase : EnemyBehavior, Flammable
                 if (target == null)
                     return;
                 agent.SetDestination(target.transform.position);
-            //TO DO SET NEAREST AS TARGET
+
                 networkObject.position = target.transform.position;
                 networkObject.rotation = transform.rotation;
             }

@@ -51,7 +51,7 @@ public class GameLogic : GameLogicBehavior
                 thePlayerInfo.GetComponent<VehicleBase>().SetComponentActive(true);
                 networkObject.SendRpc(RPC_SET_PLAYER_ACTIVE, Receivers.All, thePlayerInfo.tag, true);
                 thePlayerInfo.GetComponent<VehicleBase>().health = thePlayerInfo.GetComponent<VehicleBase>().maxHealth;
-                networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+                networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.AllBuffered, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
 
                 respawnTimer = 0;
             }
@@ -59,7 +59,7 @@ public class GameLogic : GameLogicBehavior
 
         if (HPUpdateDebounce > 2f)
         {
-            networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.All, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
+            networkObject.SendRpcUnreliable(RPC_UPDATE_PLAYER_HEALTH, Receivers.AllBuffered, thePlayerInfo.gameObject.GetComponent<VehicleBase>().health, thePlayerInfo.gameObject.tag);
             HPUpdateDebounce = 0f;
         }
 	}
