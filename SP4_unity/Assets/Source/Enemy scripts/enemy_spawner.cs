@@ -77,6 +77,17 @@ public class enemy_spawner : EnemySpawnerBehavior {
         return MaxMinDiff / 2 * ((currentWave -= 2) * currentWave * currentWave + 2) + startMobCount;
     }
 
+	public void SpawnSpiderSwarm (Transform _transform)
+	{
+		// spawn 10 spiders in the area
+		for (int i = 0; i < 10; ++i) 
+		{
+			var newEnemy = NetworkManager.Instance.InstantiateEnemy(enemyPrefabCount, _transform.position, _transform.rotation);
+
+			enemyList.Add(newEnemy.gameObject);
+		}
+	}
+
     //public override void StartInstantiate(RpcArgs args)
     //{
     //    var newEnemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], args.GetNext<Vector3>(), transform.rotation);

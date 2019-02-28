@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using BeardedManStudios.Forge.Networking;
-
+using BeardedManStudios.Forge.Networking.Unity;
 public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
@@ -21,7 +21,7 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 	private int m_aAttackHash = Animator.StringToHash("attack");
 	private bool m_deathPlayed = false;	// For animations to play before destroy()
 	private float m_deathTimer = 1.5f;
-
+	static private enemy_spawner spawnerRef;
 	Rigidbody thisGO;
 	// Use this for initialization
 	void Start () {
@@ -39,8 +39,14 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 		fire.Stop ();
 		glow.Stop ();
 		m_deathPlayed = false;
+		Invoke ("InitSpawnerRef", 1.0f);
 	}
-	
+
+	void InitSpawnerRef()
+	{
+		spawnerRef = GameObject.Find("Global").GetComponent<enemy_spawner>();
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -177,12 +183,14 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
                 anim.SetTrigger (m_aDeathHash);
+				ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
 				return;
 			}	
 			if (m_deathTimer <= 0.0f)
             {
+				if (networkObject.IsServer)
+				spawnerRef.SpawnSpiderSwarm (transform);
 				networkObject.Destroy();
             }
 		}

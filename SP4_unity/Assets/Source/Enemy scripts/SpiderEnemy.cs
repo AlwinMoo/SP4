@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using BeardedManStudios.Forge.Networking;
-
 public class SpiderEnemy :  EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
@@ -177,8 +176,8 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
                 anim.SetTrigger (m_aDeathHash);
+				ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
 				return;
 			}	
 			if (m_deathTimer <= 0.0f)
