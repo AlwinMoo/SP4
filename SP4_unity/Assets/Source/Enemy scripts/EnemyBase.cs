@@ -54,6 +54,9 @@ public class EnemyBase : EnemyBehavior, Flammable
     }
 
     // Update is called once per frame
+	/// <summary>
+	/// Updates pathfinding information based on objectives and player states
+	/// </summary>
     public virtual void Update()
     {
         m_countDown += Time.deltaTime;
@@ -97,7 +100,9 @@ public class EnemyBase : EnemyBehavior, Flammable
         if (this.transform.position.y >= -3f)
             this.transform.position = new Vector3(this.transform.position.x, -3f, this.transform.position.z);
     }
-
+	/// <summary>
+	/// If it collides with a player, start attacking
+	/// </summary>
     public virtual void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.GetComponent<VehicleBase>() != null)
@@ -169,18 +174,24 @@ public class EnemyBase : EnemyBehavior, Flammable
 		m_damageTaken += _damage;
 	}
 
-	private void UnloadTickDamage()
-	{
-		health -= m_damageTaken;
-		m_damageTaken = 0.0f;
-	}
+	//private void UnloadTickDamage()
+	//{
+	//	health -= m_damageTaken;
+	//	m_damageTaken = 0.0f;
+	//}
 
+	/// <summary>
+	/// RPC to tell receiver that the enemy object has been ignited
+	/// </summary>
     public override void SendOnFire(RpcArgs args)
     {
         // Play the animation if it hasn't been played
         Ignited();
     }
 
+	/// <summary>
+	/// RPC to tell clients that enemy has taken damage
+	/// </summary>
 	public override void TakeDamage(RpcArgs args)
 	{
 		float damage = args.GetNext<float> ();

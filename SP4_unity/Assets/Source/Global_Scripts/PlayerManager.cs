@@ -34,7 +34,7 @@ public class PlayerManager : PlayerManagerBehavior {
 	void Awake()
 	{
 		if (playerManager == null) {
-
+			// Initialize the playerManager
 			DontDestroyOnLoad (gameObject);
 			playerManager = this;
             for (int i = 0; i < 4; ++i)
@@ -49,7 +49,7 @@ public class PlayerManager : PlayerManagerBehavior {
 		} 
 		else if (playerManager != this) 
 		{
-			Destroy (gameObject);
+			Destroy (gameObject);	// There should only be 1 instance of playerManager
 		}
 	}
 
@@ -82,6 +82,10 @@ public class PlayerManager : PlayerManagerBehavior {
 		// a player connects
 	}
 
+
+	/// <summary>
+	/// If a player has been accepted into the server, he will be added
+	/// </summary>
 	private void PlayerAccepted(NetworkingPlayer player, NetWorker sender)
 	{
 		MainThreadManager.Run (() => {
@@ -99,7 +103,7 @@ public class PlayerManager : PlayerManagerBehavior {
 				m_players [i].player_slot_empty = false;
 				m_players [i].player_active = false;
 
-				// Send the assigned slot rpc to this player
+				// Send the assigned slot rpc to all players
 					networkObject.SendRpc (RPC_GET_PLAYER_LIST, Receivers.All, 
 						Serializer.GetInstance ().Serialize<Player[]> (m_players));
 					networkObject.SendRpc (player, RPC_ASSIGN_PLAYER, 
@@ -109,21 +113,26 @@ public class PlayerManager : PlayerManagerBehavior {
 			;
 		});
 	}
-
+	/// <summary>
+	/// Receives the list of players in the session
+	/// </summary>
 	public override void GetPlayerList(RpcArgs args)
 	{
+		// Run in the main thread
 		MainThreadManager.Run (() => {
-			m_players = Serializer.GetInstance ().Deserialize<Player[]> (args.GetNext<Byte[]> ());
+			m_players = Serializer.GetInstance ().Deserialize<Player[]> (args.GetNext<Byte[]> ());	// Deserialize the information
 			m_playerCount = 0;
 			for (int i = 0; i < 4; ++i) {
 				if (m_players [i].player_slot_empty)
 					continue;
-				++m_playerCount;
+				++m_playerCount;	// Redo the player count
 			}
 			;
 		});
 	}
-
+	/// <summary>
+	/// RPC to assign player to a slot of the 4 player slots available
+	/// </summary>
 	public override void AssignPlayer(RpcArgs args)
 	{
         // Assigning current player to this player

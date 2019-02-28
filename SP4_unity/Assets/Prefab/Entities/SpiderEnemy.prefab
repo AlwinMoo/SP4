@@ -2284,7 +2284,6 @@ MonoBehaviour:
   damageTakenTickRate: 0.3
   fire: {fileID: 198332052944026246}
   glow: {fileID: 198108846259770300}
-  bloodSplatter: {fileID: 19886758, guid: 0807e44964498b645a033aa3d46d14d8, type: 2}
   anim: {fileID: 95439211348189946}
 --- !u!136 &136349567296582986
 CapsuleCollider:
@@ -2390,7 +2389,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 1.5
+  m_Speed: 10
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 120

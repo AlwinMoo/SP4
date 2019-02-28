@@ -15,6 +15,7 @@ public class LobbyScript : LobbyBehavior
     // Use this for initialization
     void Start()
     {
+		// If this is the server, only the host will be inside
         if (networkObject.IsServer)
         {
             networkObject.player1 = 1;
@@ -31,6 +32,7 @@ public class LobbyScript : LobbyBehavior
 
     IEnumerator LateStart(float waitTime)
     {
+		// Initialize ready to the server when player joins
         yield return new WaitForSeconds(waitTime);
         networkObject.SendRpc(RPC_TOGGLE_READY, Receivers.Server, (int)PlayerManager.playerManager.GetPlayerIndex());
     }
@@ -41,12 +43,7 @@ public class LobbyScript : LobbyBehavior
     // Update is called once per frame
     void Update()
     {
-        // Updating according to server
-        //Debug.Log(networkObject.player2);
-        //Debug.Log("Player 1 " + (networkObject.player1));
-        //Debug.Log("Player 2 " + (networkObject.player2));
-        //Debug.Log("Player 3 " + (networkObject.player3));
-        //Debug.Log("Player 4 " + (networkObject.player4));
+        // Updating according to server information
         players[0] = networkObject.player2;
         players[1] = networkObject.player3;
         players[2] = networkObject.player4;
@@ -108,6 +105,8 @@ public class LobbyScript : LobbyBehavior
     }
     public override void JoinedLobby(RpcArgs args)
     {
+		// everyone should receive this function when a player joins the lobby
+		// Occupy the slot that the new player is assigned
         int playerIndex = args.GetNext<int>();
         Debug.Log("Player joined lobby with index " + playerIndex);
         switch (playerIndex)
@@ -147,19 +146,20 @@ public class LobbyScript : LobbyBehavior
 
         if (networkObject.IsServer)
         {
-            networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.Others, carID, playerID);
+			networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.Others, carID, playerID);	// Send to all that the car has changed for a player (stated the player's id in param)
         }
     }
 
     public void UpdatePlayerCar(int ID)
     {
-        networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.All, ID, (int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
+        networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.All, ID, (int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));// To update car changes to the server
     }
 
 	private void PlayerDisconnectedFromServer(NetworkingPlayer _player, NetWorker sender)
 	{
 		Debug.Log ("Player has disconnected from lobby");
 		NetworkManager.Instance.Networker.playerDisconnected -= PlayerDisconnectedFromServer;
+		// Based on the player that quit, reset that slot in the lobby to appear empty
 		for (int i = 1; i < 4; ++i) 
 		{
 			if (PlayerManager.playerManager.m_players [i].player_ID != _player.NetworkId)

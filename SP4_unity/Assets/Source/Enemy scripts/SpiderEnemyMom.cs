@@ -35,28 +35,29 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 		agent.speed = 1.5f;
 		m_burning = false;
 		m_countDownSpider = 0.0f;
-		// TODO: make the particle systems disable play on awake
+		// Don't let the particles for fire play on start
 		fire.Stop ();
 		glow.Stop ();
-		m_deathPlayed = false;
-		Invoke ("InitSpawnerRef", 1.0f);
+		m_deathPlayed = false;	// Only true if the enemy is playing death animation
+		Invoke ("InitSpawnerRef", 1.0f);	// This is to initialize the spawner reference only once
 	}
 
 	void InitSpawnerRef()
 	{
-		spawnerRef = GameObject.Find("Global").GetComponent<enemy_spawner>();
+		spawnerRef = GameObject.Find("Global").GetComponent<enemy_spawner>();	// Get the enemy spawner (this is to spawn more spiders as mother)
 	}
 
     // Update is called once per frame
     public override void Update()
     {
-		CheckAlive ();
+		CheckAlive ();	// This is necessary for monsters that have a death animation
 		if (m_deathPlayed) {
-			m_deathTimer -= Time.deltaTime;
+			m_deathTimer -= Time.deltaTime;	// Only if the monster is playing dying animation
 			return;
 		}
-		base.Update();
+		base.Update();	// Updates what enemy has in common with other enemies
 
+		// Only the server handles the fire damage since it's based on time (decreases packets sent)
 		if (networkObject.IsServer && m_burning)
 		{
 			m_countDownSpider -= Time.deltaTime;

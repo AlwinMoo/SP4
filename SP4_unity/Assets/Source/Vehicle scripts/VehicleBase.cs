@@ -330,6 +330,9 @@ public class VehicleBase : PlayerVehicleBehavior {
         UpdateWheelPoses();
     }
 
+	/// <summary>
+	/// Receives damage when the player enters collision with an enemy. Different vehicle types take different damage amounts
+	/// </summary>
     public virtual void OnCollisionEnter(Collision collision)
     {
 
@@ -352,7 +355,9 @@ public class VehicleBase : PlayerVehicleBehavior {
             }
         }
     }
-
+	/// <summary>
+	/// Triggers fire when a client shoots
+	/// </summary>
     public override void triggerShoot(RpcArgs args)
     {
         int ShooterID = args.GetNext<int>();

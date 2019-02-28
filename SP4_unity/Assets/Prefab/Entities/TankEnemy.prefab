@@ -2797,7 +2797,6 @@ MonoBehaviour:
   damageTakenTickRate: 0.3
   fire: {fileID: 198871181508862664}
   glow: {fileID: 198386486393904510}
-  bloodSplatter: {fileID: 19886758, guid: 0807e44964498b645a033aa3d46d14d8, type: 2}
   maxHealth: 100
   anim: {fileID: 95765562759591338}
 --- !u!136 &136974557478339508
@@ -2932,7 +2931,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 1.5
+  m_Speed: 5
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 120
