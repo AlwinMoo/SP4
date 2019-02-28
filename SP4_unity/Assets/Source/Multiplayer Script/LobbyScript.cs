@@ -21,6 +21,7 @@ public class LobbyScript : LobbyBehavior
             networkObject.player2 = 0;
             networkObject.player3 = 0;
             networkObject.player4 = 0;
+			NetworkManager.Instance.Networker.playerDisconnected += PlayerDisconnectedFromServer;
             return;
         }
 
@@ -154,4 +155,28 @@ public class LobbyScript : LobbyBehavior
     {
         networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.All, ID, (int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
     }
+
+	private void PlayerDisconnectedFromServer(NetworkingPlayer _player, NetWorker sender)
+	{
+		Debug.Log ("Player has disconnected from lobby");
+		NetworkManager.Instance.Networker.playerDisconnected -= PlayerDisconnectedFromServer;
+		for (int i = 1; i < 4; ++i) 
+		{
+			if (PlayerManager.playerManager.m_players [i].player_ID != _player.NetworkId)
+				continue;
+			switch (i)
+			{
+			case 1:
+				networkObject.player2 = 0;
+				break;
+			case 2:
+				networkObject.player3 = 0;
+				break;
+			case 3:
+				networkObject.player4 = 0;
+				break;
+			}
+			break;
+		}
+	}
 }

@@ -69,6 +69,7 @@ public class PlayerManager : PlayerManagerBehavior {
 			playerManager.m_players[0].player_name = "Host";
             m_playerIndex = 0;
             ++m_playerCount;
+			NetworkManager.Instance.Networker.playerDisconnected += PlayerDisconnectedFromServer;
         }
 		else
 		{
@@ -88,7 +89,7 @@ public class PlayerManager : PlayerManagerBehavior {
 			// Assign this player to a slot and 
 			// Send the list of players to this player
 			for (int i = 0; i < 4; ++i) {
-				if (m_players [i].player_ID == player.NetworkId)	// Bad workaround :(
+				if (m_players [i].player_ID == player.NetworkId)
 					return;
 				if (!m_players [i].player_slot_empty)
 					continue;
@@ -178,7 +179,40 @@ public class PlayerManager : PlayerManagerBehavior {
         // Send the new playerlist to everyone
         networkObject.SendRpc(RPC_GET_PLAYER_LIST, Receivers.All,
             Serializer.GetInstance().Serialize<Player[]>(m_players));
-
-        // TODO: situation where client disconnects DURING the game
     }
+
+	private void PlayerDisconnectedFromServer(NetworkingPlayer _player, NetWorker _sender)
+	{
+		Debug.Log ("Player has disconnected");
+		NetworkManager.Instance.Networker.playerDisconnected -= PlayerDisconnectedFromServer;
+		--m_playerCount;
+		for (int i = 0; i < 4; ++i) 
+		{
+			if (m_players [i].player_ID != _player.NetworkId)
+				continue;
+			m_players [i].player_name = "empty";
+			m_players [i].player_slot_empty = true;
+			m_players [i].player_active = false;
+			m_players [i].player_car = 0;
+			break;
+		}
+		networkObject.SendRpc(RPC_GET_PLAYER_LIST, Receivers.All,
+			Serializer.GetInstance().Serialize<Player[]>(m_players));
+		// Delete the car that belongs to the player
+		NetworkObject networkObjectToDestroy = null;
+		foreach (var no in _sender.NetworkObjectList)
+		{
+			if (no.Owner == _player)
+			{
+				//Found him
+				networkObjectToDestroy = no;                        
+			}
+		}
+		//Remove the actual network object outside of the foreach loop, as we would modify the collection at runtime elsewise. (could also use a return, too late)
+		if (networkObjectToDestroy != null)
+		{
+			_sender.NetworkObjectList.Remove(networkObjectToDestroy);
+			networkObjectToDestroy.Destroy();
+		}
+	}
 }
