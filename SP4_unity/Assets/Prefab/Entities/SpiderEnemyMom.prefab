@@ -2312,6 +2312,7 @@ MonoBehaviour:
   damageTakenTickRate: 0.3
   fire: {fileID: 198542777684996676}
   glow: {fileID: 198392856423496240}
+  bloodSplatter: {fileID: 19886758, guid: 0807e44964498b645a033aa3d46d14d8, type: 2}
   anim: {fileID: 95742665965979628}
 --- !u!136 &136742154641244694
 CapsuleCollider:

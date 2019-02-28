@@ -8,8 +8,6 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
     public float bulletForce = 60.0f;
     public const float maxLifeTime = 3.0f;
     private float m_currLifeTime = maxLifeTime;
-    public ParticleSystem explosion;
-    public ParticleSystem smoke;
 
     public void OnObjectSpawn()
     {

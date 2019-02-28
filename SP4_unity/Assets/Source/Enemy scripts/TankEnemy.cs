@@ -9,8 +9,8 @@ using BeardedManStudios.Forge.Networking;
 public class TankEnemy : EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
-	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-	public const float burnDuration = 3.0f;
+    //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
+    public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public float maxHealth;
 	public Animator anim;
@@ -41,7 +41,7 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		fire.Stop ();
 		glow.Stop ();
 
-		m_aStaggeredHash = Animator.StringToHash("staggered");
+        m_aStaggeredHash = Animator.StringToHash("staggered");
 		m_aDeathHash = Animator.StringToHash("death");
 		m_aAttackHash = Animator.StringToHash("attack");
 	}
@@ -182,11 +182,15 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
-				anim.SetTrigger (m_aDeathHash);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
+                anim.SetTrigger (m_aDeathHash);
 				return;
 			}	
 			if (m_deathTimer <= 0.0f)
-				networkObject.Destroy();
+            {
+                networkObject.Destroy();
+            }
+                
 		}
 	}
 }

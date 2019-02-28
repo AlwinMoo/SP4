@@ -7,8 +7,8 @@ using BeardedManStudios.Forge.Networking;
 public class SpiderEnemy :  EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
-	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-	public const float burnDuration = 3.0f;
+    //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
+    public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public const float maxHealth = 200;
 	//private bool m_burning;
@@ -38,7 +38,7 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		// TODO: make the particle systems disable play on awake
 		fire.Stop ();
 		glow.Stop ();
-		m_deathPlayed = false;
+        m_deathPlayed = false;
 	}
 	
 	// Update is called once per frame
@@ -177,11 +177,14 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
-				anim.SetTrigger (m_aDeathHash);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
+                anim.SetTrigger (m_aDeathHash);
 				return;
 			}	
 			if (m_deathTimer <= 0.0f)
-				networkObject.Destroy();
+            {
+                networkObject.Destroy();
+            }
 		}
 	}
 }

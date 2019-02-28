@@ -14,8 +14,8 @@ public class MeshGenerator : NetworkMapGenerationBehavior
     Vector3[] vertices;
     int[] triangles;
 
-    public int xSize = 20;
-    public int zSize = 20;
+    public int xSize;
+    public int zSize;
     public float PerlinNoise;
     public GameObject[] Obstacles;
 
@@ -142,13 +142,10 @@ public class MeshGenerator : NetworkMapGenerationBehavior
     // Creating obstacles on random parts of the tile
     void CreateObstacles(int numOfObstacles)
     {
-
         for (int i = 0; i < numOfObstacles; ++i)
         {
             Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.min.y, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
             randPos.y = this.transform.position.y + 1.0f;
-
-            //Debug.Log("randomPos: " + randPos);
 
             int obstacleType = Random.Range(0, Obstacles.Length);
 

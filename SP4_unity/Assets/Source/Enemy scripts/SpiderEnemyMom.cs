@@ -7,8 +7,8 @@ using BeardedManStudios.Forge.Networking;
 public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 	public ParticleSystem fire;
 	public ParticleSystem glow;
-	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-	public const float burnDuration = 3.0f;
+    //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
+    public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
 	public const float maxHealth = 200;
 	//private bool m_burning;
@@ -177,11 +177,14 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
-				anim.SetTrigger (m_aDeathHash);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
+                anim.SetTrigger (m_aDeathHash);
 				return;
 			}	
 			if (m_deathTimer <= 0.0f)
+            {
 				networkObject.Destroy();
+            }
 		}
 	}
 }

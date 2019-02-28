@@ -170,8 +170,9 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
 	{
 		if (health <= 0) 
 		{
-			// Call an animation blood splatter to play at this location
-			networkObject.Destroy();
+            // Call an animation blood splatter to play at this location
+            ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
+            networkObject.Destroy();
 		}
 	}
 }
