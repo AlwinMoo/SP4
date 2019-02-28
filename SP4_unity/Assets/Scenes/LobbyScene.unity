@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 109155096}
   - component: {fileID: 109155099}
   - component: {fileID: 109155098}
-  - component: {fileID: 109155097}
   m_Layer: 5
   m_Name: Player3(Empty)
   m_TagString: Player3
@@ -305,20 +304,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -12.999939}
   m_SizeDelta: {x: 100, y: 103.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &109155097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 109155095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d24d04a5c356e4b8c9768be5f93a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: {fileID: 1253210547}
-  Car: {fileID: 0}
-  slotNumber: 2
 --- !u!114 &109155098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2438,7 +2423,6 @@ GameObject:
   - component: {fileID: 684788346}
   - component: {fileID: 684788349}
   - component: {fileID: 684788348}
-  - component: {fileID: 684788347}
   m_Layer: 5
   m_Name: Player1(Empty)
   m_TagString: Player0
@@ -2465,20 +2449,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 38}
   m_SizeDelta: {x: 100, y: 103.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &684788347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 684788345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d24d04a5c356e4b8c9768be5f93a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: {fileID: 574766095}
-  Car: {fileID: 0}
-  slotNumber: 0
 --- !u!114 &684788348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7041,7 +7011,6 @@ GameObject:
   - component: {fileID: 1742490433}
   - component: {fileID: 1742490436}
   - component: {fileID: 1742490435}
-  - component: {fileID: 1742490434}
   m_Layer: 5
   m_Name: Player4(Empty)
   m_TagString: Player4
@@ -7068,20 +7037,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -37.99997}
   m_SizeDelta: {x: 100, y: 103.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1742490434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1742490432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d24d04a5c356e4b8c9768be5f93a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: {fileID: 533523029}
-  Car: {fileID: 0}
-  slotNumber: 3
 --- !u!114 &1742490435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8463,7 +8418,6 @@ GameObject:
   - component: {fileID: 2078584114}
   - component: {fileID: 2078584117}
   - component: {fileID: 2078584116}
-  - component: {fileID: 2078584115}
   m_Layer: 5
   m_Name: Player2(Empty)
   m_TagString: Player2
@@ -8490,20 +8444,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 13}
   m_SizeDelta: {x: 100, y: 103.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2078584115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078584113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d24d04a5c356e4b8c9768be5f93a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: {fileID: 2129096680}
-  Car: {fileID: 0}
-  slotNumber: 1
 --- !u!114 &2078584116
 MonoBehaviour:
   m_ObjectHideFlags: 0
