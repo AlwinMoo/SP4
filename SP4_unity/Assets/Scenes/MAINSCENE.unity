@@ -144,6 +144,15 @@ MonoBehaviour:
   - tag: HMG_Bullet
     prefab: {fileID: 1799208403371290, guid: 60e7bdcee4a117e49996826a1644e358, type: 2}
     size: 20
+  - tag: RL_Bullet
+    prefab: {fileID: 1055574777500844, guid: 276872101fb987f4b96398e70218e459, type: 2}
+    size: 20
+  - tag: RL_Explosion
+    prefab: {fileID: 1412991401808716, guid: abb5fe579d588c944b191ba069f1523e, type: 2}
+    size: 20
+  - tag: BloodSplatter
+    prefab: {fileID: 194062, guid: 0807e44964498b645a033aa3d46d14d8, type: 2}
+    size: 20
 --- !u!4 &17133232
 Transform:
   m_ObjectHideFlags: 0
@@ -14187,7 +14196,9 @@ MonoBehaviour:
   damageTakenTickRate: 0.3
   fire: {fileID: 1601105410}
   glow: {fileID: 841589143}
+  bloodSplatter: {fileID: 19886758, guid: 0807e44964498b645a033aa3d46d14d8, type: 2}
   maxHealth: 100
+  anim: {fileID: 0}
 --- !u!136 &1528660107
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c85e702558efa4686f547a004cc60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 50
-  zSize: 50
+  xSize: 100
+  zSize: 100
   PerlinNoise: 0.2
   Obstacles:
   - {fileID: 1025408070894950, guid: c4a07404c19ff974a990b563a1b3409f, type: 2}

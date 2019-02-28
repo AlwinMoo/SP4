@@ -139,5 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20e97af26860a47952b1171c19ab3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  smoke: {fileID: 0}
+  bulletForce: 60
+  explosion: {fileID: 198946767295836954, guid: 7da3d6f75de902742a70ccd2db2eb7ce,
+    type: 2}
+  smoke: {fileID: 198203216233008182, guid: 7da3d6f75de902742a70ccd2db2eb7ce, type: 2}
