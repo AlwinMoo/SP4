@@ -133,4 +133,22 @@ public class LobbyScript : LobbyBehavior
         }
         return ready;
     }
+
+    public override void ChangedCar(RpcArgs args)
+    {
+        int carID = args.GetNext<int>();
+        int playerID = args.GetNext<int>();
+
+        PlayerManager.playerManager.m_players[playerID].player_car = carID;
+
+        if (networkObject.IsServer)
+        {
+            networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.Others, carID, playerID);
+        }
+    }
+
+    public void UpdatePlayerCar(int ID)
+    {
+        networkObject.SendRpc(RPC_CHANGED_CAR, Receivers.All, ID, (int)PlayerManager.playerManager.GetPlayerID((int)PlayerManager.playerManager.GetPlayerIndex()));
+    }
 }

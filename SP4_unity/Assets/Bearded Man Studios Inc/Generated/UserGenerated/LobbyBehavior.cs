@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[][\"int\"][\"int\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[][\"PlayerIndex\"][\"PlayerIndex\"]]")]
+	[GeneratedRPC("{\"types\":[[][\"int\"][\"int\"][\"int\", \"int\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[][\"PlayerIndex\"][\"PlayerIndex\"][\"CarID\", \"PlayerID\"]]")]
 	public abstract partial class LobbyBehavior : NetworkBehavior
 	{
 		public const byte RPC_BEGIN_READY_C_D = 0 + 5;
 		public const byte RPC_TOGGLE_READY = 1 + 5;
 		public const byte RPC_JOINED_LOBBY = 2 + 5;
+		public const byte RPC_CHANGED_CAR = 3 + 5;
 		
 		public LobbyNetworkObject networkObject = null;
 
@@ -27,6 +28,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.RegisterRpc("BeginReadyCD", BeginReadyCD);
 			networkObject.RegisterRpc("ToggleReady", ToggleReady, typeof(int));
 			networkObject.RegisterRpc("JoinedLobby", JoinedLobby, typeof(int));
+			networkObject.RegisterRpc("ChangedCar", ChangedCar, typeof(int), typeof(int));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -115,6 +117,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		/// Arguments:
 		/// </summary>
 		public abstract void JoinedLobby(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// </summary>
+		public abstract void ChangedCar(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

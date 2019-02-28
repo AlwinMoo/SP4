@@ -10,16 +10,25 @@ public class CarSelection : MonoBehaviour {
     public GameObject Van;
     public GameObject Monstertruck;
 
+    public GameObject LobbysystemPrefab;
+    private LobbyScript LobScript;
+
 
     public void SelectID()
     {
         SliderValue.ID = CARID;
         PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car = SliderValue.ID;
+        LobScript.UpdatePlayerCar(PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car);
     }
 
     void Update()
     {
-        switch (SliderValue.ID)
+        LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");
+        LobScript = LobbysystemPrefab.GetComponent<LobbyScript>();
+
+        Debug.Log(PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car);
+
+        switch (PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car)
         {
             case 0:
                 {
