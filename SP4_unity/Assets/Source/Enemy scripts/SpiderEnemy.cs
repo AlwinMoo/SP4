@@ -9,7 +9,7 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
     //TODO: PUT THIS VARIABLE INTO BASE INSTEAD
     public const float burnDuration = 3.0f;
 	//TODO: PUT THIS VARIABLE INTO BASE INSTEAD
-	public const float maxHealth = 200;
+	public const float maxHealth = 50;
 	//private bool m_burning;
 	private float m_countDownSpider;
 	public Animator anim;
@@ -32,7 +32,7 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		mass = thisGO.mass;
 
 		enemyType = enemytype.ENEMY_SPIDER;
-		agent.speed = 1.5f;
+		agent.speed = 30f;
 		m_burning = false;
 		m_countDownSpider = 0.0f;
 		// TODO: make the particle systems disable play on awake
@@ -123,10 +123,8 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 				health -= _damage;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-				health -= _damage;
-				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-				health -= _damage;
+				health -= _damage * 2f;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
 				health -= _damage;
@@ -144,10 +142,8 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 				TakeTickDamage(_damage);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-				// Stagger when they take this damage
-
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-				TakeTickDamage(_damage);
+				TakeTickDamage(_damage * 2f);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
 				TakeTickDamage(_damage);

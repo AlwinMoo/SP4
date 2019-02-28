@@ -31,7 +31,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
         mass = thisGO.mass;
 
         enemyType = enemytype.ENEMY_NORMAL;
-        agent.speed = 3.5f;
+        agent.speed = 35f;
         m_countDownNormal = 0.0f;
         m_burning = false;
         fire.Stop();
@@ -108,7 +108,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
 		if (networkObject.IsServer) {
 			switch (_type) {
 			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
-				health -= _damage;
+				health -= _damage * 2f;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
 				health -= _damage;
@@ -129,7 +129,7 @@ public class NormalEnemy : EnemyBase, ILiveEntity {
 			switch (_type)
 			{
 			case GlobalDamage.DamageTypes.DAMAGE_BALLISTIC_SMALL:
-				TakeTickDamage(_damage);
+				TakeTickDamage(_damage * 2f);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
 				TakeTickDamage(_damage);

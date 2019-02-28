@@ -35,7 +35,7 @@ public class TankEnemy : EnemyBase, ILiveEntity {
         mass = thisGO.mass;
 
         enemyType = enemytype.ENEMY_TANK;
-        agent.speed = 1.5f;
+        agent.speed = 15f;
 		m_burning = false;
 		m_countDownTank = 0.0f;
 		fire.Stop ();
@@ -135,10 +135,8 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 				health -= _damage;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
-				health -= _damage;
-				break;
 			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
-				health -= _damage;
+				health -= _damage * 2f;
 				break;
 			}
 		} 
@@ -156,10 +154,8 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 				TakeTickDamage(_damage);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
-				TakeTickDamage(_damage);
-				break;
 			case GlobalDamage.DamageTypes.DAMAGE_AOE_ROCKET_DAMAGE:
-				TakeTickDamage(_damage);
+				TakeTickDamage(_damage * 2f);
 				break;
 			}
 		}

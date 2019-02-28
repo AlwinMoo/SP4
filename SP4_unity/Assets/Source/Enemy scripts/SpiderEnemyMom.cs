@@ -32,7 +32,7 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 		mass = thisGO.mass;
 
 		enemyType = enemytype.ENEMY_SPIDER;
-		agent.speed = 1.5f;
+		agent.speed = 10f;
 		m_burning = false;
 		m_countDownSpider = 0.0f;
 		// Don't let the particles for fire play on start
@@ -133,10 +133,8 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 				health -= _damage;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-				health -= _damage;
-				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-				health -= _damage;
+				health -= _damage * 2f;
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
 				health -= _damage;
@@ -154,10 +152,8 @@ public class SpiderEnemyMom :  EnemyBase, ILiveEntity {
 				TakeTickDamage(_damage);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL:
-				// Stagger when they take this damage
-
 			case GlobalDamage.DamageTypes.DAMAGE_FIRE_TICK:
-				TakeTickDamage(_damage);
+				TakeTickDamage(_damage * 2f);
 				break;
 			case GlobalDamage.DamageTypes.DAMAGE_ROCKET:
 				TakeTickDamage(_damage);
