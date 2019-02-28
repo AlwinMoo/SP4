@@ -45,7 +45,7 @@ public class GameLogic : GameLogicBehavior
         {
             respawnTimer += Time.deltaTime;
             Debug.Log(respawnTimer);
-            if (respawnTimer >= 3)
+            if (respawnTimer >= 5)
             {
                 TextDisplay.IsAlive();
                 thePlayerInfo.GetComponent<VehicleBase>().SetComponentActive(true);

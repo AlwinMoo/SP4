@@ -19,7 +19,7 @@ public class Respawning : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        RespawnTimer.text = "Respawning in: " + (3.0f - GameLogic.respawnTimer).ToString("0");
+        RespawnTimer.text = "Respawning in: " + (5.0f - GameLogic.respawnTimer).ToString("0");
 
     }
 }
