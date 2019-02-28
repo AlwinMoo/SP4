@@ -12,5 +12,26 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Name.text = PlayerManager.playerManager.GetPlayerName(slotNumber);
+
+        switch (PlayerManager.playerManager.GetPlayerCar(slotNumber))
+        {
+            case 0:
+                {
+                    Car.text = "Sedan";
+                    break;
+                }
+            case 1:
+                {
+                    Car.text = "Van";
+                    break;
+                }
+            case 2:
+                {
+                    Car.text = "MonsterTruck";
+                    break;
+                }
+        }
+
+
 	}
 }

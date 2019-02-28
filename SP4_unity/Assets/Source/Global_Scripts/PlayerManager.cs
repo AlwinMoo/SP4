@@ -154,6 +154,11 @@ public class PlayerManager : PlayerManagerBehavior {
         return m_playerIndex;
     }
 
+    public int GetPlayerCar(int index)
+    {
+        return m_players[index].player_car;
+    }
+
 	//TODO: disconnected function
 	private void DisconnectedFromServer(NetWorker sender)
 	{
