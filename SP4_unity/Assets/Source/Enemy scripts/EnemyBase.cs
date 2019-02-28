@@ -86,6 +86,12 @@ public class EnemyBase : EnemyBehavior, Flammable
                 networkObject.rotation = transform.rotation;
             }
 
+            if(QuestSystem.QuestID == 1)
+            {
+                if(QuestSystem.theObj != null)
+                    target = QuestSystem.theObj;
+            }
+
             m_countDown = 0.0f;
             
             agent.stoppingDistance = 5;
@@ -116,15 +122,26 @@ public class EnemyBase : EnemyBehavior, Flammable
                     case enemytype.ENEMY_TANK:
                         collision.gameObject.GetComponent<VehicleBase>().health -= (20 * collision.gameObject.GetComponent<VehicleBase>().armour);
                         break;
-				case enemytype.ENEMY_SPIDER:
-					collision.gameObject.GetComponent<VehicleBase>().health -= (15 * collision.gameObject.GetComponent<VehicleBase>().armour);
-					break;
+				    case enemytype.ENEMY_SPIDER:
+				    	collision.gameObject.GetComponent<VehicleBase>().health -= (15 * collision.gameObject.GetComponent<VehicleBase>().armour);
+				    	break;
                     default:
                         break;
                 }
                 damageTickCD = 0.0f;
 
                 collision.gameObject.GetComponentInChildren<Healthbar>().hpBar.fillAmount = collision.gameObject.GetComponent<VehicleBase>().health / collision.gameObject.GetComponent<VehicleBase>().maxHealth;
+
+            }
+        }
+        else if (collision.gameObject.CompareTag("Objective"))
+        {
+            if (damageTickCD >= 2)
+            {
+                
+                damageTickCD = 0.0f;
+
+                collision.gameObject.GetComponent<ObjectiveObject>().health -= 5;
 
             }
         }

@@ -10,7 +10,7 @@ public class QuestSystem : QuestSystemBehavior
 {
 
     private Vector3 gameObjectPosition;
-    GameObject theObj;
+    public static GameObject theObj;
 
     public static string Title;
     public static string Description;

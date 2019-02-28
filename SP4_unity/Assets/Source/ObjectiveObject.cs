@@ -9,7 +9,7 @@ using BeardedManStudios.Forge.Networking.Generated;
 public class ObjectiveObject : ObjectiveObjectBehavior
 {
 
-    private int health;
+    public int health;
     public Slider HealthSlider;
     private bool remove;
     private float temp;
