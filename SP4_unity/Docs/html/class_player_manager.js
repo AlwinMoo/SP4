@@ -15,6 +15,7 @@ var class_player_manager =
     [ "GetPlayerList", "class_player_manager.html#ab49864b1fcc2265d375e567828215fe7", null ],
     [ "GetPlayerName", "class_player_manager.html#ad150aed954549363fd2eec9e31746e59", null ],
     [ "PlayerAccepted", "class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9", null ],
+    [ "PlayerDisconnectedFromServer", "class_player_manager.html#a9aae09c2557f46bd91ed5e1199f34b06", null ],
     [ "Start", "class_player_manager.html#abdb444060fde7b515c89247b97f5167c", null ],
     [ "Update", "class_player_manager.html#a845f49f829496d56defe86c77e03fa12", null ],
     [ "m_gameState", "class_player_manager.html#a35ae1702e0d9c2420d0de7a2f28a7cc0", null ],

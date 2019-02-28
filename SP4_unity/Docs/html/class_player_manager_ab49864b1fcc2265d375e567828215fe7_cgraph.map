@@ -1,4 +1,4 @@
 <map id="PlayerManager.GetPlayerList" name="PlayerManager.GetPlayerList">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,197,32"/>
+<area shape="rect" id="node1" title="Receives the list of players in the session" alt="" coords="5,5,197,32"/>
 <area shape="rect" id="node2" href="$class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="245,5,396,32"/>
 </map>

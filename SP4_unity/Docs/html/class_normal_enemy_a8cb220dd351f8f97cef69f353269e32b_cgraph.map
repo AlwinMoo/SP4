@@ -1,5 +1,5 @@
 <map id="NormalEnemy.Update" name="NormalEnemy.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,155,57"/>
+<area shape="rect" id="node1" title="Updates pathfinding information based on objectives and player states" alt="" coords="5,31,155,57"/>
 <area shape="rect" id="node2" href="$class_normal_enemy.html#ac6d19d38f5dafb83827230534000f6fc" title=" " alt="" coords="209,5,381,32"/>
 <area shape="rect" id="node5" href="$class_normal_enemy.html#a147f4a16c9b30865e135249ee8a95e60" title=" " alt="" coords="203,56,387,83"/>
 <area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="435,5,631,32"/>

@@ -128,9 +128,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aea4b8d7c658692ecff0d45452dc423b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff3d96a7a05b771e661ab2627ad73fcd"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#aff3d96a7a05b771e661ab2627ad73fcd">maxLifeTime</a> = 3.0f</td></tr>
 <tr class="separator:aff3d96a7a05b771e661ab2627ad73fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac507b74367a817778453c2952dcc55ea"><td class="memItemLeft" align="right" valign="top">AudioClip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#ac507b74367a817778453c2952dcc55ea">SoundClip</a></td></tr>
+<tr class="separator:ac507b74367a817778453c2952dcc55ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a89c650ed05fe68e07806ad22f91f07ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#a89c650ed05fe68e07806ad22f91f07ff">Start</a> ()</td></tr>
+<tr class="separator:a89c650ed05fe68e07806ad22f91f07ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b926064d8afc7be2d7f8d52fc95372a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#a9b926064d8afc7be2d7f8d52fc95372a">Update</a> ()</td></tr>
 <tr class="separator:a9b926064d8afc7be2d7f8d52fc95372a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbf440dd85688daab4bf2bf0c9e7c063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#abbf440dd85688daab4bf2bf0c9e7c063">OnCollisionEnter</a> (Collision col)</td></tr>
@@ -140,6 +144,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a61454ad8b7c0cce49b6f03de07d50b9a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#a61454ad8b7c0cce49b6f03de07d50b9a">m_currLifeTime</a> = <a class="el" href="class_r_l___bullet.html#aff3d96a7a05b771e661ab2627ad73fcd">maxLifeTime</a></td></tr>
 <tr class="separator:a61454ad8b7c0cce49b6f03de07d50b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f467a53adc723a30716172ad9f9b29"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_l___bullet.html#a70f467a53adc723a30716172ad9f9b29">SoundSource</a></td></tr>
+<tr class="separator:a70f467a53adc723a30716172ad9f9b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -170,7 +176,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Spawn the explosion particle if the bullet hits something </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00033">33</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00041">41</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -206,7 +212,34 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="interface_i_pooled_object.html#a27411dde55be385d617e122d1c4c11a3">IPooledObject</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00012">12</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00020">20</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+
+</div>
+</div>
+<a id="a89c650ed05fe68e07806ad22f91f07ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c650ed05fe68e07806ad22f91f07ff">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RL_Bullet.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00014">14</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
 
 </div>
 </div>
@@ -233,7 +266,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00024">24</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00032">32</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
 
 </div>
 </div>
@@ -294,6 +327,46 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="ac507b74367a817778453c2952dcc55ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac507b74367a817778453c2952dcc55ea">&#9670;&nbsp;</a></span>SoundClip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip RL_Bullet.SoundClip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00011">11</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+
+</div>
+</div>
+<a id="a70f467a53adc723a30716172ad9f9b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f467a53adc723a30716172ad9f9b29">&#9670;&nbsp;</a></span>SoundSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioSource RL_Bullet.SoundSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_r_l___bullet_8cs_source.html#l00012">12</a> of file <a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/alien/Desktop/SP4_Repo/SP4/SP4_unity/Assets/Source/Projectile_Scripts/<a class="el" href="_r_l___bullet_8cs_source.html">RL_Bullet.cs</a></li>
 </ul>
@@ -303,7 +376,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_r_l___bullet.html">RL_Bullet</a></li>
-    <li class="footer">Generated on Thu Feb 28 2019 19:03:17 for CS: Fog of War by
+    <li class="footer">Generated on Thu Feb 28 2019 20:52:13 for CS: Fog of War by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

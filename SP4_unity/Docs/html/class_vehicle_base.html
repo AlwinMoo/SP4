@@ -156,8 +156,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3084a4e823f369b500f9f74e3c5cdc55"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a3084a4e823f369b500f9f74e3c5cdc55">FixedUpdate</a> ()</td></tr>
 <tr class="separator:a3084a4e823f369b500f9f74e3c5cdc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6f6d13360600d1d0b5320bf6ace82df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#ab6f6d13360600d1d0b5320bf6ace82df">OnCollisionEnter</a> (Collision collision)</td></tr>
+<tr class="memdesc:ab6f6d13360600d1d0b5320bf6ace82df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives damage when the player enters collision with an enemy.  <a href="#ab6f6d13360600d1d0b5320bf6ace82df">More...</a><br /></td></tr>
 <tr class="separator:ab6f6d13360600d1d0b5320bf6ace82df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7733c6bd2c3586e0897dc9a3297297cf"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a7733c6bd2c3586e0897dc9a3297297cf">triggerShoot</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:a7733c6bd2c3586e0897dc9a3297297cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers fire when a client shoots  <a href="#a7733c6bd2c3586e0897dc9a3297297cf">More...</a><br /></td></tr>
 <tr class="separator:a7733c6bd2c3586e0897dc9a3297297cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a365f0593652fab241416b898565cd6f7"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vehicle_base.html#a365f0593652fab241416b898565cd6f7">SendTag</a> (RpcArgs args)</td></tr>
 <tr class="separator:a365f0593652fab241416b898565cd6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -457,9 +459,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Receives damage when the player enters collision with an enemy. </p>
+<p>Different vehicle types take different damage amounts </p>
+
 <p>Reimplemented in <a class="el" href="class_monster_truck.html#a834ae3cd7406ef521220dce0ce673ad5">MonsterTruck</a>, <a class="el" href="class_sedan.html#a434617f0c498baddb94475aa69c35f60">Sedan</a>, and <a class="el" href="class_van.html#a60a5220951a02766dda1deb5db44a396">Van</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00333">333</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00336">336</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -479,7 +484,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00395">395</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00400">400</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 
 </div>
 </div>
@@ -596,13 +601,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00356">356</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
+<p>Triggers fire when a client shoots </p>
+
+<p class="definition">Definition at line <a class="el" href="_vehicle_base_8cs_source.html#l00361">361</a> of file <a class="el" href="_vehicle_base_8cs_source.html">VehicleBase.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_vehicle_base_a7733c6bd2c3586e0897dc9a3297297cf_cgraph.png" border="0" usemap="#class_vehicle_base_a7733c6bd2c3586e0897dc9a3297297cf_cgraph" alt=""/></div>
 <map name="class_vehicle_base_a7733c6bd2c3586e0897dc9a3297297cf_cgraph" id="class_vehicle_base_a7733c6bd2c3586e0897dc9a3297297cf_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect"  title="Triggers fire when a client shoots" alt="" coords="5,5,175,32"/>
 <area shape="rect"  href="class_event_manager.html#a6c21511b223de8452ede93e2308a5c64" title=" " alt="" coords="223,5,401,32"/>
 </map>
 </div>
@@ -1484,7 +1491,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_vehicle_base.html">VehicleBase</a></li>
-    <li class="footer">Generated on Thu Feb 28 2019 19:03:18 for CS: Fog of War by
+    <li class="footer">Generated on Thu Feb 28 2019 20:52:15 for CS: Fog of War by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

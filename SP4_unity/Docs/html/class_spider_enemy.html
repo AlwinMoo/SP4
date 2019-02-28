@@ -125,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a055ba240b3ad96b344d3096e3298ed73"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spider_enemy.html#a055ba240b3ad96b344d3096e3298ed73">Start</a> ()</td></tr>
 <tr class="separator:a055ba240b3ad96b344d3096e3298ed73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d881fb2b9ba479fae5db0d8407926da"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spider_enemy.html#a7d881fb2b9ba479fae5db0d8407926da">Update</a> ()</td></tr>
+<tr class="memdesc:a7d881fb2b9ba479fae5db0d8407926da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates pathfinding information based on objectives and player states  <a href="#a7d881fb2b9ba479fae5db0d8407926da">More...</a><br /></td></tr>
 <tr class="separator:a7d881fb2b9ba479fae5db0d8407926da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a902c2cc1cb91964e81b74f2cd95e1d29"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spider_enemy.html#a902c2cc1cb91964e81b74f2cd95e1d29">OnTriggerStay</a> (Collider collision)</td></tr>
 <tr class="memdesc:a902c2cc1cb91964e81b74f2cd95e1d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts attacking the vehicle when in the triggerbox  <a href="#a902c2cc1cb91964e81b74f2cd95e1d29">More...</a><br /></td></tr>
@@ -151,8 +152,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b121e5b33af45a9cfcaab8d4ca41312 inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312">TakeTickDamage</a> (float _damage)</td></tr>
 <tr class="separator:a2b121e5b33af45a9cfcaab8d4ca41312 inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848">SendOnFire</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPC to tell receiver that the enemy object has been ignited  <a href="class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848">More...</a><br /></td></tr>
 <tr class="separator:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f">TakeDamage</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPC to tell clients that enemy has taken damage  <a href="class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f">More...</a><br /></td></tr>
 <tr class="separator:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -478,6 +481,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates pathfinding information based on objectives and player states </p>
+
 <p>Reimplemented from <a class="el" href="class_enemy_base.html#a8bda6712b2baa5726a62e555eda1c473">EnemyBase</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_spider_enemy_8cs_source.html#l00045">45</a> of file <a class="el" href="_spider_enemy_8cs_source.html">SpiderEnemy.cs</a>.</p>
@@ -486,7 +491,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_spider_enemy_a7d881fb2b9ba479fae5db0d8407926da_cgraph.png" border="0" usemap="#class_spider_enemy_a7d881fb2b9ba479fae5db0d8407926da_cgraph" alt=""/></div>
 <map name="class_spider_enemy_a7d881fb2b9ba479fae5db0d8407926da_cgraph" id="class_spider_enemy_a7d881fb2b9ba479fae5db0d8407926da_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,31,151,57"/>
+<area shape="rect"  title="Updates pathfinding information based on objectives and player states" alt="" coords="5,31,151,57"/>
 <area shape="rect"  href="class_spider_enemy.html#a37098e8e8c71f53ef64995704bca5d17" title="Checks if the Enemy is alive." alt="" coords="205,5,373,32"/>
 <area shape="rect"  href="class_spider_enemy.html#a7ee9f7a4214b8c367bdda90e23584b6c" title="Deduct health accordingly to what damaged it" alt="" coords="199,56,379,83"/>
 <area shape="rect"  href="class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="427,5,623,32"/>
@@ -755,7 +760,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_spider_enemy.html">SpiderEnemy</a></li>
-    <li class="footer">Generated on Thu Feb 28 2019 19:03:18 for CS: Fog of War by
+    <li class="footer">Generated on Thu Feb 28 2019 20:52:14 for CS: Fog of War by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

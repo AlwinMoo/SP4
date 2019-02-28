@@ -1,4 +1,4 @@
 <map id="EnemyBase.SendOnFire" name="EnemyBase.SendOnFire">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" title="RPC to tell receiver that the enemy object has been ignited" alt="" coords="5,5,172,32"/>
 <area shape="rect" id="node2" href="$class_enemy_base.html#afbdcbe50851bebbc49679dff840806cd" title=" " alt="" coords="220,5,355,32"/>
 </map>

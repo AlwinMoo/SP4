@@ -15,7 +15,7 @@ var searchData=
   ['respawning',['Respawning',['../class_respawning.html',1,'']]],
   ['respawning_2ecs',['Respawning.cs',['../_respawning_8cs.html',1,'']]],
   ['respawnpanel',['RespawnPanel',['../class_text_display.html#a81fa1a21435b199339c8fc20226c6ea8',1,'TextDisplay']]],
-  ['respawntimer',['RespawnTimer',['../class_respawning.html#aaeaf09c82a915f6c3a6481c70e7f08b0',1,'Respawning.RespawnTimer()'],['../class_game_logic.html#a77c1cd89acef09ac1da8f24c46a2d0b0',1,'GameLogic.respawnTimer()']]],
+  ['respawntimer',['respawnTimer',['../class_game_logic.html#a77c1cd89acef09ac1da8f24c46a2d0b0',1,'GameLogic.respawnTimer()'],['../class_respawning.html#aaeaf09c82a915f6c3a6481c70e7f08b0',1,'Respawning.RespawnTimer()']]],
   ['rl_5fbullet',['RL_Bullet',['../class_r_l___bullet.html',1,'RL_Bullet'],['../class_r_l___explosion.html#a3642ce0223ae362d797903cfb3542303',1,'RL_Explosion.RL_Bullet()']]],
   ['rl_5fbullet_2ecs',['RL_Bullet.cs',['../_r_l___bullet_8cs.html',1,'']]],
   ['rl_5fexplosion',['RL_Explosion',['../class_r_l___explosion.html',1,'']]],

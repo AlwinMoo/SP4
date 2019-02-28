@@ -17,7 +17,6 @@ var class_enemy_base =
     [ "Start", "class_enemy_base.html#afa5ee82be2fab97633a629e5e43dfac4", null ],
     [ "TakeDamage", "class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f", null ],
     [ "TakeTickDamage", "class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312", null ],
-    [ "UnloadTickDamage", "class_enemy_base.html#a8526c058fba66e1e23ed6e1d955cb896", null ],
     [ "Update", "class_enemy_base.html#a8bda6712b2baa5726a62e555eda1c473", null ],
     [ "damageTakenTickRate", "class_enemy_base.html#a2a3607f35a98699596646aaa94227aa7", null ],
     [ "damageTickCD", "class_enemy_base.html#ad32b24fc20572889a44f498dcb512e8d", null ],

@@ -125,8 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9a74f2f02c3c18570f9c1c1d90696cd9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_normal_enemy.html#a9a74f2f02c3c18570f9c1c1d90696cd9">Start</a> ()</td></tr>
 <tr class="separator:a9a74f2f02c3c18570f9c1c1d90696cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cb220dd351f8f97cef69f353269e32b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_normal_enemy.html#a8cb220dd351f8f97cef69f353269e32b">Update</a> ()</td></tr>
+<tr class="memdesc:a8cb220dd351f8f97cef69f353269e32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates pathfinding information based on objectives and player states  <a href="#a8cb220dd351f8f97cef69f353269e32b">More...</a><br /></td></tr>
 <tr class="separator:a8cb220dd351f8f97cef69f353269e32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e95447366533e76cd357ef4454cd0ed"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_normal_enemy.html#a2e95447366533e76cd357ef4454cd0ed">OnTriggerStay</a> (Collider collision)</td></tr>
+<tr class="memdesc:a2e95447366533e76cd357ef4454cd0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">If it collides with a player, start attacking  <a href="#a2e95447366533e76cd357ef4454cd0ed">More...</a><br /></td></tr>
 <tr class="separator:a2e95447366533e76cd357ef4454cd0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7926107a97d4e4438ac5d643403c1353"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_normal_enemy.html#a7926107a97d4e4438ac5d643403c1353">OnCollisionEnter</a> (Collision collision)</td></tr>
 <tr class="separator:a7926107a97d4e4438ac5d643403c1353"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,8 +148,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b121e5b33af45a9cfcaab8d4ca41312 inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a2b121e5b33af45a9cfcaab8d4ca41312">TakeTickDamage</a> (float _damage)</td></tr>
 <tr class="separator:a2b121e5b33af45a9cfcaab8d4ca41312 inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848">SendOnFire</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPC to tell receiver that the enemy object has been ignited  <a href="class_enemy_base.html#a3740aad398f7fd0ab5cfc6444d176848">More...</a><br /></td></tr>
 <tr class="separator:a3740aad398f7fd0ab5cfc6444d176848 inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f">TakeDamage</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPC to tell clients that enemy has taken damage  <a href="class_enemy_base.html#a7f23bbdd93af7f7f724edc2af802dd1f">More...</a><br /></td></tr>
 <tr class="separator:a7f23bbdd93af7f7f724edc2af802dd1f inherit pub_methods_class_enemy_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -333,6 +337,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>If it collides with a player, start attacking </p>
+
 <p>Reimplemented from <a class="el" href="class_enemy_base.html#a677360581e87a6b4221df8fb5ff6c36d">EnemyBase</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_normal_enemy_8cs_source.html#l00069">69</a> of file <a class="el" href="_normal_enemy_8cs_source.html">NormalEnemy.cs</a>.</p>
@@ -432,6 +438,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates pathfinding information based on objectives and player states </p>
+
 <p>Reimplemented from <a class="el" href="class_enemy_base.html#a8bda6712b2baa5726a62e555eda1c473">EnemyBase</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_normal_enemy_8cs_source.html#l00041">41</a> of file <a class="el" href="_normal_enemy_8cs_source.html">NormalEnemy.cs</a>.</p>
@@ -440,7 +448,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_normal_enemy_a8cb220dd351f8f97cef69f353269e32b_cgraph.png" border="0" usemap="#class_normal_enemy_a8cb220dd351f8f97cef69f353269e32b_cgraph" alt=""/></div>
 <map name="class_normal_enemy_a8cb220dd351f8f97cef69f353269e32b_cgraph" id="class_normal_enemy_a8cb220dd351f8f97cef69f353269e32b_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,31,155,57"/>
+<area shape="rect"  title="Updates pathfinding information based on objectives and player states" alt="" coords="5,31,155,57"/>
 <area shape="rect"  href="class_normal_enemy.html#ac6d19d38f5dafb83827230534000f6fc" title=" " alt="" coords="209,5,381,32"/>
 <area shape="rect"  href="class_normal_enemy.html#a147f4a16c9b30865e135249ee8a95e60" title=" " alt="" coords="203,56,387,83"/>
 <area shape="rect"  href="class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="435,5,631,32"/>
@@ -613,7 +621,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_normal_enemy.html">NormalEnemy</a></li>
-    <li class="footer">Generated on Thu Feb 28 2019 19:03:16 for CS: Fog of War by
+    <li class="footer">Generated on Thu Feb 28 2019 20:52:11 for CS: Fog of War by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

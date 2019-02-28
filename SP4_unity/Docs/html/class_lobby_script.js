@@ -5,6 +5,7 @@ var class_lobby_script =
     [ "CheckIfAllReady", "class_lobby_script.html#aa1ef5eadc57ba82ec5707b90431458bf", null ],
     [ "JoinedLobby", "class_lobby_script.html#a93ead7296ceafc0356b54393670b65b7", null ],
     [ "LateStart", "class_lobby_script.html#a66620ed0900c53949384dfdac0aff376", null ],
+    [ "PlayerDisconnectedFromServer", "class_lobby_script.html#a20f1546e58aa2814f2a5c7580dbe474e", null ],
     [ "ReadyToggle", "class_lobby_script.html#a3de825821f895042ddaecbee18594756", null ],
     [ "Start", "class_lobby_script.html#a289cbe33c3a07bb4f3da810da40d5e4d", null ],
     [ "ToggleReady", "class_lobby_script.html#aa34f9a9c6ac845f4e1d892e30c06992e", null ],

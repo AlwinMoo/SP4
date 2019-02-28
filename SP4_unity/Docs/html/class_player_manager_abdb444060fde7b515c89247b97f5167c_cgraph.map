@@ -1,6 +1,7 @@
 <map id="PlayerManager.Start" name="PlayerManager.Start">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,147,61"/>
-<area shape="rect" id="node2" href="$class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9" title=" " alt="" coords="195,5,400,32"/>
-<area shape="rect" id="node4" href="$class_player_manager.html#a404ac6a2db218a213218198206aab69d" title=" " alt="" coords="201,57,393,98"/>
-<area shape="rect" id="node3" href="$class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="448,35,599,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,147,91"/>
+<area shape="rect" id="node2" href="$class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9" title="If a player has been accepted into the server, he will be added" alt="" coords="207,5,412,32"/>
+<area shape="rect" id="node4" href="$class_player_manager.html#a9aae09c2557f46bd91ed5e1199f34b06" title=" " alt="" coords="195,57,424,98"/>
+<area shape="rect" id="node5" href="$class_player_manager.html#a404ac6a2db218a213218198206aab69d" title=" " alt="" coords="213,122,405,163"/>
+<area shape="rect" id="node3" href="$class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="472,64,623,91"/>
 </map>

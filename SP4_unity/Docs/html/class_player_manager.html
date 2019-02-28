@@ -127,8 +127,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab49864b1fcc2265d375e567828215fe7"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#ab49864b1fcc2265d375e567828215fe7">GetPlayerList</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:ab49864b1fcc2265d375e567828215fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the list of players in the session  <a href="#ab49864b1fcc2265d375e567828215fe7">More...</a><br /></td></tr>
 <tr class="separator:ab49864b1fcc2265d375e567828215fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1ab46833aefc09ebd94027cd84b081e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#ad1ab46833aefc09ebd94027cd84b081e">AssignPlayer</a> (RpcArgs args)</td></tr>
+<tr class="memdesc:ad1ab46833aefc09ebd94027cd84b081e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPC to assign player to a slot of the 4 player slots available  <a href="#ad1ab46833aefc09ebd94027cd84b081e">More...</a><br /></td></tr>
 <tr class="separator:ad1ab46833aefc09ebd94027cd84b081e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac86926a420132e3cc22bc939e7a18f71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#ac86926a420132e3cc22bc939e7a18f71">GetPlayerCount</a> ()</td></tr>
 <tr class="separator:ac86926a420132e3cc22bc939e7a18f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,9 +171,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a845f49f829496d56defe86c77e03fa12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#a845f49f829496d56defe86c77e03fa12">Update</a> ()</td></tr>
 <tr class="separator:a845f49f829496d56defe86c77e03fa12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0ad76a6afd615075b237c53f8815d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9">PlayerAccepted</a> (NetworkingPlayer player, NetWorker sender)</td></tr>
+<tr class="memdesc:abc0ad76a6afd615075b237c53f8815d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a player has been accepted into the server, he will be added  <a href="#abc0ad76a6afd615075b237c53f8815d9">More...</a><br /></td></tr>
 <tr class="separator:abc0ad76a6afd615075b237c53f8815d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404ac6a2db218a213218198206aab69d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#a404ac6a2db218a213218198206aab69d">DisconnectedFromServer</a> (NetWorker sender)</td></tr>
 <tr class="separator:a404ac6a2db218a213218198206aab69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aae09c2557f46bd91ed5e1199f34b06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_manager.html#a9aae09c2557f46bd91ed5e1199f34b06">PlayerDisconnectedFromServer</a> (NetworkingPlayer _player, NetWorker _sender)</td></tr>
+<tr class="separator:a9aae09c2557f46bd91ed5e1199f34b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -229,7 +234,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00126">126</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p>RPC to assign player to a slot of the 4 player slots available </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00136">136</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -284,7 +291,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00163">163</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00173">173</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -313,7 +320,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00157">157</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00167">167</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -332,7 +339,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00137">137</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00147">147</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -352,7 +359,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00147">147</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00157">157</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -371,7 +378,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00152">152</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00162">162</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -391,13 +398,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00112">112</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p>Receives the list of players in the session </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00119">119</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player_manager_ab49864b1fcc2265d375e567828215fe7_cgraph.png" border="0" usemap="#class_player_manager_ab49864b1fcc2265d375e567828215fe7_cgraph" alt=""/></div>
 <map name="class_player_manager_ab49864b1fcc2265d375e567828215fe7_cgraph" id="class_player_manager_ab49864b1fcc2265d375e567828215fe7_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,197,32"/>
+<area shape="rect"  title="Receives the list of players in the session" alt="" coords="5,5,197,32"/>
 <area shape="rect"  href="class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="245,5,396,32"/>
 </map>
 </div>
@@ -420,7 +429,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00142">142</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00152">152</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -458,14 +467,63 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00084">84</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p>If a player has been accepted into the server, he will be added </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00089">89</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player_manager_abc0ad76a6afd615075b237c53f8815d9_cgraph.png" border="0" usemap="#class_player_manager_abc0ad76a6afd615075b237c53f8815d9_cgraph" alt=""/></div>
 <map name="class_player_manager_abc0ad76a6afd615075b237c53f8815d9_cgraph" id="class_player_manager_abc0ad76a6afd615075b237c53f8815d9_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,211,32"/>
+<area shape="rect"  title="If a player has been accepted into the server, he will be added" alt="" coords="5,5,211,32"/>
 <area shape="rect"  href="class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="259,5,409,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9aae09c2557f46bd91ed5e1199f34b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aae09c2557f46bd91ed5e1199f34b06">&#9670;&nbsp;</a></span>PlayerDisconnectedFromServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager.PlayerDisconnectedFromServer </td>
+          <td>(</td>
+          <td class="paramtype">NetworkingPlayer&#160;</td>
+          <td class="paramname"><em>_player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NetWorker&#160;</td>
+          <td class="paramname"><em>_sender</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00193">193</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_manager_a9aae09c2557f46bd91ed5e1199f34b06_cgraph.png" border="0" usemap="#class_player_manager_a9aae09c2557f46bd91ed5e1199f34b06_cgraph" alt=""/></div>
+<map name="class_player_manager_a9aae09c2557f46bd91ed5e1199f34b06_cgraph" id="class_player_manager_a9aae09c2557f46bd91ed5e1199f34b06_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,5,235,47"/>
+<area shape="rect"  href="class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="283,13,433,39"/>
 </map>
 </div>
 
@@ -500,10 +558,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player_manager_abdb444060fde7b515c89247b97f5167c_cgraph.png" border="0" usemap="#class_player_manager_abdb444060fde7b515c89247b97f5167c_cgraph" alt=""/></div>
 <map name="class_player_manager_abdb444060fde7b515c89247b97f5167c_cgraph" id="class_player_manager_abdb444060fde7b515c89247b97f5167c_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,35,147,61"/>
-<area shape="rect"  href="class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9" title=" " alt="" coords="195,5,400,32"/>
-<area shape="rect"  href="class_player_manager.html#a404ac6a2db218a213218198206aab69d" title=" " alt="" coords="201,57,393,98"/>
-<area shape="rect"  href="class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="448,35,599,61"/>
+<area shape="rect"  title=" " alt="" coords="5,64,147,91"/>
+<area shape="rect"  href="class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9" title="If a player has been accepted into the server, he will be added" alt="" coords="207,5,412,32"/>
+<area shape="rect"  href="class_player_manager.html#a9aae09c2557f46bd91ed5e1199f34b06" title=" " alt="" coords="195,57,424,98"/>
+<area shape="rect"  href="class_player_manager.html#a404ac6a2db218a213218198206aab69d" title=" " alt="" coords="213,122,405,163"/>
+<area shape="rect"  href="class_serializer.html#a8462f8612b7264eb728e3244dda17522" title=" " alt="" coords="472,64,623,91"/>
 </map>
 </div>
 
@@ -532,7 +591,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00078">78</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_manager_8cs_source.html#l00079">79</a> of file <a class="el" href="_player_manager_8cs_source.html">PlayerManager.cs</a>.</p>
 
 </div>
 </div>
@@ -650,7 +709,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_player_manager.html">PlayerManager</a></li>
-    <li class="footer">Generated on Thu Feb 28 2019 19:03:16 for CS: Fog of War by
+    <li class="footer">Generated on Thu Feb 28 2019 20:52:12 for CS: Fog of War by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

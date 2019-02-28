@@ -1,5 +1,5 @@
 <map id="TankEnemy.Update" name="TankEnemy.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,141,57"/>
+<area shape="rect" id="node1" title="Updates pathfinding information based on objectives and player states" alt="" coords="5,31,141,57"/>
 <area shape="rect" id="node2" href="$class_tank_enemy.html#ae14fde783fc26592d881c40d45e1b38d" title="Checks if the Enemy is alive." alt="" coords="195,5,354,32"/>
 <area shape="rect" id="node5" href="$class_tank_enemy.html#ac68dbcf31373219b9ea8c59abbb838a9" title="Deduct health accordingly to what damaged it" alt="" coords="189,56,360,83"/>
 <area shape="rect" id="node3" href="$class_object_pooler.html#a711398f0d283fe1b902e904b89ade323" title=" " alt="" coords="409,5,605,32"/>

@@ -7,7 +7,7 @@ var searchData=
   ['readycount',['ReadyCount',['../class_player_lobby.html#a013a4c7c75e8b3442c2a5b0c027590fc',1,'PlayerLobby']]],
   ['remove',['remove',['../class_objective_object.html#a173ea237bb66062d60059310ceebeaf7',1,'ObjectiveObject']]],
   ['respawnpanel',['RespawnPanel',['../class_text_display.html#a81fa1a21435b199339c8fc20226c6ea8',1,'TextDisplay']]],
-  ['respawntimer',['RespawnTimer',['../class_respawning.html#aaeaf09c82a915f6c3a6481c70e7f08b0',1,'Respawning.RespawnTimer()'],['../class_game_logic.html#a77c1cd89acef09ac1da8f24c46a2d0b0',1,'GameLogic.respawnTimer()']]],
+  ['respawntimer',['respawnTimer',['../class_game_logic.html#a77c1cd89acef09ac1da8f24c46a2d0b0',1,'GameLogic.respawnTimer()'],['../class_respawning.html#aaeaf09c82a915f6c3a6481c70e7f08b0',1,'Respawning.RespawnTimer()']]],
   ['rl_5fbullet',['RL_Bullet',['../class_r_l___explosion.html#a3642ce0223ae362d797903cfb3542303',1,'RL_Explosion']]],
   ['rl_5ft',['rL_T',['../class_car___controller.html#a9e29689c551a41826e1931a317e1933d',1,'Car_Controller']]],
   ['rl_5fwheel',['rL_Wheel',['../class_car___controller.html#a0fec98e26f9a189630df9370bdfe1d2b',1,'Car_Controller']]],

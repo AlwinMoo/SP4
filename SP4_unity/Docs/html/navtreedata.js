@@ -46,9 +46,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_b_g_m_8cs.html",
-"class_flame.html#a82b82d6b4793069426a08fb67cf50717",
-"class_r_l___bullet.html#abbf440dd85688daab4bf2bf0c9e7c063",
-"classenemy__spawner.html#a057df02653be19cb8ea37efefaca054e"
+"class_flame_thrower.html",
+"class_r_l___bullet.html#a70f467a53adc723a30716172ad9f9b29",
+"class_vehicle_base.html#affc4a5e93cbff519a2dfdc45000fd4e1ab18bc81ad5e0fd6dff91528094d12473"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

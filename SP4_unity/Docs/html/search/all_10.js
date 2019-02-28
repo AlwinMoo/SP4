@@ -17,6 +17,7 @@ var searchData=
   ['player_5fname',['player_name',['../struct_player_manager_1_1_player.html#a3d05bae633af5b253b39281be36376f9',1,'PlayerManager::Player']]],
   ['player_5fslot_5fempty',['player_slot_empty',['../struct_player_manager_1_1_player.html#a876ef7a255983855a008e989b6e1318e',1,'PlayerManager::Player']]],
   ['playeraccepted',['PlayerAccepted',['../class_player_manager.html#abc0ad76a6afd615075b237c53f8815d9',1,'PlayerManager']]],
+  ['playerdisconnectedfromserver',['PlayerDisconnectedFromServer',['../class_player_manager.html#a9aae09c2557f46bd91ed5e1199f34b06',1,'PlayerManager.PlayerDisconnectedFromServer()'],['../class_lobby_script.html#a20f1546e58aa2814f2a5c7580dbe474e',1,'LobbyScript.PlayerDisconnectedFromServer()']]],
   ['playerhealth',['PlayerHealth',['../class_player_health.html',1,'']]],
   ['playerhealth_2ecs',['PlayerHealth.cs',['../_player_health_8cs.html',1,'']]],
   ['playerlobby',['PlayerLobby',['../class_player_lobby.html',1,'']]],
