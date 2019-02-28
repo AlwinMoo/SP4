@@ -115,7 +115,7 @@ public class VehicleBase : PlayerVehicleBehavior {
         
         HealthSlider.value = health;
 
-        if (Input.GetMouseButton(0) && (this.gameObject.GetComponent(typeof(Renderer)) as Renderer) != false)
+        if (Input.GetMouseButton(0) && (this.gameObject.GetComponent(typeof(Collider)) as Collider) != false)
         {
             //RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

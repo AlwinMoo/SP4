@@ -37,7 +37,9 @@ public class HMG_Bullet : MonoBehaviour, IPooledObject
 			this.gameObject.SetActive (false);
 		}
 
-        if (_other.gameObject.tag == "Player")
+        string checkTag = _other.gameObject.tag.Remove(_other.gameObject.tag.Length - 1);
+
+        if (checkTag == "Player")
         {
             Physics.IgnoreCollision(_other.collider, this.gameObject.GetComponent<Collider>());
         }

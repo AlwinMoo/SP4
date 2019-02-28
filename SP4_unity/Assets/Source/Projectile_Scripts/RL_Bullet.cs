@@ -41,7 +41,9 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
             //this.gameObject.SetActive(false);
         }
 
-        if (col.gameObject.tag == "Player")
+        string checkTag = col.gameObject.tag.Remove(col.gameObject.tag.Length - 1);
+
+        if (checkTag == "Player")
         {
             Physics.IgnoreCollision(col.collider, this.gameObject.GetComponent<Collider>());
         }

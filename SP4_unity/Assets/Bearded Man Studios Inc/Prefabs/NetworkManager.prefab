@@ -69,7 +69,7 @@ MonoBehaviour:
   PlayerVehicleNetworkObject:
   - {fileID: 1284209154681884, guid: 8fdf3b2a91677f14ba5985bdd8f6dd39, type: 2}
   - {fileID: 1962795683774018, guid: d3a7ce60004abab4589a4fac8b69a9f9, type: 2}
-  - {fileID: 1487782952363076, guid: 0b35dc679fafc5448b64bc95dd8015bf, type: 2}
+  - {fileID: 1044895375829378, guid: 0b35dc679fafc5448b64bc95dd8015bf, type: 2}
   QuestSystemNetworkObject: []
   TestNetworkObject: []
   automaticScenes: 1

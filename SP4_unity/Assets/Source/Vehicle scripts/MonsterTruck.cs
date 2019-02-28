@@ -14,7 +14,7 @@ public class MonsterTruck : VehicleBase
 
         //transform.Find("RocketLauncher").gameObject.SetActive(true);
         
-        motorForce = 800;
+        motorForce = 5000;
         steerForce = 9000;
         brakeForce = 5 * motorForce;
 
@@ -35,7 +35,7 @@ public class MonsterTruck : VehicleBase
         rL_T = GameObject.FindWithTag("RL_Transform").GetComponent<Transform>();
         InitWheelScale(rL_T.GetComponent<Transform>(), new Vector3(1f, 3.5f, 4f));
 
-        driveTrain = DriveTrain.DRIVE_RWD;
+        driveTrain = DriveTrain.DRIVE_AWD;
         vehicleType = VehicleType.VEH_MONSTER_TRUCK;
         
         base.Start();

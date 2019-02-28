@@ -41,7 +41,7 @@ public class GameLogic : GameLogicBehavior
     {
         HPUpdateDebounce += Time.deltaTime;
          
-        if((thePlayerInfo.gameObject.GetComponent(typeof(Renderer)) as Renderer).enabled == false)
+        if((thePlayerInfo.gameObject.GetComponent(typeof(Collider)) as Collider).enabled == false)
         {
             respawnTimer += Time.deltaTime;
             Debug.Log(respawnTimer);

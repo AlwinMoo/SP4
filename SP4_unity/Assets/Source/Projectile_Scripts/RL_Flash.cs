@@ -10,13 +10,14 @@ public class RL_Flash : MonoBehaviour
     private float m_countDown;
     private Light m_light;
 
-	void Start ()
+	void Start()
     {
         m_light = GetComponent<Light>();
 	}
 	
     public void InitLight()
     {
+        m_light = GetComponent<Light>();
         m_countDown = flashDuration;
         m_light.intensity = startingIntensity;
         m_light.enabled = true;

@@ -1,38 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RocketLauncher : MonoBehaviour
 {
     ObjectPooler objectPooler;
     public float fireRate = 2.0f;
     public GameObject flash;
-    private bool firing = false;
     private float m_countDown = 0.0f;
+
+    UnityAction Listener;
 
     // Use this for initialization
     private void Start()
     {
         objectPooler = ObjectPooler.Instance;
+
+        Listener = new UnityAction(triggerRocket);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // lower cooldown if cooldown is above 0 and isn't firing
-        if (!firing && m_countDown > 0.0f)
+        if (m_countDown > 0.0f)
             m_countDown -= Time.deltaTime;
+        else if (m_countDown < 0.0f)
+            m_countDown = 0.0f;
+        EventManager.StartListening("RocketShoot", Listener, transform.parent.gameObject.tag);
+    }
 
-        // if right clicked and cooldown is below 0
-        if (Input.GetMouseButton(1) && m_countDown <= 0.0f)
-        {
-            firing = true;
+    void triggerRocket()
+    {
 
-            flash.GetComponent<RL_Flash>().InitLight();
-            objectPooler.SpawnFromPool("RL_Bullet", transform.position, this.gameObject.transform.rotation);
-            m_countDown = fireRate;
-            firing = false;
+        if (m_countDown > 0.0f)
+            return;
+        m_countDown += fireRate;
 
-        }
+        transform.rotation = Quaternion.LookRotation(VehicleBase.parentDir);
+        flash.GetComponent<RL_Flash>().InitLight();
+        objectPooler.SpawnFromPool("RL_Bullet", transform.position, transform.rotation);
+
+        EventManager.StopListening("RocketShoot", Listener, transform.parent.gameObject.tag);
     }
 }
