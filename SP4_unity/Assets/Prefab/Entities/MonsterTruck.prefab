@@ -1246,6 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 2
   flash: {fileID: 1268367876077668, guid: 3b5bbc6870e2bcf4bab43de03d2eefb6, type: 2}
+  SoundClip: {fileID: 0}
 --- !u!114 &114498848390728800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthSlider: {fileID: 0}
+  parentDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114594191039513098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1360,6 +1362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 2
   flash: {fileID: 1154397799929134}
+  SoundClip: {fileID: 8300000, guid: 5f25d503b7adbbc4f93811f35d2e8f72, type: 3}
 --- !u!114 &114944041249001714
 MonoBehaviour:
   m_ObjectHideFlags: 1

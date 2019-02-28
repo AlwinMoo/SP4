@@ -8,6 +8,14 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
     public float bulletForce = 60.0f;
     public const float maxLifeTime = 3.0f;
     private float m_currLifeTime = maxLifeTime;
+    public AudioClip SoundClip;
+    AudioSource SoundSource;
+
+    void Start()
+    {
+        SoundSource = GameObject.FindGameObjectWithTag("BaseSFX").GetComponent<AudioSource>();
+        SoundSource.clip = SoundClip;
+    }
 
     public void OnObjectSpawn()
     {
@@ -34,6 +42,7 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
     {
         ILiveEntity target = col.gameObject.GetComponent<ILiveEntity>();
 
+      
         if (target != null)
         {
             target.TakeDamage(GlobalDamage.g_RocketDirectDamage, GlobalDamage.DamageTypes.DAMAGE_ROCKET);
@@ -49,6 +58,10 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
         
         /// Spawn the explosion particle if the bullet hits something
         ObjectPooler.Instance.SpawnFromPool("RL_Explosion", transform.position, gameObject.transform.rotation);
+
+        SoundSource.volume = SFX.SFXvolchanger.audioSrc.volume;
+        SoundSource.Play();
+
         var explosionScript = this.gameObject.GetComponent<RL_Explosion>();
         explosionScript.Explosion();
         this.gameObject.SetActive(false);

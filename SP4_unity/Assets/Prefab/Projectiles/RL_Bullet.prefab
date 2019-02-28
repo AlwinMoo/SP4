@@ -140,6 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletForce: 60
-  explosion: {fileID: 198946767295836954, guid: 7da3d6f75de902742a70ccd2db2eb7ce,
-    type: 2}
-  smoke: {fileID: 198203216233008182, guid: 7da3d6f75de902742a70ccd2db2eb7ce, type: 2}
+  SoundClip: {fileID: 8300000, guid: c76544b4381fb9248b6aefba582630cf, type: 3}

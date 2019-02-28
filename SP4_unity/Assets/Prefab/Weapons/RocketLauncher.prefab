@@ -207,3 +207,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 2
   flash: {fileID: 1268367876077668}
+  SoundClip: {fileID: 8300000, guid: 5f25d503b7adbbc4f93811f35d2e8f72, type: 3}
