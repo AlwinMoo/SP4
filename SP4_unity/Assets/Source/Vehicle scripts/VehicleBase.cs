@@ -62,7 +62,7 @@ public class VehicleBase : PlayerVehicleBehavior {
 
     public Slider HealthSlider;
 
-    public static Vector3 parentDir;
+    public Vector3 parentDir;
 
     // Use this for initialization
     public virtual void Start()
@@ -155,8 +155,8 @@ public class VehicleBase : PlayerVehicleBehavior {
                 Vector3 dir = hitPos - transform.position;
                 dir.y = 0;
 
+                parentDir = dir;
                 networkObject.WeaponRotation = dir;
-                parentDir = networkObject.WeaponRotation;
 
                 cancelShoot = true;
                 networkObject.SendRpc(RPC_TRIGGER_SHOOT, Receivers.All, (int)PlayerManager.playerManager.m_players[(int)PlayerManager.playerManager.GetPlayerIndex()].player_ID, true);

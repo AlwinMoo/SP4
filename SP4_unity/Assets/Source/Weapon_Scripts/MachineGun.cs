@@ -45,7 +45,7 @@ public class MachineGun : MonoBehaviour {
 			return;
 		m_countDown += fireRate;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(VehicleBase.parentDir), Time.deltaTime * 15);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(transform.parent.GetComponent<VehicleBase>().parentDir), Time.deltaTime * 15);
         objectPooler.SpawnFromPool("HMG_Bullet", transform.position, transform.rotation);
 
         // Play thegunfire light

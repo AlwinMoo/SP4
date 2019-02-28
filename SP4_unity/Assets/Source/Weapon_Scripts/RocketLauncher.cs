@@ -36,7 +36,7 @@ public class RocketLauncher : MonoBehaviour
             return;
         m_countDown += fireRate;
 
-        transform.rotation = Quaternion.LookRotation(VehicleBase.parentDir);
+        transform.rotation = Quaternion.LookRotation(transform.parent.GetComponent<VehicleBase>().parentDir);
         flash.GetComponent<RL_Flash>().InitLight();
         objectPooler.SpawnFromPool("RL_Bullet", transform.position, transform.rotation);
 

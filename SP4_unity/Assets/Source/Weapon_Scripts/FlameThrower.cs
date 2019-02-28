@@ -40,7 +40,7 @@ public class FlameThrower : MonoBehaviour {
 
     public void TriggerFire()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(VehicleBase.parentDir), Time.deltaTime * 2);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(transform.parent.GetComponent<VehicleBase>().parentDir), Time.deltaTime * 2);
         FireEffects(true);
 
         EventManager.StopListening("FireShoot", Listener, transform.parent.gameObject.tag);
