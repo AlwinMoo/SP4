@@ -75,7 +75,10 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 			TakeDamage(damage, GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL);
 		}
     }
-
+    /// <summary>
+    /// Starts attacking the vehicle when in the triggerbox
+    /// </summary>
+    /// <param name="collision"> PlayerVehicle </param>
 	public override void OnTriggerStay(Collider collision)
 	{
 		base.OnTriggerStay(collision);
@@ -83,6 +86,10 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 			anim.SetTrigger (m_aAttackHash);
 	}
 
+    /// <summary>
+    /// Do momentum transfer when collided
+    /// </summary>
+    /// <param name="collision"> PlayerVehicle </param>
     public override void OnCollisionEnter(Collision collision)
     {
         if (!this.enabled)
@@ -93,23 +100,24 @@ public class TankEnemy : EnemyBase, ILiveEntity {
             GetComponent<NavMeshAgent>().enabled = false;
             thisGO.isKinematic = false;
 
-            m1 = this.mass;
+           m1 = this.mass;
            m2 = collision.gameObject.GetComponent<VehicleBase>().mass;
-           //u1 = this.gameObject.GetComponent<NavMeshAgent>().velocity;
            u1 = thisGO.velocity;
            u2 = collision.gameObject.GetComponent<Rigidbody>().velocity;
 
            Vector3 N = (this.gameObject.transform.position - collision.gameObject.transform.position).normalized;
-
-           //this.gameObject.GetComponent<Rigidbody>().AddForce(u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N, ForceMode.VelocityChange);
-           //collision.gameObject.GetComponent<Rigidbody>().AddForce(u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N, ForceMode.VelocityChange);
-            //this.gameObject.GetComponent<Rigidbody>().velocity = u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N;
-            //collision.gameObject.GetComponent<Rigidbody>().velocity = u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N;
+            
             collision.gameObject.GetComponent<Rigidbody>().AddForce(u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N, ForceMode.VelocityChange);
             this.gameObject.GetComponent<Rigidbody>().AddForce(u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N, ForceMode.VelocityChange);
         }
     }
 
+    /// <summary>
+    /// Deduct health accordingly to what damaged it
+    /// </summary>
+    /// <param name="_damage"> Damage Value </param>
+    /// <param name="_type"> Damage Type </param>
+    /// <returns></returns>
 	public bool TakeDamage(float _damage, GlobalDamage.DamageTypes _type)
 	{
         if (!this.enabled)
@@ -158,6 +166,11 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		return true;
 	}
 
+    /// <summary>
+    /// Play fire particles on the enemy when they are set on fire.
+    /// Tells everyone that THAT specific enemy is on fire and play the particles accordingly
+    /// </summary>
+    /// <returns> ErrorCheck Boolean </returns>
 	public override bool Ignited()
 	{
 		// If not already burning
@@ -176,12 +189,17 @@ public class TankEnemy : EnemyBase, ILiveEntity {
 		return false;
 	}
 
+    /// <summary>
+    /// Checks if the Enemy is alive. 
+    /// If not, spawn blood particles and delete it
+    /// </summary>
 	public override void CheckAlive ()
 	{
 		if (health <= 0) 
 		{
 			if (!m_deathPlayed) {
 				m_deathPlayed = true;
+                
                 ObjectPooler.Instance.SpawnFromPool("BloodSplatter", transform.position, gameObject.transform.rotation);
                 anim.SetTrigger (m_aDeathHash);
 				return;

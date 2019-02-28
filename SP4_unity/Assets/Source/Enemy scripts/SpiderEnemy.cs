@@ -22,8 +22,9 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 	private float m_deathTimer = 1.5f;
 
 	Rigidbody thisGO;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    public override void Start()
+    {
 		health = maxHealth;
 
 		thisGO = this.gameObject.GetComponent<Rigidbody>();
@@ -39,10 +40,10 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		glow.Stop ();
         m_deathPlayed = false;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
+
+    // Update is called once per frame
+    public override void Update()
+    {
 		CheckAlive ();
 		if (m_deathPlayed) {
 			m_deathTimer -= Time.deltaTime;
@@ -69,14 +70,20 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 			TakeDamage(damage, GlobalDamage.DamageTypes.DAMAGE_FIRE_NORMAL);
 		}
 	}
-
-	public override void OnTriggerStay(Collider collision)
+    /// <summary>
+    /// Starts attacking the vehicle when in the triggerbox
+    /// </summary>
+    /// <param name="collision"> PlayerVehicle </param>
+    public override void OnTriggerStay(Collider collision)
 	{
 		base.OnTriggerStay(collision);
 		if (anim.GetCurrentAnimatorStateInfo (0).fullPathHash != m_aAttackHash)
 			anim.SetTrigger (m_aAttackHash);
 	}
-
+    /// <summary>
+    /// Do momentum transfer when collided
+    /// </summary>
+    /// <param name="collision"> PlayerVehicle </param>
 	public override void OnCollisionEnter(Collision collision)
 	{
 		if (!this.enabled)
@@ -95,16 +102,17 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 
 			Vector3 N = (this.gameObject.transform.position - collision.gameObject.transform.position).normalized;
 
-			//this.gameObject.GetComponent<Rigidbody>().AddForce(u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N, ForceMode.VelocityChange);
-			//collision.gameObject.GetComponent<Rigidbody>().AddForce(u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N, ForceMode.VelocityChange);
-			//this.gameObject.GetComponent<Rigidbody>().velocity = u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N;
-			//collision.gameObject.GetComponent<Rigidbody>().velocity = u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N;
 			collision.gameObject.GetComponent<Rigidbody>().AddForce(u1 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u2 - u1), N) * N, ForceMode.VelocityChange);
 			this.gameObject.GetComponent<Rigidbody>().AddForce(u2 + ((2 * m2) / (m1 + m2)) * Vector3.Dot((u1 - u2), N) * N, ForceMode.VelocityChange);
 		}
 	}
-
-	public bool TakeDamage(float _damage, GlobalDamage.DamageTypes _type)
+    /// <summary>
+    /// Deduct health accordingly to what damaged it
+    /// </summary>
+    /// <param name="_damage"> Damage Value </param>
+    /// <param name="_type"> Damage Type </param>
+    /// <returns></returns>
+    public bool TakeDamage(float _damage, GlobalDamage.DamageTypes _type)
 	{
 		if (!this.enabled)
 			return false;
@@ -152,7 +160,12 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		return true;
 	}
 
-	public override bool Ignited()
+    /// <summary>
+    /// Play fire particles on the enemy when they are set on fire.
+    /// Tells everyone that THAT specific enemy is on fire and play the particles accordingly
+    /// </summary>
+    /// <returns> ErrorCheck Boolean </returns>
+    public override bool Ignited()
 	{
 		// If not already burning
 		if (!m_burning) 
@@ -169,8 +182,11 @@ public class SpiderEnemy :  EnemyBase, ILiveEntity {
 		m_countDownSpider = burnDuration;
 		return false;
 	}
-
-	public override void CheckAlive()
+    /// <summary>
+    /// Checks if the Enemy is alive. 
+    /// If not, spawn blood particles and delete it
+    /// </summary>
+    public override void CheckAlive()
 	{
 		if (health <= 0) 
 		{
