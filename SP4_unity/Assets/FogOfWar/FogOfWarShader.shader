@@ -53,6 +53,7 @@
 
 	//return 0 if (pos - nearVertex) > _FogRadius
 	float powerForPos(float4 pos, float2 nearVertex) {
+		pos.z -= 15;
 		float atten = clamp(FogRadius - length(pos.xz - nearVertex.xy), 0.0, FogRadius);
 
 		return (1.0 / _FogMaxRadius)*atten / FogRadius;
