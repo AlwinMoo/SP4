@@ -18,7 +18,6 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
         Vector3 force = shootDirection * bulletForce;
         // Apply force to bullet
         GetComponent<Rigidbody>().velocity = force;
-        Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 
     // Update is called once per frame
@@ -41,11 +40,12 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
             //this.gameObject.SetActive(false);
         }
 
-        string checkTag = col.gameObject.tag.Remove(col.gameObject.tag.Length - 1);
+        string checkTag = col.transform.tag.Remove(col.gameObject.tag.Length - 1);
 
         if (checkTag == "Player")
         {
             Physics.IgnoreCollision(col.collider, this.gameObject.GetComponent<Collider>());
+            return;
         }
 
         //TODO: fix rocket detonating on flamethrowers

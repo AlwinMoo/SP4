@@ -57,16 +57,7 @@ public class EnemyBase : EnemyBehavior, Flammable
     public virtual void Update()
     {
         m_countDown += Time.deltaTime;
-
-        //TODO: switch to pooler?
-        //if (health <= 0)
-        //{
-			// TODO: decide on death of enemy
-            //networkObject.SendRpc(RPC_SEND_DEATH, Receivers.All);
-			// Attempted method: use ondeath local function
-		//	EnemyDeath();
-        //}
-		//CheckAlive();
+        
         if (m_countDown >= 3.0f && GetComponent<NavMeshAgent>().enabled == true && GetComponent<Rigidbody>().isKinematic == true)
         {
             if (!networkObject.IsOwner)
@@ -94,9 +85,7 @@ public class EnemyBase : EnemyBehavior, Flammable
 
             m_countDown = 0.0f;
             
-            agent.stoppingDistance = 5;
-            
-            //Debug.Log("updated destination");
+            agent.stoppingDistance = 8;
         }
         else if (m_countDown >= 7.0f && GetComponent<NavMeshAgent>().enabled == false && GetComponent<Rigidbody>().isKinematic == false)
         {
@@ -104,6 +93,9 @@ public class EnemyBase : EnemyBehavior, Flammable
             GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<Rigidbody>().isKinematic = true;
         }
+
+        if (this.transform.position.y >= -3f)
+            this.transform.position = new Vector3(this.transform.position.x, -3f, this.transform.position.z);
     }
 
     public virtual void OnTriggerStay(Collider collision)
