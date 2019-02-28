@@ -13,6 +13,9 @@ public class Respawning : MonoBehaviour {
 		
 	}
 	
+    /// <summary>
+    ///  the timer for respawning 
+    /// </summary>
 	// Update is called once per frame
 	void Update () {
 

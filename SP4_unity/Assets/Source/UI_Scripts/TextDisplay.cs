@@ -30,6 +30,10 @@ public class TextDisplay : MonoBehaviour {
         TimeRemainingTillNextWave = 5;
     }
 
+
+    /// <summary>
+    ///  print the texts for the HUD
+    /// </summary>
     // Update is called once per frame
     void Update()
     {

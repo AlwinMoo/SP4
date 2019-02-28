@@ -17,7 +17,12 @@ public class HealthPotion : HealthPotionBehavior {
         gameObject.transform.RotateAround(gameObject.transform.position, Vector3.up, 45 * Time.deltaTime);
     }
 
-	void OnTriggerEnter(Collider other)
+    /// <summary>
+    ///  Check if a player picked up the powerup
+    /// </summary>
+    /// <param name="other"> the player </param>
+
+    void OnTriggerEnter(Collider other)
     {
         for(int i = 0; i < 4; ++i)
         {
@@ -41,7 +46,10 @@ public class HealthPotion : HealthPotionBehavior {
         // this only does for one of the players need to sync it online
         RemoveGameObject();
     }
-
+    /// <summary>
+    ///  if pick up delete the gameobject
+    /// </summary>
+    /// <param name="Player"> the player that picked up the power up </param>
     private void RemoveGameObject()
     {
         networkObject.SendRpc(RPC_SEND_DESTROY, Receivers.All);

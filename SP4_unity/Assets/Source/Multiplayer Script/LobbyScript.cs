@@ -34,6 +34,9 @@ public class LobbyScript : LobbyBehavior
         networkObject.SendRpc(RPC_TOGGLE_READY, Receivers.Server, (int)PlayerManager.playerManager.GetPlayerIndex());
     }
 
+    /// <summary>
+    ///  The amount of toggles needed to start the game 
+    /// </summary>
     // Update is called once per frame
     void Update()
     {

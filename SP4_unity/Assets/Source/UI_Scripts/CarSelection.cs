@@ -21,6 +21,9 @@ public class CarSelection : MonoBehaviour {
         LobScript.UpdatePlayerCar(PlayerManager.playerManager.m_players[PlayerManager.playerManager.GetPlayerIndex()].player_car);
     }
 
+    /// <summary>
+    /// Display the appropriate car when the car's button is pressed
+    /// </summary>
     void Update()
     {
         LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");

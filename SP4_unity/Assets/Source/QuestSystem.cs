@@ -23,7 +23,7 @@ public class QuestSystem : QuestSystemBehavior
 
     void Start()
     {
-        // If IsActive == false, the quest will not start
+        /// If IsActive == false, the quest will not start
         networkObject.IsActive = false;
         temp = 0;
         if (networkObject.IsServer)
@@ -42,8 +42,8 @@ public class QuestSystem : QuestSystemBehavior
                     {
                         if (networkObject.IsServer)
                         {
-                            // server side
-                            // This is the Init of the quests
+                            /// server side
+                            /// This is the Init of the quests
                             if (!Done)
                             {
                                 networkObject.HoldOutTime = 30;
@@ -58,12 +58,13 @@ public class QuestSystem : QuestSystemBehavior
                             if (networkObject.HoldOutTime <= 0)
                             {
                                 networkObject.IsPassed = true;
-                                // Set the time for the next quest
+                                /// Set the time for the next quest
                                 randomTime = Random.Range(5, 15);
-                                // Destroy the objective object
+                                /// Destroy the objective object
                                 if(theObj != null)
                                     theObj.GetComponent<ObjectiveObject>().SendRemove();
 
+                                /// if the objective is succesful spawn rewards 
                                 for(int i = 0; i < Random.Range(1,5); ++i)
                                 {
                                     int random = Random.Range(1, 3);
@@ -82,9 +83,9 @@ public class QuestSystem : QuestSystemBehavior
                             else if (theObj.GetComponent<ObjectiveObject>().HealthSlider.value <= 0)
                             {
                                 networkObject.IsFailed = true;
-                                // Set the time for the next quest
+                                /// Set the time for the next quest
                                 randomTime = Random.Range(5, 15);
-                                // Destroy the objective object
+                                /// Destroy the objective object
                                 if (theObj != null)
                                     theObj.GetComponent<ObjectiveObject>().SendRemove();
 
@@ -99,8 +100,8 @@ public class QuestSystem : QuestSystemBehavior
                     {
                         if (networkObject.IsServer)
                         {
-                            // server side
-                            // This is the Init of the quests
+                            /// server side
+                            /// This is the Init of the quests
                             if (!Done)
                             {
                                 networkObject.HoldOutTime = 20;
@@ -110,6 +111,8 @@ public class QuestSystem : QuestSystemBehavior
                             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
                             {
                                 networkObject.IsPassed = true;
+
+                                /// if the objective is succesful spawn rewards 
 
                                 for (int i = 0; i < Random.Range(1, 5); ++i)
                                 {
@@ -140,6 +143,7 @@ public class QuestSystem : QuestSystemBehavior
         }
         else if (networkObject.IsServer && !networkObject.IsActive)
         {
+            /// if there is no quest spawn a new quest after a certain time
             temp += Time.deltaTime;
             if (temp >= randomTime)
             {
@@ -153,7 +157,7 @@ public class QuestSystem : QuestSystemBehavior
             }
         }
 
-        // This part below is the printing out of stuff
+        /// This part below is the printing out of objective
 
         if (networkObject.IsPassed)
         {

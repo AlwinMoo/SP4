@@ -15,6 +15,9 @@ public class ReadyToggler : MonoBehaviour
 
     }
 
+    /// <summary>
+    ///  if the player is ready toggle the players toggle to be on or false
+    /// </summary>
     void Update()
     {
         LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");

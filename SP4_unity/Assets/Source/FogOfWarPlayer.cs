@@ -25,7 +25,7 @@ public class FogOfWarPlayer : MonoBehaviour
     {
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         Ray rayToPlayerPos = Camera.main.ScreenPointToRay(screenPos);
-
+        /// Increase the fog of war radius by the time of day
         if(WorldClock._worldTime < 12)
         {
             _fogRad = StartingFogRad + WorldClock._worldTime;
@@ -46,7 +46,7 @@ public class FogOfWarPlayer : MonoBehaviour
             FindFogPlane().GetComponent<Renderer>().material.SetFloat("_FogMaxRadius", _MaxfogRad);
         }
 
-        // This checks if hits the fog of war plane if does creates a hole to the player
+        /// This checks if hits the fog of war plane if does creates a hole to the player
         RaycastHit hit;
         if (Physics.Raycast(rayToPlayerPos, out hit, 1000))
         {
@@ -55,6 +55,10 @@ public class FogOfWarPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///  finds the fogofwarplane gameobject 
+    /// </summary>
+    /// <returns></returns>
     Transform FindFogPlane()
     {
         FogPlane = GameObject.FindWithTag("FogOfWarPlane");

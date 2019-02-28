@@ -11,6 +11,9 @@ public class Sun : MonoBehaviour {
 		
 	}
 	
+    /// <summary>
+    ///  rotate the directional light according to the world clock 
+    /// </summary>
 	// Update is called once per frame
 	void Update () {
         transform.RotateAround(Vector3.zero, Vector3.right, 15f * Time.deltaTime);

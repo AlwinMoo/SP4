@@ -12,6 +12,10 @@ public class SliderValue : MonoBehaviour {
 
     public static int ID;
 
+    /// <summary>
+    ///  Show the cars stats 
+    /// </summary>
+
     void Update ()
     {
         switch (ID)

@@ -22,7 +22,9 @@ public class StartButton : MonoBehaviour {
             readyButton.SetActive(false);
         }
 	}
-
+    /// <summary>
+    /// Check if all players are erady then start the game 
+    /// </summary>
     void Update()
     {
         LobbysystemPrefab = GameObject.FindWithTag("LobbySystem");

@@ -7,7 +7,10 @@ using BeardedManStudios.Forge.Networking.Generated;
 
 public class ShieldPowerUp : ArmourBehavior {
    
-
+    /// <summary>
+    ///  Check if a player picked up the powerup
+    /// </summary>
+    /// <param name="other"> the player </param>
     void OnTriggerEnter(Collider other)
     {
 
@@ -19,7 +22,10 @@ public class ShieldPowerUp : ArmourBehavior {
             }
         }
     }
-
+    /// <summary>
+    ///  if pick up delete the gameobject
+    /// </summary>
+    /// <param name="Player"> the player that picked up the power up </param>
     void PickUp(Collider Player)
     {
         Player.gameObject.GetComponent<VehicleBase>().armour *= 0.5f;

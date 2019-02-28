@@ -11,7 +11,9 @@ public class WorldClock : MonoBehaviour {
         _worldTime = 0;
 
     }
-	
+	/// <summary>
+    /// world time
+    /// </summary>
 	// Update is called once per frame
 	void Update ()
     {

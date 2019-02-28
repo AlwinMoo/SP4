@@ -6,7 +6,9 @@ public class SFX : MonoBehaviour {
 
     public static SFX SFXvolchanger;
     public AudioSource audioSrc;
-
+    /// <summary>
+    ///  Make this the only SFXvolume in the game
+    /// </summary>
     void Awake()
     {
         audioSrc.volume = 1f;

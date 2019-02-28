@@ -6,7 +6,9 @@ public class PanelToggler : MonoBehaviour {
 
     public GameObject OpenPanel;
     public GameObject ClosePanel;
-
+    /// <summary>
+    /// to open and close the appropriate panel
+    /// </summary>
     public void PanelOpen() 
     {
         if(OpenPanel != null)
