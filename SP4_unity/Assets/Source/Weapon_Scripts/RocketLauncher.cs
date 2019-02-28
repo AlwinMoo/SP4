@@ -9,12 +9,17 @@ public class RocketLauncher : MonoBehaviour
     public float fireRate = 2.0f;
     public GameObject flash;
     private float m_countDown = 0.0f;
+    public AudioClip SoundClip;
+    AudioSource SoundSource;
 
     UnityAction Listener;
 
     // Use this for initialization
     private void Start()
     {
+        SoundSource = GameObject.FindGameObjectWithTag("BaseSFX").GetComponent<AudioSource>();
+        SoundSource.clip = SoundClip;
+
         objectPooler = ObjectPooler.Instance;
 
         Listener = new UnityAction(triggerRocket);
@@ -40,6 +45,9 @@ public class RocketLauncher : MonoBehaviour
         if (m_countDown > 0.0f)
             return;
         m_countDown += fireRate;
+
+        SoundSource.volume = SFX.SFXvolchanger.audioSrc.volume;
+        SoundSource.Play();
 
         transform.rotation = Quaternion.LookRotation(transform.parent.GetComponent<VehicleBase>().parentDir);
         flash.GetComponent<RL_Flash>().InitLight();
