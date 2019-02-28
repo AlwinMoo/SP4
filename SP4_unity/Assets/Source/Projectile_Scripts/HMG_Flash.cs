@@ -18,7 +18,7 @@ public class HMG_Flash : MonoBehaviour {
 	public void StartLight()
 	{
 		m_countDown = duration;
-		// Set Intensity
+		/// Set Light Intensity
 		m_lt.intensity = startIntensity;
 		m_lt.enabled = true;
 	}
@@ -34,7 +34,6 @@ public class HMG_Flash : MonoBehaviour {
 			return;
 		}
 		m_lt.intensity = startIntensity * (m_countDown / duration);
-		//Debug.Log ("new intensity of muzzle flash is " + m_lt.intensity);
 	}
 
 }

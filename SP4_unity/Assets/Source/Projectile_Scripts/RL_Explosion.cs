@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RL_Explosion : MonoBehaviour
 {
-    // Gameobject that will trigger the explosion
+    /// Gameobject that will trigger the explosion
     private GameObject RL_Bullet;
-    // explosion force
+    /// explosion force
     public float power = 100.0f;
-    // explosion radius
+    /// explosion radius
     public float radius = 2.0f;
-    // upward force to send surrounding gameobjects up into the air
+    /// upward force to send surrounding gameobjects up into the air
     public float upforce = 1.0f;
 
 	// Use this for initialization
@@ -18,26 +18,22 @@ public class RL_Explosion : MonoBehaviour
     {
         RL_Bullet = this.gameObject;
     }
-	
-	// Update is called once per frame
-	//void FixedUpdate ()
- //   { 
- //       if(RL_Bullet == enabled)
- //       {
- //           Invoke("Explosion", 1);
- //       }
-	//}
 
+    /// <summary>
+    /// Do explosion force on all gameobjects with rigidbodies
+    /// </summary>
     public void Explosion()
     {
-
+        
         Vector3 explosionPosition = RL_Bullet.transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
         foreach (Collider hit in colliders)
         {
+            ///checking for colliders
             Rigidbody rigidbody = hit.GetComponent<Rigidbody>();
             if (rigidbody != null)
             {
+                ///push surrounding gameobjects away
                 rigidbody.AddExplosionForce(power, explosionPosition, radius, upforce, ForceMode.Impulse);
             }
 

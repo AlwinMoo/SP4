@@ -12,11 +12,11 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
     public void OnObjectSpawn()
     {
         m_currLifeTime = maxLifeTime;
-        // direction vector for bullet's direction
+        /// direction vector for bullet's direction
         Vector3 shootDirection = this.transform.rotation * Vector3.forward;
-        // Set bullet force to go towards the shooting direction
+        /// Set bullet force to go towards the shooting direction
         Vector3 force = shootDirection * bulletForce;
-        // Apply force to bullet
+        /// Apply force to bullet
         GetComponent<Rigidbody>().velocity = force;
     }
 
@@ -37,7 +37,6 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
         if (target != null)
         {
             target.TakeDamage(GlobalDamage.g_RocketDirectDamage, GlobalDamage.DamageTypes.DAMAGE_ROCKET);
-            //this.gameObject.SetActive(false);
         }
 
         string checkTag = col.transform.tag.Remove(col.gameObject.tag.Length - 1);
@@ -47,8 +46,8 @@ public class RL_Bullet : MonoBehaviour, IPooledObject
             Physics.IgnoreCollision(col.collider, this.gameObject.GetComponent<Collider>());
             return;
         }
-
-        //TODO: fix rocket detonating on flamethrowers
+        
+        /// Spawn the explosion particle if the bullet hits something
         ObjectPooler.Instance.SpawnFromPool("RL_Explosion", transform.position, gameObject.transform.rotation);
         var explosionScript = this.gameObject.GetComponent<RL_Explosion>();
         explosionScript.Explosion();

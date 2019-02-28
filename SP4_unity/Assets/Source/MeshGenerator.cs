@@ -20,8 +20,8 @@ public class MeshGenerator : NetworkMapGenerationBehavior
     public GameObject[] Obstacles;
 
     private static Random.State seedGenerator;
-    // seed to generate seed 
-    private static int seedGeneratorSeed = 1;
+    /// seed to generate seed 
+    private static int seedGeneratorSeed = 2;
     private static bool seedGeneratorInitialised = false;
 
     // Use this for initialization
@@ -42,6 +42,9 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         GameObject.Find("NavMesh").GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
+    /// <summary>
+    /// Creates a square map
+    /// </summary>
     void CreateShape()
     {
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
@@ -52,7 +55,7 @@ public class MeshGenerator : NetworkMapGenerationBehavior
             {
                 if((x == 0 || x == xSize) || (z == 0 || z == zSize))
                 {
-                    float y = 10.0f;
+                    float y = 30.0f;
                     vertices[i] = new Vector3(x, y, z);
                 }
                 else
@@ -64,12 +67,13 @@ public class MeshGenerator : NetworkMapGenerationBehavior
                 i++;
             }
         }
-
+        /// generates 6 vertices to make a square
         triangles = new int[xSize * zSize * 6];
 
         int vert = 0;
         int tris = 0;
 
+        /// creates i num of squares, where i = xSize * zSize
         for (int z = 0; z < zSize; z++)
         {
             for (int x = 0; x < xSize; x++)
@@ -91,6 +95,9 @@ public class MeshGenerator : NetworkMapGenerationBehavior
 
     }
 
+    /// <summary>
+    /// creates the mesh 
+    /// </summary>
     void UpdateMesh()
     {
         mesh.Clear();
@@ -102,11 +109,15 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         mesh.RecalculateBounds();
     }
 
+    /// <summary>
+    /// Generates a random seed
+    /// </summary>
+    /// <returns></returns>
     public int GenerateSeed()
     {
         if (networkObject.IsServer)
         {
-            // remember the old seed
+            /// remember the old seed
             var temp = Random.state;
 
             // initialise generator if not generated
@@ -117,14 +128,14 @@ public class MeshGenerator : NetworkMapGenerationBehavior
                 seedGeneratorInitialised = true;
             }
 
-            // set generator state to seed generator
+            /// set generator state to seed generator
             Random.state = seedGenerator;
-            // generate new seed
+            /// generate new seed
             var newSeed = Random.Range(int.MinValue, int.MaxValue);
-            // remember generator state
+            /// remember generator state
             seedGenerator = Random.state;
 
-            // set the original state back so that normal random generation can continue where it left off
+            /// set the original state back so that normal random generation can continue where it left off
             Random.state = temp;
 
             Debug.Log(" " + newSeed);
@@ -139,13 +150,18 @@ public class MeshGenerator : NetworkMapGenerationBehavior
         }
     }
 
-    // Creating obstacles on random parts of the tile
+    /// Creating obstacles on random parts of the tile
     void CreateObstacles(int numOfObstacles)
     {
         for (int i = 0; i < numOfObstacles; ++i)
         {
-            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x, mesh.bounds.max.x), mesh.bounds.min.y, Random.Range(mesh.bounds.min.z, mesh.bounds.max.z));
+            Vector3 randPos = new Vector3(Random.Range(mesh.bounds.min.x - mesh.bounds.max.x + 5.0f, mesh.bounds.max.x - 5.0f), mesh.bounds.min.y, Random.Range(mesh.bounds.min.z - mesh.bounds.max.z + 5.0f, mesh.bounds.max.z - 5.0f));
             randPos.y = this.transform.position.y + 1.0f;
+            
+            Debug.Log("minX: " + mesh.bounds.min.x);
+            Debug.Log("maxX: " + mesh.bounds.max.x);
+            Debug.Log("minZ: " + mesh.bounds.min.z);
+            Debug.Log("maxZ: " + mesh.bounds.max.z);
 
             int obstacleType = Random.Range(0, Obstacles.Length);
 

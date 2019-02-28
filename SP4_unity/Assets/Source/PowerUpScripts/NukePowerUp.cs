@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NukePowerUp : MonoBehaviour
 {
-    // GameObject - Nuke
+    /// GameObject - Nuke
     public GameObject nuke;
-    // The explosion force (how far the explosion will push other gameobjects away)
+    /// The explosion force (how far the explosion will push other gameobjects away)
     public float power = 100.0f;
-    // explosion radius
+    /// explosion radius
     public float radius = 5.0f;
-    // upward force (sends surrounding gameobjects slightly up into the air)
+    /// upward force (sends surrounding gameobjects slightly up into the air)
     public float upForce = 1.0f;
 
     // Use this for initialization
@@ -19,7 +19,7 @@ public class NukePowerUp : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    /// Update is called once per frame
     void FixedUpdate()
     {
         if (nuke == enabled)
@@ -28,11 +28,14 @@ public class NukePowerUp : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Explosion that pushes gameObjects away in the radius
+    /// </summary>
     public void NukeExplosion()
     {
 
-        Vector3 explosionPos = nuke.transform.position; // Set explosion position to the gameobject's position
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); // Set colliders so that gameobjects in the colliders will get pushed away by the explosion
+        Vector3 explosionPos = nuke.transform.position; /// Set explosion position to the gameobject's position
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius); /// Set colliders so that gameobjects in the colliders will get pushed away by the explosion
         foreach (Collider hit in colliders)
         {
             Rigidbody rigidbody = hit.GetComponent<Rigidbody>();

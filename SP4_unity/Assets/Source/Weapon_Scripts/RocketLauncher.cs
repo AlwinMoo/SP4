@@ -26,9 +26,14 @@ public class RocketLauncher : MonoBehaviour
             m_countDown -= Time.deltaTime;
         else if (m_countDown < 0.0f)
             m_countDown = 0.0f;
+        /// Rotates the barrel according to the mouse position
         EventManager.StartListening("RocketShoot", Listener, transform.parent.gameObject.tag);
     }
 
+    /// <summary>
+    /// Stops the barrel from rotating when player fires
+    /// Shoots the rocket bullet
+    /// </summary>
     void triggerRocket()
     {
 
